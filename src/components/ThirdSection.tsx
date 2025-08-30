@@ -11,7 +11,7 @@ export default function ThirdSection() {
                         <Heading>
                             The Future of <span className='font-inter text-secondry'>Hygiene</span> in Healthcare
                         </Heading>
-                        <Subheading>
+                        <Subheading classname='max-w-xl mx-auto'>
                             Wet Wash Gloves deliver safety, efficiency, and dignity—reshaping caregiving for hospitals, elderly homes, and beyond.
                         </Subheading>
                     </div>
