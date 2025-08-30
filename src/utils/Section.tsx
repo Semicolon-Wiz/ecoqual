@@ -1,6 +1,11 @@
-import React, { CSSProperties } from 'react'
+import React, { ButtonHTMLAttributes, CSSProperties } from 'react'
 
 interface Props {
+    children: React.ReactNode;
+    classname?: string;
+    style?: CSSProperties;
+}
+interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
     classname?: string;
     style?: CSSProperties;
@@ -34,16 +39,17 @@ export function Subheading({ children, classname, style }: Props) {
         </p>
     )
 }
-export function ButtonPrimary({ children, classname, style, ...rest }: Props) {
+export function ButtonPrimary({ children, classname, style, ...rest }: BtnProps) {
     return (
         <button className={`${classname ?? ''} text-white bg-primary md:text-base text-sm font-semibold px-5 h-11 border-none outline-none cursor-pointer transition-all duration-200 ease-linear hover:bg-[#849d13] rounded-full`} {...rest} style={style}>
             {children}
         </button>
     )
 }
-export function ButtonSecondry({ children, classname, style, ...rest }: Props) {
+export function ButtonSecondry({ children, classname, style, ...rest }: BtnProps) {
     return (
-        <button className={`${classname ?? ''} text-white bg-secondry md:text-base text-sm font-semibold px-5 h-11 border-none outline-none cursor-pointer transition-all duration-200 ease-linear hover:bg-[#068AC3] rounded-full`} {...rest} style={style}>
+        <button className={`${classname ?? ''} text-white bg-secondry md:text-base text-sm font-semibold px-5 h-11 border-none outline-none cursor-pointer transition-all duration-200 ease-linear hover:bg-[#068AC3] rounded-full`} {...rest}
+            style={style}>
             {children}
         </button>
     )

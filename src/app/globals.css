@@ -4,7 +4,7 @@
   --primary: #afcb1e;
   --secondry: #119dd2;
   --primary-dark: #445116;
-  --secondry-dark: #068AC3;
+  --secondry-dark: #068ac3;
   --light-bg: #ecf5a1;
   --montserrat: "Montserrat", sans-serif;
   --inter: "Inter", sans-serif;
@@ -20,15 +20,35 @@
   --font-inter: var(--inter);
 }
 
-section{
+section {
   position: relative;
   width: 100%;
   padding: 60px 0;
 }
 
-a,h1,h2,h3,h4,h5,h6{
+@media (max-width: 1024px) {
+  section {
+    padding: 45px 0;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    padding: 30px 0;
+  }
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--inter);
 }
-p,span,button,li{
+p,
+span,
+button,
+li {
   font-family: var(--montserrat);
 }
