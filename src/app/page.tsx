@@ -1,3 +1,4 @@
+import FourthSection from "@/components/FourthSection";
 import Hero from "@/components/Hero";
 import SecondComponent from "@/components/SecondComponent";
 import ThirdSection from "@/components/ThirdSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <SecondComponent />
       <ThirdSection/>
+      <FourthSection/>
     </main>
   );
 }
