@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
 import SecondComponent from "@/components/SecondComponent";
+import ThirdSection from "@/components/ThirdSection";
 
 export default function Home() {
   return (
     <main className="relative w-full">
       <Hero />
       <SecondComponent />
+      <ThirdSection/>
     </main>
   );
 }
