@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import FourthSection from "@/components/FourthSection";
 import Hero from "@/components/Hero";
 import SecondComponent from "@/components/SecondComponent";
@@ -10,6 +11,7 @@ export default function Home() {
       <SecondComponent />
       <ThirdSection/>
       <FourthSection/>
+      <ContactForm/>
     </main>
   );
 }
