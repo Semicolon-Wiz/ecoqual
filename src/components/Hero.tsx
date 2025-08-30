@@ -59,7 +59,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
+                <div className='relative w-full mt-14 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
                     {
                         data.map((items, idx) => (
                             <div className='w-full h-full flex gap-2 items-start' key={idx}>
