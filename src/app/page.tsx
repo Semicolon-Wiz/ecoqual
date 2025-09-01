@@ -13,10 +13,10 @@ export default function Home() {
     <main className="relative w-full">
       <Hero />
       <SecondComponent />
-      <About />
-      <WhyUs />
       <ThirdSection />
       <FourthSection />
+      <About />
+      <WhyUs />
       <Products />
       <ContactForm />
       <Footer />
