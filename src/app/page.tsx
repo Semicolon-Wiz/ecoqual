@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import FourthSection from "@/components/FourthSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="relative w-full">
       <Hero />
       <SecondComponent />
+      <About/>
       <ThirdSection/>
       <FourthSection/>
       <Products />
