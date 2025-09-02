@@ -19,10 +19,11 @@ export default function ThirdSection() {
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
                         <div className="w-full h-full relative flex justify-center flex-col pr-5">
                             <h3 className='font-semibold lg:text-3xl md:text-xl text-base text-secondry'>
-                                A Smarter Way to Care
+                                A New Standard in Hygiene Care
                             </h3>
                             <Subheading classname='text-left mt-3 max-w-2xl'>
-                                Wet Wash Gloves are an innovative alternative to traditional bed baths and wet wipes. Designed for safety, comfort, and efficiency, these single-use gloves are infused with pH-balanced cleansers that protect fragile skin while ensuring superior hygiene. Easy to warm in a microwave for added comfort, they save caregivers time, reduce infection risks, and preserve patient dignity—setting a new standard for hygiene in hospitals, elderly care, and palliative settings worldwide.
+                                Traditional bed baths are water-heavy, time-consuming, and infection-prone. EQ Wet Wash Gloves offer a modern alternative: pre-moistened, single-use cleansing gloves designed to protect delicate skin, improve caregiver efficiency, and preserve dignity.
+                                Microwave-safe for warmth, dermatologically tested for safety, and available in biodegradable options, they set a new benchmark for healthcare facilities, senior care, and home care services.
                             </Subheading>
                             <ButtonPrimary classname='mt-8 w-max'>
                                 Discover How It Works
@@ -30,7 +31,7 @@ export default function ThirdSection() {
                         </div>
 
                         <div className="w-full h-full relative flex lg:justify-end justify-center items-center">
-                            <Image src={'/images/product.png'} alt='image'
+                            <Image src={'/images/img.png'} alt='image'
                                 width={800}
                                 height={500}
                                 className='w-[450px]' />
