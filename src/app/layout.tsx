@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScrollProvider from "@/utils/SmoothScroll";
 import NavBar from "@/components/NavBar";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Ecoqual Healthcare Solutions",
@@ -24,6 +26,8 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <NavBar />
           {children}
+          <ContactForm />
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>

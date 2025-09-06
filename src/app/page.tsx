@@ -1,6 +1,4 @@
 import About from "@/components/About";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
 import FourthSection from "@/components/FourthSection";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
@@ -20,8 +18,6 @@ export default function Home() {
       <About />
       <WhyUs />
       <Products />
-      <ContactForm />
-      <Footer />
     </main>
   );
 }

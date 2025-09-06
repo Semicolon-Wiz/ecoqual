@@ -22,6 +22,11 @@ export default function NavBar() {
             path: '/'
         },
         {
+            key: 'wet-wash-gloves',
+            name: 'Wet Wash Gloves',
+            path: '/wet-wash-gloves'
+        },
+        {
             key: 'about',
             name: 'About',
             path: '/about'
@@ -35,12 +40,7 @@ export default function NavBar() {
             key: 'products',
             name: 'Products',
             path: '/products'
-        },
-        {
-            key: 'how-it-work',
-            name: 'How it Works',
-            path: '/working'
-        },
+        }
     ]
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { stopScroll, startScroll } = useLenisControl();
