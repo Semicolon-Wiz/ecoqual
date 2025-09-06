@@ -14,7 +14,7 @@ export default function Home() {
       <SecondComponent />
       <ThirdSection />
       {/* <FourthSection /> */}
-      <WetWash/>
+      {/* <WetWash/> */}
       <About />
       <WhyUs />
       <Products />
