@@ -1,7 +1,10 @@
-import React from 'react'
+import WetHero from "./WetHero";
+
 
 export default function WetWashGloves() {
-  return (
-    <div>WetWashGloves</div>
-  )
+    return (
+        <main className="relative w-full">
+            <WetHero />
+        </main>
+    )
 }

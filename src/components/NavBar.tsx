@@ -73,17 +73,9 @@ export default function NavBar() {
                     }
                 </div>
 
-                <div className='lg:flex hidden relative w-max items-center gap-2'>
-                    <div className='relative w-72 flex items-center gap-2 bg-neutral-100 rounded-full py-2 pl-5 pr-3'>
-                        <input type="text" placeholder='Search items.....' className='h-full grow text-zinc-800 border-none outline-none font-montserrat font-medium ' />
-                        <div className='shrink-0 w-7 h-full flex items-center justify-center'>
-                            <Image src='/images/svg/icons/search-icon.svg' alt='Search Items' width={28} height={28} className='w-7 h-7 cursor-pointer' />
-                        </div>
-                    </div>
-                    <ButtonPrimary>
-                        Learn More
-                    </ButtonPrimary>
-                </div>
+                <ButtonPrimary classname='lg:block hidden'>
+                    Learn More
+                </ButtonPrimary>
 
                 <button onClick={() => setIsMenuOpen((prev) => !prev)} className='lg:hidden w-12 h-12 flex items-center justify-center cursor-pointer bg-primary rounded-full '>
                     <Menu className='text-white w-7 h-7' />
@@ -101,13 +93,6 @@ export default function NavBar() {
                         <button className='w-10 h-10 bg-white rounded-full flex items-center justify-center border-none cursor-pointer' onClick={() => { setIsMenuOpen(false) }}>
                             <X />
                         </button>
-                    </div>
-
-                    <div className='relative w-full mt-8 flex items-center gap-2 bg-neutral-100 rounded py-2 pl-5 pr-3'>
-                        <input type="text" placeholder='Search items.....' className='h-full grow text-zinc-800 border-none outline-none font-montserrat font-medium ' />
-                        <div className='shrink-0 w-7 h-full flex items-center justify-center'>
-                            <Image src='/images/svg/icons/search-icon.svg' alt='Search Items' width={28} height={28} className='w-7 h-7 cursor-pointer' />
-                        </div>
                     </div>
 
                     <div className='w-full relative mt-5 flex flex-col gap-2'>
