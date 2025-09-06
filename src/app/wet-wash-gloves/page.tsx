@@ -12,6 +12,7 @@ export default function WetWashGloves() {
         <main className="relative w-full">
             <WetHero />
             <AboutWet />
+            <FourthSection /> 
             <Details />
             <WhereToUse />
             <WetWash />
