@@ -4,6 +4,7 @@ import Details from "./Details";
 import WetHero from "./WetHero";
 import WhereToUse from "./WhereToUse";
 import Commitment from "./Commitment";
+import FourthSection from "@/components/FourthSection";
 
 
 export default function WetWashGloves() {
