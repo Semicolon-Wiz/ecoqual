@@ -153,18 +153,18 @@ export default function NavBar() {
                         <Link href={'/'}>
                             <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='w-28 h-auto ' />
                         </Link>
-                        <button className='w-10 h-10 bg-white rounded-full flex items-center justify-center border-none cursor-pointer' onClick={() => { setIsMenuOpen(false) }}>
+                        <button className='w-10 h-10 bg-white rounded-full flex items-center justify-center border-none cursor-pointer' onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null);}}>
                             <X />
                         </button>
                     </div>
 
-                    <div className='w-full relative mt-5 flex flex-col gap-2'>
+                    <div className='w-full relative mt-20 flex flex-col gap-2'>
                         {
                             menuItems.map(items => (
-                                <div className='relative' key={items.key}>
+                                <div className='relative flex flex-col gap-3.5' key={items.key}>
                                     {
                                         items.key !== 'products' ? (
-                                            <Link href={items.path} className={`relative text-xl transition-all font-medium duration-200 ease-linear hover:text-secondry ${currentPath === items.path ? 'text-secondry' : 'text-white'} `}
+                                            <Link href={items.path} className={`w-max relative text-xl transition-all font-medium duration-200 ease-linear px-4 py-1.5 rounded-full  ${currentPath === items.path ? 'bg-white text-primary' : 'text-white'} `}
                                                 onClick={() => { setIsMenuOpen(false) }}
                                             >
                                                 {items.name}
@@ -173,10 +173,7 @@ export default function NavBar() {
                                             <>
                                                 <button type="button"
                                                     onClick={() => toggleSubMenu(items.key)}
-                                                    className={`transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1 text-base font-normal ${currentPath === items.path
-                                                        ? "text-secondry"
-                                                        : "text-white hover:text-secondry"
-                                                        }`}
+                                                    className={`transition-all duration-200 ease-linear !font-inter px-4 py-1.5 cursor-pointer inline-flex items-center gap-1 font-medium text-white text-xl`}
                                                 >
                                                     {items.name}
                                                     <ChevronDown className={`transition-transform duration-200 ${openSubMenu === items.key ? "rotate-180" : ""
@@ -193,7 +190,7 @@ export default function NavBar() {
                                                             key={submenu.key}
                                                             href={submenu.path}
                                                             onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
-                                                            className="group/item flex items-center gap-2.5 px-3 py-1.5 rounded text-white transition-colors duration-200"
+                                                            className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                             <span className="truncate">{submenu.name}</span>
