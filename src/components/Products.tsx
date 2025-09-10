@@ -26,7 +26,7 @@ export default function Products() {
         {
             name: 'Disicfectant Floor Cleaner',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/floor-cleaner',
+            link: '/product/disicfectant-floor-cleaner',
             image: '/images/products/product-02.webp'
         },
         {
@@ -38,7 +38,7 @@ export default function Products() {
         {
             name: 'Disicfectant Toilet Cleaner',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/toilet-cleaner',
+            link: '/product/disicfectant-toilet-cleaner',
             image: '/images/products/product-04.webp'
         },
         {
@@ -56,13 +56,13 @@ export default function Products() {
         {
             name: 'Surgical Gown',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/handwash',
+            link: '/product/surgical-gown',
             image: '/images/products/product-07.webp'
         },
         {
             name: 'Garbage Bag',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/handwash',
+            link: '/product/garbage-bag',
             image: '/images/products/product-08.webp'
         }
     ]
