@@ -96,23 +96,20 @@ export default function NavBar() {
                     </Link>
                 </div>
 
-                <div className='lg:flex hidden relative w-max items-center gap-4'>
+                <div className='lg:flex hidden relative w-max items-center gap-2'>
                     {
                         menuItems.map(items => (
                             <Fragment key={items.key} >
                                 <div className="relative group/menu">
                                     {
                                         items.key !== 'products' ? (
-                                            <Link href={items.path} className={`relative text-base transition-all duration-200 ease-linear hover:text-secondry after:absolute after:bottom-0.5 after:h-[2px] after:bg-secondry  ${currentPath === items.path ? ' after:left-0 after:w-full text-secondry' : 'after:w-0 after:right-0 after:left-auto text-zinc-800'} `}>
+                                            <Link href={items.path} className={`relative text-lg transition-all duration-200 ease-linear px-3.5 py-1.5 ${currentPath === items.path ? ' bg-primary text-white rounded-full' : ' text-zinc-800'} `}>
                                                 {items.name}
                                             </Link>
 
                                         ) : (
                                             <button type="button"
-                                                className={`transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1  text-base font-normal ${currentPath === items.path
-                                                    ? "text-secondry"
-                                                    : "text-zinc-800 hover:text-secondry"
-                                                    }`}
+                                                className={`transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1  text-lg font-normal`}
                                             >
                                                 {items.name}
                                                 <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" />
@@ -126,7 +123,7 @@ export default function NavBar() {
                                                 <Link
                                                     key={submenu.key}
                                                     href={submenu.path}
-                                                    className="group/item flex items-center gap-2.5 px-3 py-1.5 rounded text-white hover:bg-warm hover:text-neutral-100 transition-colors duration-200"
+                                                    className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-white hover:bg-warm hover:text-neutral-100 transition-colors duration-200"
                                                 >
                                                     <MoveUpRight
                                                         className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5 group-hover/item:text-white"
