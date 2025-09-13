@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Expand, X } from 'lucide-react';
 import Background from '@/utils/Background';
 import { useLenisControl } from '@/utils/SmoothScroll';
+import { usePathname } from 'next/navigation';
 
 interface Products {
     name: string;
@@ -16,6 +17,7 @@ interface Products {
 }
 
 export default function Products() {
+    const router = usePathname()
     const product: Products[] = [
         {
             name: 'Hand Sanitizer',
@@ -80,7 +82,7 @@ export default function Products() {
     }, [selectedProduct, stopScroll, startScroll]);
 
     return (
-        <Section classname='bg-light-bg'>
+        <Section classname={` ${ router !== '/product/cleaning-products' ? 'bg-light-bg' : 'bg-transparent'}`}>
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Benefites, Comparison, WetWashWorking, WhereToUse } from './Details'
+import { Benefites, Comparison, WetWashWorking, WhereToUse } from '../Details'
 import Details from '@/components/Details'
 
-export default function page() {
+export default function BenefitesAndApplications() {
     return (
         <main className='relative w-full'>
             <Benefites />
