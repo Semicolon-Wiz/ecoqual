@@ -13,7 +13,7 @@ interface MenuItem {
     path: string;
     submenu?: SubMenu[];
 }
-type SubMenu = Omit<MenuItem, "submenu">;
+type SubMenu = Omit<MenuItem, 'submenu'>
 
 export default function NavBar() {
     const currentPath = usePathname();
@@ -24,50 +24,60 @@ export default function NavBar() {
             path: '/'
         },
         {
-            key: 'wet-wash-gloves',
-            name: 'Wet Wash Gloves',
-            path: '/wet-wash-gloves'
-        },
-        {
             key: 'about',
-            name: 'About',
+            name: 'About EcoQual',
             path: '/about'
         },
         {
-            key: 'benefits',
-            name: 'Benefits',
-            path: '#'
+            key: 'wet-wash-gloves',
+            name: 'Wet Wash Gloves',
+            path: '/wet-wash-gloves',
+            submenu: [
+                {
+                    key: 'wet-wash-gloves-benefites',
+                    name: 'Benefits of Wet Wash Gloves',
+                    path: '/wet-wash-gloves/benefites',
+                },
+                {
+                    key: 'wet-wash-gloves-technical-details',
+                    name: 'Technical Details',
+                    path: '/wet-wash-gloves/technical-details',
+                },
+                {
+                    key: 'wet-wash-gloves-contributor',
+                    name: 'Contributor to NHM & NPHCE Policies of India',
+                    path: '/wet-wash-gloves/contributor',
+                },
+                {
+                    key: 'wet-wash-gloves-packaging-and-supply',
+                    name: 'Packaging & Supply Details',
+                    path: '/wet-wash-gloves/packaging-and-supply',
+                },
+            ]
         },
         {
             key: 'products',
-            name: 'Products',
+            name: 'Other EQ Products',
             path: '/products',
             submenu: [
                 {
-                    key: 'hand-sanitizer',
-                    name: 'Hand Sanitizer',
-                    path: '/product/hand-sanitizer',
+                    key: 'ultrasound-gel',
+                    name: 'Ultrasound Gel',
+                    path: '/product/ultrasound-gel',
 
                 },
                 {
-                    key: 'disicfectant-floorcleaner',
-                    name: 'Disicfectant Floor Cleaner',
-                    path: '/product/disicfectant-floorcleaner',
+                    key: 'cleaning-products',
+                    name: 'Cleaning Products',
+                    path: '/product/cleaning-products',
 
-                },
-                {
-                    key: 'glass-cleaner',
-                    name: 'Glass Cleaner',
-                    path: '/product/glass-cleaner',
-
-                },
-                {
-                    key: 'surgical-gown',
-                    name: 'Surgical Gown',
-                    path: '/product/surgical-gown',
-
-                },
+                }
             ]
+        },
+        {
+            key: 'contact',
+            name: 'Contact',
+            path: '/contact'
         }
     ]
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,7 +112,7 @@ export default function NavBar() {
                             <Fragment key={items.key} >
                                 <div className="relative group/menu">
                                     {
-                                        items.key !== 'products' ? (
+                                        items.key !== 'products' && items.key !== 'wet-wash-gloves' ? (
                                             <Link href={items.path} className={`relative text-lg transition-all duration-200 ease-linear px-3.5 py-1.5 ${currentPath === items.path ? ' bg-primary text-white rounded-full' : ' text-zinc-800'} `}>
                                                 {items.name}
                                             </Link>
@@ -115,9 +125,9 @@ export default function NavBar() {
                                                 <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" />
                                             </button>
                                         )}
-                                    {items.key === 'products' && (
+                                    {items.key === 'products' || items.key === 'wet-wash-gloves' ? (
                                         <div
-                                            className="absolute top-full right-0 mt-2 z-50 w-72 bg-primary rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 "
+                                            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-primary rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 "
                                         >
                                             {items.submenu?.map((submenu) => (
                                                 <Link
@@ -132,7 +142,7 @@ export default function NavBar() {
                                                 </Link>
                                             ))}
                                         </div>
-                                    )}
+                                    ) : ''}
 
                                 </div>
                             </Fragment>
@@ -153,7 +163,7 @@ export default function NavBar() {
                         <Link href={'/'}>
                             <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='w-28 h-auto ' />
                         </Link>
-                        <button className='w-10 h-10 bg-white rounded-full flex items-center justify-center border-none cursor-pointer' onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null);}}>
+                        <button className='w-10 h-10 bg-white rounded-full flex items-center justify-center border-none cursor-pointer' onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}>
                             <X />
                         </button>
                     </div>
