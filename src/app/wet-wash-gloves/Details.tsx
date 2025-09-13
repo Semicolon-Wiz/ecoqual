@@ -215,3 +215,270 @@ export function Comparison() {
         </Section>
     )
 }
+
+type Content = {
+    title: string;
+    data: string;
+}
+export function Technical() {
+    const contentOne: Content[] = [
+        {
+            title: 'Product Name',
+            data: 'Wet Wash Gloves'
+        },
+        {
+            title: 'Model Number',
+            data: 'EQ-43'
+        },
+        {
+            title: 'Fabric Used',
+            data: 'Nonwoven Spunlace Fabric (Minimum 90 GSM, 80% Polyester, 20% Viscose)'
+        },
+        {
+            title: 'Dimensions',
+            data: '230 mm x 145 mm'
+        },
+        {
+            title: 'Packaging',
+            data: '5 Pieces per Resealable Poly Pack'
+        },
+        {
+            title: 'Shelf Life',
+            data: '2 Years'
+        },
+        {
+            title: 'Scented',
+            data: 'Yes'
+        },
+        {
+            title: 'Sterile',
+            data: 'No'
+        },
+        {
+            title: 'Protective Inner Film',
+            data: '100 Gauge (Food Grade Transparent)'
+        },
+    ];
+
+    const contentTwo: Content[] = [
+        {
+            title: 'Shape',
+            data: 'Rectangular'
+        },
+        {
+            title: 'Colour',
+            data: 'White'
+        },
+        {
+            title: 'Embossing',
+            data: 'Dot Embossing'
+        },
+        {
+            title: 'Scented',
+            data: 'Yes'
+        },
+        {
+            title: 'Sterile',
+            data: 'No'
+        },
+        {
+            title: 'Protective Inner Film',
+            data: '100 Gauge (Food Grade Transparent)'
+        },
+        {
+            title: 'Shelf Life',
+            data: '2 Years'
+        },
+        {
+            title: 'Packaging',
+            data: 'Resealable Poly Pack'
+        }
+    ];
+
+    const contentThree: Content[] = [
+        {
+            title: 'Surface Disinfectant',
+            data: 'Skin'
+        },
+        {
+            title: 'Chemical Contains',
+            data: 'No'
+        },
+        {
+            title: 'Alcohol Contains',
+            data: 'No'
+        },
+        {
+            title: 'Dermatologically Tested',
+            data: 'Yes'
+        },
+        {
+            title: 'Skin Friendly',
+            data: 'Yo'
+        },
+        {
+            title: 'Material Composition',
+            data: 'Nonwoven Spunlace Fabric'
+        },
+        {
+            title: 'Safety Certifications',
+            data: 'ISO 9001:2015'
+        },
+        {
+            title: 'Startup India',
+            data: 'DIPP164286'
+        }
+    ];
+
+    const ingredients = [
+        {
+            sno: 1,
+            ingredient: 'Water (Aqua)',
+            function: 'Base Solvent',
+            relevance: 'Ensures hydration, minimal irritation',
+        },
+        {
+            sno: 2,
+            ingredient: 'Aloe Vera Extract',
+            function: 'Anti-inflammatory, soothing',
+            relevance: 'Calms affected skin',
+        },
+        {
+            sno: 3,
+            ingredient: 'Glycerine',
+            function: 'Humectant',
+            relevance: 'Maintains hydration of dry, fragile skin',
+        },
+        {
+            sno: 4,
+            ingredient: 'Jojoba Oil',
+            function: 'Skin barrier enhancer',
+            relevance: 'Protects thin or peeling skin',
+        },
+        {
+            sno: 5,
+            ingredient: 'Ethyl Hexyl Glycerine',
+            function: 'Emollient & Anti Microbial Agent',
+            relevance: 'Prevents microbial colonization on weakened skin',
+        },
+        {
+            sno: 6,
+            ingredient: 'Sodium Benzoate',
+            function: 'Preservative',
+            relevance: 'Maintains product integrity by inhibiting microbial growth',
+        },
+    ];
+
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            <span className='font-inter text-secondry'>Technical Details</span>
+                        </Heading>
+                        <Subheading classname='max-w-lg mx-auto'>
+                            In-depth Product Specification | Functional Ingredients | Certificate of Analysis
+                        </Subheading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Product Overview
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentOne.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-10'>
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative md:pl-10'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Product Specification
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentTwo.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Functional Ingredient Breakdown
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentThree.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative w-full'>
+                        <div className="w-full overflow-x-auto">
+                            <table className="w-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                                <thead className="bg-primary text-white">
+                                    <tr>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold">S.No</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold">Ingredient</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold">Classification / Function</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold">Relevance for Patients</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-200">
+                                    {ingredients.map((item) => (
+                                        <tr
+                                            key={item.sno}
+                                            className="hover:bg-blue-50 transition duration-200"
+                                        >
+                                            <td className="px-4 py-3 text-gray-700 font-medium">{item.sno}</td>
+                                            <td className="px-4 py-3 text-gray-700">{item.ingredient}</td>
+                                            <td className="px-4 py-3 text-gray-700">{item.function}</td>
+                                            <td className="px-4 py-3 text-gray-700">{item.relevance}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
