@@ -2,6 +2,17 @@ import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import React from 'react'
 
+
+interface Data {
+    title: string;
+    summary: string;
+    icon: string;
+}
+type Content = {
+    title: string;
+    data: string;
+}
+
 export function Benefites() {
     return (
         <Section>
@@ -28,12 +39,6 @@ export function Benefites() {
             </Wrapper>
         </Section>
     )
-}
-
-interface Data {
-    title: string;
-    summary: string;
-    icon: string;
 }
 export function WetWashWorking() {
     const data: Data[] = [
@@ -103,7 +108,6 @@ export function WetWashWorking() {
         </Section>
     )
 }
-
 export function WhereToUse() {
     const data: Data[] = [
         {
@@ -171,7 +175,6 @@ export function WhereToUse() {
         </Section>
     )
 }
-
 export function Comparison() {
     return (
         <Section classname='bg-primary'>
@@ -214,11 +217,6 @@ export function Comparison() {
             </Wrapper>
         </Section>
     )
-}
-
-type Content = {
-    title: string;
-    data: string;
 }
 export function Technical() {
     const contentOne: Content[] = [
@@ -476,6 +474,244 @@ export function Technical() {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+export function ContributorMain() {
+    const contentOne: Content[] = [
+        {
+            title: 'Water Scarcity',
+            data: 'Conventional bed baths consume 2–5 litres of water per patient, creating inconsistent hygiene in water-stressed areas.'
+        },
+        {
+            title: 'Infection Control',
+            data: 'Shared basins and towels increase cross-contamination risks, leading to higher rates of HAIs, skin infections, and UTIs.'
+        },
+        {
+            title: 'Time & Resource Intensive',
+            data: 'Bed baths take 15–30 minutes per patient, reducing caregiver efficiency.'
+        },
+        {
+            title: 'Patient Comfort & Dignity',
+            data: 'Cold exposure, rough sponges, and limited privacy compromise comfort and dignity.'
+        }
+    ];
+    const contentTwo: Content[] = [
+        {
+            title: 'Equity',
+            data: 'Uniform quality hygiene care across rural and urban facilities.'
+        },
+        {
+            title: 'Efficiency',
+            data: 'Saves nursing time and reduces resource wastage.'
+        },
+        {
+            title: 'Quality of Care',
+            data: 'Better infection prevention and patient satisfaction.'
+        },
+        {
+            title: 'Sustainability',
+            data: 'Cuts dependency on water, laundry, and chemical disinfectants.'
+        }
+    ];
+    const contentThree: Content[] = [
+        {
+            title: 'Reduction in HAIs',
+            data: '≥30% in pilot facilities'
+        },
+        {
+            title: 'Time Saved per Patient',
+            data: '≥60%'
+        },
+        {
+            title: 'Patient Satisfaction',
+            data: '≥85% positive feedback'
+        },
+        {
+            title: 'Cost Savings',
+            data: ': ≥70% reduction in water & laundry expenses'
+        }
+    ];
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            <span className='font-inter text-secondry'>Contributor to NHM & NPHCE Policies of India</span>
+                        </Heading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Introduction
+                                </h2>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    The National Health Mission (NHM) provides a framework for strengthening healthcare delivery across India. Within this framework, the National Programme for Health Care of the Elderly (NPHCE) focuses on specialized geriatric care through District Hospitals, Community Health Centres (CHCs), and Primary Health Centres (PHCs).
+                                </Subheading>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    EQ Wet Wash Gloves have been proposed as an innovative hygiene solution to support NHM and NPHCE objectives, addressing systemic challenges in geriatric hygiene management such as water scarcity, infection control, patient comfort, and operational efficiency.
+                                </Subheading>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-5'>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+
+                        <div className='md:pl-10 relative w-full h-full flex flex-col gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Current Challenges in Geriatric Hygiene
+                                </h2>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    Elderly patients, especially those who are bedridden or mobility-restricted, face significant hygiene gaps under existing practices.
+                                </Subheading>
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentOne.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    EQ Wet Wash Gloves - A Policy-Aligned Solution
+                                </h2>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    EQ Wet Wash Gloves offer a waterless, single-use, pre-moistened solution for full-body cleansing that is safe, efficient, and dignified.
+                                </Subheading>
+                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                    Key Benefits
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    <li> Zero water requirement </li>
+                                    <li> Minimal cross-contamination risk </li>
+                                    <li> Faster hygiene routine (6–8 minutes per patient) </li>
+                                    <li> Improved patient dignity and comfort </li>
+                                    <li> Reduced costs of water, laundry, and disinfectants </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-5'>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+
+                        <div className='md:pl-10 relative w-full h-full flex flex-col gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Alignment with NHM & NPHCE Objectives
+                                </h2>
+
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentTwo.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+
+                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                    Supports NPHCE goals by
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    <li> Ensuring hygienic and dignified elder care. </li>
+                                    <li> Reducing morbidity from preventable infections. </li>
+                                    <li> Enabling community-based and home-based elderly care interventions. </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Implementation Framework
+                                </h2>
+
+                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                    Phase 1: Pilot (6 months)
+                                </h2>
+                                <ul className='mt-1 list-decimal'>
+                                    <li> Coverage: 10 District Hospitals + 20 CHCs under NPHCE </li>
+                                    <li> Training: Orientation for nurses, ANMs, geriatric care attendants </li>
+                                    <li>
+                                        Monitoring Indicators :-
+                                        <ul className='pl-4 list-disc'>
+                                            <li> HAI incidence rates </li>
+                                            <li> Nursing time utilization </li>
+                                            <li> Patient comfort scores </li>
+                                            <li> Resource utilization logs </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                    Phase 2: Statewide Scale-up
+                                </h2>
+                                <ul className='mt-1 list-decimal'>
+                                    <li> Inclusion in Annual PIP under NHM&apos;s “Consumables for Geriatric Care” </li>
+                                    <li> Centralized procurement via UPMSCL or NHM Procurement Cell </li>
+                                    <li> Distribution to all NPHCE facilities, including home-based elderly care programs </li>
+                                </ul>
+                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                    Expected Measurable Outcomes
+                                </h2>
+                                <ul className='mt-5 list-decimal'>
+                                    {
+                                        contentThree.map((data, idx) => (
+                                            <li key={idx}>
+                                                <strong className='font-montserrat text-zinc-700'>{data.title}:</strong> {data.data}
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative '>
+                        <Heading>
+                            Conclusion
+                        </Heading>
+                        <Subheading classname='text-left'>
+                            By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.
+                        </Subheading>
                     </div>
                 </div>
             </Wrapper>
