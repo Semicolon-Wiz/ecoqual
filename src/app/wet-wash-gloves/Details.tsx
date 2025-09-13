@@ -1,5 +1,6 @@
 import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -712,6 +713,99 @@ export function ContributorMain() {
                         <Subheading classname='text-left'>
                             By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.
                         </Subheading>
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+export function Packaging() {
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            <span className='font-inter text-secondry'>Packaging & Supply Details</span>
+                        </Heading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Packaging That Fits Every Setup
+                                </h2>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    EQ Wet Wash Gloves are thoughtfully packaged to meet the diverse requirements of healthcare providers, caregivers, and institutions. Whether it is for individual patient care, small clinics, or large-scale hospital use, the gloves are available in multiple pack sizes that ensure convenience and flexibility. Each pouch is lightweight, easy to open, and hygienically sealed to maintain product safety until use.
+                                </Subheading>
+                                <Subheading classname='text-left !text-lg mt-3'>
+                                    The packaging is designed to support efficient distribution, storage, and inventory management, making it suitable for routine care as well as emergency or large-volume supply. From compact packs for bedside care to bulk cartons for institutional procurement, EQ Wet Wash Gloves provide a scalable solution that adapts to different levels of demand.
+                                </Subheading>
+                            </div>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col gap-10'>
+                            <div className='w-full relative'>
+                                <h2 className='font-bold md:text-2xl text-primary'>
+                                    Packaging Options
+                                </h2>
+                                <ul className='mt-5 list-decimal flex flex-col gap-4'>
+                                    <li>
+                                        Small Size Gloves
+                                        <ul className='pl-4 list-disc'>
+                                            <li>
+                                                <strong className='font-montserrat text-zinc-700'>10 Pouches:</strong> 50 pcs in total
+                                            </li>
+                                            <li>
+                                                <strong className='font-montserrat text-zinc-700'>20 Pouches:</strong> 100 pcs in total
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Standard Size Gloves
+                                        <ul className='pl-4 list-disc'>
+                                            <li>
+                                                <strong className='font-montserrat text-zinc-700'>5 Pouches:</strong> 50 pcs in total
+                                            </li>
+                                            <li>
+                                                <strong className='font-montserrat text-zinc-700'>10 Pouches:</strong> 100 pcs in total
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <h2 className='font-bold md:text-2xl text-primary mt-5'>
+                                    Supply & Distribution
+                                </h2>
+                                <ul className='mt-3 list-decimal'>
+                                    <li>
+                                        <strong className='font-montserrat text-zinc-700'>Unit-based packs:</strong> Hygienic single-use pouches for direct patient care.
+                                    </li>
+                                    <li>
+                                        <strong className='font-montserrat text-zinc-700'>Bulk cartons:</strong> Suitable for hospitals, nursing homes, and community health programs.
+                                    </li>
+                                    <li>
+                                        <strong className='font-montserrat text-zinc-700'>Scalable supply model:</strong> From pilot projects to statewide procurement.
+                                    </li>
+                                    <li>
+                                        <strong className='font-montserrat text-zinc-700'>Quality Assurance:</strong> Manufactured as per global quality standards, ensuring safety, reliability, and compliance.
+                                    </li>
+                                </ul>
+                            </div>
+                            <Link href='#' className='w-max text-white bg-primary md:text-base text-sm font-semibold px-5 py-2 transition-all duration-200 ease-linear hover:bg-[#849d13] rounded-full '>
+                                Order Sample Pack
+                            </Link>
+                        </div>
+
+                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-full h-auto'
+                        />
                     </div>
                 </div>
             </Wrapper>
