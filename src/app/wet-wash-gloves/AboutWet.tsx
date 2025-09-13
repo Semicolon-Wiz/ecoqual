@@ -1,4 +1,4 @@
-import { ButtonPrimary, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import { BadgeCheck } from 'lucide-react'
 import Image from 'next/image'
 
