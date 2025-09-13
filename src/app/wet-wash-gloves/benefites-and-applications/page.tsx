@@ -1,5 +1,6 @@
 import React from 'react'
 import { Benefites, Comparison, WetWashWorking, WhereToUse } from './Details'
+import Details from '@/components/Details'
 
 export default function page() {
     return (
@@ -7,6 +8,7 @@ export default function page() {
             <Benefites />
             <WetWashWorking />
             <WhereToUse />
+            <Details/>
             <Comparison />
         </main>
     )
