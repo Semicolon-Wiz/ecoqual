@@ -57,6 +57,6 @@ export const ProductData: Products[] = [
         key: 'ultrasound-gel',
         name: 'Ultrasound Gel',
         content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ab quisquam cupiditate quasi dolores perferendis, incidunt unde excepturi nihil illum doloremque tempora. Voluptatibus itaque voluptate blanditiis repellat! Corporis iusto magnam molestias, itaque fugiat dolor? Rerum recusandae consequatur quia, unde corrupti, earum quaerat itaque, at minus libero repudiandae dignissimos. Iure, facere!',
-        image: '/images/products/product-08.webp'
+        image: '/images/products/product-9.jpeg'
     }
 ]

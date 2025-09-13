@@ -1,7 +1,12 @@
+import About from '@/components/About'
+import WhyUs from '@/components/WhyUs'
 import React from 'react'
 
 export default function AboutPage() {
   return (
-    <div>page</div>
+    <main>
+      <About />
+      <WhyUs />
+    </main>
   )
 }

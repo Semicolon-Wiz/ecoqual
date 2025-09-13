@@ -171,9 +171,9 @@ export default function NavBar() {
                     <div className='w-full relative mt-20 flex flex-col gap-2'>
                         {
                             menuItems.map(items => (
-                                <div className='relative flex flex-col gap-3.5' key={items.key}>
+                                <div className='relative flex flex-col' key={items.key}>
                                     {
-                                        items.key !== 'products' ? (
+                                        items.key !== 'products' && items.key !== 'wet-wash-gloves' ? (
                                             <Link href={items.path} className={`w-max relative text-xl transition-all font-medium duration-200 ease-linear px-4 py-1.5 rounded-full  ${currentPath === items.path ? 'bg-white text-primary' : 'text-white'} `}
                                                 onClick={() => { setIsMenuOpen(false) }}
                                             >
