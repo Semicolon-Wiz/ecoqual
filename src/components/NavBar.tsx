@@ -35,8 +35,8 @@ export default function NavBar() {
             submenu: [
                 {
                     key: 'wet-wash-gloves-benefites',
-                    name: 'Benefits of Wet Wash Gloves',
-                    path: '/wet-wash-gloves/benefites',
+                    name: 'Benefits & Applications',
+                    path: '/wet-wash-gloves/benefites-and-applications',
                 },
                 {
                     key: 'wet-wash-gloves-technical-details',

@@ -1,8 +1,7 @@
 import WetWash from "@/components/WetWash";
-import AboutWet from "./AboutWet";
-import Details from "./Details";
+import AboutWet from "../../components/AboutWet";
+import Details from "../../components/Details";
 import WetHero from "./WetHero";
-import WhereToUse from "./WhereToUse";
 import Commitment from "./Commitment";
 import FourthSection from "@/components/FourthSection";
 
@@ -14,7 +13,6 @@ export default function WetWashGloves() {
             <AboutWet />
             <FourthSection /> 
             <Details />
-            <WhereToUse />
             <WetWash />
             <Commitment />
         </main>
