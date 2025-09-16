@@ -25,7 +25,6 @@ export default function WetWash() {
             image: '/images/steps/step-5.png'
         },
     ]
-    console.log(steps.length - 1);
     
     return (
         <Section>
