@@ -98,7 +98,7 @@ export default function NavBar() {
     }, [isMenuOpen, stopScroll, startScroll]);
 
     return (
-        <header className='relative w-full bg-light-bg'>
+        <header className='relative w-full'>
             <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
                 <div className='relative shrink-0 w-max'>
                     <Link href={'/'}>

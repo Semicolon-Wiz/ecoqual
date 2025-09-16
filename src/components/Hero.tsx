@@ -32,7 +32,7 @@ export default function Hero() {
         },
     ]
     return (
-        <Section classname='bg-light-bg'>
+        <Section classname=''>
             <Wrapper>
                 <div className='w-full relative grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-5'>
                     <div className="w-full h-full relative flex flex-col justify-center md:items-start items-center">

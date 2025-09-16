@@ -46,8 +46,8 @@ export default function FourthSection() {
                     <div className='flex-1 relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx)=>(
-                                <div className='w-full h-full bg-neutral-100 rounded-xl p-5 shadow' key={idx}>
-                                    <Image src={items.image} width={64} height={64} alt={items.title} className='w-16 h-16'/>
+                                <div className='w-full h-full bg-light-bg rounded-xl p-5 shadow' key={idx}>
+                                    <Image src={items.image} width={64} height={64} alt={items.title} className='w-12 h-12'/>
                                     <h2 className='mt-8 font-semibold text-primary-dark lg:text-2xl md:text-xl text-base'>
                                         {items.title}
                                     </h2>
