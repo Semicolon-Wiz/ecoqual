@@ -30,22 +30,24 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
     }
     return (
         <div className='relative w-full flex md:flex-row flex-col md:gap-20 gap-7'>
-            <div className='sticky top-0 w-[450px]'>
-                <Carousel className="w-full ">
-                    <CarouselContent ref={fancyboxRef}>
-                        {product.image.map((src, idx) => (
-                            <CarouselItem key={idx}>
-                                <div data-fancybox="gallery" data-src={src} data-thumb-src={src}>
-                                    <Lens hovering={hovering} setHovering={setHovering}>
-                                        <Image src={src} key={idx} width={500} height={200} alt={product.name} className='rounded-lg w-full h-auto' />
-                                    </Lens>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
+            <div className='md:w-[450px] w-full '>
+                <div className="sticky top-10">
+                    <Carousel className="w-full ">
+                        <CarouselContent ref={fancyboxRef}>
+                            {product.image.map((src, idx) => (
+                                <CarouselItem key={idx}>
+                                    <div data-fancybox="gallery" data-src={src} data-thumb-src={src}>
+                                        <Lens hovering={hovering} setHovering={setHovering}>
+                                            <Image src={src} key={idx} width={500} height={200} alt={product.name} className='rounded-lg w-full h-auto' />
+                                        </Lens>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
             </div>
 
             <div className='flex-1 relative'>
