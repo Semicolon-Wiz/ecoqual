@@ -24,10 +24,10 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
     const data: ProductType[] = Product.houseKeeping;
     const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
 
+    const [fancyboxRef] = useFancybox({});
     if (!product) {
         return <div>Product not found</div>
     }
-    const [fancyboxRef] = useFancybox({});
     return (
         <div className='relative w-full flex md:flex-row flex-col md:gap-20 gap-7'>
             <div className='sticky top-0 w-[450px]'>
