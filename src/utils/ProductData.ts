@@ -1,4 +1,4 @@
-interface Product {
+export interface ProductType {
     id: number;
     name: string;
     description?: string;
@@ -10,10 +10,10 @@ interface Product {
     slug: string;
 }
 interface ProductData {
-    houseKeeping: Product[];
-    surgical: Product[];
-    institutional: Product[];
-    kits: Product[];
+    houseKeeping: ProductType[];
+    surgical: ProductType[];
+    institutional: ProductType[];
+    kits: ProductType[];
 }
 
 export const Product: ProductData = {

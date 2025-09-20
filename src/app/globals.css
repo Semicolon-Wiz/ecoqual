@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
 
 :root {
-  --primary: #afcb1e;
+  --primary: #AFCB1E;
   --secondry: #119dd2;
   --primary-dark: #445116;
   --secondry-dark: #068ac3;
