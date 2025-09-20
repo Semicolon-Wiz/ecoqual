@@ -61,15 +61,27 @@ export default function NavBar() {
             path: '/products',
             submenu: [
                 {
-                    key: 'ultrasound-gel',
-                    name: 'Ultrasound Gel',
-                    path: '/product/ultrasound-gel',
+                    key: 'house-keeping-products',
+                    name: 'House Keeping Products',
+                    path: '/product/house-keeping',
 
                 },
                 {
-                    key: 'cleaning-products',
-                    name: 'Cleaning Products',
-                    path: '/product/cleaning-products',
+                    key: 'surgical-products',
+                    name: 'Surgical Products',
+                    path: '/product/surgical',
+
+                },
+                {
+                    key: 'institutional-products',
+                    name: 'Institutional Products',
+                    path: '/product/institutional',
+
+                },
+                {
+                    key: 'kits',
+                    name: 'Kits',
+                    path: '/product/kits',
 
                 }
             ]
