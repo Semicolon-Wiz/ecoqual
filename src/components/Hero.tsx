@@ -9,28 +9,28 @@ interface Data {
 }
 
 export default function Hero() {
-    const data: Data[] = [
-        {
-            title: 'Housekeeping & Cleaning Supplies',
-            summary: 'Eco-friendly sanitizers, phenyls, disinfectants, and multi-purpose cleaning agents ensure spotless hygiene across healthcare and corporate facilities.',
-            image: '/images/hero/icon-01.svg'
-        },
-        {
-            title: 'Hospital Consumables',
-            summary: 'From sterile HIV kits to durable gowns, aprons, gloves, and masks, our consumables deliver safety and protection in every setting.',
-            image: '/images/hero/icon-02.svg'
-        },
-        {
-            title: 'Patient Care Essentials',
-            summary: 'Products designed to support comfort and infection control across wards, ICUs, and operation theatres, ensuring better patient well-being.',
-            image: '/images/hero/icon-03.svg'
-        },
-        {
-            title: 'Wet Wash Gloves',
-            summary: 'A modern hygiene solution that reduces infection risks, enhances patient comfort, and saves caregiver time with safe, disposable, and convenient use.',
-            image: '/images/hero/icon-04.svg'
-        },
-    ]
+    // const data: Data[] = [
+    //     {
+    //         title: 'Housekeeping & Cleaning Supplies',
+    //         summary: 'Eco-friendly sanitizers, phenyls, disinfectants, and multi-purpose cleaning agents ensure spotless hygiene across healthcare and corporate facilities.',
+    //         image: '/images/hero/icon-01.svg'
+    //     },
+    //     {
+    //         title: 'Hospital Consumables',
+    //         summary: 'From sterile HIV kits to durable gowns, aprons, gloves, and masks, our consumables deliver safety and protection in every setting.',
+    //         image: '/images/hero/icon-02.svg'
+    //     },
+    //     {
+    //         title: 'Patient Care Essentials',
+    //         summary: 'Products designed to support comfort and infection control across wards, ICUs, and operation theatres, ensuring better patient well-being.',
+    //         image: '/images/hero/icon-03.svg'
+    //     },
+    //     {
+    //         title: 'Wet Wash Gloves',
+    //         summary: 'A modern hygiene solution that reduces infection risks, enhances patient comfort, and saves caregiver time with safe, disposable, and convenient use.',
+    //         image: '/images/hero/icon-04.svg'
+    //     },
+    // ]
     return (
         <Section classname=''>
             <Wrapper>
@@ -59,7 +59,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
+                {/* <div className='relative w-full mt-14 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
                     {
                         data.map((items, idx) => (
                             <div className='w-full h-full flex gap-2 items-start' key={idx}>
@@ -77,7 +77,7 @@ export default function Hero() {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
             </Wrapper>
         </Section>
     )

@@ -21,7 +21,7 @@ export default function AboutWet() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            What Are <span className='font-inter text-secondry'>Wet Wash Gloves?</span>
+                            Revolutionizing Hygiene Care with <span className='font-inter text-secondry'>Wet Wash Gloves</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Convenience and care in one simple glove.

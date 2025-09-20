@@ -2,7 +2,7 @@ import About from "@/components/About";
 import AboutWet from "@/components/AboutWet";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
-import SecondComponent from "@/components/SecondComponent";
+import ProductsCategory from "@/components/ProductsCategory";
 import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
@@ -10,8 +10,8 @@ export default function Home() {
     <main className="relative w-full">
       <Hero />
       <About />
-      <SecondComponent />
       <AboutWet />
+      <ProductsCategory/>
       <Products />
       <WhyUs />
     </main>
