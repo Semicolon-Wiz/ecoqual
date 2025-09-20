@@ -28,11 +28,11 @@ export default function HouseKeepingPage() {
                                     key={idx}
                                     className='relative w-full h-full rounded-xl overflow-hidden bg-white shadow group'
                                 >
-                                    <div className='relative w-full h-[250px] overflow-hidden'>
+                                    <Link href={`/product/house-keeping/${items.slug}`} className='block relative w-full h-[250px] overflow-hidden'>
                                         <Image src={items.image[0]} alt={items.name} width={500} height={400}
                                             className='w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300 ease-in-out'
                                         />
-                                    </div>
+                                    </Link>
                                     <div className='relative w-full px-3 z-10  py-3'>
                                         <span className='text-sm font-medium text-primary'>
                                             House Keeping
