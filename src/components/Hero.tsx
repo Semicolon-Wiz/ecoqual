@@ -9,38 +9,38 @@ interface Data {
 }
 
 export default function Hero() {
-    const data: Data[] = [
-        {
-            title: 'Reduces infection risks',
-            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
-            image: '/images/hero/icon-01.svg'
-        },
-        {
-            title: 'Enhances patient comfort',
-            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
-            image: '/images/hero/icon-02.svg'
-        },
-        {
-            title: 'Single-use & microwaveable',
-            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
-            image: '/images/hero/icon-03.svg'
-        },
-        {
-            title: 'Saves time for caregivers',
-            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
-            image: '/images/hero/icon-04.svg'
-        },
-    ]
+    // const data: Data[] = [
+    //     {
+    //         title: 'Housekeeping & Cleaning Supplies',
+    //         summary: 'Eco-friendly sanitizers, phenyls, disinfectants, and multi-purpose cleaning agents ensure spotless hygiene across healthcare and corporate facilities.',
+    //         image: '/images/hero/icon-01.svg'
+    //     },
+    //     {
+    //         title: 'Hospital Consumables',
+    //         summary: 'From sterile HIV kits to durable gowns, aprons, gloves, and masks, our consumables deliver safety and protection in every setting.',
+    //         image: '/images/hero/icon-02.svg'
+    //     },
+    //     {
+    //         title: 'Patient Care Essentials',
+    //         summary: 'Products designed to support comfort and infection control across wards, ICUs, and operation theatres, ensuring better patient well-being.',
+    //         image: '/images/hero/icon-03.svg'
+    //     },
+    //     {
+    //         title: 'Wet Wash Gloves',
+    //         summary: 'A modern hygiene solution that reduces infection risks, enhances patient comfort, and saves caregiver time with safe, disposable, and convenient use.',
+    //         image: '/images/hero/icon-04.svg'
+    //     },
+    // ]
     return (
-        <Section classname='bg-light-bg'>
+        <Section classname=''>
             <Wrapper>
                 <div className='w-full relative grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-5'>
                     <div className="w-full h-full relative flex flex-col justify-center md:items-start items-center">
-                        <h1 className='font-extrabold lg:text-5xl md:text-4xl text-[28px] text-primary-dark md:text-left text-center md:mt-0 mt-5 leading-[1.3]'>
-                            Because Every Patient Deserves <span className='!font-inter text-secondry'>Safer Care</span>
+                        <h1 className='font-extrabold lg:text-5xl md:text-4xl text-[28px] text-primary md:text-left text-center md:mt-0 mt-5 leading-[1.3]'>
+                            Ecoqual Sets the Standard in <span className='!font-inter text-secondry'>Hygiene Care</span>
                         </h1>
-                        <Subheading classname='md:!text-xl md:text-left !mt-2 text-center max-w-lg'>
-                            Wet Wash Gloves - A New Standard in Hygiene That&apos;s Convenient, Effective, and Cost-Saving
+                        <Subheading classname='md:!text-xl md:text-left !mt-2 text-center max-w-xl'>
+                            From cleaning supplies to medical essentials, Ecoqual delivers safer and more reliable solutions for healthcare.
                         </Subheading>
                         <div className='relative mt-10 flex items-center gap-2 md:justify-start justify-center'>
                             <ButtonPrimary>
@@ -59,7 +59,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
+                {/* <div className='relative w-full mt-14 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5'>
                     {
                         data.map((items, idx) => (
                             <div className='w-full h-full flex gap-2 items-start' key={idx}>
@@ -77,7 +77,7 @@ export default function Hero() {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
             </Wrapper>
         </Section>
     )

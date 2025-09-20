@@ -26,7 +26,7 @@ export default function About() {
                                 <Link href='/about' className='w-max text-white bg-primary md:text-base text-sm font-semibold px-5 py-2 transition-all duration-200 ease-linear hover:bg-[#849d13] rounded-full '>
                                     Read More
                                 </Link>
-                                <Link href='/products' className='w-max text-white bg-secondry md:text-base text-sm font-semibold px-5 py-2 transition-all duration-200 ease-linear hover:bg-[#068AC3] rounded-full '>
+                                <Link href='/product' className='w-max text-white bg-secondry md:text-base text-sm font-semibold px-5 py-2 transition-all duration-200 ease-linear hover:bg-[#068AC3] rounded-full '>
                                     View all Products
                                 </Link>
                             </div>

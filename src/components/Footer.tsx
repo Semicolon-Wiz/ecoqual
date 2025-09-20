@@ -57,7 +57,7 @@ export default function Footer() {
             link: '#'
         },
         {
-            name: 'info@drmonicadental.com',
+            name: 'info@ecoqual.com',
             icon: '/images/svg/icons/mail-white.svg',
             link: '#'
         },

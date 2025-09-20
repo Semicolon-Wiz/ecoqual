@@ -1,23 +1,19 @@
 import About from "@/components/About";
 import AboutWet from "@/components/AboutWet";
-import FourthSection from "@/components/FourthSection";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
-import SecondComponent from "@/components/SecondComponent";
-import WetWash from "@/components/WetWash";
+import ProductsCategory from "@/components/ProductsCategory";
 import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
   return (
     <main className="relative w-full">
       <Hero />
-      <SecondComponent />
-      <AboutWet />
-      <FourthSection />
-      <WetWash />
       <About />
-      <WhyUs />
+      <AboutWet />
+      <ProductsCategory/>
       <Products />
+      <WhyUs />
     </main>
   );
 }

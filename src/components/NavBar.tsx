@@ -34,9 +34,9 @@ export default function NavBar() {
             path: '/wet-wash-gloves',
             submenu: [
                 {
-                    key: 'wet-wash-gloves-benefites',
-                    name: 'Benefits & Applications',
-                    path: '/wet-wash-gloves/benefites-and-applications',
+                    key: 'wet-wash-gloves',
+                    name: 'Wet Wash Gloves',
+                    path: '/wet-wash-gloves',
                 },
                 {
                     key: 'wet-wash-gloves-technical-details',
@@ -61,15 +61,27 @@ export default function NavBar() {
             path: '/products',
             submenu: [
                 {
-                    key: 'ultrasound-gel',
-                    name: 'Ultrasound Gel',
-                    path: '/product/ultrasound-gel',
+                    key: 'house-keeping-products',
+                    name: 'House Keeping Products',
+                    path: '/product/house-keeping',
 
                 },
                 {
-                    key: 'cleaning-products',
-                    name: 'Cleaning Products',
-                    path: '/product/cleaning-products',
+                    key: 'surgical-products',
+                    name: 'Surgical Products',
+                    path: '/product/surgical',
+
+                },
+                {
+                    key: 'institutional-products',
+                    name: 'Institutional Products',
+                    path: '/product/institutional',
+
+                },
+                {
+                    key: 'kits',
+                    name: 'Kits',
+                    path: '/product/kits',
 
                 }
             ]
@@ -98,7 +110,7 @@ export default function NavBar() {
     }, [isMenuOpen, stopScroll, startScroll]);
 
     return (
-        <header className='relative w-full bg-light-bg'>
+        <header className='relative w-full'>
             <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
                 <div className='relative shrink-0 w-max'>
                     <Link href={'/'}>
