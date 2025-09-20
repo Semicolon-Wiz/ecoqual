@@ -16,15 +16,16 @@ interface ProductData {
     kits: Product[];
 }
 
-const ProductData: ProductData = {
+export const Product: ProductData = {
     houseKeeping: [
         {
             id: 1,
             name: 'Floor Cleaner',
-            description: 'House Keeping Products',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
             image: [
-                '/images/house-keeping.jpg',
-                '/images/house-keeping.jpg'
+                '/images/category/house-keeping/floor-cleaning/img-1.webp',
+                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
+                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
             ],
             ingredients: [
                 'Bezalkonium Chloride Solution (80%)',
@@ -53,6 +54,81 @@ const ProductData: ProductData = {
             ],
             slug: 'floor-cleaner',
         },
+        {
+            id: 2,
+            name: 'Toilet Cleaner',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            image: [
+                '/images/category/house-keeping/toilet-cleaning/img-1.webp',
+                '/images/category/house-keeping/toilet-cleaning/img-2.jpg',
+                '/images/category/house-keeping/toilet-cleaning/img-3.jpg'
+            ],
+            ingredients: [
+                'Hydrochloric Acid 10.5% w/v',
+                'Hydroxyl Ethyl Oleylamine',
+                'Cetyl Trimethyl Ammonium Chloride',
+                'Methyl Salicylate',
+                'Butylated Hydroxyl Toluene',
+                'Acid Blue 80',
+                'Acid Red 52',
+                'Water'
+            ],
+            specifications: [
+                'Conforming to IS 7983: Latest',
+                'Valid Drug License',
+                'Test report available on demand',
+                'Color: Dark Blue',
+                'Grade: 1',
+                'Shelf Life: 24 months',
+                'Packaging: 5 Ltr & 500 ml (PET/HDPE containers)',
+                'Fragrance: Normal'
+            ],
+            features: [
+                'Effectively removes tough yellow stains',
+                'Strong cleaning action for hygienic toilets'
+            ],
+            slug: 'toilet-cleaner',
+        },
+        {
+            id: 3,
+            name: 'Glass Cleaner',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            image: [
+                '/images/category/house-keeping/glass-cleaning/img-1.webp',
+                '/images/category/house-keeping/glass-cleaning/img-2.jpg',
+                '/images/category/house-keeping/glass-cleaning/img-3.jpg'
+            ],
+            ingredients: [
+                'Aqua',
+                'Ammonium Lauryl Sulfate',
+                'Sodium Laureth Sulfate',
+                'Glycol Stearate',
+                'Perfume',
+                'Cocamide MEA',
+                'Glycerin',
+                'Propylene Glycol',
+                'Salicylic Acid',
+                'Tetrasodium EDTA',
+                'Citric Acid',
+                'Sodium Chloride'
+            ],
+            specifications: [
+                'Conforming to IS 8540: Latest',
+                'Valid Drug License',
+                'Test report available on demand',
+                'Color: Blue',
+                'Grade: 1',
+                'Shelf Life: 24 months',
+                'Packaging: 5 Ltr & 500 ml (PET/HDPE containers)',
+                'Fragrance: Lemon'
+            ],
+            features: [
+                'Effectively removes stains from glass and similar surfaces',
+                'Easy-to-use spray formula',
+                'Gives streak-free shine'
+            ],
+            slug: 'glass-cleaner',
+        }
     ],
     surgical: [
         {
