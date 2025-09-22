@@ -133,11 +133,79 @@ export const Product: ProductData = {
     surgical: [
         {
             id: 1,
-            name: 'Surgical Products',
-            description: 'Surgical Products',
-            image: ['/images/surgical.jpg'],
-            slug: 'surgical-products',
+            name: 'Bouffant Cap',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            image: [
+                '/images/category/house-keeping/floor-cleaning/img-1.webp',
+                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
+                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
+            ],
+            specifications: [
+                'Non-woven breathable fabric',
+                'GSM: 30 to 50 GSM',
+                'Color: Blue, Green',
+                'Ultrasonically heat-sealed joints',
+                'Pack Size: 100 pieces',
+                'Test report available on demand',
+                'Certificate on demand'
+            ],
+            features: [
+                'Comfortable and lightweight',
+                'Prevents hair contamination in clean areas',
+                'Disposable and hygienic',
+                'Ideal for hospitals, labs, and food industries'
+            ],
+            slug: 'bouffant-cap',
         },
+        {
+            id: 2,
+            name: "Surgeon's Cap",
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            image: [
+                '/images/category/house-keeping/floor-cleaning/img-1.webp',
+                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
+                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
+            ],
+            specifications: [
+                "Non-woven breathable fabric",
+                "GSM: 30 to 50 GSM",
+                "Size: Normal & Large",
+                "Color: Blue, Green",
+                "Ultrasonically heat-sealed joints",
+                "Pack Size: 100 pieces",
+                "Test report available on demand",
+                "Certificate on demand"
+            ],
+            features: [
+                "Provides secure hair coverage during surgery",
+                "Comfortable fit for long hours",
+                "Disposable and hygienic",
+                "Suitable for medical and clinical use"
+            ],
+            slug: "surgeons-cap"
+        },
+        {
+            id: 3,
+            name: "Wraparound Gown - Disposable",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.",
+            image: [
+                "/images/category/house-keeping/floor-cleaning/img-1.webp",
+                "/images/category/house-keeping/floor-cleaning/img-2.jpg",
+                "/images/category/house-keeping/floor-cleaning/img-3.jpg"
+            ],
+            specifications: [
+                "AAMI Protection Level: 3",
+                "Material: Non-Woven SMMMS Fabric",
+                "Sterilization: ETO Sterilized",
+                "GSM: >50",
+                "Color: Blue",
+                "Sealing: Ultrasonically heat-sealed on sleeves & joints",
+                "Pack Size: Single piece",
+                "Certificates: Available on demand",
+                "Test Report: Available on demand"
+            ],
+            slug: "wraparound-gown-disposable"
+        }
     ],
     institutional: [
         {
