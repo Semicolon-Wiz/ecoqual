@@ -28,7 +28,7 @@ export default function SurgicalPage() {
                   key={idx}
                   className='relative w-full h-full rounded-xl overflow-hidden bg-white shadow group'
                 >
-                  <Link href={`/product/house-keeping/${items.slug}`} className='block relative w-full h-[250px] overflow-hidden'>
+                  <Link href={`/product/surgical/${items.slug}`} className='block relative w-full h-[250px] overflow-hidden'>
                     <Image src={items.image[0]} alt={items.name} width={500} height={400}
                       className='w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300 ease-in-out'
                     />
@@ -37,7 +37,7 @@ export default function SurgicalPage() {
                     <span className='text-sm font-medium text-primary'>
                       House Keeping
                     </span>
-                    <Link href={`/product/house-keeping/${items.slug}`} className='block mt-1 text-gray-900 font-normal !font-montserrat lg:text-2xl md:text-lg text-base '>
+                    <Link href={`/product/surgical/${items.slug}`} className='block mt-1 text-gray-900 font-normal !font-montserrat lg:text-2xl md:text-lg text-base '>
                       {items.name}
                     </Link>
 
@@ -45,7 +45,7 @@ export default function SurgicalPage() {
                       {items.description}
                     </Subheading>
 
-                    <Link href={`/product/house-keeping/${items.slug}`} className='ml-auto mt-6 w-max px-4 py-2 border border-primary flex items-center gap-2 justify-center rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300 ease-in-out'>
+                    <Link href={`/product/surgical/${items.slug}`} className='ml-auto mt-6 w-max px-4 py-2 border border-primary flex items-center gap-2 justify-center rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300 ease-in-out'>
                       View Product
                       <MoveUpRight size={20} />
                     </Link>
