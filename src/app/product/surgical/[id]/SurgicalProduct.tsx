@@ -19,9 +19,9 @@ import {
 import { Lens } from '@/components/ui/lens';
 import { ButtonPrimary, Subheading } from '@/utils/Section';
 
-export default function HouseKeepingProduct({ id }: { id: string }) {
+export default function SurgicalProduct({ id }: { id: string }) {
     const [hovering, setHovering] = useState(false);
-    const data: ProductType[] = Product.houseKeeping;
+    const data: ProductType[] = Product.surgical;
     const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
 
     const [fancyboxRef] = useFancybox({});
@@ -62,24 +62,28 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
                 </ButtonPrimary>
 
                 <div className='w-full relative mt-5 flex flex-col gap-4'>
-                    <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
-                        <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
-                            <AccordionTrigger className='text-xl text-primary'>
-                                Features
-                            </AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
-                                    {
-                                        product.features?.map((data, idx) => (
-                                            <li key={idx}>
-                                                {data}
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
+                    {
+                        product.features ? (
+                            <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
+                                <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
+                                    <AccordionTrigger className='text-xl text-primary'>
+                                        Features
+                                    </AccordionTrigger>
+                                    <AccordionContent className="flex flex-col gap-4 text-balance">
+                                        <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
+                                            {
+                                                product.features?.map((data, idx) => (
+                                                    <li key={idx}>
+                                                        {data}
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        ) : null
+                    }
 
                     <Accordion type="single" collapsible className="w-full" defaultValue="item-2">
                         <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
@@ -90,25 +94,6 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
                                 <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
                                     {
                                         product.specifications?.map((data, idx) => (
-                                            <li key={idx}>
-                                                {data}
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-
-                    <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
-                        <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
-                            <AccordionTrigger className='text-xl text-primary'>
-                                Ingredients
-                            </AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
-                                    {
-                                        product.ingredients?.map((data, idx) => (
                                             <li key={idx}>
                                                 {data}
                                             </li>
