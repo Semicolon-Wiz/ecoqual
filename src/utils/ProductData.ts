@@ -107,15 +107,37 @@ export const Product: ProductData = {
                 '/images/category/house-keeping/p-4/img-2.JPG',
                 '/images/category/house-keeping/p-4/img-3.JPG',
             ],
-            material: 'Non-woven fabric with laminated layer',
+            material: 'Ethyl Alcohol (IPA) 70–80% v/v (active ingredient for disinfection)',
             ingredients: [
                 'Non-woven fabric with laminated layer'
+            ],
+            specifications: [
+                'Quick-drying, non-sticky formula for frequent use',
+                'Provides effective protection without soap and water',
+                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
+
+            ],
+            features: [
+                'Sterile and infection-resistant'
+            ],
+            slug: 'eco-hand-sanitizer'
+        },
+        {
+            id: 5,
+            name: 'Hand Sanitizer (5 ltr Gallon)',
+            description: 'Sterile, laminated bedsheet ideal for operation theatres and critical care areas, offering extra protection against contamination.',
+            image: [
+                '/images/category/house-keeping/p-5/product-01.webp',
+            ],
+            material: 'Hand sanitizer that effectively kills 99.9% of germs and bacteria.',
+            ingredients: [
+                'Hand sanitizer that effectively kills 99.9% of germs and bacteria.'
             ],
             specifications: [
                 'Disposable, single-use sheet',
                 'Laminated for added strength',
                 'Sterilized and individually packed',
-                'Shelf life: 24 months',
+                'Shelf life: 24 months',    
                 'Packaging: 10 pcs per pack'
             ],
             features: [
