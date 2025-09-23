@@ -56,16 +56,16 @@ export default function Products() {
             image: '/images/category/kits/p-4/img-1.JPG'
         },
         {
-            name: 'Surgical Gown',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/surgical-gown',
-            image: '/images/products/product-07.webp'
+            name: 'LDPE Apron',
+            description: 'A lightweight, waterproof apron designed to keep staff safe from spills and stains during cleaning or medical duties. Easy to wear and dispose after use.',
+            link: '/product/house-keeping/ldpe-apron',
+            image: '/images/category/house-keeping/p-1/img-1.JPG'
         },
         {
-            name: 'Garbage Bag',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/garbage-bag',
-            image: '/images/products/product-08.webp'
+            name: 'OT Gown (Disposable)',
+            description: 'A lightweight, disposable gown that provides full coverage and safety for surgeons and staff, while ensuring comfort during long procedures.',
+            link: '/product/surgical/ot-gown-disposable',
+            image: '/images/category/surgical-products/p-1/img-1.JPG'
         }
     ]
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
