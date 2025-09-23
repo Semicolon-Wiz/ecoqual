@@ -561,15 +561,15 @@ export function ContributorMain() {
                             </div>
                         </div>
 
-                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                        <Image src='/images/about/why.png' width={450} height={400} alt='Wet Wash Gloves'
                             className='w-full h-auto'
                         />
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-5'>
 
-                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                        <Image src='/images/about/wet.png' width={450} height={400} alt='Wet Wash Gloves'
+                            className='w-[350px] h-auto'
                         />
 
                         <div className='md:pl-10 relative w-full h-full flex flex-col gap-10'>
@@ -615,14 +615,14 @@ export function ContributorMain() {
                             </div>
                         </div>
 
-                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                        <Image src='/images/about/7.png' width={450} height={400} alt='Wet Wash Gloves'
                             className='w-full h-auto'
                         />
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-5'>
 
-                        <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
+                        <Image src='/images/about/9.png' width={450} height={400} alt='Wet Wash Gloves'
                             className='w-full h-auto'
                         />
 
