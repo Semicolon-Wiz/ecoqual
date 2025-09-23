@@ -5,6 +5,7 @@ export interface ProductType {
     image: string[];
     video?: string;
     specifications?: string[];
+    material?: string;
     ingredients?: string[];
     features?: string[];
     contents?: string[];
@@ -21,114 +22,107 @@ export const Product: ProductData = {
     houseKeeping: [
         {
             id: 1,
-            name: 'Floor Cleaner',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            name: 'LDPE Apron',
+            description: 'A lightweight, waterproof apron designed to keep staff safe from spills and stains during cleaning or medical duties. Easy to wear and dispose after use.',
             image: [
-                '/images/category/house-keeping/floor-cleaning/img-1.webp',
-                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
-                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
+                '/images/category/house-keeping/p-1/img-1.JPG',
+                '/images/category/house-keeping/p-1/img-2.JPG',
+                '/images/category/house-keeping/p-1/img-3.JPG'
             ],
+            material: 'LDPE (Low-Density Polyethylene)',
             ingredients: [
-                'Bezalkonium Chloride Solution (80%)',
-                'Deionised Water',
-                'Lauryl Alcohol Ethoxylate',
-                'Coco Amido Propyl Betaine',
-                'Sodium Bicarbonate',
-                'Perfume',
-                'Tetrasodium Ethylene Diamine Tetra Acetic Acid',
-                'Butylated Hydroxyl Toluene',
-                'Alizann'
+                'LDPE (Low-Density Polyethylene)'
             ],
             specifications: [
-                'Conforming to latest Indian standards',
-                'Valid Drug License',
-                'Test report available on demand',
-                'Color: Pink',
-                'Grade: 1',
-                'Shelf Life: 24 months',
-                'Packaging: 5 Ltr (PET/HDPE containers)',
-                'Fragrance: Rose'
+                'Made from durable LDPE material',
+                'Disposable, single-use design',
+                'Available in standard sizes',
+                'Shelf life: 24 months',
+                'Packaging: 100 pcs per pack'
             ],
             features: [
-                'Effective in removing hard stains',
-                'To be diluted in water before use'
+                'Protects against fluid and dirt exposure',
+                'Comfortable and easy for long-hour usage'
             ],
-            slug: 'floor-cleaner',
+            slug: 'ldpe-apron'
         },
         {
             id: 2,
-            name: 'Toilet Cleaner',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            name: 'LDPE Bedsheet',
+            description: 'Waterproof bedsheet offering reliable protection against spills and stains, ensuring patient comfort and hygiene.',
             image: [
-                '/images/category/house-keeping/toilet-cleaning/img-1.webp',
-                '/images/category/house-keeping/toilet-cleaning/img-2.jpg',
-                '/images/category/house-keeping/toilet-cleaning/img-3.jpg'
+                '/images/category/house-keeping/p-2/img-1.JPG',
+                '/images/category/house-keeping/p-2/img-2.JPG',
             ],
+            material: 'LDPE (Low-Density Polyethylene)',
             ingredients: [
-                'Hydrochloric Acid 10.5% w/v',
-                'Hydroxyl Ethyl Oleylamine',
-                'Cetyl Trimethyl Ammonium Chloride',
-                'Methyl Salicylate',
-                'Butylated Hydroxyl Toluene',
-                'Acid Blue 80',
-                'Acid Red 52',
-                'Water'
+                'LDPE (Low-Density Polyethylene)'
             ],
             specifications: [
-                'Conforming to IS 7983: Latest',
-                'Valid Drug License',
-                'Test report available on demand',
-                'Color: Dark Blue',
-                'Grade: 1',
-                'Shelf Life: 24 months',
-                'Packaging: 5 Ltr & 500 ml (PET/HDPE containers)',
-                'Fragrance: Normal'
+                'Made from medical-grade LDPE',
+                'Disposable and easy to spread',
+                'Standard hospital bed size',
+                'Shelf life: 24 months',
+                'Packaging: 25 pcs per pack'
             ],
             features: [
-                'Effectively removes tough yellow stains',
-                'Strong cleaning action for hygienic toilets'
+                'Provides a clean and safe surface',
+                'Reduces cross-contamination risks'
             ],
-            slug: 'toilet-cleaner',
+            slug: 'ldpe-bedsheet'
         },
         {
             id: 3,
-            name: 'Glass Cleaner',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            name: 'Non-Woven Bedsheet (Disposable)',
+            description: 'Soft yet strong disposable bedsheet designed to improve patient comfort while keeping hospital beds hygienic.',
             image: [
-                '/images/category/house-keeping/glass-cleaning/img-1.webp',
-                '/images/category/house-keeping/glass-cleaning/img-2.jpg',
-                '/images/category/house-keeping/glass-cleaning/img-3.jpg'
+                '/images/category/house-keeping/p-3/img-1.JPG',
+                '/images/category/house-keeping/p-3/img-2.JPG',
+                '/images/category/house-keeping/p-3/img-3.JPG',
+                '/images/category/house-keeping/p-3/img-4.JPG',
             ],
+            material: 'Non-woven polypropylene',
             ingredients: [
-                'Aqua',
-                'Ammonium Lauryl Sulfate',
-                'Sodium Laureth Sulfate',
-                'Glycol Stearate',
-                'Perfume',
-                'Cocamide MEA',
-                'Glycerin',
-                'Propylene Glycol',
-                'Salicylic Acid',
-                'Tetrasodium EDTA',
-                'Citric Acid',
-                'Sodium Chloride'
+                'Non-woven polypropylene'
             ],
             specifications: [
-                'Conforming to IS 8540: Latest',
-                'Valid Drug License',
-                'Test report available on demand',
-                'Color: Blue',
-                'Grade: 1',
-                'Shelf Life: 24 months',
-                'Packaging: 5 Ltr & 500 ml (PET/HDPE containers)',
-                'Fragrance: Lemon'
+                'Non-woven polypropylene fabric',
+                'Lightweight and tear-resistant',
+                'Fits standard hospital beds',
+                'Shelf life: 18 months',
+                'Packaging: 25 pcs per pack'
             ],
             features: [
-                'Effectively removes stains from glass and similar surfaces',
-                'Easy-to-use spray formula',
-                'Gives streak-free shine'
+                'Skin-friendly and breathable',
+                'Hygienic single-use option'
             ],
-            slug: 'glass-cleaner',
+            slug: 'non-woven-bedsheet-disposable'
+        },
+        {
+            id: 4,
+            name: 'Laminated Sterile Bedsheet (Disposable)',
+            description: 'Sterile, laminated bedsheet ideal for operation theatres and critical care areas, offering extra protection against contamination.',
+            image: [
+                '/images/category/house-keeping/p-4/img-1.JPG',
+                '/images/category/house-keeping/p-4/img-2.JPG',
+                '/images/category/house-keeping/p-4/img-3.JPG',
+            ],
+            material: 'Non-woven fabric with laminated layer',
+            ingredients: [
+                'Non-woven fabric with laminated layer'
+            ],
+            specifications: [
+                'Disposable, single-use sheet',
+                'Laminated for added strength',
+                'Sterilized and individually packed',
+                'Shelf life: 24 months',
+                'Packaging: 10 pcs per pack'
+            ],
+            features: [
+                'Sterile and infection-resistant',
+                'Provides waterproof protection'
+            ],
+            slug: 'laminated-sterile-bedsheet'
         }
     ],
     surgical: [
