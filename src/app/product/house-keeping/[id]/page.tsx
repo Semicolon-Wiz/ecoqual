@@ -7,7 +7,7 @@ export default async function Product({ params }: { params: Promise<{ id: string
   return (
     <main className="relative w-full">
         <HouseKeepingProduct id={id} />
-        <RecentProduct id={id} category={'houseKeeping'} />
+        <RecentProduct id={id} category={'houseKeeping'} name={'House Keeping Product'} />
     </main>
   )
 }   

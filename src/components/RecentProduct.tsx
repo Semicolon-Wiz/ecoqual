@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-export default function RecentProduct({ id, category }: { id: string, category: keyof ProductData }) {
+export default function RecentProduct({ id, category, name }: { id: string, category: keyof ProductData, name:string }) {
     const data = Product[category]?.filter((item: ProductType) => item.slug.toLowerCase() !== id.toLowerCase());
     return (
         <Section>
@@ -13,10 +13,12 @@ export default function RecentProduct({ id, category }: { id: string, category: 
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading classname='text-secondry'>
-                            Housekeeping Products
+                            Other <span className='text-primary !font-inter'>
+                                {name}
+                            </span>
                         </Heading>
                         <Subheading classname='max-w-lg mx-auto'>
-                            Easy and effective cleaning solutions. Made to keep places neat, hygienic, and fresh every day.
+                            Discover more from our wide range of high-quality and reliable products.
                         </Subheading>
                     </div>
 
