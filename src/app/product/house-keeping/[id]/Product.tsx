@@ -22,6 +22,7 @@ import { ButtonPrimary, Subheading } from '@/utils/Section';
 export default function HouseKeepingProduct({ id }: { id: string }) {
     const [hovering, setHovering] = useState(false);
     const data: ProductType[] = Product.houseKeeping;
+
     const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
 
     const [fancyboxRef] = useFancybox({});
@@ -114,6 +115,21 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
                                             </li>
                                         ))
                                     }
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+
+                    <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
+                        <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
+                            <AccordionTrigger className='text-xl text-primary'>
+                                Material
+                            </AccordionTrigger>
+                            <AccordionContent className="flex flex-col gap-4 text-balance">
+                                <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
+                                    <li>
+                                        {product.material}
+                                    </li>
                                 </ul>
                             </AccordionContent>
                         </AccordionItem>
