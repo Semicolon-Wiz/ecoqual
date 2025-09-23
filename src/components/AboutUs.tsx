@@ -18,8 +18,8 @@ export default function AboutUs() {
 
                     <div className='relative flex-1 grid md:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
                         <div className='w-full h-full relative flex justify-center flex-col pr-5'>
-                            <p className='font-medium md:text-base text-sm text-zinc-700'>
-                                Ecoqual was established with a clear purpose – to make healthcare safer, cleaner, and more dignified through solutions that combine quality, affordability, and sustainability. Backed by BioBhoomi Consumables Pvt. Ltd., we bring together advanced manufacturing, strict quality checks, and innovative thinking to create products that meet the real needs of healthcare providers and patients. What began as a simple idea has now grown into a trusted brand that supports hospitals, clinics, and institutions across India in maintaining high standards of hygiene and infection control.
+                            <p className='font-medium md:text-xl text-sm text-zinc-700'>
+                                Ecoqual was established with a clear purpose – to make healthcare safer, cleaner, and more dignified through solutions that combine quality, affordability, and sustainability. Backed by <strong>BioBhoomi Consumables Pvt. Ltd.</strong>, we bring together advanced manufacturing, strict quality checks, and innovative thinking to create products that meet the real needs of healthcare providers and patients. What began as a simple idea has now grown into a trusted brand that supports hospitals, clinics, and institutions across India in maintaining high standards of hygiene and infection control.
                             </p>
                         </div>
                         <div className='w-full h-full relative flex items-center justify-center'>
