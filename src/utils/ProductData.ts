@@ -112,15 +112,18 @@ export const Product: ProductData = {
                 'Non-woven fabric with laminated layer'
             ],
             specifications: [
-                'Quick-drying, non-sticky formula for frequent use',
-                'Provides effective protection without soap and water',
-                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
+                'Disposable, single-use sheet',
+                'Laminated for added strength',
+                'Sterilized and individually packed',
+                'Shelf life: 24 months',    
+                'Packaging: 10 pcs per pack',
+                
 
             ],
             features: [
                 'Sterile and infection-resistant'
             ],
-            slug: 'eco-hand-sanitizer'
+            slug: 'laminated-sterile-bedsheet'
         },
         {
             id: 5,
@@ -134,17 +137,15 @@ export const Product: ProductData = {
                 'Hand sanitizer that effectively kills 99.9% of germs and bacteria.'
             ],
             specifications: [
-                'Disposable, single-use sheet',
-                'Laminated for added strength',
-                'Sterilized and individually packed',
-                'Shelf life: 24 months',    
-                'Packaging: 10 pcs per pack'
+                'Quick-drying, non-sticky formula for frequent use',
+                'Provides effective protection without soap and water',
+                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
             ],
             features: [
                 'Sterile and infection-resistant',
                 'Provides waterproof protection'
             ],
-            slug: 'laminated-sterile-bedsheet'
+            slug: 'eco-hand-sanitizer'
         }
     ],
     surgical: [
