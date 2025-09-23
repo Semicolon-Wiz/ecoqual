@@ -73,8 +73,8 @@ export default function NavBar() {
 
                 },
                 {
-                    key: 'institutional-products',
-                    name: 'Institutional Products',
+                    key: 'institutional-uniforms',
+                    name: 'Institutional Uniforms',
                     path: '/product/institutional',
 
                 },
