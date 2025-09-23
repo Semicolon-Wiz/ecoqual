@@ -26,8 +26,8 @@ export default function Products() {
             image: '/images/products/product-01.webp'
         },
         {
-            name: 'Disicfectant Floor Cleaner',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
+            name: 'Disinfectant Floor Cleaner',
+            description: 'A powerful disinfectant floor cleaner that removes tough stains while killing 99.9% of germs. Leaves floors fresh, hygienic, and safe for everyday use in homes, hospitals, and workplaces.',
             link: '/product/disicfectant-floor-cleaner',
             image: '/images/products/product-02.webp'
         },
