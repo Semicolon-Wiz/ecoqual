@@ -1,11 +1,11 @@
-import About from '@/components/About'
+import AboutUs from '@/components/AboutUs'
 import WhyUs from '@/components/WhyUs'
 import React from 'react'
 
 export default function AboutPage() {
   return (
     <main>
-      <About />
+      <AboutUs />
       <WhyUs />
     </main>
   )
