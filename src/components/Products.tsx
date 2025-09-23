@@ -33,27 +33,27 @@ export default function Products() {
         },
         {
             name: 'Concentrated Phenyl',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
+            description: 'A highly concentrated disinfectant phenyl formulated to provide long-lasting protection against germs',
             link: '/product/house-keeping/eco-concentrated-phenyl',
             image: '/images/products/product-05.webp'
         },
         {
-            name: 'Disicfectant Toilet Cleaner',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/disicfectant-toilet-cleaner',
-            image: '/images/products/product-04.webp'
+            name: 'Mother & Baby Kit',
+            description: 'A convenient kit designed to support postnatal care, providing essentials for both mother and newborn.',
+            link: '/product/kits/mother-baby-kit',
+            image: '/images/category/kits/p-3/img-1.JPG'
         },
         {
-            name: 'Concentrated Phenyl',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/phenyl',
-            image: '/images/products/product-05.webp'
+            name: 'Draw Sheet',
+            description: 'Durable sheet designed for hospital beds, providing protection and hygiene with daily use.',
+            link: '/product/institutional/draw-sheet',
+            image: '/images/category/institutional/p-1/img-1.JPG'
         },
         {
-            name: 'Liquid Handwash',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/handwash',
-            image: '/images/products/product-06.webp'
+            name: 'Dental Kit (Disposable)',
+            description: 'Single-use kit designed for dental procedures, ensuring hygiene and efficiency in clinics.',
+            link: '/product/kits/dental-kit-disposable',
+            image: '/images/category/kits/p-4/img-1.JPG'
         },
         {
             name: 'Surgical Gown',
