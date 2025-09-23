@@ -47,7 +47,7 @@ export default function Products() {
             name: 'Draw Sheet',
             description: 'Durable sheet designed for hospital beds, providing protection and hygiene with daily use.',
             link: '/product/institutional/draw-sheet',
-            image: '/images/category/institutional/p-1/img-1.JPG'
+            image: '/images/category/institutional/p-4/img-1.JPG'
         },
         {
             name: 'Dental Kit (Disposable)',
