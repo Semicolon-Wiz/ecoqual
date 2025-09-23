@@ -151,6 +151,32 @@ export const Product: ProductData = {
                 'Pleasant fragrance for a fresh and clean environment',
             ],
             slug: 'eco-floor-cleaner'
+        },
+        {
+            id: 6,
+            name: 'Concentrated Phenyl (1 ltr Bottle)',
+            description: 'A highly concentrated disinfectant phenyl formulated to provide long-lasting protection against germs. It cleans, deodorizes, and leaves floors with a fresh fragrance, ensuring a hygienic environment.',
+            image: [
+                '/images/category/house-keeping/p-5/product-05.webp',
+            ],
+            material: 'Pine Oil (active cleaning and deodorizing agent)',
+            ingredients: [
+                'Emulsifiers & Surfactants (for stable dilution)',
+                'Black/White Phenyl Compound (disinfectant base)',
+                'Purified Water (as base solution)',
+
+            ],
+            specifications: [
+               'Strong germicidal action for effective disinfection',
+                'Concentrated formula, economical in use after dilution',
+                'Suitable for hospitals, offices, schools, and household cleaning',
+            ],
+            features: [
+               'Strong germicidal action for effective disinfection',
+                'Concentrated formula, economical in use after dilution',
+                'Suitable for hospitals, offices, schools, and household cleaning',
+            ],
+            slug: 'eco-concentrated-phenyl'
         }
 
     ],

@@ -22,20 +22,20 @@ export default function Products() {
         {
             name: 'Hand Sanitizer',
             description: 'A 5 Ltr bulk pack alcohol-based hand sanitizer that kills 99.9% of germs instantly. Ideal for hospitals, offices, and public spaces, it ensures convenient and long-lasting hand hygiene.',
-            link: '/product/house-keeping/eco-hand-sanitizer',
+            link: '/product/surgical/eco-hand-sanitizer',
             image: '/images/products/product-01.webp'
         },
         {
             name: 'Disinfectant Floor Cleaner',
             description: 'A powerful disinfectant floor cleaner that removes tough stains while killing 99.9% of germs. Leaves floors fresh, hygienic, and safe for everyday use in homes, hospitals, and workplaces.',
-            link: '/product/disicfectant-floor-cleaner',
+            link: '/product/house-keeping/eco-floor-cleaner',
             image: '/images/products/product-02.webp'
         },
         {
-            name: 'Glass Cleaner',
+            name: 'Concentrated Phenyl',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/glass-cleaner',
-            image: '/images/products/product-03.webp'
+            link: '/product/house-keeping/eco-concentrated-phenyl',
+            image: '/images/products/product-05.webp'
         },
         {
             name: 'Disicfectant Toilet Cleaner',
