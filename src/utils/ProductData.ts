@@ -128,79 +128,110 @@ export const Product: ProductData = {
     surgical: [
         {
             id: 1,
-            name: 'Bouffant Cap',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            name: 'OT Gown (Disposable)',
+            description: 'A lightweight, disposable gown that provides full coverage and safety for surgeons and staff, while ensuring comfort during long procedures.',
             image: [
-                '/images/category/house-keeping/floor-cleaning/img-1.webp',
-                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
-                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
+                '/images/category/surgical-products/p-1/img-1.JPG',
+                '/images/category/surgical-products/p-1/img-2.JPG',
+                '/images/category/surgical-products/p-1/img-3.JPG',
+                '/images/category/surgical-products/p-1/img-4.JPG',
+            ],
+            material: 'SMS (Spunbond-Meltblown-Spunbond) non-woven fabric',
+            ingredients: [
+                'SMS (Spunbond-Meltblown-Spunbond) non-woven fabric'
             ],
             specifications: [
-                'Non-woven breathable fabric',
-                'GSM: 30 to 50 GSM',
-                'Color: Blue, Green',
-                'Ultrasonically heat-sealed joints',
-                'Pack Size: 100 pieces',
-                'Test report available on demand',
-                'Certificate on demand'
+                'Disposable, single-use gown',
+                'Available in sterile & non-sterile options',
+                'Free size with tie-up/velcro closure',
+                'Shelf life: 24 months',
+                'Packaging: Individually packed'
             ],
             features: [
-                'Comfortable and lightweight',
-                'Prevents hair contamination in clean areas',
-                'Disposable and hygienic',
-                'Ideal for hospitals, labs, and food industries'
+                'Barrier protection against fluids and contaminants',
+                'Breathable, lightweight fabric for comfort'
             ],
-            slug: 'bouffant-cap',
+            slug: 'ot-gown-disposable'
         },
         {
             id: 2,
-            name: "Surgeon's Cap",
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.',
+            name: 'Medsimart Surgical Gloves',
+            description: 'High-quality sterile gloves designed for precision and safety during surgical procedures, offering excellent grip and flexibility.',
             image: [
-                '/images/category/house-keeping/floor-cleaning/img-1.webp',
-                '/images/category/house-keeping/floor-cleaning/img-2.jpg',
-                '/images/category/house-keeping/floor-cleaning/img-3.jpg'
+                '/images/category/surgical-products/p-2/img-1.JPG',
+                '/images/category/surgical-products/p-2/img-2.JPG',
+                '/images/category/surgical-products/p-2/img-3.JPG',
+                '/images/category/surgical-products/p-2/img-4.JPG',
+            ],
+            material: 'Medical-grade natural latex or nitrile',
+            ingredients: [
+                'Medical-grade natural latex or nitrile'
             ],
             specifications: [
-                "Non-woven breathable fabric",
-                "GSM: 30 to 50 GSM",
-                "Size: Normal & Large",
-                "Color: Blue, Green",
-                "Ultrasonically heat-sealed joints",
-                "Pack Size: 100 pieces",
-                "Test report available on demand",
-                "Certificate on demand"
+                'Sterile, single-use gloves',
+                'Available in multiple sizes (6–8.5)',
+                'Shelf life: 36 months',
+                'Packaging: 50 pairs per box'
             ],
             features: [
-                "Provides secure hair coverage during surgery",
-                "Comfortable fit for long hours",
-                "Disposable and hygienic",
-                "Suitable for medical and clinical use"
+                'Provides excellent tactile sensitivity',
+                'Powder-free, reducing allergy risks'
             ],
-            slug: "surgeons-cap"
+            slug: 'medsimart-surgical-gloves'
         },
         {
             id: 3,
-            name: "Wraparound Gown - Disposable",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.",
+            name: 'Camera Cover',
+            description: 'Protective cover designed to safeguard medical cameras and equipment during surgical procedures, ensuring sterile usage.',
             image: [
-                "/images/category/house-keeping/floor-cleaning/img-1.webp",
-                "/images/category/house-keeping/floor-cleaning/img-2.jpg",
-                "/images/category/house-keeping/floor-cleaning/img-3.jpg"
+                '/images/category/surgical-products/p-3/img-1.jpeg',
+                '/images/category/surgical-products/p-3/img-2.JPG',
+                '/images/category/surgical-products/p-3/img-3.JPG',
+                '/images/category/surgical-products/p-3/img-4.JPG',
+            ],
+            material: 'Medical-grade polyethylene',
+            ingredients: [
+                'Medical-grade polyethylene'
             ],
             specifications: [
-                "AAMI Protection Level: 3",
-                "Material: Non-Woven SMMMS Fabric",
-                "Sterilization: ETO Sterilized",
-                "GSM: >50",
-                "Color: Blue",
-                "Sealing: Ultrasonically heat-sealed on sleeves & joints",
-                "Pack Size: Single piece",
-                "Certificates: Available on demand",
-                "Test Report: Available on demand"
+                'Sterile and single-use',
+                'Compatible with standard surgical cameras',
+                'Shelf life: 24 months',
+                'Packaging: Individually packed'
             ],
-            slug: "wraparound-gown-disposable"
+            features: [
+                'Prevents contamination of surgical equipment',
+                'Transparent for clear visibility'
+            ],
+            slug: 'camera-cover'
+        },
+        {
+            id: 4,
+            name: 'Probe Cover',
+            description: 'Sterile cover that ensures infection control while using diagnostic or surgical probes, keeping patients safe and equipment hygienic.',
+            image: [
+                '/images/category/surgical-products/p-4/img-1.JPG',
+                '/images/category/surgical-products/p-4/img-2.JPG',
+                '/images/category/surgical-products/p-4/img-3.JPG',
+                '/images/category/surgical-products/p-4/img-4.JPG',
+            ],
+            material: 'Medical-grade latex or polyethylene',
+            ingredients: [
+                'Medical-grade latex or polyethylene'
+            ],
+            specifications: [
+                'Single-use, sterile covers',
+                'Available in various probe sizes',
+                'Shelf life: 24 months',
+                'Packaging: Individually packed'
+            ],
+            features: [
+                'Prevents cross-contamination',
+                'Easy to apply and remove'
+            ],
+            slug: 'probe-cover'
         }
+
     ],
     institutional: [
         {
