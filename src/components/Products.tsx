@@ -21,8 +21,8 @@ export default function Products() {
     const product: Products[] = [
         {
             name: 'Hand Sanitizer',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/hand-sanitizer',
+            description: 'A 5 Ltr bulk pack alcohol-based hand sanitizer that kills 99.9% of germs instantly. Ideal for hospitals, offices, and public spaces, it ensures convenient and long-lasting hand hygiene.',
+            link: '/product/house-keeping/eco-hand-sanitizer',
             image: '/images/products/product-01.webp'
         },
         {
