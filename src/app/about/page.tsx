@@ -1,4 +1,4 @@
-import AboutUs, { OurMission } from '@/components/AboutUs'
+import AboutUs, { OurImpact, OurMission, OurValues, OurVision } from '@/components/AboutUs'
 import React from 'react'
 
 export default function AboutPage() {
@@ -6,6 +6,9 @@ export default function AboutPage() {
     <main>
       <AboutUs />
       <OurMission />
+      <OurVision />
+      <OurValues />
+      <OurImpact />
     </main>
   )
 }
