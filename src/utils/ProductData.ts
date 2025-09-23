@@ -245,40 +245,122 @@ export const Product: ProductData = {
     kits: [
         {
             id: 1,
-            name: "Viral Barrier Kit / HIV Kit Premium",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit excepturi iure, possimus quia perferendis earum autem voluptatibus quas nam maiores soluta fuga distinctio sed eligendi, labore ratione dolorem fugiat id.",
+            name: "HIV Kit",
+            description: "A reliable kit designed to provide safe, sterile, and complete protection during HIV-related procedures.",
             image: [
-                "/images/category/house-keeping/floor-cleaning/img-1.webp",
-                "/images/category/house-keeping/floor-cleaning/img-2.jpg",
-                "/images/category/house-keeping/floor-cleaning/img-3.jpg"
+                '/images/category/kits/p-1/img-1.JPG',
+                '/images/category/kits/p-1/img-2.JPG',
+                '/images/category/kits/p-1/img-3.JPG',
+                '/images/category/kits/p-1/img-4.JPG',
+                '/images/category/kits/p-1/img-5.JPG',
             ],
             specifications: [
-                "Premium protection kit designed for infection control",
-                "Conforms to latest healthcare and hygiene standards",
-                "Single-use, disposable components",
-                "Sterile and safe packaging"
+                "Single-use, disposable kit",
+                "Valid drug license compliant",
+                "Shelf life: 36 months",
+                "Packaging: Sterile pouch/box"
             ],
             contents: [
-                "Wraparound Gown – 1 piece",
-                "Bouffant Cap – 1 piece",
-                "Spunlace Non-Woven Shoe Cover – 1 pair",
-                "Sterile Latex Surgical Gloves – 1 pair",
-                "Goggles – 1 piece",
-                "3-Ply Surgical Mask – 1 piece",
-                "Hand Towel – 1 piece",
-                "Draw Sheet – 1 piece",
-                "Trolley Cover – 1 piece",
-                "Diathermy Bag – 1 piece",
-                "Disposable Bag – 1 piece",
-                "Plain Sheet (Large) – 1 piece"
+                "Gloves",
+                "Mask",
+                "Apron",
+                "Gown",
+                "Waste bag"
             ],
             features: [
-                "Complete body protection barrier kit",
-                "Ideal for handling high-risk viral exposure cases (HIV, etc.)",
-                "Provides safety and hygiene for healthcare professionals",
-                "Lightweight, comfortable, and easy to use"
+                "Pre-packed sterile components",
+                "Ensures patient and staff safety"
             ],
-            slug: "viral-barrier-kit-premium"
+            slug: "hiv-kit"
         },
+        {
+            id: 2,
+            name: "HIV Kit Premium",
+            description: "An upgraded version with enhanced components for maximum safety in high-risk medical procedures.",
+            image: [
+                '/images/category/kits/p-2/img-1.JPG',
+                '/images/category/kits/p-2/img-2.JPG',
+                '/images/category/kits/p-2/img-3.JPG',
+                '/images/category/kits/p-2/img-4.JPG',
+                '/images/category/kits/p-2/img-5.JPG',
+                '/images/category/kits/p-2/img-6.JPG',
+            ],
+            specifications: [
+                "Sterile, disposable kit",
+                "Shelf life: 36 months",
+                "Packaging: Sterile pouch/box"
+            ],
+            contents: [
+                "Premium gloves",
+                "Apron",
+                "Gown",
+                "Mask",
+                "Waste bag",
+                "Shoe covers"
+            ],
+            features: [
+                "Extra protective elements included",
+                "Reduces infection risk effectively"
+            ],
+            slug: "hiv-kit-premium"
+        },
+        {
+            id: 3,
+            name: "Mother & Baby Kit",
+            description: "A convenient kit designed to support postnatal care, providing essentials for both mother and newborn.",
+            image: [
+                '/images/category/kits/p-3/img-1.JPG',
+                '/images/category/kits/p-3/img-2.JPG',
+                '/images/category/kits/p-3/img-3.JPG',
+                '/images/category/kits/p-3/img-4.JPG',
+                '/images/category/kits/p-3/img-5.JPG',
+            ],
+            specifications: [
+                "Pre-assembled, disposable kit",
+                "Shelf life: 24 months",
+                "Packaging: Sterile pouch"
+            ],
+            contents: [
+                "Sanitary pads",
+                "Baby wipes",
+                "Towel",
+                "Gloves",
+                "Waste bag"
+            ],
+            features: [
+                "Packed with essential care items",
+                "Hygienic and safe for mother & child"
+            ],
+            slug: "mother-baby-kit"
+        },
+        {
+            id: 4,
+            name: "Dental Kit (Disposable)",
+            description: "Single-use kit designed for dental procedures, ensuring hygiene and efficiency in clinics.",
+            image: [
+                '/images/category/kits/p-4/img-1.JPG',
+                '/images/category/kits/p-4/img-2.JPG',
+                '/images/category/kits/p-4/img-3.JPG',
+                '/images/category/kits/p-4/img-4.JPG',
+            ],
+            specifications: [
+                "Disposable, single-use kit",
+                "Shelf life: 24 months",
+                "Packaging: Sterile pouch"
+            ],
+            contents: [
+                "Dental bib",
+                "Suction tip",
+                "Gloves",
+                "Mask",
+                "Cup"
+            ],
+            features: [
+                "Reduces infection risks",
+                "Compact and easy to use"
+            ],
+            slug: "dental-kit-disposable"
+        }
+
     ]
 };
