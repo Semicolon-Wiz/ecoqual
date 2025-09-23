@@ -152,14 +152,14 @@ export default function Products() {
                     <AnimatePresence>
                         {selectedProduct !== null && (
                             <motion.div
-                                className='fixed inset-0 bg-black/60 backdrop-blur-sm z-50  p-5 overflow-y-auto'
+                                className='fixed inset-0 bg-black/60 backdrop-blur-sm z-50  p-10 overflow-y-auto'
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 onClick={() => setSelectedProduct(null)}
                                 data-lenis-prevent
                             >
-                                <div className='relative w-full h-full'>
+                                <div className='relative w-full h-max'>
                                     <motion.div
                                         className='relative max-w-lg mx-auto w-full h-max bg-white p-5 rounded-lg shadow-lg'
                                         layoutId={`card-${selectedProduct}`}
@@ -194,6 +194,9 @@ export default function Products() {
                                         >
                                             {product[selectedProduct].description}
                                         </motion.p>
+                                        <Link href={product[selectedProduct].link} className='mt-4 flex ml-auto px-4 py-2 bg-primary text-white w-max rounded'>
+                                            View in Details
+                                        </Link>
                                     </motion.div>
                                 </div>
                             </motion.div>

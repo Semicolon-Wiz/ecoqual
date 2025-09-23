@@ -1,13 +1,12 @@
-import { Section, Wrapper } from "@/utils/Section"
 import InstitutionalProducts from "./InstitutionalProducts"
+import RecentProduct from "@/components/RecentProduct"
 export default async function Kits({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     return (
-        <Section>
-            <Wrapper>
-                <InstitutionalProducts id={id} />
-            </Wrapper>
-        </Section>
+        <main className="relative w-full">
+            <InstitutionalProducts id={id} />
+            <RecentProduct id={id} category={'institutional'} name={'Institutional Uniform Product'} />
+        </main>
     )
 }   
