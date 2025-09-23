@@ -21,7 +21,7 @@ import { ButtonPrimary, Subheading } from '@/utils/Section';
 
 export default function InstitutionalProducts({ id }: { id: string }) {
     const [hovering, setHovering] = useState(false);
-    const data: ProductType[] = Product.kits;
+    const data: ProductType[] = Product.institutional;
     const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
 
     const [fancyboxRef] = useFancybox({});
@@ -110,16 +110,16 @@ export default function InstitutionalProducts({ id }: { id: string }) {
                     }
 
                     {
-                        product.contents && (
+                        product.ingredients && (
                             <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
                                 <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
                                     <AccordionTrigger className='text-xl text-primary'>
-                                        Contents of the Kit
+                                        Ingredients
                                     </AccordionTrigger>
                                     <AccordionContent className="flex flex-col gap-4 text-balance">
                                         <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
                                             {
-                                                product.contents?.map((data, idx) => (
+                                                product.ingredients?.map((data, idx) => (
                                                     <li key={idx}>
                                                         {data}
                                                     </li>

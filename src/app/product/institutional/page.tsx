@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
 
 export default function InstitutionalPage() {
-  const data = Product.kits;
+  const data = Product.institutional;
   return (
     <Section classname='bg-gray-100'>
       <Wrapper>

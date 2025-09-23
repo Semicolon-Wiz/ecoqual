@@ -236,11 +236,99 @@ export const Product: ProductData = {
     institutional: [
         {
             id: 1,
-            name: 'Institutional Products',
-            description: 'Institutional Products',
-            image: ['/images/institutional.jpg'],
-            slug: 'institutional-products',
+            name: 'Scrub Suit / Kurta Pajama',
+            description: 'Comfortable medical attire designed for doctors, nurses, and staff, offering hygiene and ease of movement during long working hours.',
+            image: [
+                '/images/category/institutional/p-1/img-1.jpg',
+            ],
+            ingredients: [
+                'Cotton-polyester blend'
+            ],
+            specifications: [
+                'Available in sizes S–XXL',
+                'Machine washable, reusable',
+                'Shelf life: 24 months',
+                'Packaging: Individual set'
+            ],
+            features: [
+                'Breathable and lightweight fabric',
+                'Provides a professional appearance'
+            ],
+            slug: 'scrub-suit-kurta-pajama'
         },
+        {
+            id: 2,
+            name: 'O.T. Gown (Green Casement)',
+            description: 'Protective gown used in operation theatres, designed for complete coverage and sterilization safety.',
+            image: [
+                '/images/category/institutional/p-2/img-1.jpg',
+            ],
+            ingredients: [
+                'Cotton-rich casement fabric'
+            ],
+            specifications: [
+                'Standard green casement fabric',
+                'Tie-back closure, free size',
+                'Shelf life: 24 months',
+                'Packaging: Individually packed'
+            ],
+            features: [
+                'Resistant to frequent washes',
+                'Reusable and long-lasting'
+            ],
+            slug: 'ot-gown-green-casement'
+        },
+        {
+            id: 3,
+            name: 'Cut Sheet',
+            description: 'Protective sheet used on beds and examination tables to ensure hygiene and cleanliness.',
+            image: [
+                '/images/category/institutional/p-3/img-1.JPG',
+                '/images/category/institutional/p-3/img-2.JPG',
+                '/images/category/institutional/p-3/img-3.JPG',
+                '/images/category/institutional/p-3/img-4.JPG'
+            ],
+            ingredients: [
+                'Cotton/casement fabric'
+            ],
+            specifications: [
+                'Available in multiple sizes',
+                'Machine washable, reusable',
+                'Shelf life: 24 months',
+                'Packaging: 10 pcs per pack'
+            ],
+            features: [
+                'Highly absorbent and durable',
+                'Provides additional comfort layer'
+            ],
+            slug: 'cut-sheet'
+        },
+        {
+            id: 4,
+            name: 'Draw Sheet',
+            description: 'Durable sheet designed for hospital beds, providing protection and hygiene with daily use.',
+            image: [
+                '/images/category/institutional/p-4/img-1.JPG',
+                '/images/category/institutional/p-4/img-2.JPG',
+                '/images/category/institutional/p-4/img-3.JPG',
+                '/images/category/institutional/p-4/img-4.JPG'
+            ],
+            ingredients: [
+                'Cotton or poly-cotton blend'
+            ],
+            specifications: [
+                'Standard hospital sizes',
+                'Reusable and long-lasting',
+                'Shelf life: 24 months',
+                'Packaging: 10 pcs per pack'
+            ],
+            features: [
+                'Easy to spread and reposition',
+                'Withstands frequent washing'
+            ],
+            slug: 'draw-sheet'
+        }
+
     ],
     kits: [
         {
