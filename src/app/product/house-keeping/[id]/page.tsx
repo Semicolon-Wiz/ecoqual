@@ -1,14 +1,13 @@
-import { Section, Wrapper } from "@/utils/Section"
 import HouseKeepingProduct from "./Product"
+import RecentProduct from "@/components/RecentProduct"
 
 export default async function Product({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
 
   return (
-    <Section>
-      <Wrapper>
+    <main className="relative w-full">
         <HouseKeepingProduct id={id} />
-      </Wrapper>
-    </Section>
+        <RecentProduct id={id} category={'houseKeeping'} />
+    </main>
   )
 }   

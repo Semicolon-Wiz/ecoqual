@@ -11,7 +11,7 @@ export interface ProductType {
     contents?: string[];
     slug: string;
 }
-interface ProductData {
+export interface ProductData {
     houseKeeping: ProductType[];
     surgical: ProductType[];
     institutional: ProductType[];
