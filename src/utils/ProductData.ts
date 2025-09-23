@@ -127,26 +127,58 @@ export const Product: ProductData = {
         },
         {
             id: 5,
-            name: 'Hand Sanitizer (5 ltr Gallon)',
-            description: 'Sterile, laminated bedsheet ideal for operation theatres and critical care areas, offering extra protection against contamination.',
+            name: 'Disinfectant Floor Cleaner (5 ltr Gallon)',
+            description: 'A powerful disinfectant floor cleaner that removes tough stains while killing 99.9% of germs. Leaves floors fresh, hygienic, and safe for everyday use in homes, hospitals, and workplaces.',
             image: [
-                '/images/category/house-keeping/p-5/product-01.webp',
+                '/images/category/house-keeping/p-5/product-02.webp',
             ],
-            material: 'Hand sanitizer that effectively kills 99.9% of germs and bacteria.',
+            material: 'Benzalkonium Chloride (active disinfectant agent)',
             ingredients: [
-                'Hand sanitizer that effectively kills 99.9% of germs and bacteria.'
+                'Benzalkonium Chloride (active disinfectant agent)',
+                'Non-ionic & cationic surfactants (for cleaning action)',
+                'Perfume & coloring agents',
+                'Purified Water (as base solution)',
+
             ],
             specifications: [
-                'Quick-drying, non-sticky formula for frequent use',
-                'Provides effective protection without soap and water',
-                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
+               'Dual action: cleans dirt and disinfects surfaces effectively',
+                'Suitable for tiles, marble, granite, and other hard floors',
+                'Pleasant fragrance for a fresh and clean environment',
             ],
             features: [
-                'Sterile and infection-resistant',
-                'Provides waterproof protection'
+                'Dual action: cleans dirt and disinfects surfaces effectively',
+                'Suitable for tiles, marble, granite, and other hard floors',
+                'Pleasant fragrance for a fresh and clean environment',
             ],
-            slug: 'eco-hand-sanitizer'
+            slug: 'eco-floor-cleaner'
+        },
+        {
+            id: 6,
+            name: 'Concentrated Phenyl (1 ltr Bottle)',
+            description: 'A highly concentrated disinfectant phenyl formulated to provide long-lasting protection against germs. It cleans, deodorizes, and leaves floors with a fresh fragrance, ensuring a hygienic environment.',
+            image: [
+                '/images/category/house-keeping/p-5/product-05.webp',
+            ],
+            material: 'Pine Oil (active cleaning and deodorizing agent)',
+            ingredients: [
+                'Emulsifiers & Surfactants (for stable dilution)',
+                'Black/White Phenyl Compound (disinfectant base)',
+                'Purified Water (as base solution)',
+
+            ],
+            specifications: [
+               'Strong germicidal action for effective disinfection',
+                'Concentrated formula, economical in use after dilution',
+                'Suitable for hospitals, offices, schools, and household cleaning',
+            ],
+            features: [
+               'Strong germicidal action for effective disinfection',
+                'Concentrated formula, economical in use after dilution',
+                'Suitable for hospitals, offices, schools, and household cleaning',
+            ],
+            slug: 'eco-concentrated-phenyl'
         }
+
     ],
     surgical: [
         {
@@ -253,6 +285,33 @@ export const Product: ProductData = {
                 'Easy to apply and remove'
             ],
             slug: 'probe-cover'
+        },
+        {
+            id: 5,
+            name: 'Hand Sanitizer (5 ltr Gallon)',
+            description: 'A 5 Ltr bulk pack alcohol-based hand sanitizer that kills 99.9% of germs instantly. Ideal for hospitals, offices, and public spaces, it ensures convenient and long-lasting hand hygiene.',
+            image: [
+                '/images/category/house-keeping/p-5/product-01.webp',
+            ],
+            material: 'Hand sanitizer that effectively kills 99.9% of germs and bacteria.',
+            ingredients: [
+                'Ethyl Alcohol (IPA) 70–80% v/v (active ingredient for disinfection)',
+                'Glycerin (for skin moisturization)',
+                'Hydrogen Peroxide (for additional germ-killing action)',
+                'Purified Water (as base solution)',
+
+            ],
+            specifications: [
+                'Quick-drying, non-sticky formula for frequent use',
+                'Provides effective protection without soap and water',
+                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
+            ],
+            features: [
+                'Quick-drying, non-sticky formula for frequent use',
+                'Provides effective protection without soap and water',
+                'Large 5 Ltr gallon pack suitable for bulk and institutional use',
+            ],
+            slug: 'eco-hand-sanitizer'
         }
 
     ],

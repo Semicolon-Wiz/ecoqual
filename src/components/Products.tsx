@@ -22,50 +22,50 @@ export default function Products() {
         {
             name: 'Hand Sanitizer',
             description: 'A 5 Ltr bulk pack alcohol-based hand sanitizer that kills 99.9% of germs instantly. Ideal for hospitals, offices, and public spaces, it ensures convenient and long-lasting hand hygiene.',
-            link: '/product/house-keeping/eco-hand-sanitizer',
+            link: '/product/surgical/eco-hand-sanitizer',
             image: '/images/products/product-01.webp'
         },
         {
-            name: 'Disicfectant Floor Cleaner',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/disicfectant-floor-cleaner',
+            name: 'Disinfectant Floor Cleaner',
+            description: 'A powerful disinfectant floor cleaner that removes tough stains while killing 99.9% of germs. Leaves floors fresh, hygienic, and safe for everyday use in homes, hospitals, and workplaces.',
+            link: '/product/house-keeping/eco-floor-cleaner',
             image: '/images/products/product-02.webp'
         },
         {
-            name: 'Glass Cleaner',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/glass-cleaner',
-            image: '/images/products/product-03.webp'
-        },
-        {
-            name: 'Disicfectant Toilet Cleaner',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/disicfectant-toilet-cleaner',
-            image: '/images/products/product-04.webp'
-        },
-        {
             name: 'Concentrated Phenyl',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/phenyl',
+            description: 'A highly concentrated disinfectant phenyl formulated to provide long-lasting protection against germs',
+            link: '/product/house-keeping/eco-concentrated-phenyl',
             image: '/images/products/product-05.webp'
         },
         {
-            name: 'Liquid Handwash',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/handwash',
-            image: '/images/products/product-06.webp'
+            name: 'Mother & Baby Kit',
+            description: 'A convenient kit designed to support postnatal care, providing essentials for both mother and newborn.',
+            link: '/product/kits/mother-baby-kit',
+            image: '/images/category/kits/p-3/img-1.JPG'
         },
         {
-            name: 'Surgical Gown',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/surgical-gown',
-            image: '/images/products/product-07.webp'
+            name: 'Draw Sheet',
+            description: 'Durable sheet designed for hospital beds, providing protection and hygiene with daily use.',
+            link: '/product/institutional/draw-sheet',
+            image: '/images/category/institutional/p-4/img-1.JPG'
         },
         {
-            name: 'Garbage Bag',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt esse, voluptatum cumque corrupti placeat officia distinctio est, numquam quasi maiores vero in quidem eum dignissimos repellat eaque veniam molestiae cum.',
-            link: '/product/garbage-bag',
-            image: '/images/products/product-08.webp'
+            name: 'Dental Kit (Disposable)',
+            description: 'Single-use kit designed for dental procedures, ensuring hygiene and efficiency in clinics.',
+            link: '/product/kits/dental-kit-disposable',
+            image: '/images/category/kits/p-4/img-1.JPG'
+        },
+        {
+            name: 'LDPE Apron',
+            description: 'A lightweight, waterproof apron designed to keep staff safe from spills and stains during cleaning or medical duties. Easy to wear and dispose after use.',
+            link: '/product/house-keeping/ldpe-apron',
+            image: '/images/category/house-keeping/p-1/img-1.JPG'
+        },
+        {
+            name: 'OT Gown (Disposable)',
+            description: 'A lightweight, disposable gown that provides full coverage and safety for surgeons and staff, while ensuring comfort during long procedures.',
+            link: '/product/surgical/ot-gown-disposable',
+            image: '/images/category/surgical-products/p-1/img-1.JPG'
         }
     ]
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
