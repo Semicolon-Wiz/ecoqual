@@ -3,7 +3,7 @@ import { Product, ProductType } from '@/utils/ProductData';
 import { Section, Wrapper } from "@/utils/Section"
 import useFancybox from '@/utils/useFancybox';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Carousel,
     CarouselContent,
@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/accordion"
 import { Lens } from '@/components/ui/lens';
 import { ButtonPrimary, Subheading } from '@/utils/Section';
+import ProductEnquiry from '@/components/ProductEnquiry';
+import { useLenisControl } from '@/utils/SmoothScroll';
 
 export default function InstitutionalProducts({ id }: { id: string }) {
     const [hovering, setHovering] = useState(false);
@@ -29,6 +31,17 @@ export default function InstitutionalProducts({ id }: { id: string }) {
     if (!product) {
         return <div>Product not found</div>
     }
+
+    const [openEnquiryForm, setEnquiryForm] = useState<boolean>(false);
+    const { stopScroll, startScroll } = useLenisControl();
+    useEffect(() => {
+        if (openEnquiryForm) {
+            stopScroll();
+        } else {
+            startScroll();
+        }
+        return () => startScroll();
+    }, [openEnquiryForm, stopScroll, startScroll]);
 
     return (
         <Section>
@@ -61,7 +74,7 @@ export default function InstitutionalProducts({ id }: { id: string }) {
                         <Subheading classname='text-left max-w-xl mt-3'>
                             {product.description}
                         </Subheading>
-                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md'>
+                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md' onClick={()=>setEnquiryForm(true)}>
                             Send Enquiry
                         </ButtonPrimary>
 
@@ -138,6 +151,7 @@ export default function InstitutionalProducts({ id }: { id: string }) {
                     </div>
                 </div>
             </Wrapper>
+            <ProductEnquiry id={id} category='institutional' openForm={openEnquiryForm} closeForm={setEnquiryForm} />
         </Section>
     )
 }
