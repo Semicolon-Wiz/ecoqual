@@ -29,7 +29,7 @@ export default function AboutWet() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
-                        <div className="w-full h-full relative flex justify-center flex-col pr-5">
+                        <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
                             <h3 className='font-semibold lg:text-3xl md:text-xl text-base text-secondry'>
                                 A New Standard in Hygiene Care
                             </h3>
@@ -68,7 +68,7 @@ export default function AboutWet() {
 
                         </div>
 
-                        <div className="w-full h-full relative flex lg:justify-end justify-center items-center">
+                        <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-2 order-1">
                             <Image src={'/images/img.png'} alt='image'
                                 width={800}
                                 height={500}
