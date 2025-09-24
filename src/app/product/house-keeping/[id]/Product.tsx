@@ -2,7 +2,7 @@
 import { Product, ProductType } from '@/utils/ProductData';
 import useFancybox from '@/utils/useFancybox';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Carousel,
     CarouselContent,
@@ -18,17 +18,28 @@ import {
 } from "@/components/ui/accordion"
 import { Lens } from '@/components/ui/lens';
 import { ButtonPrimary, Section, Subheading, Wrapper } from '@/utils/Section';
+import ProductEnquiry from '@/components/ProductEnquiry';
+import { useLenisControl } from '@/utils/SmoothScroll';
 
 export default function HouseKeepingProduct({ id }: { id: string }) {
     const [hovering, setHovering] = useState(false);
     const data: ProductType[] = Product.houseKeeping;
-
+    const [openEnquiryForm, setEnquiryForm] = useState<boolean>(false);
+    const { stopScroll, startScroll } = useLenisControl();
     const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
 
     const [fancyboxRef] = useFancybox({});
     if (!product) {
         return <div>Product not found</div>
     }
+    useEffect(() => {
+        if (openEnquiryForm) {
+            stopScroll();
+        } else {
+            startScroll();
+        }
+        return () => startScroll();
+    }, [openEnquiryForm, stopScroll, startScroll]);
     return (
         <Section>
             <Wrapper>
@@ -60,7 +71,7 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
                         <Subheading classname='text-left max-w-xl mt-3'>
                             {product.description}
                         </Subheading>
-                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md'>
+                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md' onClick={() => setEnquiryForm(true)}>
                             Send Enquiry
                         </ButtonPrimary>
 
@@ -140,6 +151,7 @@ export default function HouseKeepingProduct({ id }: { id: string }) {
                     </div>
                 </div>
             </Wrapper>
+            <ProductEnquiry id={id} category='houseKeeping' openForm={openEnquiryForm} closeForm={setEnquiryForm} />
         </Section>
     )
 }

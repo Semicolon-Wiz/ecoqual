@@ -65,28 +65,16 @@ export default function Footer() {
     const socialMedia: SocialIcons[] = [
         {
             icon: '/images/svg/icons/instagram.svg',
-            link: ''
+            link: 'https://www.instagram.com/eq.solutions__/'
         },
         {
             icon: '/images/svg/icons/facebook.svg',
-            link: ''
-        },
-        {
-            icon: '/images/svg/icons/linkedin.svg',
-            link: ''
+            link: 'https://www.facebook.com/people/EQ-Solutions/61579565495330/'
         },
         {
             icon: '/images/svg/icons/youtube.svg',
-            link: ''
-        },
-        {
-            icon: '/images/svg/icons/x.svg',
-            link: ''
-        },
-        {
-            icon: '/images/svg/icons/google.svg',
-            link: ''
-        },
+            link: 'https://www.youtube.com/@EcoQualHealthcare'
+        }
     ]
 
     return (
@@ -100,7 +88,7 @@ export default function Footer() {
                     <div className='mt-3 w-full relative flex items-center gap-2'>
                         {
                             socialMedia.map((item, idx) => (
-                                <Link key={idx} href={item.link}>
+                                <Link key={idx} href={item.link} target='_blank'>
                                     <Image src={item.icon} width={32} height={32} alt='Social icon' />
                                 </Link>
                             ))
