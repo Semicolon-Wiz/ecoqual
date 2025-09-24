@@ -384,10 +384,10 @@ export function Technical() {
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
                         <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Product Overview
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentOne.map((data, idx) => (
                                             <li key={idx}>
@@ -406,14 +406,14 @@ export function Technical() {
 
                     <div className='flex-1 relative grid lg:grid-cols-[550px_1fr] grid-cols-1 gap-10'>
                         <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-1 order-2 '
                         />
-                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-2 order-1 '>
                             <div className='w-full relative md:pl-10'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Product Specification
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentTwo.map((data, idx) => (
                                             <li key={idx}>
@@ -429,10 +429,10 @@ export function Technical() {
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
                         <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Functional Ingredient Breakdown
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentThree.map((data, idx) => (
                                             <li key={idx}>
@@ -455,9 +455,9 @@ export function Technical() {
                                 <thead className="bg-primary text-white">
                                     <tr>
                                         <th className="px-4 py-3 text-left text-sm font-semibold">S.No</th>
-                                        <th className="px-4 py-3 text-left text-sm font-semibold">Ingredient</th>
-                                        <th className="px-4 py-3 text-left text-sm font-semibold">Classification / Function</th>
-                                        <th className="px-4 py-3 text-left text-sm font-semibold">Relevance for Patients</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold min-w-40">Ingredient</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold min-w-48">Classification / Function</th>
+                                        <th className="px-4 py-3 text-left text-sm font-semibold min-w-56">Relevance for Patients</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200">
@@ -547,22 +547,22 @@ export function ContributorMain() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-1 order-2'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Introduction
                                 </h2>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     The National Health Mission (NHM) provides a framework for strengthening healthcare delivery across India. Within this framework, the National Programme for Health Care of the Elderly (NPHCE) focuses on specialized geriatric care through District Hospitals, Community Health Centres (CHCs), and Primary Health Centres (PHCs).
                                 </Subheading>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     EQ Wet Wash Gloves have been proposed as an innovative hygiene solution to support NHM and NPHCE objectives, addressing systemic challenges in geriatric hygiene management such as water scarcity, infection control, patient comfort, and operational efficiency.
                                 </Subheading>
                             </div>
                         </div>
 
                         <Image src='/images/about/why.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
 
@@ -574,13 +574,13 @@ export function ContributorMain() {
 
                         <div className='md:pl-10 relative w-full h-full flex flex-col gap-10'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Current Challenges in Geriatric Hygiene
                                 </h2>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     Elderly patients, especially those who are bedridden or mobility-restricted, face significant hygiene gaps under existing practices.
                                 </Subheading>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentOne.map((data, idx) => (
                                             <li key={idx}>
@@ -594,18 +594,18 @@ export function ContributorMain() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-1 order-2'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     EQ Wet Wash Gloves - A Policy-Aligned Solution
                                 </h2>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     EQ Wet Wash Gloves offer a waterless, single-use, pre-moistened solution for full-body cleansing that is safe, efficient, and dignified.
                                 </Subheading>
-                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                <h2 className='font-bold text-lg text-primary mt-5'>
                                     Key Benefits
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-2 list-decimal pl-4'>
                                     <li> Zero water requirement </li>
                                     <li> Minimal cross-contamination risk </li>
                                     <li> Faster hygiene routine (6–8 minutes per patient) </li>
@@ -616,7 +616,7 @@ export function ContributorMain() {
                         </div>
 
                         <Image src='/images/about/7.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
 
@@ -628,11 +628,11 @@ export function ContributorMain() {
 
                         <div className='md:pl-10 relative w-full h-full flex flex-col gap-10'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Alignment with NHM & NPHCE Objectives
                                 </h2>
 
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentTwo.map((data, idx) => (
                                             <li key={idx}>
@@ -642,10 +642,10 @@ export function ContributorMain() {
                                     }
                                 </ul>
 
-                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                <h2 className='font-bold text-lg text-primary mt-5'>
                                     Supports NPHCE goals by
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     <li> Ensuring hygienic and dignified elder care. </li>
                                     <li> Reducing morbidity from preventable infections. </li>
                                     <li> Enabling community-based and home-based elderly care interventions. </li>
@@ -655,16 +655,16 @@ export function ContributorMain() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10'>
+                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-1 order-2'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Implementation Framework
                                 </h2>
 
-                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                <h2 className='font-bold text-lg text-primary mt-5'>
                                     Phase 1: Pilot (6 months)
                                 </h2>
-                                <ul className='mt-1 list-decimal'>
+                                <ul className='mt-1 list-decimal pl-4'>
                                     <li> Coverage: 10 District Hospitals + 20 CHCs under NPHCE </li>
                                     <li> Training: Orientation for nurses, ANMs, geriatric care attendants </li>
                                     <li>
@@ -678,18 +678,18 @@ export function ContributorMain() {
                                     </li>
                                 </ul>
 
-                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                <h2 className='font-bold text-lg text-primary mt-5'>
                                     Phase 2: Statewide Scale-up
                                 </h2>
-                                <ul className='mt-1 list-decimal'>
+                                <ul className='mt-1 list-decimal pl-4'>
                                     <li> Inclusion in Annual PIP under NHM&apos;s “Consumables for Geriatric Care” </li>
                                     <li> Centralized procurement via UPMSCL or NHM Procurement Cell </li>
                                     <li> Distribution to all NPHCE facilities, including home-based elderly care programs </li>
                                 </ul>
-                                <h2 className='font-bold md:text-lg text-primary mt-5'>
+                                <h2 className='font-bold text-lg text-primary mt-5'>
                                     Expected Measurable Outcomes
                                 </h2>
-                                <ul className='mt-5 list-decimal'>
+                                <ul className='mt-5 list-decimal pl-4'>
                                     {
                                         contentThree.map((data, idx) => (
                                             <li key={idx}>
@@ -702,7 +702,7 @@ export function ContributorMain() {
                         </div>
 
                         <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
 
@@ -731,32 +731,32 @@ export function Packaging() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col gap-10'>
+                        <div className='relative w-full h-full flex flex-col gap-10 lg:order-1 order-2'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Packaging That Fits Every Setup
                                 </h2>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     EQ Wet Wash Gloves are thoughtfully packaged to meet the diverse requirements of healthcare providers, caregivers, and institutions. Whether it is for individual patient care, small clinics, or large-scale hospital use, the gloves are available in multiple pack sizes that ensure convenience and flexibility. Each pouch is lightweight, easy to open, and hygienically sealed to maintain product safety until use.
                                 </Subheading>
-                                <Subheading classname='text-left !text-lg mt-3'>
+                                <Subheading classname='text-left lg:!text-lg mt-3'>
                                     The packaging is designed to support efficient distribution, storage, and inventory management, making it suitable for routine care as well as emergency or large-volume supply. From compact packs for bedside care to bulk cartons for institutional procurement, EQ Wet Wash Gloves provide a scalable solution that adapts to different levels of demand.
                                 </Subheading>
                             </div>
                         </div>
 
                         <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col gap-10'>
+                        <div className='relative w-full h-full flex flex-col gap-7 lg:order-1 order-2'>
                             <div className='w-full relative'>
-                                <h2 className='font-bold md:text-2xl text-primary'>
+                                <h2 className='font-bold text-2xl text-primary'>
                                     Packaging Options
                                 </h2>
-                                <ul className='mt-5 list-decimal flex flex-col gap-4'>
+                                <ul className='mt-5 list-decimal flex flex-col gap-4 pl-4'>
                                     <li>
                                         Small Size Gloves
                                         <ul className='pl-4 list-disc'>
@@ -780,10 +780,10 @@ export function Packaging() {
                                         </ul>
                                     </li>
                                 </ul>
-                                <h2 className='font-bold md:text-2xl text-primary mt-5'>
+                                <h2 className='font-bold text-2xl text-primary mt-5'>
                                     Supply & Distribution
                                 </h2>
-                                <ul className='mt-3 list-decimal'>
+                                <ul className='mt-3 list-decimal pl-4'>
                                     <li>
                                         <strong className='font-montserrat text-zinc-700'>Unit-based packs:</strong> Hygienic single-use pouches for direct patient care.
                                     </li>
@@ -804,7 +804,7 @@ export function Packaging() {
                         </div>
 
                         <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
-                            className='w-full h-auto'
+                            className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
                 </div>
