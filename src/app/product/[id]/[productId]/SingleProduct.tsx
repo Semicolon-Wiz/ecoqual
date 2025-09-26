@@ -22,6 +22,7 @@ import ProductEnquiry from '@/components/ProductEnquiry';
 import { useLenisControl } from '@/utils/SmoothScroll';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { SingleProductSkeleton } from "@/components/Skeleton";
 
 export interface Product {
     id: number;
@@ -76,7 +77,7 @@ export default function SingleProduct({ category, productId }: { category: strin
     }, [openEnquiryForm, stopScroll, startScroll]);
 
     if (isLoading) {
-        return <span>Loading....</span>
+        return <SingleProductSkeleton />
     }
 
     return (
