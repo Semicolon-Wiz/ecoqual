@@ -8,68 +8,46 @@ import { Expand, X } from 'lucide-react';
 import Background from '@/utils/Background';
 import { useLenisControl } from '@/utils/SmoothScroll';
 import { usePathname } from 'next/navigation';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
-interface Products {
-    name: string;
-    description: string;
-    link: string;
+
+export interface Product {
+    id: number;
+    title: string;
+    slug: string;
+    product_description: string;
+    category_id: number;
+    label_id: number;
     image: string;
+    category: Category;
 }
+export interface Category {
+    id: number;
+    title: string;
+    slug: string;
+}
+interface ApiResponse<T> {
+    success: boolean;
+    message: string;
+    products: T;
+}
+
+const fetchProducts = async (): Promise<Product[]> => {
+    const res = await axios.get<ApiResponse<Product[]>>("https://inforbit.in/demo/ecoqual/api/home-product");
+    return res.data.products;
+};
+
 
 export default function Products() {
     const router = usePathname()
-    const product: Products[] = [
-        {
-            name: 'Hand Sanitizer',
-            description: 'A 5 Ltr bulk pack alcohol-based hand sanitizer that kills 99.9% of germs instantly. Ideal for hospitals, offices, and public spaces, it ensures convenient and long-lasting hand hygiene.',
-            link: '/product/surgical/eco-hand-sanitizer',
-            image: '/images/products/product-01.webp'
-        },
-        {
-            name: 'Disinfectant Floor Cleaner',
-            description: 'A powerful disinfectant floor cleaner that removes tough stains while killing 99.9% of germs. Leaves floors fresh, hygienic, and safe for everyday use in homes, hospitals, and workplaces.',
-            link: '/product/house-keeping/eco-floor-cleaner',
-            image: '/images/products/product-02.webp'
-        },
-        {
-            name: 'Concentrated Phenyl',
-            description: 'A highly concentrated disinfectant phenyl formulated to provide long-lasting protection against germs',
-            link: '/product/house-keeping/eco-concentrated-phenyl',
-            image: '/images/products/product-05.webp'
-        },
-        {
-            name: 'Mother & Baby Kit',
-            description: 'A convenient kit designed to support postnatal care, providing essentials for both mother and newborn.',
-            link: '/product/kits/mother-baby-kit',
-            image: '/images/category/kits/p-3/img-1.JPG'
-        },
-        {
-            name: 'Draw Sheet',
-            description: 'Durable sheet designed for hospital beds, providing protection and hygiene with daily use.',
-            link: '/product/institutional/draw-sheet',
-            image: '/images/category/institutional/p-4/img-1.JPG'
-        },
-        {
-            name: 'Dental Kit (Disposable)',
-            description: 'Single-use kit designed for dental procedures, ensuring hygiene and efficiency in clinics.',
-            link: '/product/kits/dental-kit-disposable',
-            image: '/images/category/kits/p-4/img-1.JPG'
-        },
-        {
-            name: 'LDPE Apron',
-            description: 'A lightweight, waterproof apron designed to keep staff safe from spills and stains during cleaning or medical duties. Easy to wear and dispose after use.',
-            link: '/product/house-keeping/ldpe-apron',
-            image: '/images/category/house-keeping/p-1/img-1.JPG'
-        },
-        {
-            name: 'OT Gown (Disposable)',
-            description: 'A lightweight, disposable gown that provides full coverage and safety for surgeons and staff, while ensuring comfort during long procedures.',
-            link: '/product/surgical/ot-gown-disposable',
-            image: '/images/category/surgical-products/p-1/img-1.JPG'
-        }
-    ]
+    const { data, error, isLoading } = useQuery<Product[], Error>({
+        queryKey: ["product", "homepage"],
+        queryFn: fetchProducts,
+        staleTime: 1000 * 60 * 5,
+    });
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const { stopScroll, startScroll } = useLenisControl();
 
     useEffect(() => {
@@ -82,7 +60,7 @@ export default function Products() {
     }, [selectedProduct, stopScroll, startScroll]);
 
     return (
-        <Section classname={` ${ router !== '/product/cleaning-products' ? 'bg-light-bg' : 'bg-transparent'}`}>
+        <Section classname='bg-light-bg'>
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
@@ -95,13 +73,13 @@ export default function Products() {
                     </div>
 
                     <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10'>
-                        {product.map((p, idx) => (
+                        {data?.map((p, idx) => (
                             <motion.div
                                 key={idx}
                                 className='relative w-full h-full p-2.5'
                             >
                                 <Link
-                                    href={p.link}
+                                    href={`/product/${p.category.slug}/${p.slug}`}
                                     className='relative w-full h-full group'
                                     onMouseEnter={() => setHoveredIndex(idx)}
                                     onMouseLeave={() => setHoveredIndex(null)}
@@ -111,7 +89,7 @@ export default function Products() {
                                             <motion.div layoutId={`image-${idx}`}>
                                                 <Image
                                                     src={p.image}
-                                                    alt={p.name}
+                                                    alt={p.title}
                                                     width={400}
                                                     height={300}
                                                     className='w-full h-full rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
@@ -123,7 +101,7 @@ export default function Products() {
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     e.stopPropagation();
-                                                    setSelectedProduct(idx);
+                                                    setSelectedProduct(p);
                                                 }}
                                             >
                                                 <Expand className='text-primary' size={16} />
@@ -134,14 +112,14 @@ export default function Products() {
                                             layoutId={`title-${idx}`}
                                             className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-white mt-2'
                                         >
-                                            {p.name}
+                                            {p.title}
                                         </motion.h3>
-                                        <motion.p
+                                        <motion.div
                                             layoutId={`desc-${idx}`}
-                                            className='text-sm text-zinc-800 transition-colors duration-200 ease-out group-hover:text-white'
+                                            className='text-sm text-zinc-800 transition-colors duration-200 ease-out group-hover:text-white line-clamp-3'
+                                            dangerouslySetInnerHTML={{ __html: p?.product_description ?? "" }}
                                         >
-                                            {p.description.slice(0, 80) + '.....'}
-                                        </motion.p>
+                                        </motion.div>
                                     </div>
                                 </Link>
                                 <Background hoveredIndex={hoveredIndex} idx={idx} />
@@ -174,10 +152,10 @@ export default function Products() {
 
                                         <motion.div layoutId={`image-${selectedProduct}`}>
                                             <Image
-                                                src={product[selectedProduct].image}
+                                                src={selectedProduct.image}
                                                 width={600}
                                                 height={400}
-                                                alt={product[selectedProduct].name}
+                                                alt={selectedProduct.title}
                                                 className='w-full h-auto rounded-2xl'
                                             />
                                         </motion.div>
@@ -186,15 +164,15 @@ export default function Products() {
                                             layoutId={`title-${selectedProduct}`}
                                             className='font-bold text-2xl text-primary-dark mt-4'
                                         >
-                                            {product[selectedProduct].name}
+                                            {selectedProduct.title}
                                         </motion.h3>
-                                        <motion.p
+                                        <motion.div
                                             layoutId={`desc-${selectedProduct}`}
                                             className='font-medium text-base text-zinc-700 mt-2'
+                                            dangerouslySetInnerHTML={{ __html: selectedProduct?.product_description ?? "" }}
                                         >
-                                            {product[selectedProduct].description}
-                                        </motion.p>
-                                        <Link href={product[selectedProduct].link} className='mt-4 flex ml-auto px-4 py-2 bg-primary text-white w-max rounded'>
+                                        </motion.div>
+                                        <Link href={`/product/${selectedProduct.category.slug}/${selectedProduct.slug}`} className='mt-4 flex ml-auto px-4 py-2 bg-primary text-white w-max rounded'>
                                             View in Details
                                         </Link>
                                     </motion.div>
