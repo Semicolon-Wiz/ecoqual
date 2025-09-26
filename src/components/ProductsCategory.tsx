@@ -30,11 +30,7 @@ const fetchCategories = async (): Promise<Data[]> => {
 };
 
 export default function ProductsCategory() {
-    const { data, error, isLoading } = useQuery<Data[], Error>({
-        queryKey: ["categories", 'home'],
-        queryFn: fetchCategories,
-        staleTime: 1000 * 60 * 5,
-    });
+
     return (
         <Section>
             <Wrapper>
@@ -47,35 +43,47 @@ export default function ProductsCategory() {
                             An extended line of useful and dependable products that complement our main healthcare solutions.
                         </Subheading>
                     </div>
-
                     <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
-                        {
-                            data?.map((items, idx) => (
-                                <div key={idx} className='w-full h-full border border-gray-200 md:rounded-2xl rounded-lg md:p-5 p-2.5 '>
-                                    <div className='relative w-full'>
-                                        <Image src={items.image} alt={items.title} width={500} height={400}
-                                            className='w-full h-[200px] object-cover object-center rounded-lg'
-                                        />
-                                    </div>
-                                    <div className='mt-5 relative'>
-                                        <h3 className='font-semibold !font-montserrat lg:text-2xl md:text-lg text-base text-zinc-700'>
-                                            {items.title}
-                                        </h3>
-                                        <Subheading classname='text-left'>
-                                            {items.description}
-                                        </Subheading>
-
-                                        <Link href={`/product/${items.slug}`} className='mt-6 px-4 py-2 rounded-full bg-secondry text-white hover:bg-secondry-dark w-max ml-auto flex items-center gap-2'>
-                                            View All Products
-                                            <MoveUpRight size={20} />
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                        <Category />
                     </div>
                 </div>
             </Wrapper>
         </Section>
+    )
+}
+
+export function Category() {
+    const { data, error, isLoading } = useQuery<Data[], Error>({
+        queryKey: ["categories", 'home'],
+        queryFn: fetchCategories,
+        staleTime: 1000 * 60 * 5,
+    });
+    return (
+        <>
+            {
+                data?.map((items, idx) => (
+                    <div key={idx} className='w-full h-full border border-gray-200 md:rounded-2xl rounded-lg md:p-5 p-2.5 '>
+                        <div className='relative w-full'>
+                            <Image src={items.image} alt={items.title} width={500} height={400}
+                                className='w-full h-[200px] object-cover object-center rounded-lg'
+                            />
+                        </div>
+                        <div className='mt-5 relative'>
+                            <h3 className='font-semibold !font-montserrat lg:text-2xl md:text-lg text-base text-zinc-700'>
+                                {items.title}
+                            </h3>
+                            <Subheading classname='text-left'>
+                                {items.description}
+                            </Subheading>
+
+                            <Link href={`/product/${items.slug}`} className='mt-6 px-4 py-2 rounded-full bg-secondry text-white hover:bg-secondry-dark w-max ml-auto flex items-center gap-2'>
+                                View All Products
+                                <MoveUpRight size={20} />
+                            </Link>
+                        </div>
+                    </div>
+                ))
+            }
+        </>
     )
 }
