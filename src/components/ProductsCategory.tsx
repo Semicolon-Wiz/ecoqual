@@ -6,6 +6,7 @@ import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import { CategorySkeleton } from './Skeleton';
 
 interface Data {
     id: string;
@@ -58,6 +59,19 @@ export function Category() {
         queryFn: fetchCategories,
         staleTime: 1000 * 60 * 5,
     });
+
+    if (isLoading) {
+        return (
+            <>
+                {
+                    Array.from({ length: 5 }).map((_, id) => (
+                        <CategorySkeleton key={id}/>
+                    ))
+                }
+            </>
+        )
+    }
+
     return (
         <>
             {
