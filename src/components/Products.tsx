@@ -10,6 +10,7 @@ import { useLenisControl } from '@/utils/SmoothScroll';
 import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { HomeProductSkeleton } from './Skeleton';
 
 
 export interface Product {
@@ -59,6 +60,22 @@ export default function Products() {
         return () => startScroll();
     }, [selectedProduct, stopScroll, startScroll]);
 
+    if (isLoading) {
+        return (
+            <Section classname='bg-light-bg'>
+                <Wrapper>
+                    <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10 gap-8'>
+                        {
+                            Array.from({ length: 8 }).map((_, id) => (
+                                <HomeProductSkeleton key={id} />
+                            ))
+                        }
+                    </div>
+                </Wrapper>
+            </Section>
+        )
+    }
+
     return (
         <Section classname='bg-light-bg'>
             <Wrapper>
@@ -86,13 +103,13 @@ export default function Products() {
                                 >
                                     <div className='w-full relative h-full z-10'>
                                         <div className='w-full relative'>
-                                            <motion.div layoutId={`image-${idx}`}>
+                                            <motion.div layoutId={`product-image-${p.id}`}>
                                                 <Image
                                                     src={p.image}
                                                     alt={p.title}
                                                     width={400}
                                                     height={300}
-                                                    className='w-full h-full rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
+                                                    className='w-full h-[270px] rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
                                                 />
                                             </motion.div>
 
@@ -109,13 +126,13 @@ export default function Products() {
                                         </div>
 
                                         <motion.h3
-                                            layoutId={`title-${idx}`}
+                                            layoutId={`product-title-${p.id}`}
                                             className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-white mt-2'
                                         >
                                             {p.title}
                                         </motion.h3>
                                         <motion.div
-                                            layoutId={`desc-${idx}`}
+                                            layoutId={`product-description-${p.id}`}
                                             className='text-sm text-zinc-800 transition-colors duration-200 ease-out group-hover:text-white line-clamp-3'
                                             dangerouslySetInnerHTML={{ __html: p?.product_description ?? "" }}
                                         >
@@ -127,7 +144,7 @@ export default function Products() {
                         ))}
                     </div>
 
-                    <AnimatePresence>
+                    <AnimatePresence mode='wait'>
                         {selectedProduct !== null && (
                             <motion.div
                                 className='fixed inset-0 bg-black/60 backdrop-blur-sm z-50  p-10 overflow-y-auto'
@@ -140,7 +157,7 @@ export default function Products() {
                                 <div className='relative w-full h-max'>
                                     <motion.div
                                         className='relative max-w-lg mx-auto w-full h-max bg-white p-5 rounded-lg shadow-lg'
-                                        layoutId={`card-${selectedProduct}`}
+                                        layoutId={`card-${selectedProduct.id}`}
                                         onClick={(e) => e.stopPropagation()}
                                     >
                                         <button
@@ -150,7 +167,7 @@ export default function Products() {
                                             <X />
                                         </button>
 
-                                        <motion.div layoutId={`image-${selectedProduct}`}>
+                                        <motion.div layoutId={`product-image-${selectedProduct.id}`}>
                                             <Image
                                                 src={selectedProduct.image}
                                                 width={600}
@@ -161,13 +178,13 @@ export default function Products() {
                                         </motion.div>
 
                                         <motion.h3
-                                            layoutId={`title-${selectedProduct}`}
+                                            layoutId={`product-title-${selectedProduct.id}`}
                                             className='font-bold text-2xl text-primary-dark mt-4'
                                         >
                                             {selectedProduct.title}
                                         </motion.h3>
                                         <motion.div
-                                            layoutId={`desc-${selectedProduct}`}
+                                            layoutId={`product-description-${selectedProduct.id}`}
                                             className='font-medium text-base text-zinc-700 mt-2'
                                             dangerouslySetInnerHTML={{ __html: selectedProduct?.product_description ?? "" }}
                                         >
