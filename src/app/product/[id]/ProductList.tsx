@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { ProductSkeleton } from '@/components/Skeleton';
 
 interface Products {
     id: string,
@@ -42,7 +43,19 @@ export default function ProductList({ id }: { id: string }) {
     });
 
     if (isLoading) {
-        return <span>Loading....</span>
+        return (
+            <Section classname='bg-gray-100'>
+                <Wrapper>
+                    <div className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
+                        {
+                            Array.from({ length: 8 }).map((_, id) => (
+                                <ProductSkeleton key={id} />
+                            ))
+                        }
+                    </div>
+                </Wrapper>
+            </Section>
+        )
     }
 
     return (
