@@ -13,15 +13,12 @@ interface FormData {
     message: string;
 }
 interface Props {
-    id: string;
-    category: keyof ProductData
+    name: string;
     openForm: boolean;
     closeForm: Dispatch<SetStateAction<boolean>>
 }
 
-export default function ProductEnquiry({ id, category, openForm, closeForm }: Props) {
-    const product: ProductType | undefined = Product[category].find(p => (id.toLowerCase() === p.slug.toLowerCase()))
-    const name = product?.name ?? '';
+export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
