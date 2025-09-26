@@ -67,7 +67,7 @@ export default function ProductList({ id }: { id: string }) {
                             {data?.category.category_heading ?? 'Housekeeping Products'}
                         </Heading>
                         <Subheading classname='max-w-lg mx-auto'>
-                            {data?.category.description ?? 'Easy and effective cleaning solutions. Made to keep places neat, hygienic, and fresh every day.'}
+                            {data?.category.category_heading ?? 'Easy and effective cleaning solutions. Made to keep places neat, hygienic, and fresh every day.'}
                         </Subheading>
                     </div>
 
