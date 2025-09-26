@@ -1,5 +1,4 @@
-'use client'
-import { Product, ProductType } from '@/utils/ProductData';
+'use client';
 import { Section, Wrapper } from "@/utils/Section"
 import useFancybox from '@/utils/useFancybox';
 import Image from 'next/image';
@@ -18,19 +17,54 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Lens } from '@/components/ui/lens';
-import { ButtonPrimary, Subheading } from '@/utils/Section';
+import { ButtonPrimary } from '@/utils/Section';
 import ProductEnquiry from '@/components/ProductEnquiry';
 import { useLenisControl } from '@/utils/SmoothScroll';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+import { SingleProductSkeleton } from "@/components/Skeleton";
 
-export default function KitsProduct({ id }: { id: string }) {
+export interface Product {
+    id: number;
+    title: string;
+    slug: string;
+    product_description: string;
+    product_specification: string;
+    video_id: string | null;
+    meta_title: string | null;
+    meta_description: string | null;
+    category: Category;
+    images: string[];
+    materials: string[];
+    ingredients: string[];
+    specifications: string[];
+    additional_features: string[];
+}
+export interface Category {
+    id: number;
+    title: string;
+    slug: string;
+}
+interface ApiResponse<T> {
+    success: boolean;
+    message: string;
+    product: T;
+}
+
+export default function SingleProduct({ category, productId }: { category: string; productId: string }) {
+    const fetchProducts = async (id: string): Promise<Product> => {
+        const res = await axios.get<ApiResponse<Product>>(`https://inforbit.in/demo/ecoqual/api/products/${id}`);
+        return res.data.product;
+    };
+
+    const { data, error, isLoading } = useQuery<Product, Error>({
+        queryKey: ["product", category, productId],
+        queryFn: () => fetchProducts(productId),
+        staleTime: 1000 * 60 * 5,
+        enabled: Boolean(productId),
+    });
     const [hovering, setHovering] = useState(false);
-    const data: ProductType[] = Product.kits;
-    const product: ProductType | undefined = data.find((p) => id.toLocaleLowerCase() === p.slug.toLocaleLowerCase())
-
     const [fancyboxRef] = useFancybox({});
-    if (!product) {
-        return <div>Product not found</div>
-    }
     const [openEnquiryForm, setEnquiryForm] = useState<boolean>(false);
     const { stopScroll, startScroll } = useLenisControl();
     useEffect(() => {
@@ -42,6 +76,10 @@ export default function KitsProduct({ id }: { id: string }) {
         return () => startScroll();
     }, [openEnquiryForm, stopScroll, startScroll]);
 
+    if (isLoading) {
+        return <SingleProductSkeleton />
+    }
+
     return (
         <Section>
             <Wrapper>
@@ -50,11 +88,12 @@ export default function KitsProduct({ id }: { id: string }) {
                         <div className="sticky top-10">
                             <Carousel className="w-full ">
                                 <CarouselContent ref={fancyboxRef}>
-                                    {product.image.map((src, idx) => (
+                                    {data?.images.map((src, idx) => (
                                         <CarouselItem key={idx}>
                                             <div data-fancybox="gallery" data-src={src} data-thumb-src={src}>
                                                 <Lens hovering={hovering} setHovering={setHovering}>
-                                                    <Image src={src} key={idx} width={500} height={200} alt={product.name} className='rounded-lg w-full h-auto' />
+                                                    <Image src={src} key={idx} width={500} height={200}
+                                                        alt={data.title} className='rounded-lg w-full h-auto' />
                                                 </Lens>
                                             </div>
                                         </CarouselItem>
@@ -68,18 +107,20 @@ export default function KitsProduct({ id }: { id: string }) {
 
                     <div className='flex-1 relative'>
                         <h1 className='font-bold text-4xl text-primary'>
-                            {product.name}
+                            {data?.title}
                         </h1>
-                        <Subheading classname='text-left max-w-xl mt-3'>
-                            {product.description}
-                        </Subheading>
-                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md' onClick={()=>setEnquiryForm(true)}>
+                        <div
+                            className="prose mt-2 max-w-none text-gray-700"
+                            dangerouslySetInnerHTML={{ __html: data?.product_description ?? "" }}
+                        />
+
+                        <ButtonPrimary classname='mt-5 !bg-zinc-800 !rounded-md' onClick={() => setEnquiryForm(true)}>
                             Send Enquiry
                         </ButtonPrimary>
 
                         <div className='w-full relative mt-5 flex flex-col gap-4'>
                             {
-                                product.features && (
+                                data?.additional_features && data.additional_features.length > 0 && (
                                     <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                                         <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
                                             <AccordionTrigger className='text-xl text-primary'>
@@ -88,7 +129,7 @@ export default function KitsProduct({ id }: { id: string }) {
                                             <AccordionContent className="flex flex-col gap-4 text-balance">
                                                 <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
                                                     {
-                                                        product.features?.map((data, idx) => (
+                                                        data.additional_features?.map((data, idx) => (
                                                             <li key={idx}>
                                                                 {data}
                                                             </li>
@@ -102,7 +143,7 @@ export default function KitsProduct({ id }: { id: string }) {
                             }
 
                             {
-                                product.specifications && (
+                                data?.specifications && data?.specifications?.length > 0 && (
                                     <Accordion type="single" collapsible className="w-full" defaultValue="item-2">
                                         <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
                                             <AccordionTrigger className='text-xl text-primary'>
@@ -111,7 +152,7 @@ export default function KitsProduct({ id }: { id: string }) {
                                             <AccordionContent className="flex flex-col gap-4 text-balance">
                                                 <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
                                                     {
-                                                        product.specifications?.map((data, idx) => (
+                                                        data?.specifications?.map((data, idx) => (
                                                             <li key={idx}>
                                                                 {data}
                                                             </li>
@@ -125,22 +166,63 @@ export default function KitsProduct({ id }: { id: string }) {
                             }
 
                             {
-                                product.contents && (
+                                data?.ingredients && data.ingredients.length > 0 && (
                                     <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
                                         <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
                                             <AccordionTrigger className='text-xl text-primary'>
-                                                Contents of the Kit
+                                                Ingredients
                                             </AccordionTrigger>
                                             <AccordionContent className="flex flex-col gap-4 text-balance">
                                                 <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
                                                     {
-                                                        product.contents?.map((data, idx) => (
+                                                        data?.ingredients?.map((data, idx) => (
                                                             <li key={idx}>
                                                                 {data}
                                                             </li>
                                                         ))
                                                     }
                                                 </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    </Accordion>
+                                )
+                            }
+
+                            {
+                                data?.materials && data.materials.length > 0 && (
+                                    <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
+                                        <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
+                                            <AccordionTrigger className='text-xl text-primary'>
+                                                Ingredients
+                                            </AccordionTrigger>
+                                            <AccordionContent className="flex flex-col gap-4 text-balance">
+                                                <ul className='w-full flex flex-col gap-1 font-montserrat text-base'>
+                                                    {
+                                                        data?.materials?.map((data, idx) => (
+                                                            <li key={idx}>
+                                                                {data}
+                                                            </li>
+                                                        ))
+                                                    }
+                                                </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    </Accordion>
+                                )
+                            }
+
+                            {
+                                data?.product_specification && data.product_specification.trim() !== "" && (
+                                    <Accordion type="single" collapsible className="w-full" defaultValue="item-3">
+                                        <AccordionItem value="item-1" className='bg-gray-100 px-5 rounded-md'>
+                                            <AccordionTrigger className='text-xl text-primary'>
+                                                Kit Content
+                                            </AccordionTrigger>
+                                            <AccordionContent className="flex flex-col gap-4 text-balance">
+                                                <div
+                                                    className="prose mt-2 max-w-none text-gray-700"
+                                                    dangerouslySetInnerHTML={{ __html: data?.product_specification ?? "" }}
+                                                />
                                             </AccordionContent>
                                         </AccordionItem>
                                     </Accordion>
@@ -150,7 +232,7 @@ export default function KitsProduct({ id }: { id: string }) {
                     </div>
                 </div>
             </Wrapper>
-            <ProductEnquiry id={id} category='kits' openForm={openEnquiryForm} closeForm={setEnquiryForm} />
+            <ProductEnquiry name={data?.title ?? ''} openForm={openEnquiryForm} closeForm={setEnquiryForm} />
         </Section>
     )
 }

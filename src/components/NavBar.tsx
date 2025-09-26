@@ -1,11 +1,12 @@
 'use client'
-import { ButtonPrimary, ButtonSecondry } from '@/utils/Section';
 import { useLenisControl } from '@/utils/SmoothScroll';
 import { ChevronDown, Menu, MoveUpRight, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import React, { Fragment, useEffect, useState } from 'react'
+import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
 
 interface MenuItem {
     key: string;
@@ -15,7 +16,27 @@ interface MenuItem {
 }
 type SubMenu = Omit<MenuItem, 'submenu'>
 
+interface Category {
+    title: string;
+    slug: string;
+}
+
+interface ApiResponse<T> {
+    success: boolean;
+    message: string;
+    data: T;
+}
+
+const fetchCategories = async (): Promise<Category[]> => {
+    const res = await axios.get<ApiResponse<Category[]>>(
+        "https://inforbit.in/demo/ecoqual/api/menu"
+    );
+    return res.data.data;
+};
+
+
 export default function NavBar() {
+
     const currentPath = usePathname();
     const menuItems: MenuItem[] = [
         {
@@ -109,6 +130,13 @@ export default function NavBar() {
         return () => startScroll();
     }, [isMenuOpen, stopScroll, startScroll]);
 
+    const { data, error, isLoading } = useQuery({
+        queryKey: ["categories"],
+        queryFn: fetchCategories,
+        staleTime: 1000 * 60 * 5,
+    });
+
+
     return (
         <header className='relative w-full'>
             <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
@@ -137,7 +165,7 @@ export default function NavBar() {
                                                 <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" />
                                             </button>
                                         )}
-                                    {items.key === 'products' || items.key === 'wet-wash-gloves' ? (
+                                    {items.key === 'wet-wash-gloves' ? (
                                         <div
                                             className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-primary rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 "
                                         >
@@ -153,6 +181,27 @@ export default function NavBar() {
                                                     <span className="truncate">{submenu.name}</span>
                                                 </Link>
                                             ))}
+                                        </div>
+                                    ) : items.key === 'products' ? (
+                                        <div
+                                            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-primary rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 "
+                                        >
+                                            {isLoading ? (
+                                                <span className="text-white px-3 py-1.5">Loading...</span>
+                                            ) : (
+                                                data?.map((submenu) => (
+                                                    <Link
+                                                        key={submenu.title}
+                                                        href={`/product/${submenu.slug}`}
+                                                        className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-white hover:bg-warm hover:text-neutral-100 transition-colors duration-200"
+                                                    >
+                                                        <MoveUpRight
+                                                            className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5 group-hover/item:text-white"
+                                                        />
+                                                        <span className="truncate">{submenu.title}</span>
+                                                    </Link>
+                                                ))
+                                            )}
                                         </div>
                                     ) : ''}
 
@@ -201,24 +250,54 @@ export default function NavBar() {
                                                     <ChevronDown className={`transition-transform duration-200 ${openSubMenu === items.key ? "rotate-180" : ""
                                                         }`} />
                                                 </button>
-                                                <div
-                                                    className={`relative z-50 transition-all duration-300 overflow-hidden ${openSubMenu === items.key
-                                                        ? "max-h-[1000px] opacity-100 visible"
-                                                        : "max-h-0 opacity-0 invisible"
-                                                        }`}
-                                                >
-                                                    {items.submenu?.map(submenu => (
-                                                        <Link
-                                                            key={submenu.key}
-                                                            href={submenu.path}
-                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
-                                                            className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
+                                                {
+                                                    items.key === 'wet-wash-gloves' ? (
+                                                        <div
+                                                            className={`relative z-50 transition-all duration-300 overflow-hidden ${openSubMenu === items.key
+                                                                ? "max-h-[1000px] opacity-100 visible"
+                                                                : "max-h-0 opacity-0 invisible"
+                                                                }`}
                                                         >
-                                                            <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
-                                                            <span className="truncate">{submenu.name}</span>
-                                                        </Link>
-                                                    ))}
-                                                </div>
+                                                            {items.submenu?.map(submenu => (
+                                                                <Link
+                                                                    key={submenu.key}
+                                                                    href={submenu.path}
+                                                                    onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
+                                                                    className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
+                                                                >
+                                                                    <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                                                    <span className="truncate">{submenu.name}</span>
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    ) : items.key === 'products' ? (
+                                                        <div
+                                                            className={`relative z-50 transition-all duration-300 overflow-hidden ${openSubMenu === items.key
+                                                                ? "max-h-[1000px] opacity-100 visible"
+                                                                : "max-h-0 opacity-0 invisible"
+                                                                }`}
+                                                        >
+                                                            {
+                                                                isLoading ? (
+                                                                    <span className="text-white px-3 py-1.5">Loading...</span>
+                                                                ) : (
+
+                                                                    data?.map(submenu => (
+                                                                        <Link
+                                                                            key={submenu.title}
+                                                                            href={`/product/${submenu.slug}`}
+                                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
+                                                                            className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
+                                                                        >
+                                                                            <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                                                            <span className="truncate">{submenu.title}</span>
+                                                                        </Link>
+                                                                    ))
+                                                                )
+                                                            }
+                                                        </div>
+                                                    ) : ""
+                                                }
                                             </>
                                         )
                                     }
