@@ -4,6 +4,7 @@ import SmoothScrollProvider from "@/utils/SmoothScroll";
 import NavBar from "@/components/NavBar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import QueryProvider from "@/utils/QueryProvider";
 
 export const metadata: Metadata = {
   title: "Ecoqual Healthcare Solutions",
@@ -25,10 +26,12 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         <SmoothScrollProvider>
-          <NavBar />
-          {children}
-          <ContactForm />
-          <Footer />
+          <QueryProvider>
+            <NavBar />
+            {children}
+            <ContactForm />
+            <Footer />
+          </QueryProvider>
         </SmoothScrollProvider>
       </body>
     </html>
