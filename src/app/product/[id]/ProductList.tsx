@@ -64,7 +64,7 @@ export default function ProductList({ id }: { id: string }) {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading classname='text-secondry'>
-                            {data?.category.category_heading ?? 'Housekeeping Products'}
+                            {data?.category.title ?? 'Housekeeping Products'}
                         </Heading>
                         <Subheading classname='max-w-lg mx-auto'>
                             {data?.category.category_heading ?? 'Easy and effective cleaning solutions. Made to keep places neat, hygienic, and fresh every day.'}
