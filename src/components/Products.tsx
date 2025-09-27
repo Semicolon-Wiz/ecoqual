@@ -64,12 +64,23 @@ export default function Products() {
         return (
             <Section classname='bg-light-bg'>
                 <Wrapper>
-                    <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10 gap-8'>
-                        {
-                            Array.from({ length: 8 }).map((_, id) => (
-                                <HomeProductSkeleton key={id} />
-                            ))
-                        }
+                    <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                        <div className='flex-1 text-center'>
+                            <Heading>
+                                Other High-Quality <span className='font-inter text-secondry'>Hospital Consumables</span>
+                            </Heading>
+                            <Subheading classname='max-w-xl mx-auto'>
+                                Innovative solutions designed to enhance patient care and support healthcare professionals.
+                            </Subheading>
+                        </div>
+
+                        <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10 gap-8'>
+                            {
+                                Array.from({ length: 8 }).map((_, id) => (
+                                    <HomeProductSkeleton key={id} />
+                                ))
+                            }
+                        </div>
                     </div>
                 </Wrapper>
             </Section>
