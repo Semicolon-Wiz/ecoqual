@@ -3,6 +3,7 @@ import AboutWet from "@/components/AboutWet";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import ProductsCategory from "@/components/ProductsCategory";
+import Sponsor from "@/components/Sponsor";
 import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
       <Hero />
       <About />
       <AboutWet />
-      <ProductsCategory/>
+      <ProductsCategory />
       <Products />
       <WhyUs />
+      <Sponsor />
     </main>
   );
 }
