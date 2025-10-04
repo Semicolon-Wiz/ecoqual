@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import AboutWet from "@/components/AboutWet";
+import BlogCard from "@/components/BlogCard";
 import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
 import Products from "@/components/Products";
@@ -15,8 +16,9 @@ export default function Home() {
       <AboutWet />
       <ProductsCategory />
       <Products />
-      <Instagram/>
+      <Instagram />
       <WhyUs />
+      <BlogCard />
       <Sponsor />
     </main>
   );
