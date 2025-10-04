@@ -63,9 +63,9 @@ export default function BlogContent({ blogId }: { blogId: string }) {
             <h1 className='font-bold lg:text-4xl md:text-2xl text-xl text-primary leading-[1.3] '>
                 {data?.title}
             </h1>
-            <Image src={data?.blog_image!} alt={data?.title!} width={800} height={500} className='w-full h-[400px] object-cover mt-5 rounded-lg' />
+            <Image src={data?.blog_image ?? ''} alt={data?.title ?? ''} width={800} height={500} className='w-full h-[400px] object-cover mt-5 rounded-lg' />
             <div className="mt-3 lg:text-base text-sm text-zinc-600 font-medium"
-                dangerouslySetInnerHTML={{ __html: data?.description! }}
+                dangerouslySetInnerHTML={{ __html: data?.description ?? '' }}
             />
             {
                 data?.paragraphs.map((items: Paragraph) => (
@@ -74,7 +74,7 @@ export default function BlogContent({ blogId }: { blogId: string }) {
                             {items.title}
                         </h3>
                         <div className="mt-1 lg:text-base text-sm text-zinc-600 font-medium"
-                            dangerouslySetInnerHTML={{ __html: items?.description! }}
+                            dangerouslySetInnerHTML={{ __html: items?.description ?? '' }}
                         />
                         {
                             items.products.length > 0 && (
@@ -98,7 +98,7 @@ export default function BlogContent({ blogId }: { blogId: string }) {
                                                     {product.title}
                                                 </Link>
                                                 <div className="mt-1 text-sm text-zinc-600 font-medium line-clamp-2"
-                                                    dangerouslySetInnerHTML={{ __html: product.description! }}
+                                                    dangerouslySetInnerHTML={{ __html: product.description ?? '' }}
                                                 />
                                                 <Link
                                                     href={`/product/${product.category.slug}/${product.slug}`} className=" w-max block mt-3 text-blue-700 ml-auto text-sm">
