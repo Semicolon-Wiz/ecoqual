@@ -108,6 +108,11 @@ export default function NavBar() {
             ]
         },
         {
+            key: 'blogs',
+            name: 'Blogs',
+            path: '/blogs'
+        },
+        {
             key: 'contact',
             name: 'Contact',
             path: '/contact'

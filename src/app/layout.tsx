@@ -33,6 +33,7 @@ export default function RootLayout({
             <Footer />
           </QueryProvider>
         </SmoothScrollProvider>
+        <script src="https://elfsightcdn.com/platform.js" async></script>
       </body>
     </html>
   );
