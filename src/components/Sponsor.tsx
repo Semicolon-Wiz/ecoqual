@@ -20,7 +20,7 @@ export default function Sponsor() {
                     services.map((data, idx) => (
                         <div key={idx} className='flex md:gap-10 gap-5'>
                             <Image src={data} alt='Our Sponsor'
-                                width={100} height={100} className="md:w-20 w-12 object-contain" />
+                                width={150} height={150} className="md:w-30 w-16 object-contain" />
                         </div>
                     ))
                 }
