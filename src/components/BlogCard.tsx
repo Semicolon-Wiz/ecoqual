@@ -54,7 +54,7 @@ export interface BlogApi {
     data: Blog[]
 }
 async function FetchBlogs(): Promise<Blog[]> {
-    const response = await axios.get<BlogApi>("http://inforbit.in/demo/ecoqual/api/blog")
+    const response = await axios.get<BlogApi>("https://inforbit.in/demo/ecoqual/api/blog")
     return response.data.data;
 }
 
