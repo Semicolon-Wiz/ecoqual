@@ -1,5 +1,4 @@
 'use client';
-
 import { Heading, Section, Subheading, Wrapper } from "@/utils/Section";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
