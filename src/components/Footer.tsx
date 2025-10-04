@@ -30,19 +30,24 @@ export default function Footer() {
             path: '/about'
         },
         {
-            key: 'benefits',
-            name: 'Benefits',
-            path: '#'
+            key: 'wet-wash-gloves',
+            name: 'Wet Wash',
+            path: '/wet-wash-gloves'
         },
         {
             key: 'products',
-            name: 'Products',
-            path: '/products'
+            name: 'All Products',
+            path: '/product'
         },
         {
-            key: 'how-it-work',
-            name: 'How it Works',
-            path: '/working'
+            key: 'blogs',
+            name: 'Blogs',
+            path: '/blogs'
+        },
+        {
+            key: 'contact',
+            name: 'Contact',
+            path: '/contact'
         },
     ]
     const contactInfo: Contact[] = [
@@ -99,10 +104,10 @@ export default function Footer() {
                 <div className="w-full h-full p-2 relative">
                     <h3 className='font-bold text-white text-2xl'>Quick Links</h3>
 
-                    <div className='relative mt-5 flex flex-col gap-1'>
+                    <div className='relative mt-5 flex flex-col gap-2'>
                         {
                             menuItems.map(item => (
-                                <Link href={item.path} key={item.key} className='uppercase font-normal text-white !font-montserrat flex items-center gap-1 text-lg'>
+                                <Link href={item.path} key={item.key} className='uppercase font-normal text-white !font-montserrat flex items-center gap-2 text-lg'>
                                     <Image src={'/images/svg/icons/link.svg'} width={18} height={18} alt={item.name} />
                                     {item.name}
                                 </Link>
