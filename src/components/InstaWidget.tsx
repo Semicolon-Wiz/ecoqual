@@ -15,6 +15,6 @@ export default function InstaWidget() {
     if (!mounted) return null;
 
     return (
-        <div className="elfsight-app-e836d82d-0ae2-47e8-b6eb-7ac6b82dba5a" data-elfsight-app-lazy></div>
+        <div className="elfsight-app-e836d82d-0ae2-47e8-b6eb-7ac6b82dba5a" data-elfsight-app-lazy data-lenis-prevent></div>
     );
 }
