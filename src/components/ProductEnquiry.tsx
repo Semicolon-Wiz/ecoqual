@@ -1,10 +1,12 @@
 'use client';
-import { Send, X } from 'lucide-react';
+import { Loader2, Send, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react'
 import Image from 'next/image';
-import React, { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
+import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
 import { TextArea, TextFields } from './TextFields';
-import { Product, ProductData, ProductType } from '@/utils/ProductData';
+import { toast } from 'react-hot-toast'
+import axios from 'axios';
+
 
 interface FormData {
     name: string;
@@ -19,6 +21,8 @@ interface Props {
 }
 
 export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
+    const [loading, setLoading] = useState<boolean>(false);
+    const [errors, setErrors] = useState<Partial<FormData>>({});
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -33,6 +37,79 @@ export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
                 [name]: value
             }
         ))
+    }
+    function validateForm() {
+        const newErrors: Partial<FormData> = {};
+
+        if (!formData.name.trim()) newErrors.name = 'Name is required';
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Invalid email address';
+        }
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+            newErrors.phone = 'Enter a valid 10-digit phone number';
+        }
+
+        if (!formData.message.trim()) newErrors.message = 'Please enter message details';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    }
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        if (!validateForm()) return;
+        setLoading(true);
+        const data = new FormData();
+        data.append('name', formData.name);
+        data.append('email', formData.email);
+        data.append('phone', formData.phone);
+        data.append('message', formData.message);
+        data.append('product', name);
+
+        try {
+            await toast.promise(
+                axios
+                    .post("/api/v1/product-enquiry", data)
+                    .then((response) => {
+                        if (response.status === 200) {
+                            setFormData({
+                                name: '',
+                                email: '',
+                                phone: '',
+                                message: '',
+                            });
+                            closeForm(false);
+                            setLoading(false)
+                            return response.data.message || "Message sent successfully!";
+                        } else {
+                            setLoading(true);
+                            return response.data.message || "Something went wrong!";
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error sending message:", error.message);
+                        setLoading(true);
+                        throw new Error("Failed to send message");
+                    }),
+                {
+                    loading: "Sending message...",
+                    success: (message) => message,
+                    error: (err) => err.message || "Something went wrong",
+                }
+            );
+        } catch (error) {
+            console.error(error);
+            setLoading(false);
+            toast.error("Something went wrong");
+        }
+        finally {
+            setLoading(false);
+        }
+
     }
     return (
         <AnimatePresence mode='wait'>
@@ -61,7 +138,7 @@ export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
                                     </button>
                                 </div>
 
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className='relative mt-16 w-full flex items-center flex-col gap-4'>
                                         <div className='relative w-full border border-primary rounded-lg bg-white px-2 py-3'>
                                             <TextFields
@@ -96,7 +173,7 @@ export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
                                         <div className='relative w-full border border-primary rounded-lg bg-white px-2 py-3'>
                                             <TextFields
                                                 type='text'
-                                                name=''
+                                                name='product'
                                                 value={name}
                                                 placeholder=''
                                                 label='Product Name'
@@ -113,8 +190,17 @@ export default function ProductEnquiry({ name, openForm, closeForm }: Props) {
                                             />
                                         </div>
                                         <button type="submit" className='w-full flex items-center justify-center font-medium text-lg gap-3 text-white bg-zinc-800 hover:bg-zinc-900 transition-colors duration-200 ease-in-out rounded-lg py-3 px-2 cursor-pointer'>
-                                            Send Enquiry
-                                            <Send size={18} className='relative ' />
+                                            {loading ? (
+                                                <>
+                                                    <Loader2 className="animate-spin" size={18} />
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Send Enquiry
+                                                    <Send size={18} className='relative' />
+                                                </>
+                                            )}
                                         </button>
                                     </div>
                                 </form>

@@ -23,6 +23,7 @@ import { useLenisControl } from '@/utils/SmoothScroll';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { SingleProductSkeleton } from "@/components/Skeleton";
+import { Toaster } from "react-hot-toast";
 
 export interface Product {
     id: number;
@@ -233,6 +234,7 @@ export default function SingleProduct({ category, productId }: { category: strin
                 </div>
             </Wrapper>
             <ProductEnquiry name={data?.title ?? ''} openForm={openEnquiryForm} closeForm={setEnquiryForm} />
+            <Toaster />
         </Section>
     )
 }
