@@ -18,8 +18,8 @@ export default function Home() {
       <Products />
       <Instagram />
       <WhyUs />
-      <BlogCard />
       <Sponsor />
+      <BlogCard />
     </main>
   );
 }

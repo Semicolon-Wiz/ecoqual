@@ -194,18 +194,32 @@ export default function NavBar() {
                                             {isLoading ? (
                                                 <span className="text-white px-3 py-1.5">Loading...</span>
                                             ) : (
-                                                data?.map((submenu) => (
+
+                                                <>
+                                                    {data?.map((submenu) => (
+                                                        <Link
+                                                            key={submenu.title}
+                                                            href={`/product/${submenu.slug}`}
+                                                            className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-white hover:bg-warm hover:text-neutral-100 transition-colors duration-200"
+                                                        >
+                                                            <MoveUpRight
+                                                                className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5 group-hover/item:text-white"
+                                                            />
+                                                            <span className="truncate">{submenu.title}</span>
+                                                        </Link>
+                                                    ))}
                                                     <Link
-                                                        key={submenu.title}
-                                                        href={`/product/${submenu.slug}`}
+                                                        href='/ultrasound-gel'
                                                         className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-white hover:bg-warm hover:text-neutral-100 transition-colors duration-200"
                                                     >
                                                         <MoveUpRight
                                                             className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5 group-hover/item:text-white"
                                                         />
-                                                        <span className="truncate">{submenu.title}</span>
+                                                        <span className="truncate">
+                                                            Ultrasound Gel
+                                                        </span>
                                                     </Link>
-                                                ))
+                                                </>
                                             )}
                                         </div>
                                     ) : ''}
@@ -286,18 +300,29 @@ export default function NavBar() {
                                                                 isLoading ? (
                                                                     <span className="text-white px-3 py-1.5">Loading...</span>
                                                                 ) : (
-
-                                                                    data?.map(submenu => (
+                                                                    <>
+                                                                        {data?.map(submenu => (
+                                                                            <Link
+                                                                                key={submenu.title}
+                                                                                href={`/product/${submenu.slug}`}
+                                                                                onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
+                                                                                className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
+                                                                            >
+                                                                                <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                                                                <span className="truncate">{submenu.title}</span>
+                                                                            </Link>
+                                                                        ))}
                                                                         <Link
-                                                                            key={submenu.title}
-                                                                            href={`/product/${submenu.slug}`}
+                                                                            href='/ultrasound-gel'
                                                                             onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null) }}
                                                                             className="group/item border-b  flex items-center gap-2.5 px-3 py-1.5 text-white transition-colors duration-200"
                                                                         >
                                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
-                                                                            <span className="truncate">{submenu.title}</span>
+                                                                            <span className="truncate">
+                                                                                Ultrasound Gel
+                                                                            </span>
                                                                         </Link>
-                                                                    ))
+                                                                    </>
                                                                 )
                                                             }
                                                         </div>

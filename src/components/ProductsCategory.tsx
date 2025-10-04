@@ -65,7 +65,7 @@ export function Category() {
             <>
                 {
                     Array.from({ length: 5 }).map((_, id) => (
-                        <CategorySkeleton key={id}/>
+                        <CategorySkeleton key={id} />
                     ))
                 }
             </>
@@ -98,6 +98,26 @@ export function Category() {
                     </div>
                 ))
             }
+            <div className='w-full h-full border border-gray-200 md:rounded-2xl rounded-lg md:p-5 p-2.5 '>
+                <div className='relative w-full'>
+                    <Image src='/images/category/ultra-sound.jpg' alt='Wet Wash Gloves' width={500} height={400}
+                        className='w-full h-[200px] object-cover object-top rounded-lg'
+                    />
+                </div>
+                <div className='mt-5 relative'>
+                    <h3 className='font-semibold !font-montserrat lg:text-2xl md:text-lg text-base text-zinc-700'>
+                        Ultrasound Gel
+                    </h3>
+                    <Subheading classname='text-left line-clamp-7'>
+                        EQ Ultrasound Gel is a premium, water-soluble gel designed to deliver smooth acoustic transmission and crystal-clear imaging for all standard ultrasound procedures. Developed with a focus on patient safety and equipment protection, the gel ensures maximum diagnostic accuracy while being gentle on the skin.
+                    </Subheading>
+
+                    <Link href='/ultrasound-gel' className='mt-6 px-4 py-2 rounded-full bg-secondry text-white hover:bg-secondry-dark w-max ml-auto flex items-center gap-2'>
+                        View Products
+                        <MoveUpRight size={20} />
+                    </Link>
+                </div>
+            </div>
         </>
     )
 }

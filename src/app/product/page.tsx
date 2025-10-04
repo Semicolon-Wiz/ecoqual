@@ -35,7 +35,7 @@ export default function ProductPage() {
                                 </Subheading>
 
                                 <Link href='/wet-wash-gloves' className='mt-6 px-4 py-2 rounded-full bg-secondry text-white hover:bg-secondry-dark w-max ml-auto flex items-center gap-2'>
-                                    View All Products
+                                    View Products
                                     <MoveUpRight size={20} />
                                 </Link>
                             </div>
