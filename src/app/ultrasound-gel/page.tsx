@@ -51,18 +51,16 @@ function AboutUltrasoundGel() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            About <span className='font-inter text-secondry'>Ultrasound Gel</span>
+                            EQ <span className='font-inter text-secondry'>Ultrasound Gel</span>
                         </Heading>
-                        <Subheading classname='max-w-xl mx-auto'>
+                        <Subheading classname='max-w-2xl mx-auto'>
                             Trusted by professionals for its consistent texture, easy application, and unmatched clarity in every scan.
                         </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid md:grid-cols-[1fr_500px] grid-cols-1 gap-5'>
+                    <div className='relative flex-1 grid grid-cols-1 gap-5'>
                         <div className='w-full h-full relative flex flex-col pr-5 md:order-1 order-2'>
-                            <h3 className='lg:text-2xl md:text-xl text-lg font-semibold text-primary'>
-                                Introduction
-                            </h3>
+                            
                             <Subheading classname='text-left'>
                                 EQ Ultrasound Gel is a premium, water-soluble gel designed to deliver smooth acoustic transmission and crystal-clear imaging for all standard ultrasound procedures. Developed with a focus on patient safety and equipment protection, the gel ensures maximum diagnostic accuracy while being gentle on the skin. Trusted by healthcare professionals, EQ Ultrasound Gel combines reliability, comfort, and quality, making it the preferred choice for hospitals, diagnostic labs, and clinics.
                             </Subheading>
@@ -110,9 +108,7 @@ function AboutUltrasoundGel() {
                             </ul>
 
                         </div>
-                        <div className='w-full h-full relative flex justify-center md:order-2 order-1'>
-                            <Image src='/images/category/hero-img.jpg' width={450} height={200} alt='Ecoqual' className='w-[450px] h-auto' />
-                        </div>
+
                     </div>
                 </div>
             </Wrapper>
