@@ -100,7 +100,7 @@ export function Category() {
             }
             <div className='w-full h-full border border-gray-200 md:rounded-2xl rounded-lg md:p-5 p-2.5 '>
                 <div className='relative w-full'>
-                    <Image src='/images/category/wet-wash.png' alt='Wet Wash Gloves' width={500} height={400}
+                    <Image src='/images/category/ultra-sound.jpg' alt='Wet Wash Gloves' width={500} height={400}
                         className='w-full h-[200px] object-cover object-top rounded-lg'
                     />
                 </div>
