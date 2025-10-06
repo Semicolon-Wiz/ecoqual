@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
 import Products from "@/components/Products";
 import ProductsCategory from "@/components/ProductsCategory";
+import SecondComponent from "@/components/SecondComponent";
 import Sponsor from "@/components/Sponsor";
 import WhyUs from "@/components/WhyUs";
 
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="relative w-full">
       <Hero />
       <About />
+      <SecondComponent/>
       <AboutWet />
       <ProductsCategory />
       <Products />
