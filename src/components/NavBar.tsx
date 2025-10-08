@@ -148,7 +148,7 @@ export default function NavBar() {
                 <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
                     <div className='relative shrink-0 w-max'>
                         <Link href={'/'}>
-                            <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='w-28 h-auto ' />
+                            <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='lg:w-24 md:w-20 w-16 h-auto ' />
                         </Link>
                     </div>
 
@@ -172,7 +172,7 @@ export default function NavBar() {
                                             )}
                                         {items.key === 'wet-wash-gloves' ? (
                                             <div
-                                                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-white rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all du    ration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 border border-gray-200"
+                                                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-white rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 border border-gray-200"
                                             >
                                                 {items.submenu?.map((submenu) => (
                                                     <Link
