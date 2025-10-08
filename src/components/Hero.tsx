@@ -21,8 +21,8 @@ interface Data {
 export default function Hero() {
     const banner = [
         '/images/hero/banner-01.webp',
-        '/images/hero/banner-02.webp',
-        '/images/hero/banner-03.webp',
+        '/images/hero/banner-02.jpg',
+        '/images/hero/banner-03.jpg',
     ]
     const [api, setApi] = React.useState<CarouselApi>()
     const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }))
@@ -40,7 +40,7 @@ export default function Hero() {
                 {
                     banner.map((data, key) => (
                         <CarouselItem key={key}>
-                            <Image src={data} alt='Bannet' width={1200} height={500} className='w-full h-auto' />
+                            <Image src={data} alt='Bannet' width={1920} height={960} className='w-full h-auto' />
                         </CarouselItem>
                     ))
                 }
