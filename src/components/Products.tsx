@@ -62,7 +62,7 @@ export default function Products() {
 
     if (isLoading) {
         return (
-            <Section classname='bg-light-bg'>
+            <Section classname='bg-gray-50'>
                 <Wrapper>
                     <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                         <div className='flex-1 text-center'>
@@ -74,7 +74,7 @@ export default function Products() {
                             </Subheading>
                         </div>
 
-                        <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10 gap-8'>
+                        <div className='relative flex-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-8'>
                             {
                                 Array.from({ length: 8 }).map((_, id) => (
                                     <HomeProductSkeleton key={id} />
@@ -88,7 +88,7 @@ export default function Products() {
     }
 
     return (
-        <Section classname='bg-light-bg'>
+        <Section classname='bg-gray-50'>
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
@@ -100,7 +100,7 @@ export default function Products() {
                         </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-y-10'>
+                    <div className='relative flex-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10'>
                         {data?.map((p, idx) => (
                             <motion.div
                                 key={idx}
@@ -120,7 +120,7 @@ export default function Products() {
                                                     alt={p.title}
                                                     width={400}
                                                     height={300}
-                                                    className='w-full h-[270px] rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
+                                                    className='w-full h-[330px] rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
                                                 />
                                             </motion.div>
 
@@ -138,13 +138,13 @@ export default function Products() {
 
                                         <motion.h3
                                             layoutId={`product-title-${p.id}`}
-                                            className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-white mt-2'
+                                            className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-blue-600 mt-2'
                                         >
                                             {p.title}
                                         </motion.h3>
                                         <motion.div
                                             layoutId={`product-description-${p.id}`}
-                                            className='text-sm text-zinc-800 transition-colors duration-200 ease-out group-hover:text-white line-clamp-3'
+                                            className='text-sm text-zinc-800 transition-colors duration-200 ease-out line-clamp-3'
                                             dangerouslySetInnerHTML={{ __html: p?.product_description ?? "" }}
                                         >
                                         </motion.div>
