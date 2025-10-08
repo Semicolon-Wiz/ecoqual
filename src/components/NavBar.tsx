@@ -158,7 +158,7 @@ export default function NavBar() {
                                 <Fragment key={items.key} >
                                     <div className="relative group/menu">
                                         {
-                                            items.submenu!?.length > 0 ? (
+                                            items.submenu && items.submenu.length > 0 ? (
                                                 <button type="button"
                                                     className={`${console.log(currentPath)} transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1  text-lg font-normal`}
                                                 >
@@ -255,7 +255,7 @@ export default function NavBar() {
                             menuItems.map(items => (
                                 <div className='relative flex flex-col' key={items.key}>
                                     {
-                                        items.submenu!?.length > 0 ? (
+                                        items.submenu && items.submenu.length > 0 ? (
                                             <>
                                                 <button type="button"
                                                     onClick={() => toggleSubMenu(items.key)}
