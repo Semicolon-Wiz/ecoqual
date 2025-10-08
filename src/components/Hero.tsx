@@ -40,7 +40,7 @@ export default function Hero() {
                 {
                     banner.map((data, key) => (
                         <CarouselItem key={key}>
-                            <Image src={data} alt='Bannet' width={1920} height={960} className='w-full h-auto' />
+                            <img src={data} alt='Bannet' className='w-full h-auto' />
                         </CarouselItem>
                     ))
                 }
