@@ -42,7 +42,7 @@ export default function ProductList({ id }: { id: string }) {
         enabled: Boolean(id),
     });
 
-    if (isLoading) {
+    if (!data && isLoading) {
         return (
             <Section classname='bg-gray-100'>
                 <Wrapper>
@@ -64,10 +64,10 @@ export default function ProductList({ id }: { id: string }) {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading classname='text-secondry'>
-                            {data?.category.title ?? 'Housekeeping Products'}
+                            {data?.category.title ?? ''}
                         </Heading>
                         <Subheading classname='max-w-lg mx-auto'>
-                            {data?.category.category_heading ?? 'Easy and effective cleaning solutions. Made to keep places neat, hygienic, and fresh every day.'}
+                            {data?.category.category_heading ?? ''}
                         </Subheading>
                     </div>
 
