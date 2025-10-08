@@ -46,7 +46,7 @@ export default function ProductList({ id }: { id: string }) {
         return (
             <Section classname='bg-gray-100'>
                 <Wrapper>
-                    <div className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
+                    <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
                         {
                             Array.from({ length: 8 }).map((_, id) => (
                                 <ProductSkeleton key={id} />
@@ -71,20 +71,20 @@ export default function ProductList({ id }: { id: string }) {
                         </Subheading>
                     </div>
 
-                    <div className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
+                    <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
                         {
                             data?.products.map((items, idx) => (
                                 <div
                                     key={idx}
-                                    className='relative w-full h-full rounded-xl overflow-hidden bg-white shadow group'
+                                    className='relative w-full h-full rounded-3xl overflow-hidden bg-white shadow-lg group p-2.5'
                                 >
-                                    <Link href={`/product/${id}/${items.slug}`} className='block relative w-full h-[250px] overflow-hidden'>
+                                    <Link href={`/product/${id}/${items.slug}`} className='block relative w-full h-[320px] overflow-hidden rounded-2xl'>
                                         <Image src={items.image} alt={items.title} width={500} height={400}
-                                            className='w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300 ease-in-out'
+                                            className='w-full h-full object-cover object-center rounded-2xl hover:scale-105 transition-transform duration-200'
                                         />
                                     </Link>
-                                    <div className='relative w-full px-3 z-10  py-3'>
-                                        <span className='text-sm font-medium text-primary'>
+                                    <div className='relative w-full px-2 z-10 py-2 mt-4'>
+                                        <span className='text-sm font-medium text-blue-600'>
                                             {data.category.title}
                                         </span>
                                         <Link href={`/product/${id}/${items.slug}`} className='block mt-1 text-gray-900 font-normal !font-montserrat lg:text-2xl md:text-lg text-base '>
@@ -96,7 +96,7 @@ export default function ProductList({ id }: { id: string }) {
                                             dangerouslySetInnerHTML={{ __html: items.product_description }}
                                         />
 
-                                        <Link href={`/product/${id}/${items.slug}`} className='ml-auto mt-6 w-max px-4 py-2 border border-primary flex items-center gap-2 justify-center rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300 ease-in-out'>
+                                        <Link href={`/product/${id}/${items.slug}`} className='ml-auto mt-6 w-max px-5 py-3 text-lg flex items-center gap-2 justify-center rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-colors duration-300 ease-in-out'>
                                             View Product
                                             <MoveUpRight size={20} />
                                         </Link>
