@@ -121,7 +121,7 @@ export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
     const { stopScroll, startScroll } = useLenisControl();
-    const [showHeader, setShowHeader] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
 
     const toggleSubMenu = (key: string) => {
         setOpenSubMenu((prev) => (prev === key ? null : key));
@@ -143,19 +143,20 @@ export default function NavBar() {
     });
 
     useEffect(() => {
-        const handleWheel = (event: WheelEvent) => {
-            if (event.deltaY < 0) {
+        let lastScroll = window.scrollY;
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll < lastScroll - 10) {
                 setShowHeader(true);
-            } else {
+            } else if (currentScroll > lastScroll + 10) {
                 setShowHeader(false);
             }
+            lastScroll = currentScroll;
         };
 
-        window.addEventListener("wheel", handleWheel);
-        return () => {
-            window.removeEventListener("wheel", handleWheel);
-        };
-    }, [showHeader])
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
     return (
