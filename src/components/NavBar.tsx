@@ -161,7 +161,7 @@ export default function NavBar() {
 
     return (
         <>
-            <header className={`sticky top-0 bg-white z-20 w-full transition-all duration-300 ease-in-out ${showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}>
+            <header className={`sticky top-0 bg-white z-20 w-full transition-all duration-300 ease-in-out border-b border-b-gray-200 ${showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}>
                 <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
                     <div className='relative shrink-0 w-max'>
                         <Link href={'/'}>

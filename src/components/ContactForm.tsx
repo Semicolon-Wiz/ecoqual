@@ -110,9 +110,9 @@ export default function ContactForm() {
     }
 
     return (
-        <Section classname='bg-neutral-100'>
+        <Section classname=''>
             <Wrapper>
-                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
                         <span className='lg:text-xl md:text-base text-sm font-medium text-secondry' >CONTACT US</span>
                         <Heading>

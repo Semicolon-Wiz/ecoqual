@@ -59,9 +59,9 @@ export default function ProductList({ id }: { id: string }) {
     }
 
     return (
-        <Section classname='bg-gray-100'>
+        <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading classname='text-secondry'>
                             {data?.category.title ?? ''}
@@ -76,7 +76,7 @@ export default function ProductList({ id }: { id: string }) {
                             data?.products.map((items, idx) => (
                                 <div
                                     key={idx}
-                                    className='relative w-full h-full rounded-3xl overflow-hidden bg-white shadow-lg group p-2.5'
+                                    className='relative w-full h-full rounded-3xl overflow-hidden bg-white shadow group p-2.5'
                                 >
                                     <Link href={`/product/${id}/${items.slug}`} className='block relative w-full h-[320px] overflow-hidden rounded-2xl'>
                                         <Image src={items.image} alt={items.title} width={500} height={400}

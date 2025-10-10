@@ -5,7 +5,7 @@ export default async function SingleProductPage({ params }: { params: Promise<{ 
   const {id, productId } = await params
 
   return (
-    <main>
+    <main className='bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100'>
       <SingleProduct category={id} productId={productId} />
     </main>
   )

@@ -1,8 +1,13 @@
 import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image'
 import React from 'react'
+import ImageCarousel from './ImageCarousel'
 
 export default function AboutUs() {
+    const data :string[] = [
+        "/images/about/1.png",
+        "/images/about/2.png"
+    ]
     return (
         <Section>
             <Wrapper>
@@ -34,8 +39,7 @@ export default function AboutUs() {
                             </p>
                         </div>
                         <div className='w-full h-full relative flex items-center justify-center md:order-2 order-1'>
-                            <Image src='/images/about/1.png' width={400} height={200} alt='Ecoqual'
-                                className='w-[350px]' />
+                            <ImageCarousel image={data} />
                         </div>
                     </div>
                 </div>
@@ -48,7 +52,7 @@ export function OurMission() {
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                <div className='relative w-full flex flex-col gap-8'>
 
                     <div className='flex-1 text-center'>
                         <Heading>
@@ -88,7 +92,7 @@ export function OurVision() {
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
                             Why <span className='font-inter text-secondry'>Safety and Infection</span> Control Matter
@@ -135,7 +139,7 @@ export function OurValues() {
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                <div className='relative w-full flex flex-col gap-8'>
 
                     <div className='flex-1 text-center'>
                         <Heading classname='text-center max-w-xl mx-auto'>
