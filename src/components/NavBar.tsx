@@ -121,6 +121,7 @@ export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
     const { stopScroll, startScroll } = useLenisControl();
+    const [showHeader, setShowHeader] = useState(true);
 
     const toggleSubMenu = (key: string) => {
         setOpenSubMenu((prev) => (prev === key ? null : key));
@@ -141,14 +142,30 @@ export default function NavBar() {
         staleTime: 1000 * 60 * 5,
     });
 
+    useEffect(() => {
+        let lastScroll = window.scrollY;
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll < lastScroll - 10) {
+                setShowHeader(true);
+            } else if (currentScroll > lastScroll + 10) {
+                setShowHeader(false);
+            }
+            lastScroll = currentScroll;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
 
     return (
         <>
-            <header className='sticky top-0 bg-white/10 backdrop-blur-2xl z-20 w-full'>
+            <header className={`sticky top-0 bg-white z-20 w-full transition-all duration-300 ease-in-out border-b border-b-gray-200 ${showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}>
                 <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
                     <div className='relative shrink-0 w-max'>
                         <Link href={'/'}>
-                            <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='lg:w-24 md:w-20 w-16 h-auto ' />
+                            <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='lg:w-24 md:w-20 w-16 h-auto' />
                         </Link>
                     </div>
 
@@ -160,13 +177,13 @@ export default function NavBar() {
                                         {
                                             items.submenu && items.submenu.length > 0 ? (
                                                 <button type="button"
-                                                    className={`${console.log(currentPath)} transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1  text-lg font-normal`}
+                                                    className={`transition-all duration-200 ease-linear !font-inter cursor-pointer inline-flex items-center gap-1  text-base font-normal`}
                                                 >
                                                     {items.name}
                                                     <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" />
                                                 </button>
                                             ) : (
-                                                <Link href={items.path} className={`relative text-lg transition-all duration-200 ease-linear px-3.5 py-1.5 ${currentPath === items.path ? ' bg-primary text-white rounded-full' : ' text-zinc-800'} `}>
+                                                <Link href={items.path} className={`relative text-base transition-all duration-200 ease-linear px-3.5 py-1.5 ${currentPath === items.path ? ' bg-primary text-white rounded-full' : ' text-zinc-800'} `}>
                                                     {items.name}
                                                 </Link>
                                             )}

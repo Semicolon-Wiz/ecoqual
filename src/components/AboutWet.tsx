@@ -21,17 +21,17 @@ export default function AboutWet() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Revolutionizing Hygiene Care with <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                            Comfort and Care in <span className='font-inter text-secondry'>Every Glove</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
-                            Convenience and care in one simple glove.
+                            Protecting skin, preventing infection, and making daily care easier.
                         </Subheading>
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
                         <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
                             <h3 className='font-semibold lg:text-3xl md:text-xl text-base text-secondry'>
-                                A New Standard in Hygiene Care
+                                Caring Made Simple
                             </h3>
                             <Subheading classname='text-left mt-3 max-w-2xl'>
                                 Wet Wash Gloves are pre-moistened, disposable gloves infused with gentle cleansing solutions. Unlike traditional methods using basins and water, they require no rinsing and offer a more hygienic and convenient solution for daily care.

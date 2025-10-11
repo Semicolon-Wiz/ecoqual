@@ -1,6 +1,4 @@
 'use client';
-import { ButtonPrimary, ButtonSecondry, Section, Subheading, Wrapper } from '@/utils/Section'
-import Image from 'next/image'
 import React, { useRef } from 'react'
 import {
     Carousel,
