@@ -50,7 +50,7 @@ export default function AboutUs() {
 
 export function OurMission() {
     const data: string[] = [
-        "/images/about/banner-02.jpg",
+        "/images/about/banner-03.jpg",
         "/images/about/banner-04.jpg"
     ]
     return (
@@ -142,6 +142,9 @@ export function OurVision() {
 }
 
 export function OurValues() {
+     const data: string[] = [
+        "/images/about/banner-7.jpg",
+    ]
     return (
         <Section>
             <Wrapper>
@@ -155,8 +158,7 @@ export function OurValues() {
 
                     <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
                         <div className='w-full h-full relative flex items-center justify-center'>
-                            <Image src='/images/about/4.png' width={400} height={200} alt='Ecoqual'
-                                className='w-[350px]' />
+                            <ImageCarousel image={data} />
                         </div>
                         <div className='w-full h-full relative flex justify-center flex-col'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
