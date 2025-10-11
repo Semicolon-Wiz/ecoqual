@@ -26,7 +26,7 @@ export default function ImageCarousel({ image }: { image: string[] }) {
                 {
                     image.map((src, key) => (
                         <CarouselItem key={key}>
-                            <img src={src} alt='EchoQual Healthcare Solutions' className='w-full h-auto' />
+                            <img src={src} alt='EchoQual Healthcare Solutions' className='w-full h-auto rounded-2xl' />
                         </CarouselItem>
                     ))
                 }

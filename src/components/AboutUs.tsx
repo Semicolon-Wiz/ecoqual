@@ -4,9 +4,9 @@ import React from 'react'
 import ImageCarousel from './ImageCarousel'
 
 export default function AboutUs() {
-    const data :string[] = [
-        "/images/about/1.png",
-        "/images/about/2.png"
+    const data: string[] = [
+        "/images/about/banner-01.jpg",
+        "/images/about/banner-02.jpg"
     ]
     return (
         <Section>
@@ -22,7 +22,7 @@ export default function AboutUs() {
                     </div>
 
                     <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
-                        <div className='px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
+                        <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
                                     We develop <strong> smart, sustainable hygiene and healthcare solutions </strong> that address real-world challenges across <strong>India and the globe.</strong>
@@ -49,6 +49,10 @@ export default function AboutUs() {
 }
 
 export function OurMission() {
+    const data: string[] = [
+        "/images/about/banner-02.jpg",
+        "/images/about/banner-04.jpg"
+    ]
     return (
         <Section>
             <Wrapper>
@@ -60,10 +64,9 @@ export function OurMission() {
                         </Heading>
                     </div>
 
-                    <div className='relative flex-1 grid md:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
                         <div className='w-full h-full relative flex items-center justify-center'>
-                            <Image src='/images/about/2.png' width={400} height={200} alt='Ecoqual'
-                                className='w-[350px]' />
+                            <ImageCarousel image={data} />
                         </div>
                         <div className='w-full h-full relative flex justify-center flex-col'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
@@ -89,6 +92,10 @@ export function OurMission() {
 }
 
 export function OurVision() {
+    const data: string[] = [
+        "/images/about/banner-05.jpg",
+        "/images/about/banner-06.jpg"
+    ]
     return (
         <Section>
             <Wrapper>
@@ -99,8 +106,8 @@ export function OurVision() {
                         </Heading>
                     </div>
 
-                    <div className='relative flex-1 grid md:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
-                        <div className='px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                        <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
                                     Clean environments are the <strong>first line of defence against infection</strong> and the foundation of trust in care.
@@ -125,8 +132,7 @@ export function OurVision() {
                             </ul>
                         </div>
                         <div className='w-full h-full relative flex items-center justify-center md:order-2 order-1'>
-                            <Image src='/images/about/3.png' width={400} height={200} alt='Ecoqual'
-                                className='w-[350px]' />
+                            <ImageCarousel image={data} />
                         </div>
                     </div>
                 </div>
@@ -147,7 +153,7 @@ export function OurValues() {
                         </Heading>
                     </div>
 
-                    <div className='relative flex-1 grid md:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
                         <div className='w-full h-full relative flex items-center justify-center'>
                             <Image src='/images/about/4.png' width={400} height={200} alt='Ecoqual'
                                 className='w-[350px]' />
@@ -207,7 +213,7 @@ export function OurImpact() {
                         </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid md:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
                         <div className='w-full h-full relative flex justify-center flex-col pr-5 md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-xl text-sm text-zinc-700'>
                                 Every product we create carries the promise of better healthcare. From water-saving wet wash gloves that provide comfort and dignity to patients, to hospital consumables that protect frontline workers, Ecoqual products are helping healthcare providers deliver safer and more efficient care. By aligning with the goals of the National Health Mission, we continue to support infection control, elder care, and equitable access to essential products, making a meaningful difference in the lives of patients, caregivers, and communities across India.
