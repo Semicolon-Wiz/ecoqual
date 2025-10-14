@@ -8,7 +8,7 @@ import { CategorySkeleton } from "./Skeleton";
 import { usePathname } from "next/navigation";
 
 
-export default function BlogCard() {
+export default function BlogCard({ limit }: { limit?: number }) {
     const currentPath = usePathname()
     return (
         <Section>
@@ -32,7 +32,7 @@ export default function BlogCard() {
                     </div>
 
                     <div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-                        <Cards />
+                        <Cards limit={limit} />
                     </div>
                 </div>
             </Wrapper>
@@ -58,7 +58,7 @@ async function FetchBlogs(): Promise<Blog[]> {
     return response.data.data;
 }
 
-function Cards() {
+function Cards({ limit }: { limit?: number }) {
     const { data, error, isLoading } = useQuery<Blog[], Error>({
         queryKey: ["blogs"],
         queryFn: FetchBlogs,
@@ -79,13 +79,13 @@ function Cards() {
     return (
         <>
             {
-                data?.map((items: Blog) => (
+                (limit && limit > 0 ? data?.slice(0, limit) : data)?.map((items: Blog) => (
                     <div key={items.id} className="group w-full relative h-full border border-gray-300 rounded-xl p-4 pb-3">
                         <div className="w-full h-60 overflow-hidden rounded-md">
                             <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" />
                         </div>
                         <div className="relative mt-5 flex flex-col">
-                            <Link href={`/blogs/${items.slug}`} className=" font-semibold lg:text-2xl md:text-lg text-base text-zinc-800 ">
+                            <Link href={`/blogs/${items.slug}`} className=" font-semibold lg:text-xl md:text-lg text-base text-zinc-800 ">
                                 {items.title}
                             </Link>
                             <div className="text-left line-clamp-4 mt-3 lg:text-base text-sm text-zinc-600 font-medium"

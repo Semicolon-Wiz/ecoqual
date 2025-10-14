@@ -51,10 +51,10 @@ export default function SecondComponent() {
                             <Subheading classname='text-left mt-3 max-w-2xl'>
                                 Maintaining proper hygiene in healthcare is critical for patient safety, but traditional methods like bed baths and wet wipes often fall short. Hospitals, elderly homes, and palliative care centers face ongoing challenges: they are time-consuming, increase the risk of infections, and can compromise patient comfort and dignity. These issues not only affect patient outcomes but also strain caregivers and increase healthcare costs.
                             </Subheading>
-                            <div className='relative w-full mt-6 grid md:grid-cols-2 grid-cols-1 gap-5'>
+                            <div className='relative w-full mt-6 grid md:grid-cols-2 grid-cols-1 gap-2'>
                                 {
                                     data.map((items, idx) => (
-                                        <div className='w-full h-full flex gap-2 items-start' key={idx}>
+                                        <div className='w-full h-full flex gap-2 items-start bg-gray-100 p-3 py-5 rounded-2xl border border-gray-300 hover:bg-gray-100/50 transition-colors duration-200 ease-in-out' key={idx}>
                                             <div className='w-14 h-w-14 shrink-0'>
                                                 <Image src={items.image} alt={items.title} width={56} height={56} className='w-14 h-14' />
                                             </div>
