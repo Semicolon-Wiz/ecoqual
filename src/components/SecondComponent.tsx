@@ -54,9 +54,9 @@ export default function SecondComponent() {
                             <div className='relative w-full mt-6 grid md:grid-cols-2 grid-cols-1 gap-2'>
                                 {
                                     data.map((items, idx) => (
-                                        <div className='w-full h-full flex gap-2 items-start bg-gray-100 p-3 py-5 rounded-2xl border border-gray-300 hover:bg-gray-100/50 transition-colors duration-200 ease-in-out' key={idx}>
-                                            <div className='w-14 h-w-14 shrink-0'>
-                                                <Image src={items.image} alt={items.title} width={56} height={56} className='w-14 h-14' />
+                                        <div className='w-full h-full flex gap-3 items-start bg-gray-100 p-3 py-5 rounded-2xl border border-gray-300 hover:bg-gray-100/50 transition-colors duration-200 ease-in-out' key={idx}>
+                                            <div className='w-8 h-w-8 shrink-0'>
+                                                <Image src={items.image} alt={items.title} width={56} height={56} className='w-8 h-8' />
                                             </div>
                                             <div className='flex-1 flex flex-col gap-1'>
                                                 <h3 className='font-medium text-lg text-primary-dark leading-[1.2]'>

@@ -46,12 +46,20 @@ export default function ProductList({ id }: { id: string }) {
         return (
             <Section classname='bg-gray-100'>
                 <Wrapper>
-                    <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
-                        {
-                            Array.from({ length: 8 }).map((_, id) => (
-                                <ProductSkeleton key={id} />
-                            ))
-                        }
+                    <div className='relative w-full flex flex-col gap-8'>
+                        <div className="animate-pulse text-center space-y-3">
+                            <div className="h-7 bg-gray-200 rounded-md w-1/3 mx-auto" />
+                            <div className="h-6 bg-gray-200 rounded-md w-2/3 mx-auto" />
+                            <div className="h-6 bg-gray-200 rounded-md w-2/3 mx-auto" />
+                        </div>
+
+                        <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
+                            {
+                                Array.from({ length: 8 }).map((_, id) => (
+                                    <ProductSkeleton key={id} />
+                                ))
+                            }
+                        </div>
                     </div>
                 </Wrapper>
             </Section>
