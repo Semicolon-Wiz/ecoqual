@@ -25,27 +25,27 @@ export default function ContactForm() {
     const contactInfo: ContactInfo[] = [
         {
             title: 'Address',
-            content: 'D58/7-8-1M, First Floor, Sigra, Varanasi, Uttar Pradesh-221010',
+            content: '38/7 -B-30, Raghunath Nagar, Tulsipur, Mahmoorganj, Varanasi, Uttar Pradesh 221010',
             icon: '/images/svg/icons/pin.svg',
-            link: '#'
+            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
         },
         {
             title: 'Phone',
-            content: '+91 1234567890',
+            content: '+91 7307430163',
             icon: '/images/svg/icons/phone.svg',
-            link: '#'
+            link: 'tel:+917307430163'
         },
         {
             title: 'E-Mail',
             content: 'info@gmail.com',
             icon: '/images/svg/icons/mail.svg',
-            link: '#'
+            link: 'info@ecoqual.com'
         },
         {
             title: 'Office Hours',
             content: 'Monday - Friday: 8:00 AM - 5:00 PM Saturday: 9:00 AM - 2:00 PM Sunday: Closed',
             icon: '/images/svg/icons/clock-2.svg',
-            link: '#'
+            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
         },
     ]
     const [loading, setLoading] = useState<boolean>(false);
@@ -137,7 +137,7 @@ export default function ContactForm() {
                                             <div className='w-8 h-8 shrink-0'>
                                                 <Image src={info.icon} width={32} height={32} alt={info.title} />
                                             </div>
-                                            <div className='relative max-w-[240px]'>
+                                            <div className='relative max-w-[320px]'>
                                                 <h4 className='text-base text-zinc-900'>
                                                     {info.title}
                                                 </h4>
