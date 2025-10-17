@@ -16,12 +16,12 @@ export default function Home() {
       <About />
       <SecondComponent/>
       <AboutWet />
-      <ProductsCategory />
+      {/* <ProductsCategory /> */}
       <Products />
       <Instagram />
       <WhyUs />
       <Sponsor />
-      <BlogCard />
+      <BlogCard limit={3}/>
     </main>
   );
 }
