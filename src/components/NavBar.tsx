@@ -361,7 +361,7 @@ export default function NavBar() {
                                             {category.sub_categories.map((sub) => (
                                                 <Link
                                                     key={sub.id}
-                                                    href={`/product/${sub.slug}`}
+                                                    href={`/${category.slug}/${sub.slug}`}
                                                     className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                                 >
                                                     <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
