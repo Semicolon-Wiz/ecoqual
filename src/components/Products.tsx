@@ -12,30 +12,36 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { HomeProductSkeleton } from './Skeleton';
 
-
+export interface ProductResponse {
+    success: boolean;
+    message: string;
+    products: Product[];
+}
 export interface Product {
     id: number;
     title: string;
     slug: string;
     product_description: string;
     category_id: number;
-    label_id: number;
+    subcategory_id: number;
     image: string;
     category: Category;
+    subcategory: SubCategory
 }
+
+export interface SubCategory {
+    id: number;
+    title: string;
+    slug: string;
+}
+
 export interface Category {
     id: number;
     title: string;
     slug: string;
 }
-interface ApiResponse<T> {
-    success: boolean;
-    message: string;
-    products: T;
-}
-
 const fetchProducts = async (): Promise<Product[]> => {
-    const res = await axios.get<ApiResponse<Product[]>>("https://inforbit.in/demo/ecoqual/api/home-product");
+    const res = await axios.get<ProductResponse>("https://inforbit.in/demo/ecoqual/api/home-product");
     return res.data.products;
 };
 
@@ -74,7 +80,7 @@ export default function Products() {
                             </Subheading>
                         </div>
 
-                        <div className='relative flex-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-8'>
+                        <div className='relative flex-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-4'>
                             {
                                 Array.from({ length: 8 }).map((_, id) => (
                                     <HomeProductSkeleton key={id} />
@@ -107,7 +113,7 @@ export default function Products() {
                                 className='relative w-full h-full p-2.5'
                             >
                                 <Link
-                                    href={`/product/${p.category.slug}/${p.slug}`}
+                                    href={`/${p.category.slug}/${p.subcategory.slug}/${p.slug}`}
                                     className='relative w-full h-full group'
                                     onMouseEnter={() => setHoveredIndex(idx)}
                                     onMouseLeave={() => setHoveredIndex(null)}
@@ -200,7 +206,7 @@ export default function Products() {
                                             dangerouslySetInnerHTML={{ __html: selectedProduct?.product_description ?? "" }}
                                         >
                                         </motion.div>
-                                        <Link href={`/product/${selectedProduct.category.slug}/${selectedProduct.slug}`} className='mt-4 flex ml-auto px-4 py-2 bg-primary text-white w-max rounded'>
+                                        <Link href={`/${selectedProduct.category.slug}/${selectedProduct.subcategory.slug}/${selectedProduct.slug}`} className='mt-4 flex ml-auto px-4 py-2 bg-primary text-white w-max rounded'>
                                             View in Details
                                         </Link>
                                     </motion.div>
