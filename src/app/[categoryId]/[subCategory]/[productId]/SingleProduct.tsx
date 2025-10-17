@@ -52,14 +52,14 @@ interface ApiResponse<T> {
     product: T;
 }
 
-export default function SingleProduct({ category, productId }: { category: string; productId: string }) {
+export default function SingleProduct({ productId, subCategory }: { productId: string; subCategory: string }) {
     const fetchProducts = async (id: string): Promise<Product> => {
         const res = await axios.get<ApiResponse<Product>>(`https://inforbit.in/demo/ecoqual/api/products/${id}`);
         return res.data.product;
     };
 
     const { data, error, isLoading } = useQuery<Product, Error>({
-        queryKey: ["product", category, productId],
+        queryKey: [subCategory, productId],
         queryFn: () => fetchProducts(productId),
         staleTime: 1000 * 60 * 5,
         enabled: Boolean(productId),
