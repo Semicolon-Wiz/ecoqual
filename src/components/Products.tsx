@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Expand, X } from 'lucide-react';
 import Background from '@/utils/Background';
 import { useLenisControl } from '@/utils/SmoothScroll';
-import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { HomeProductSkeleton } from './Skeleton';
@@ -47,7 +46,6 @@ const fetchProducts = async (): Promise<Product[]> => {
 
 
 export default function Products() {
-    const router = usePathname()
     const { data, error, isLoading } = useQuery<Product[], Error>({
         queryKey: ["product", "homepage"],
         queryFn: fetchProducts,
