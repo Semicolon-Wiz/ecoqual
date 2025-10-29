@@ -52,19 +52,19 @@ export default function Footer() {
     ]
     const contactInfo: Contact[] = [
         {
-            name: 'D58/7-8-1M, First Floor, Sigra, Varanasi, Uttar Pradesh-221010',
+            name: '38/7 -B-30, Raghunath Nagar, Tulsipur, Mahmoorganj, Varanasi, Uttar Pradesh 221010',
             icon: '/images/svg/icons/pin-white.svg',
-            link: '#'
+            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
         },
         {
-            name: '+91 1234567890',
+            name: '+91 7307430163',
             icon: '/images/svg/icons/phone-white.svg',
-            link: '#'
+            link: 'tel:+917307430163'
         },
         {
             name: 'info@ecoqual.com',
             icon: '/images/svg/icons/mail-white.svg',
-            link: '#'
+            link: 'info@ecoqual.com'
         },
     ]
     const socialMedia: SocialIcons[] = [
@@ -134,7 +134,7 @@ export default function Footer() {
                     <div className='relative mt-5 flex items-center justify-center'>
                         <iframe
                             className='rounded-xl h-52'
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15249885.318783779!2d82.75252935!3d21.0680074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1756547193533!5m2!1sen!2sin" width="100%" height="100%" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.145973941424!2d82.97680327415763!3d25.299299227559967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320ed9555555%3A0x7d77e8b1b105b0c2!2sEcoQual!5e0!3m2!1sen!2sin!4v1760697878296!5m2!1sen!2sin" width="100%" height="100%" style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>

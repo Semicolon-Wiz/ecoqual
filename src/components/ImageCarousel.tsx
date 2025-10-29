@@ -1,26 +1,18 @@
 'use client';
-import React, { useRef } from 'react'
+import React from 'react'
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-    type CarouselApi
 } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay";
 
 
 export default function ImageCarousel({ image }: { image: string[] }) {
-    const [api, setApi] = React.useState<CarouselApi>()
-    const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true }))
     return (
         <Carousel className="w-full overflow-hidden rounded-2xl"
-            plugins={[plugin.current]}
             opts={{ loop: true }}
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-            setApi={setApi}
         >
             <CarouselContent>
                 {
@@ -31,6 +23,12 @@ export default function ImageCarousel({ image }: { image: string[] }) {
                     ))
                 }
             </CarouselContent>
+            <CarouselPrevious
+                className="border-none w-10 h-10 bg-zinc-900 text-white left-1 text-3xl cursor-pointer hover:bg-zinc-800 absolute top-1/2 -translate-y-1/2"
+            />
+            <CarouselNext
+                className="border-none w-10 h-10 bg-zinc-900 text-white right-1 text-3xl cursor-pointer hover:bg-zinc-800 absolute top-1/2 -translate-y-1/2"
+            />
         </Carousel>
     )
 }

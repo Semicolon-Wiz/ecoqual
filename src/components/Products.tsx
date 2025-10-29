@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Expand, X } from 'lucide-react';
 import Background from '@/utils/Background';
 import { useLenisControl } from '@/utils/SmoothScroll';
-import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { HomeProductSkeleton } from './Skeleton';
@@ -47,7 +46,6 @@ const fetchProducts = async (): Promise<Product[]> => {
 
 
 export default function Products() {
-    const router = usePathname()
     const { data, error, isLoading } = useQuery<Product[], Error>({
         queryKey: ["product", "homepage"],
         queryFn: fetchProducts,
@@ -119,26 +117,26 @@ export default function Products() {
                                     onMouseLeave={() => setHoveredIndex(null)}
                                 >
                                     <div className='w-full relative h-full z-10'>
-                                        <div className='w-full relative'>
+                                        <div className='w-full relative bg-white rounded-lg'>
                                             <motion.div layoutId={`product-image-${p.id}`}>
                                                 <Image
                                                     src={p.image}
                                                     alt={p.title}
                                                     width={400}
                                                     height={300}
-                                                    className='w-full h-[330px] rounded-xl object-cover object-center transition-transform duration-200 ease-out group-hover:scale-95'
+                                                    className='w-full h-[330px] rounded-xl object-contain object-center transition-transform duration-200 ease-out group-hover:scale-95'
                                                 />
                                             </motion.div>
 
                                             <button
-                                                className='absolute opacity-0 top-4 right-4 w-7 h-7 rounded-full transition-opacity duration-300 ease-out group-hover:opacity-100 flex items-center justify-center bg-white z-30 cursor-pointer'
+                                                className='absolute opacity-0 top-4 right-4 w-10 h-10 rounded-full transition-opacity duration-300 ease-out group-hover:opacity-100 flex items-center justify-center bg-gray-100 z-30 cursor-pointer'
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     e.stopPropagation();
                                                     setSelectedProduct(p);
                                                 }}
                                             >
-                                                <Expand className='text-primary' size={16} />
+                                                <Expand className='text-primary' size={18} />
                                             </button>
                                         </div>
 
