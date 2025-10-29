@@ -124,7 +124,7 @@ export default function ContactForm() {
                     </div>
 
                     <div className='relative w-full grid md:grid-cols-2 grid-cols-1 gap-5'>
-                        <div className="w-full h-full relative md:p-8 p-3 bg-white rounded-2xl border border-neutral-200">
+                        <div className="w-full h-full relative md:p-8 p-3 bg-white rounded-2xl border border-neutral-300">
                             <div className='w-full relative'>
                                 <h3 className='font-bold text-xl text-[#525252]'>
                                     Contact Information
@@ -151,7 +151,7 @@ export default function ContactForm() {
                             </div>
                         </div>
 
-                        <div className="w-full h-full relative md:p-8 p-3 bg-white rounded-2xl border border-neutral-200">
+                        <div className="w-full h-full relative md:p-8 p-3 bg-white rounded-2xl border border-neutral-300">
                             <div className='w-full relative'>
                                 <h3 className='font-bold text-xl text-[#525252]'>
                                     Send us a Message

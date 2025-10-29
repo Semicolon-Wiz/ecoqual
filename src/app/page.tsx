@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AboutUs, { OurMission, OurValues, OurVision } from "@/components/AboutUs";
 import AboutWet from "@/components/AboutWet";
 import BlogCard from "@/components/BlogCard";
 import Hero from "@/components/Hero";
@@ -13,15 +14,19 @@ export default function Home() {
   return (
     <main className="relative w-full">
       <Hero />
-      <About />
-      <SecondComponent/>
-      <AboutWet />
+      {/* <About /> */}
+      <AboutUs />
+      <OurMission />
+      <OurVision />
+      <OurValues />
+      {/* <SecondComponent/> */}
+      {/* <AboutWet /> */}
       {/* <ProductsCategory /> */}
       <Products />
-      <Instagram />
-      <WhyUs />
+      {/* <Instagram /> */}
+      {/* <WhyUs /> */}
       <Sponsor />
-      <BlogCard limit={3}/>
+      <BlogCard limit={3} />
     </main>
   );
 }
