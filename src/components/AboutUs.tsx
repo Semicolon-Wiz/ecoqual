@@ -5,7 +5,7 @@ import ImageCarousel from './ImageCarousel'
 
 export default function AboutUs() {
     const data: string[] = [
-        "/images/about/banner-01.jpg",
+        "/images/about/new-01.png",
         "/images/about/banner-02.jpg"
     ]
     return (
@@ -53,7 +53,7 @@ export default function AboutUs() {
 
 export function OurMission() {
     const data: string[] = [
-        "/images/about/banner-03.jpg",
+        "/images/about/new-02.png",
         "/images/about/banner-04.jpg"
     ]
     return (
@@ -99,7 +99,7 @@ export function OurMission() {
 
 export function OurVision() {
     const data: string[] = [
-        "/images/about/banner-05.jpg",
+        "/images/about/new-03.png",
         "/images/about/banner-06.jpg"
     ]
     return (

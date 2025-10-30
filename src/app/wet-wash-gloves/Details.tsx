@@ -1014,6 +1014,24 @@ export function AllPageLinks() {
             icon: '/images/details/icon-14.svg',
             link: 'wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves'
         },
+        {
+            title: 'Technical Details',
+            summary: 'Key specifications ensuring quality and reliability.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/technical-details'
+        },
+        {
+            title: 'Contributor to NHM & NPHCE Policies of India',
+            summary: 'Supporting national health initiatives with trusted hygiene solutions',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/contributor'
+        },
+        {
+            title: 'Packaging & Supply Details',
+            summary: 'Secure, hygienic, and convenient packaging for every need.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/packaging-and-supply'
+        },
     ]
     return (
         <Section>
@@ -1021,10 +1039,10 @@ export function AllPageLinks() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Application of <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                            Get to Know <span className='font-inter text-secondry'>Wet Wash Gloves</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
-                            Versatile Use Across Diverse Clinical and Care Settings.
+                            A closer look at the innovation behind hygiene made simple.
                         </Subheading>
                     </div>
 
