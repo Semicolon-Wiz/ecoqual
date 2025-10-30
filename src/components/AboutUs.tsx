@@ -11,30 +11,33 @@ export default function AboutUs() {
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
-                        <Heading classname='text-center max-w-2xl mx-auto'>
-                            <span className='font-inter text-secondry'>Welcome to EQ</span> — Caring for Every Hand That Cares.
+                        <Heading classname='text-center md:max-w-2xl mx-auto'>
+                            <span className='font-inter text-secondry'>EcoQual Healthcare Solutions </span>  
                         </Heading>
-                        <Subheading classname='max-w-xl mx-auto'>
-                            At EQ, we believe innovation begins with empathy.
+                        <p className='lg:text-3xl md:text-2xl text-xl font-semibold text-primary-dark'>
+                            Caring for every hand that cares.
+                        </p>
+                        <Subheading classname='max-w-xl mx-auto text-xl!'>
+                            Towards Sustainable Innovation
                         </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white '>
                         <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
-                                    We develop <strong> smart, sustainable hygiene and healthcare solutions </strong> that address real-world challenges across <strong>India and the globe.</strong>
+                                    We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe. 
                                 </span>
                                 <span>
-                                    Our mission is to <strong> reshape the hygiene and healthcare landscape</strong> while <strong> creating greater health awareness</strong> in society.
+                                    Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
                                 </span>
                                 <span>
-                                    Driven by our core values of <strong>Economic and Quality</strong>, every EQ product is crafted with <strong>precision, safety, and trust,</strong> ensuring comfort and confidence in every touch.
+                                    Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
                                 </span>
                                 <span>
-                                    Together, we&apos;re not just creating products — we&apos;re <strong>building a healthier, more aware world.</strong>
+                                    Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
                                 </span>
                             </p>
                         </div>
