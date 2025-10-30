@@ -70,7 +70,7 @@ export default function Details() {
                     <div className='relative flex-1 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             details.map((items, idx) => (
-                                <div key={idx} className='relative w-full h-full p-5 border border-zinc-200 rounded-2xl'>
+                                <div key={idx} className='relative w-full h-full p-5 bg-white border border-zinc-200 rounded-2xl'>
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>

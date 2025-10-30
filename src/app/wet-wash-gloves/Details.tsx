@@ -245,7 +245,7 @@ export function WetWashWorking() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div className='relative w-full h-full p-5 border border-zinc-200 rounded-2xl' key={idx}>
+                                <div className='relative w-full h-full p-5 bg-white border border-zinc-200 rounded-2xl' key={idx}>
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>
@@ -312,7 +312,7 @@ export function WhereToUse() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div className='relative w-full h-full p-5 border border-zinc-200 rounded-2xl' key={idx}>
+                                <div className='relative w-full h-full p-5 bg-white border border-zinc-200 rounded-2xl' key={idx}>
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>
@@ -976,43 +976,43 @@ export function AllPageLinks() {
             title: 'Benefits of Wet Wash Gloves?',
             summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
             icon: '/images/details/icon-9.svg',
-            link: 'benefits'
+            link: 'wet-wash-gloves/benefits'
         },
         {
             title: 'Why Wet Wash Gloves Work Better',
             summary: 'Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.',
             icon: '/images/details/icon-10.svg',
-            link: 'working'
+            link: 'wet-wash-gloves/working'
         },
         {
             title: 'Application of Wet Wash Gloves',
             summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
             icon: '/images/details/icon-12.svg',
-            link: 'application'
+            link: 'wet-wash-gloves/application'
         },
         {
             title: 'Key Features of Wet Wash Gloves',
             summary: 'Engineered for trust, safety, and ease.',
             icon: '/images/details/icon-13.svg',
-            link: 'key-features'
+            link: 'wet-wash-gloves/key-features'
         },
         {
             title: 'Why Choose Wet Wash Gloves?',
             summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
             icon: '/images/details/icon-14.svg',
-            link: 'why-wet-wash-gloves'
+            link: 'wet-wash-gloves/why-wet-wash-gloves'
         },
         {
             title: 'How to use Wet Wash Gloves',
             summary: 'Hygiene made simple—in just a few easy steps.',
             icon: '/images/details/icon-14.svg',
-            link: 'how-to-use-wet-wash-gloves'
+            link: 'wet-wash-gloves/how-to-use-wet-wash-gloves'
         },
         {
             title: 'Traditional Bathing vs. Wet Wash Gloves',
             summary: 'See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.',
             icon: '/images/details/icon-14.svg',
-            link: 'traditional-bathing-vs-wet-wash-gloves'
+            link: 'wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves'
         },
     ]
     return (
