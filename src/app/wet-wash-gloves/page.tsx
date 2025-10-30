@@ -1,7 +1,6 @@
 import AboutWet from '@/components/AboutWet'
-import Hero from '@/components/Hero'
 import React from 'react'
-import { Benefites, Comparison, WetWashWorking, WhereToUse } from './Details'
+import { Benefites, Comparison, WetWashHero, WetWashWorking, WhereToUse } from './Details'
 import Details from '@/components/Details'
 import FourthSection from '@/components/FourthSection'
 import WetWash from '@/components/WetWash'
@@ -9,7 +8,7 @@ import WetWash from '@/components/WetWash'
 export default function WetWashGlovesPage() {
     return (
         <main className='relative w-full'>
-            <Hero />
+            <WetWashHero />
             <AboutWet />
             <Benefites />
             <WetWashWorking />

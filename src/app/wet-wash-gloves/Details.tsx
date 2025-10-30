@@ -1,4 +1,4 @@
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { ButtonPrimary, ButtonSecondry, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -13,7 +13,86 @@ type Content = {
     title: string;
     data: string;
 }
+interface NewData {
+    title: string;
+    summary: string;
+    image: string;
+}
 
+export function WetWashHero() {
+    const data: NewData[] = [
+        {
+            title: 'Reduces infection risks',
+            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
+            image: '/images/hero/icon-01.svg'
+        },
+        {
+            title: 'Enhances patient comfort',
+            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
+            image: '/images/hero/icon-02.svg'
+        },
+        {
+            title: 'Single-use & microwaveable',
+            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
+            image: '/images/hero/icon-03.svg'
+        },
+        {
+            title: 'Saves time for caregivers',
+            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
+            image: '/images/hero/icon-04.svg'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='w-full relative grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-5'>
+                    <div className="w-full h-full relative flex flex-col justify-center md:items-start items-center">
+                        <h1 className='font-extrabold lg:text-5xl md:text-4xl text-[28px] text-primary md:text-left text-center md:mt-0 mt-5 leading-[1.3]'>
+                            Because Every Patient Deserves <span className='!font-inter text-secondry'>Safer Care</span>
+                        </h1>
+                        <Subheading classname='md:!text-xl md:text-left !mt-2 text-center max-w-xl'>
+                            Wet Wash Gloves - A New Standard in Hygiene That&apos;s Convenient, Effective, and Cost-Saving
+                        </Subheading>
+                        <div className='relative mt-10 flex items-center gap-2 md:justify-start justify-center'>
+                            <ButtonPrimary>
+                                Contact Us
+                            </ButtonPrimary>
+                            <ButtonSecondry>
+                                View Demo
+                            </ButtonSecondry>
+                        </div>
+                    </div>
+
+                    <div className="w-full h-full relative flex items-center md:justify-end justify-center">
+                        <Image src={'/images/hero/wet-hero.png'} width={800} height={450}
+                            alt='Hero Image'
+                            className='w-full h-auto max-w-[570px] ' />
+                    </div>
+                </div>
+
+                <div className='relative w-full mt-14 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
+                    {
+                        data.map((items, idx) => (
+                            <div className='w-full h-full flex gap-2 items-start bg-light-bg p-3 rounded-lg border border-primary ' key={idx}>
+                                <div className='w-10 h-10 shrink-0'>
+                                    <Image src={items.image} alt={items.title} width={40} height={40} className='w-10 h-10' />
+                                </div>
+                                <div className='flex-1 flex flex-col gap-1'>
+                                    <h3 className='font-medium text-base text-primary'>
+                                        {items.title}
+                                    </h3>
+                                    <Subheading classname='!text-left leading-[1.3] !text-xs'>
+                                        {items.summary}
+                                    </Subheading>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
 export function Benefites() {
     return (
         <Section>
