@@ -1,4 +1,4 @@
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { ButtonPrimary, ButtonSecondry, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -8,12 +8,167 @@ interface Data {
     title: string;
     summary: string;
     icon: string;
+    link?: string
 }
 type Content = {
     title: string;
     data: string;
 }
+interface NewData {
+    title: string;
+    summary: string;
+    image: string;
+}
 
+export function WetWashHero() {
+    const data: NewData[] = [
+        {
+            title: 'Reduces infection risks',
+            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
+            image: '/images/hero/icon-01.svg'
+        },
+        {
+            title: 'Enhances patient comfort',
+            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
+            image: '/images/hero/icon-02.svg'
+        },
+        {
+            title: 'Single-use & microwaveable',
+            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
+            image: '/images/hero/icon-03.svg'
+        },
+        {
+            title: 'Saves time for caregivers',
+            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
+            image: '/images/hero/icon-04.svg'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='w-full relative grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-5'>
+                    <div className="w-full h-full relative flex flex-col justify-center md:items-start items-center">
+                        <h1 className='font-extrabold lg:text-5xl md:text-4xl text-[28px] text-primary md:text-left text-center md:mt-0 mt-5 leading-[1.3]'>
+                            Because Every Patient Deserves <span className='!font-inter text-secondry'>Safer Care</span>
+                        </h1>
+                        <Subheading classname='md:!text-xl md:text-left !mt-2 text-center max-w-xl'>
+                            Wet Wash Gloves - A New Standard in Hygiene That&apos;s Convenient, Effective, and Cost-Saving
+                        </Subheading>
+                        <div className='relative mt-10 flex items-center gap-2 md:justify-start justify-center'>
+                            <ButtonPrimary>
+                                Contact Us
+                            </ButtonPrimary>
+                            <ButtonSecondry>
+                                View Demo
+                            </ButtonSecondry>
+                        </div>
+                    </div>
+
+                    <div className="w-full h-full relative flex items-center md:justify-end justify-center">
+                        <Image src={'/images/hero/wet-hero.png'} width={800} height={450}
+                            alt='Hero Image'
+                            className='w-full h-auto max-w-[570px] ' />
+                    </div>
+                </div>
+
+                <div className='relative w-full mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3'>
+                    {
+                        data.map((items, idx) => (
+                            <div className='w-full h-full flex gap-2 items-start bg-light-bg p-3 rounded-lg border border-primary ' key={idx}>
+                                <div className='w-10 h-10 shrink-0'>
+                                    <Image src={items.image} alt={items.title} width={40} height={40} className='w-10 h-10' />
+                                </div>
+                                <div className='flex-1 flex flex-col gap-1'>
+                                    <h3 className='font-medium text-base text-primary'>
+                                        {items.title}
+                                    </h3>
+                                    <Subheading classname='!text-left leading-[1.3] !text-xs'>
+                                        {items.summary}
+                                    </Subheading>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+export function WetWashDetails() {
+    const dt1 = [
+        {
+            title: 'Two-Sided Soft Fabric',
+            content: 'Dual-textured surface offers gentle yet effective cleaning for all skin types.',
+            icon: '/images/wet_wash/icon-01.svg'
+        },
+        {
+            title: 'Mild Cleansing Solution',
+            content: 'Infused with a skin-friendly, pH-balanced formula for lasting freshness.',
+            icon: '/images/wet_wash/icon-02.svg'
+        },
+        {
+            title: 'Pre-Moisturized & Rinse-Free',
+            content: 'Ready-to-use gloves ensure hygiene anywhere, anytime — without water.',
+            icon: '/images/wet_wash/icon-03.svg'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            What are Wet Wash Gloves?
+                        </Heading>
+                        <Subheading classname='max-w-xl mx-auto'>
+                            Smart, water-free cleansing for modern hygiene needs.
+                        </Subheading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_480px] grid-cols-1 gap-5'>
+                        <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
+                            <Subheading classname='text-left mt-3 max-w-2xl !text-lg'>
+                                EQ Wet Wash Gloves are pre-moistened, single-use cleansing gloves designed for easy and effective hygiene care without the need for water or soap. Scientifically developed and clinically tested, they support hospital hygiene standards while ensuring comfort, convenience, and skin protection.
+                            </Subheading>
+
+                            <Subheading classname='text-left mt-2 max-w-2xl !text-primary italic !font-normal !text-lg'>
+                                Made with soft, two-sided fabric and a gentle cleansing solution, these gloves make cleaning quick, safe, and water-free — no rinsing required.
+                            </Subheading>
+
+                            <div className='mt-8 w-full grid grid-cols-2 gap-5'>
+                                {
+                                    dt1.map((data) => (
+                                        <div key={data.title} className='w-full h-full p-5 bg-gray-50 border border-gray-300 rounded-2xl '>
+                                            <div className='w-full flex gap-5 items-center'>
+                                                <div className='shrink-0 w-12 h-12 rounded-full bg-primary p-2 '>
+                                                    <Image src={data.icon} alt={data.title} width={36} height={36} />
+                                                </div>
+                                                <h2 className='font-semibold md:text-lg text-base text-primary leading-[1.2] '>
+                                                    {data.title}
+                                                </h2>
+                                            </div>
+                                            <p className='mt-3 font-medium text-base text-zinc-700'>
+                                                {data.content}
+                                            </p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+
+                        </div>
+
+                        <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-2 order-1">
+                            <Image src={'/images/hero/wet-wash.png'} alt='image'
+                                width={800}
+                                height={500}
+                                className='w-[550px]' />
+                        </div>
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
 export function Benefites() {
     return (
         <Section>
@@ -90,7 +245,7 @@ export function WetWashWorking() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div className='relative w-full h-full p-5 border border-zinc-200 rounded-2xl' key={idx}>
+                                <div className='relative w-full h-full p-5 bg-white border border-zinc-200 rounded-2xl' key={idx}>
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>
@@ -157,7 +312,7 @@ export function WhereToUse() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div className='relative w-full h-full p-5 border border-zinc-200 rounded-2xl' key={idx}>
+                                <div className='relative w-full h-full p-5 bg-white border border-zinc-200 rounded-2xl' key={idx}>
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>
@@ -812,3 +967,110 @@ export function Packaging() {
         </Section>
     )
 }
+
+
+
+export function AllPageLinks() {
+    const data: Data[] = [
+        {
+            title: 'Benefits of Wet Wash Gloves?',
+            summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
+            icon: '/images/details/icon-9.svg',
+            link: 'wet-wash-gloves/benefits'
+        },
+        {
+            title: 'Why Wet Wash Gloves Work Better',
+            summary: 'Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.',
+            icon: '/images/details/icon-10.svg',
+            link: 'wet-wash-gloves/working'
+        },
+        {
+            title: 'Application of Wet Wash Gloves',
+            summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
+            icon: '/images/details/icon-12.svg',
+            link: 'wet-wash-gloves/application'
+        },
+        {
+            title: 'Key Features of Wet Wash Gloves',
+            summary: 'Engineered for trust, safety, and ease.',
+            icon: '/images/details/icon-13.svg',
+            link: 'wet-wash-gloves/key-features'
+        },
+        {
+            title: 'Why Choose Wet Wash Gloves?',
+            summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/why-wet-wash-gloves'
+        },
+        {
+            title: 'How to use Wet Wash Gloves',
+            summary: 'Hygiene made simple—in just a few easy steps.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/how-to-use-wet-wash-gloves'
+        },
+        {
+            title: 'Traditional Bathing vs. Wet Wash Gloves',
+            summary: 'See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves'
+        },
+        {
+            title: 'Technical Details',
+            summary: 'Key specifications ensuring quality and reliability.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/technical-details'
+        },
+        {
+            title: 'Contributor to NHM & NPHCE Policies of India',
+            summary: 'Supporting national health initiatives with trusted hygiene solutions',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/contributor'
+        },
+        {
+            title: 'Packaging & Supply Details',
+            summary: 'Secure, hygienic, and convenient packaging for every need.',
+            icon: '/images/details/icon-14.svg',
+            link: 'wet-wash-gloves/packaging-and-supply'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            Get to Know <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                        </Heading>
+                        <Subheading classname='max-w-xl mx-auto'>
+                            A closer look at the innovation behind hygiene made simple.
+                        </Subheading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
+                        {
+                            data.map((items, idx) => (
+                                <div className='relative w-full h-full p-3 bg-white border border-zinc-200 rounded-2xl' key={idx}>
+                                    <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
+                                        <Image src={items.icon} width={40} height={40} alt={items.title} />
+                                    </div>
+                                    <h2 className='mt-8 font-semibold text-primary-dark  md:text-xl text-base'>
+                                        {items.title}
+                                    </h2>
+                                    <Subheading classname='text-left mt-4 leading-[1.3] !font-normal line-clamp-2 '>
+                                        {items.summary}
+                                    </Subheading>
+                                    <Link href={items.link ?? '#'} className='block mt-3 ml-auto text-blue-500 w-max '>
+                                        Learn More
+                                    </Link>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+
+

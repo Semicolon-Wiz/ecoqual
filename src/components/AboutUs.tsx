@@ -5,36 +5,39 @@ import ImageCarousel from './ImageCarousel'
 
 export default function AboutUs() {
     const data: string[] = [
-        "/images/about/banner-01.jpg",
+        "/images/about/new-01.png",
         "/images/about/banner-02.jpg"
     ]
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
-                        <Heading classname='text-center max-w-2xl mx-auto'>
-                            <span className='font-inter text-secondry'>Welcome to EQ</span> — Caring for Every Hand That Cares.
+                        <Heading classname='text-center md:max-w-2xl mx-auto'>
+                            <span className='font-inter text-secondry'>EcoQual Healthcare Solutions </span>
                         </Heading>
-                        <Subheading classname='max-w-xl mx-auto'>
-                            At EQ, we believe innovation begins with empathy.
+                        <p className='lg:text-3xl md:text-2xl text-xl font-semibold text-primary-dark'>
+                            Caring for every hand that cares.
+                        </p>
+                        <Subheading classname='max-w-xl mx-auto text-xl!'>
+                            Towards Sustainable Innovation
                         </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white '>
                         <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
-                                    We develop <strong> smart, sustainable hygiene and healthcare solutions </strong> that address real-world challenges across <strong>India and the globe.</strong>
+                                    We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
                                 </span>
                                 <span>
-                                    Our mission is to <strong> reshape the hygiene and healthcare landscape</strong> while <strong> creating greater health awareness</strong> in society.
+                                    Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
                                 </span>
                                 <span>
-                                    Driven by our core values of <strong>Economic and Quality</strong>, every EQ product is crafted with <strong>precision, safety, and trust,</strong> ensuring comfort and confidence in every touch.
+                                    Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
                                 </span>
                                 <span>
-                                    Together, we&apos;re not just creating products — we&apos;re <strong>building a healthier, more aware world.</strong>
+                                    Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
                                 </span>
                             </p>
                         </div>
@@ -50,37 +53,40 @@ export default function AboutUs() {
 
 export function OurMission() {
     const data: string[] = [
-        "/images/about/banner-03.jpg",
+        "/images/about/new-02.png",
         "/images/about/banner-04.jpg"
     ]
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
 
                     <div className='flex-1 text-center'>
                         <Heading>
                             When Hygiene Fails, <span className='font-inter text-secondry'>Everything Is at Risk</span>
                         </Heading>
+                        <Subheading classname='max-w-xl mx-auto text-xl!'>
+                            Preserving life, dignity, and confidence
+                        </Subheading>
                     </div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5'>
                         <div className='w-full h-full relative flex items-center justify-center'>
                             <ImageCarousel image={data} />
                         </div>
                         <div className='w-full h-full relative flex justify-center flex-col'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
-                                    Hygiene isn&apos;t just about cleaning — it&apos;s about <strong>preserving life, dignity, and confidence.</strong>
+                                    Hygiene isn&apos;t just about cleaning — it&apos;s about preserving life, dignity, and confidence.
                                 </span>
                                 <span>
                                     But in hospitals, workplaces, and community environments, keeping spaces safe is still a daily struggle.
                                 </span>
                                 <span>
-                                    Traditional systems and outdated methods are often <strong>slow, inconsistent, and costly</strong> to maintain the standards people deserve.
+                                    Traditional systems and outdated methods are often slow, inconsistent, and costly to maintain the standards people deserve.
                                 </span>
                                 <span>
-                                    The result? <strong>Rising infections, wasted time, higher costs, and reduced confidence — for both caregivers and the communities they serve.</strong>
+                                    The result? Rising infections, wasted time, higher costs, and reduced confidence — for both caregivers and the communities they serve.
                                 </span>
                             </p>
                         </div>
@@ -93,20 +99,20 @@ export function OurMission() {
 
 export function OurVision() {
     const data: string[] = [
-        "/images/about/banner-05.jpg",
+        "/images/about/new-03.png",
         "/images/about/banner-06.jpg"
     ]
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
                         <Heading>
                             Why <span className='font-inter text-secondry'>Safety and Infection</span> Control Matter
                         </Heading>
                     </div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
                         <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
                             <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
@@ -142,13 +148,13 @@ export function OurVision() {
 }
 
 export function OurValues() {
-     const data: string[] = [
+    const data: string[] = [
         "/images/about/banner-7.jpg",
     ]
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
 
                     <div className='flex-1 text-center'>
                         <Heading classname='text-center max-w-xl mx-auto'>
@@ -156,7 +162,7 @@ export function OurValues() {
                         </Heading>
                     </div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 bg-white p-5 rounded-3xl border border-gray-200'>
+                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 '>
                         <div className='w-full h-full relative flex items-center justify-center'>
                             <ImageCarousel image={data} />
                         </div>
