@@ -117,7 +117,7 @@ export default function Products() {
                                     onMouseLeave={() => setHoveredIndex(null)}
                                 >
                                     <div className='w-full relative h-full z-10'>
-                                        <div className='w-full relative bg-white rounded-lg'>
+                                        <div className='w-full relative rounded-lg'>
                                             <motion.div layoutId={`product-image-${p.id}`}>
                                                 <Image
                                                     src={p.image}
@@ -142,7 +142,7 @@ export default function Products() {
 
                                         <motion.h3
                                             layoutId={`product-title-${p.id}`}
-                                            className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-blue-600 mt-2'
+                                            className='lg:text-lg text-base font-semibold text-primary-dark transition-colors duration-200 ease-out group-hover:text-blue-600 mt-2 text-center'
                                         >
                                             {p.title}
                                         </motion.h3>
