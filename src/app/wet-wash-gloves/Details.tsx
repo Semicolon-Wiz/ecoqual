@@ -70,7 +70,7 @@ export function WetWashHero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
+                <div className='relative w-full mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3'>
                     {
                         data.map((items, idx) => (
                             <div className='w-full h-full flex gap-2 items-start bg-light-bg p-3 rounded-lg border border-primary ' key={idx}>
@@ -88,6 +88,81 @@ export function WetWashHero() {
                             </div>
                         ))
                     }
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+export function WetWashDetails() {
+    const dt1 = [
+       {
+        title:'Two-Sided Soft Fabric',
+        content:'Dual-textured surface offers gentle yet effective cleaning for all skin types.',
+        icon:'/images/wet_wash/icon-01.svg'
+       },
+       {
+        title:'Mild Cleansing Solution',
+        content:'Infused with a skin-friendly, pH-balanced formula for lasting freshness.',
+        icon:'/images/wet_wash/icon-02.svg'
+       },
+       {
+        title:'Pre-Moisturized & Rinse-Free',
+        content:'Ready-to-use gloves ensure hygiene anywhere, anytime — without water.',
+        icon:'/images/wet_wash/icon-03.svg'
+       },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            What are Wet Wash Gloves?
+                        </Heading>
+                        <Subheading classname='max-w-xl mx-auto'>
+                            Smart, water-free cleansing for modern hygiene needs.
+                        </Subheading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_480px] grid-cols-1 gap-5'>
+                        <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
+                            <Subheading classname='text-left mt-3 max-w-2xl !text-lg'>
+                                EQ Wet Wash Gloves are pre-moistened, single-use cleansing gloves designed for easy and effective hygiene care without the need for water or soap. Scientifically developed and clinically tested, they support hospital hygiene standards while ensuring comfort, convenience, and skin protection.
+                            </Subheading>
+
+                            <Subheading classname='text-left mt-2 max-w-2xl !text-primary italic !font-normal !text-lg'>
+                                Made with soft, two-sided fabric and a gentle cleansing solution, these gloves make cleaning quick, safe, and water-free — no rinsing required.
+                            </Subheading>
+
+                            <div className='mt-8 w-full grid grid-cols-2 gap-5'>
+                                {
+                                    dt1.map((data) => (
+                                        <div key={data.title} className='w-full h-full p-5 bg-gray-50 border border-gray-300 rounded-2xl '>
+                                            <div className='w-full flex gap-5 items-center'>
+                                                <div className='shrink-0 w-12 h-12 rounded-full bg-primary p-2 '>
+                                                    <Image src={data.icon} alt={data.title} width={36} height={36} />
+                                                </div>
+                                                <h2 className='font-semibold md:text-lg text-base text-primary leading-[1.2] '>
+                                                    {data.title}
+                                                </h2>
+                                            </div>
+                                            <p className='mt-3 font-medium text-base text-zinc-700'>
+                                                {data.content}
+                                            </p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+
+                        </div>
+
+                        <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-2 order-1">
+                            <Image src={'/images/hero/wet-wash.png'} alt='image'
+                                width={800}
+                                height={500}
+                                className='w-[550px]' />
+                        </div>
+                    </div>
                 </div>
             </Wrapper>
         </Section>
