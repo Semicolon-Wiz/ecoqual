@@ -8,6 +8,7 @@ interface Data {
     title: string;
     summary: string;
     icon: string;
+    link?: string
 }
 type Content = {
     title: string;
@@ -95,21 +96,21 @@ export function WetWashHero() {
 }
 export function WetWashDetails() {
     const dt1 = [
-       {
-        title:'Two-Sided Soft Fabric',
-        content:'Dual-textured surface offers gentle yet effective cleaning for all skin types.',
-        icon:'/images/wet_wash/icon-01.svg'
-       },
-       {
-        title:'Mild Cleansing Solution',
-        content:'Infused with a skin-friendly, pH-balanced formula for lasting freshness.',
-        icon:'/images/wet_wash/icon-02.svg'
-       },
-       {
-        title:'Pre-Moisturized & Rinse-Free',
-        content:'Ready-to-use gloves ensure hygiene anywhere, anytime — without water.',
-        icon:'/images/wet_wash/icon-03.svg'
-       },
+        {
+            title: 'Two-Sided Soft Fabric',
+            content: 'Dual-textured surface offers gentle yet effective cleaning for all skin types.',
+            icon: '/images/wet_wash/icon-01.svg'
+        },
+        {
+            title: 'Mild Cleansing Solution',
+            content: 'Infused with a skin-friendly, pH-balanced formula for lasting freshness.',
+            icon: '/images/wet_wash/icon-02.svg'
+        },
+        {
+            title: 'Pre-Moisturized & Rinse-Free',
+            content: 'Ready-to-use gloves ensure hygiene anywhere, anytime — without water.',
+            icon: '/images/wet_wash/icon-03.svg'
+        },
     ]
     return (
         <Section>
@@ -966,3 +967,92 @@ export function Packaging() {
         </Section>
     )
 }
+
+
+
+export function AllPageLinks() {
+    const data: Data[] = [
+        {
+            title: 'Benefits of Wet Wash Gloves?',
+            summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
+            icon: '/images/details/icon-9.svg',
+            link: 'benefits'
+        },
+        {
+            title: 'Why Wet Wash Gloves Work Better',
+            summary: 'Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.',
+            icon: '/images/details/icon-10.svg',
+            link: 'working'
+        },
+        {
+            title: 'Application of Wet Wash Gloves',
+            summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
+            icon: '/images/details/icon-12.svg',
+            link: 'application'
+        },
+        {
+            title: 'Key Features of Wet Wash Gloves',
+            summary: 'Engineered for trust, safety, and ease.',
+            icon: '/images/details/icon-13.svg',
+            link: 'key-features'
+        },
+        {
+            title: 'Why Choose Wet Wash Gloves?',
+            summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
+            icon: '/images/details/icon-14.svg',
+            link: 'why-wet-wash-gloves'
+        },
+        {
+            title: 'How to use Wet Wash Gloves',
+            summary: 'Hygiene made simple—in just a few easy steps.',
+            icon: '/images/details/icon-14.svg',
+            link: 'how-to-use-wet-wash-gloves'
+        },
+        {
+            title: 'Traditional Bathing vs. Wet Wash Gloves',
+            summary: 'See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.',
+            icon: '/images/details/icon-14.svg',
+            link: 'traditional-bathing-vs-wet-wash-gloves'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            Application of <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                        </Heading>
+                        <Subheading classname='max-w-xl mx-auto'>
+                            Versatile Use Across Diverse Clinical and Care Settings.
+                        </Subheading>
+                    </div>
+
+                    <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
+                        {
+                            data.map((items, idx) => (
+                                <div className='relative w-full h-full p-3 bg-white border border-zinc-200 rounded-2xl' key={idx}>
+                                    <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
+                                        <Image src={items.icon} width={40} height={40} alt={items.title} />
+                                    </div>
+                                    <h2 className='mt-8 font-semibold text-primary-dark  md:text-xl text-base'>
+                                        {items.title}
+                                    </h2>
+                                    <Subheading classname='text-left mt-4 leading-[1.3] !font-normal line-clamp-2 '>
+                                        {items.summary}
+                                    </Subheading>
+                                    <Link href={items.link ?? '#'} className='block mt-3 ml-auto text-blue-500 w-max '>
+                                        Learn More
+                                    </Link>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+
+
