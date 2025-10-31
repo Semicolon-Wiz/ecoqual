@@ -35,11 +35,6 @@ export default function Footer() {
             path: '/wet-wash-gloves'
         },
         {
-            key: 'products',
-            name: 'All Products',
-            path: '/product'
-        },
-        {
             key: 'blogs',
             name: 'Blogs',
             path: '/blogs'
