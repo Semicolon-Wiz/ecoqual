@@ -17,15 +17,14 @@ export default function Home() {
       {/* <About /> */}
       <AboutUs />
       <OurMission />
-      <OurVision />
-      <OurValues />
+      {/* <OurVision /> */}
+      {/* <OurValues /> */}
       {/* <SecondComponent/> */}
       {/* <AboutWet /> */}
       {/* <ProductsCategory /> */}
       <Products />
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
-      <Sponsor />
       <BlogCard limit={3} />
     </main>
   );

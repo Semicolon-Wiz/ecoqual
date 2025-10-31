@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import QueryProvider from "@/utils/QueryProvider";
+import Sponsor from "@/components/Sponsor";
 
 export const metadata: Metadata = {
   title: "Ecoqual Healthcare Solutions",
@@ -29,6 +30,7 @@ export default function RootLayout({
           <QueryProvider>
             <NavBar />
             {children}
+            <Sponsor />
             <ContactForm />
             <Footer />
           </QueryProvider>
