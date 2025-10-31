@@ -1,51 +1,94 @@
+'use client';
 import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image'
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
+import { motion, scale } from 'motion/react'
+
 
 export default function AboutUs() {
-    const data: string[] = [
-        "/images/about/new-01.png",
-        "/images/about/banner-02.jpg"
-    ]
+    const easeInOut: [number, number, number, number] = [0.42, 0, 0.58, 1];
+    const leftVariant = {
+        hidden: { opacity: 0, x: -80 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: easeInOut } },
+    }
+    const middleVariant = {
+        hidden: { opacity: 0, scale:0.8 },
+        visible: { opacity: 1, scale:1, transition: { duration: 0.6, ease: easeInOut } },
+    }
+    const rightVariant = {
+        hidden: { opacity: 0, x: 80 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: easeInOut } },
+    }
     return (
         <Section>
             <Wrapper>
-                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
-                    <div className='flex-1 text-center'>
-                        <Heading classname='text-center md:max-w-2xl mx-auto'>
+                <motion.div
+                    className='relative flex-1 grid lg:grid-cols-3 grid-cols-1 gap-5 bg-white'
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    <motion.div
+                        className='w-full h-full relative flex flex-col'
+                        variants={leftVariant}
+                    >
+                        <h2 className='font-bold md:text-2xl text-base text-center'>
                             <span className='font-inter text-secondry'>EcoQual Healthcare Solutions </span>
-                        </Heading>
-                        <p className='lg:text-3xl md:text-2xl text-xl font-semibold text-primary-dark'>
+                        </h2>
+                        <p className='md:text-xl text-sm font-semibold text-primary-dark text-center'>
                             Caring for every hand that cares.
                         </p>
-                        <Subheading classname='max-w-xl mx-auto text-xl!'>
+                        <Subheading classname='max-w-xl mx-auto text-base!'>
                             Towards Sustainable Innovation
                         </Subheading>
-                    </div>
+                        <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                            <span>
+                                We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
+                            </span>
+                            <span>
+                                Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
+                            </span>
+                            <span>
+                                Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
+                            </span>
+                            <span>
+                                Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
+                            </span>
+                        </p>
+                    </motion.div>
 
-                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 bg-white '>
-                        <div className='lg:px-3 w-full h-full relative flex justify-center flex-col md:order-1 order-2'>
-                            <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
-                                <span>
-                                    We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
-                                </span>
-                                <span>
-                                    Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
-                                </span>
-                                <span>
-                                    Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
-                                </span>
-                                <span>
-                                    Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
-                                </span>
-                            </p>
-                        </div>
-                        <div className='w-full h-full relative flex items-center justify-center md:order-2 order-1'>
-                            <ImageCarousel image={data} />
-                        </div>
-                    </div>
-                </div>
+                    <motion.div
+                        variants={middleVariant}
+                    >
+                        <Image src='/images/about/about.jpg' alt='EcoQual Health Care Solutions' width={1920} height={1080} className='w-full h-full object-cover object-center rounded-2xl ' />
+                    </motion.div>
+
+                    <motion.div
+                        variants={rightVariant}
+                        className='w-full h-full relative flex flex-col'>
+                        <h2 className='font-bold md:text-2xl text-base text-center'>
+                            <span className='font-inter text-secondry'>When Hygiene Fails, Everything Is at Risk</span>
+                        </h2>
+                        <p className='md:text-xl text-sm font-semibold text-primary-dark text-center'>
+                            Preserving life, dignity, and confidence
+                        </p>
+                        <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                            <span>
+                                Hygiene isn&apos;t just about cleaning — it&apos;s about preserving life, dignity, and confidence.
+                            </span>
+                            <span>
+                                But in hospitals, workplaces, and community environments, keeping spaces safe is still a daily struggle.
+                            </span>
+                            <span>
+                                Traditional systems and outdated methods are often slow, inconsistent, and costly to maintain the standards people deserve.
+                            </span>
+                            <span>
+                                The result? Rising infections, wasted time, higher costs, and reduced confidence — for both caregivers and the communities they serve.
+                            </span>
+                        </p>
+                    </motion.div>
+                </motion.div>
             </Wrapper>
         </Section>
     )
