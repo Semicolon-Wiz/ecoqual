@@ -22,7 +22,7 @@ export default function Home() {
       {/* <SecondComponent/> */}
       {/* <AboutWet /> */}
       <ProductsCategory />
-      <Products />
+      {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
       <BlogCard limit={3} />
