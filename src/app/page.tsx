@@ -25,7 +25,7 @@ export default function Home() {
       {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
-      <BlogCard limit={3} />
+      {/* <BlogCard limit={3} /> */}
     </main>
   );
 }
