@@ -57,9 +57,9 @@ export default function Footer() {
             link: 'tel:+917307430163'
         },
         {
-            name: 'info@ecoqual.com',
+            name: 'contact@ecoqual.in',
             icon: '/images/svg/icons/mail-white.svg',
-            link: 'info@ecoqual.com'
+            link: 'mainlto:contact@ecoqual.in'
         },
     ]
     const socialMedia: SocialIcons[] = [
@@ -138,10 +138,10 @@ export default function Footer() {
             <div className='relative border-t border-neutral-100 pt-5'>
                 <div className='flex items-center md:justify-between justify-center md:flex-row flex-col gap-1 max-w-7xl relative mx-auto px-6 w-full'>
                     <span className='md:text-sm text-[10px] font-normal text-white text-center'>
-                        Copyright @ 2025 Ecoqual Healthcare Solutions. All rights reserved.
+                        Copyright @ {new Date().getFullYear() } Ecoqual Healthcare Solutions. All rights reserved.
                     </span>
-                    <Link href={'#'} className='!font-montserrat md:text-sm text-[10px] font-normal text-white'>
-                        Made with by ❤ Wizards Next.
+                    <Link href={'https://wizards.co.in/'} target='_blank' className='!font-montserrat md:text-sm text-[10px] font-normal text-white'>
+                        Made with ❤ by <em className='underline underline-offset-1'>Wizards Next</em>.
                     </Link>
                 </div>
             </div>

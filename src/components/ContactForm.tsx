@@ -37,15 +37,9 @@ export default function ContactForm() {
         },
         {
             title: 'E-Mail',
-            content: 'info@gmail.com',
+            content: 'contact@ecoqual.in',
             icon: '/images/svg/icons/mail.svg',
-            link: 'info@ecoqual.com'
-        },
-        {
-            title: 'Office Hours',
-            content: 'Monday - Friday: 8:00 AM - 5:00 PM Saturday: 9:00 AM - 2:00 PM Sunday: Closed',
-            icon: '/images/svg/icons/clock-2.svg',
-            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
+            link: 'mailto:contact@ecoqual.in'
         },
     ]
     const [loading, setLoading] = useState<boolean>(false);
