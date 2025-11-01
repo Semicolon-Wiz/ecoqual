@@ -24,72 +24,83 @@ export default function AboutUs() {
     return (
         <Section>
             <Wrapper>
-                <motion.div
-                    className='relative flex-1 grid lg:grid-cols-3 grid-cols-1 gap-5 bg-white'
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                >
-                    <motion.div
-                        className='w-full h-full relative flex flex-col'
-                        variants={leftVariant}
-                    >
-                        <h2 className='font-bold md:text-2xl text-base text-center'>
+                <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
                             <span className='font-inter text-secondry'>EcoQual Healthcare Solutions </span>
-                        </h2>
-                        <p className='md:text-xl text-sm font-semibold text-primary-dark text-center'>
+                        </Heading>
+                        <p className='md:text-2xl text-sm font-semibold text-primary-dark text-center'>
                             Caring for every hand that cares.
                         </p>
-                        <Subheading classname='max-w-xl mx-auto text-base!'>
+                        <Subheading classname='max-w-xl mx-auto'>
                             Towards Sustainable Innovation
                         </Subheading>
-                        <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
-                            <span>
-                                We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
-                            </span>
-                            <span>
-                                Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
-                            </span>
-                            <span>
-                                Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
-                            </span>
-                            <span>
-                                Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
-                            </span>
-                        </p>
-                    </motion.div>
+                    </div>
 
                     <motion.div
-                        variants={middleVariant}
+                        className='relative flex-1 grid lg:grid-cols-3 grid-cols-1 gap-5 bg-white'
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
                     >
-                        <Image src='/images/about/about.jpg' alt='EcoQual Health Care Solutions' width={1920} height={1080} className='w-full h-full object-cover object-center rounded-2xl ' />
-                    </motion.div>
+                        <motion.div
+                            className='w-full h-full relative flex flex-col bg-gray-50 p-5 border border-gray-300 rounded-2xl'
+                            variants={leftVariant}
+                        >
+                            <h2 className='font-bold md:text-xl text-base'>
+                                <span className='font-inter text-secondry'>
+                                    When Hygiene Fails, Everything Is at Risk
+                                </span>
+                            </h2>
 
-                    <motion.div
-                        variants={rightVariant}
-                        className='w-full h-full relative flex flex-col'>
-                        <h2 className='font-bold md:text-2xl text-base text-center'>
-                            <span className='font-inter text-secondry'>When Hygiene Fails, Everything Is at Risk</span>
-                        </h2>
-                        <p className='md:text-xl text-sm font-semibold text-primary-dark text-center'>
-                            Preserving life, dignity, and confidence
-                        </p>
-                        <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
-                            <span>
-                                Hygiene isn&apos;t just about cleaning — it&apos;s about preserving life, dignity, and confidence.
-                            </span>
-                            <span>
-                                But in hospitals, workplaces, and community environments, keeping spaces safe is still a daily struggle.
-                            </span>
-                            <span>
-                                Traditional systems and outdated methods are often slow, inconsistent, and costly to maintain the standards people deserve.
-                            </span>
-                            <span>
-                                The result? Rising infections, wasted time, higher costs, and reduced confidence — for both caregivers and the communities they serve.
-                            </span>
-                        </p>
+                            <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
+                                <span>
+                                    We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
+                                </span>
+                                <span>
+                                    Our mission is to reshape the hygiene and healthcare landscape while creating greater health awareness in society.
+                                </span>
+                                <span>
+                                    Driven by our core values of Economic and Quality, every EQ product is crafted with precision, safety, and trust, ensuring comfort and confidence in every touch.
+                                </span>
+                                <span>
+                                    Together, we&apos;re not just creating products — we&apos;re building a healthier, more aware world.
+                                </span>
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            variants={middleVariant}
+                        >
+                            <Image src='/images/about/about.jpg' alt='EcoQual Health Care Solutions' width={1920} height={1080} className='w-full h-full object-cover object-center rounded-2xl ' />
+                        </motion.div>
+
+                        <motion.div
+                            variants={rightVariant}
+                            className='w-full h-full relative flex flex-col bg-gray-50 p-5 border border-gray-300 rounded-2xl'
+                        >
+                            <h2 className='font-bold md:text-xl text-base'>
+                                <span className='font-inter text-secondry'>
+                                    Preserving life, dignity, and confidence
+                                </span>
+                            </h2>
+                            <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
+                                <span>
+                                    Hygiene isn&apos;t just about cleaning — it&apos;s about preserving life, dignity, and confidence.
+                                </span>
+                                <span>
+                                    But in hospitals, workplaces, and community environments, keeping spaces safe is still a daily struggle.
+                                </span>
+                                <span>
+                                    Traditional systems and outdated methods are often slow, inconsistent, and costly to maintain the standards people deserve.
+                                </span>
+                                <span>
+                                    The result? Rising infections, wasted time, higher costs, and reduced confidence — for both caregivers and the communities they serve.
+                                </span>
+                            </p>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
             </Wrapper>
         </Section>
     )
