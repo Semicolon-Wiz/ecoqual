@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
 import { motion, scale } from 'motion/react'
+import { ChevronsRight } from 'lucide-react';
 
 
 export default function AboutUs() {
@@ -365,6 +366,110 @@ export function MoreAboutUs() {
                             <br />
                             With every answer, we move closer to our vision of creating lasting, positive change.
                         </p>
+                    </div>
+                </div>
+            </Wrapper>
+        </Section>
+    )
+}
+
+export function InstitutionsList() {
+    interface InstitutionCategory {
+        name: string;
+        institutions: string[];
+        icon: string;
+    }
+
+    const institutionsData: InstitutionCategory[] = [
+        {
+            name: "Government",
+            institutions: [
+                "BLW Hospital (Railways)",
+                "NER Hospital (Railways)",
+                "MPMMMCC & HBC Varanasi & Muzaffarpur Bihar (Tata Cancer Hospital)",
+                "Sir Sundarlal Hospital (BHU)",
+                "LPS Cardiology Institute (Kanpur)",
+                "Maa Vindhyawasini Autonomous State Medical College, Mirzapur",
+                "Maharaja Balwant Singh District Hospital, Bhadohi",
+                "District Woman Hospital, Jaunpur",
+            ],
+            icon: '/images/wet_wash/new-icon-01.svg'
+        },
+        {
+            name: "NGO",
+            institutions: ["Ram Krishna Mission Home of Service"],
+            icon: '/images/wet_wash/new-icon-02.svg',
+        },
+        {
+            name: "Private",
+            institutions: [
+                "Ashirwad Hospital, Varanasi",
+                "Galaxy Hospital",
+                "Shubham Hospital",
+                "Apex Hospital",
+                "Trimurti Hospital",
+            ],
+            icon: '/images/wet_wash/new-icon-03.svg',
+        },
+        {
+            name: "Other Institutions",
+            institutions: [
+                "State Bank of India",
+                "Nagar Nigam Varanasi",
+                "ICICI Bank",
+                "The Banaras Club",
+                "Automobile Dealerships (Tata, Kia, Bajaj, Honda etc.)",
+                "Sunbeam Group of Institutions",
+            ],
+            icon: '/images/wet_wash/new-icon-04.svg',
+        }
+    ];
+
+    const bg = [
+        "#85D0B1",
+        "#9688E9",
+        "#E87966",
+        "#F2C94C"
+    ]
+
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
+                    <div className='flex-1 text-center'>
+                        <Heading>
+                            <span className='font-inter text-secondry'>Institutions We Serve</span>
+                        </Heading>
+                        <Subheading classname='max-w-xl mx-auto'>
+                            Proudly supplying sustainable hygiene products to hospitals NGOs and corporate institutions across India.
+                        </Subheading>
+                    </div>
+                    <div className='relative w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 lg:gap-5 md:gap-3 gap-2.5'>
+                        {
+                            institutionsData.map((value, idx) => (
+                                <div
+                                    key={idx + 2}
+                                    style={{ backgroundColor: bg[idx] }}
+                                    className={`w-full h-full relative p-3 lg:p-5 text-white rounded-xl `}>
+                                    <span className='block w-full font-semibold text-2xl'>
+                                        {value.name}
+                                    </span>
+                                    <div className='mt-8 w-full flex flex-col gap-1'>
+                                        {
+                                            value.institutions.map((item, id) => (
+                                                <div key={id} className='flex items-center gap-2 text-sm'>
+                                                    <ChevronsRight size={16} className='shrink-0' />
+                                                    {item}
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                    <Image src={value.icon} alt={value.name} width={75} height={75}
+                                        className='absolute top-3 right-3'
+                                    />
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </Wrapper>
