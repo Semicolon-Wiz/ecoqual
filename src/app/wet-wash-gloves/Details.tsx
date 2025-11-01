@@ -21,28 +21,7 @@ interface NewData {
 }
 
 export function WetWashHero() {
-    const data: NewData[] = [
-        {
-            title: 'Reduces infection risks',
-            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
-            image: '/images/hero/icon-01.svg'
-        },
-        {
-            title: 'Enhances patient comfort',
-            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
-            image: '/images/hero/icon-02.svg'
-        },
-        {
-            title: 'Single-use & microwaveable',
-            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
-            image: '/images/hero/icon-03.svg'
-        },
-        {
-            title: 'Saves time for caregivers',
-            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
-            image: '/images/hero/icon-04.svg'
-        },
-    ]
+
     return (
         <Section>
             <Wrapper>
@@ -71,18 +50,48 @@ export function WetWashHero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3'>
+            </Wrapper>
+        </Section>
+    )
+}
+export function WetWashCard() {
+    const data: NewData[] = [
+        {
+            title: 'Reduces infection risks',
+            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
+            image: '/images/hero/icon-01.svg'
+        },
+        {
+            title: 'Enhances patient comfort',
+            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
+            image: '/images/hero/icon-02.svg'
+        },
+        {
+            title: 'Single-use & microwaveable',
+            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
+            image: '/images/hero/icon-03.svg'
+        },
+        {
+            title: 'Saves time for caregivers',
+            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
+            image: '/images/hero/icon-04.svg'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3'>
                     {
                         data.map((items, idx) => (
-                            <div className='w-full h-full flex gap-2 items-start bg-light-bg p-3 rounded-lg border border-primary ' key={idx}>
-                                <div className='w-10 h-10 shrink-0'>
-                                    <Image src={items.image} alt={items.title} width={40} height={40} className='w-10 h-10' />
+                            <div className='w-full h-full flex gap-5 items-start bg-primary p-5 rounded-lg border border-primary ' key={idx}>
+                                <div className='w-12 h-12 shrink-0 bg-white rounded-full flex items-center justify-center'>
+                                    <Image src={items.image} alt={items.title} width={40} height={40} className='w-9 h-9' />
                                 </div>
                                 <div className='flex-1 flex flex-col gap-1'>
-                                    <h3 className='font-medium text-base text-primary'>
+                                    <h3 className='font-medium lg:text-[22px] md:text-lg text-base text-white'>
                                         {items.title}
                                     </h3>
-                                    <Subheading classname='!text-left leading-[1.3] !text-xs'>
+                                    <Subheading classname='!text-left leading-[1.3] !text-white'>
                                         {items.summary}
                                     </Subheading>
                                 </div>
