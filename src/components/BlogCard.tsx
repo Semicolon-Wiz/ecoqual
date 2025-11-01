@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CategorySkeleton } from "./Skeleton";
 import { usePathname } from "next/navigation";
+import { motion } from 'motion/react'
 
 
 export default function BlogCard({ limit }: { limit?: number }) {
@@ -31,9 +32,7 @@ export default function BlogCard({ limit }: { limit?: number }) {
                         </Subheading>
                     </div>
 
-                    <div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-                        <Cards limit={limit} />
-                    </div>
+                    <Cards limit={limit} />
                 </div>
             </Wrapper>
         </Section>
@@ -59,6 +58,7 @@ async function FetchBlogs(): Promise<Blog[]> {
 }
 
 function Cards({ limit }: { limit?: number }) {
+    const easeInOut: [number, number, number, number] = [0.42, 0, 0.58, 1];
     const { data, error, isLoading } = useQuery<Blog[], Error>({
         queryKey: ["blogs"],
         queryFn: FetchBlogs,
@@ -67,24 +67,45 @@ function Cards({ limit }: { limit?: number }) {
 
     if (!data && isLoading) {
         return (
-            <>
+            <div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                 {
                     Array.from({ length: 3 }).map((_, id) => (
                         <CategorySkeleton key={id} />
                     ))
                 }
-            </>
+            </div>
         )
     }
+
+    const cardContainerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.3,
+                ease: easeInOut,
+            },
+        },
+    };
+    const cardVarient = {
+        hidden: { opacity: 0, y: 200 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: easeInOut } },
+    }
     return (
-        <>
+        <motion.div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5"
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+        >
             {
                 (limit && limit > 0 ? data?.slice(0, limit) : data)?.map((items: Blog) => (
-                    <div key={items.id} className="group w-full relative h-full border border-gray-300 rounded-xl p-4 pb-3">
-                        <div className="w-full h-60 overflow-hidden rounded-md">
-                            <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" />
+                    <motion.div key={items.id} className="group w-full relative h-full border border-gray-300"
+                        variants={cardVarient}
+                    >
+                        <div className="w-full h-60">
+                            <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-cover" />
                         </div>
-                        <div className="relative mt-5 flex flex-col">
+                        <div className="relative flex flex-col lg:p-5 p-3">
                             <Link href={`/blogs/${items.slug}`} className=" font-semibold lg:text-xl md:text-lg text-base text-zinc-800 ">
                                 {items.title}
                             </Link>
@@ -95,9 +116,9 @@ function Cards({ limit }: { limit?: number }) {
                                 Read this blog
                             </Link>
                         </div>
-                    </div>
+                    </motion.div>
                 ))
             }
-        </>
+        </motion.div>
     )
 }

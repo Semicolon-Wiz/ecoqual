@@ -111,6 +111,26 @@ export function WetWashDetails() {
             content: 'Ready-to-use gloves ensure hygiene anywhere, anytime — without water.',
             icon: '/images/wet_wash/icon-03.svg'
         },
+        // {
+        //     title: 'Reduces infection risks',
+        //     content: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
+        //     icon: '/images/hero/icon-01.svg'
+        // },
+        // {
+        //     title: 'Enhances patient comfort',
+        //     content: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
+        //     icon: '/images/hero/icon-02.svg'
+        // },
+        // {
+        //     title: 'Single-use & microwaveable',
+        //     content: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
+        //     icon: '/images/hero/icon-03.svg'
+        // },
+        // {
+        //     title: 'Saves time for caregivers',
+        //     content: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
+        //     icon: '/images/hero/icon-04.svg'
+        // },
     ]
     return (
         <Section>
@@ -973,53 +993,53 @@ export function Packaging() {
 export function AllPageLinks() {
     const data: Data[] = [
         {
-            title: 'Benefits of Wet Wash Gloves?',
+            title: 'Benefits & Features of Wet Wash Gloves',
             summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
             icon: '/images/details/icon-9.svg',
             link: 'wet-wash-gloves/benefits'
         },
         {
-            title: 'Why Wet Wash Gloves Work Better',
-            summary: 'Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.',
-            icon: '/images/details/icon-10.svg',
-            link: 'wet-wash-gloves/working'
-        },
-        {
-            title: 'Application of Wet Wash Gloves',
-            summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
-            icon: '/images/details/icon-12.svg',
-            link: 'wet-wash-gloves/application'
-        },
-        {
-            title: 'Key Features of Wet Wash Gloves',
-            summary: 'Engineered for trust, safety, and ease.',
-            icon: '/images/details/icon-13.svg',
-            link: 'wet-wash-gloves/key-features'
-        },
-        {
-            title: 'Why Choose Wet Wash Gloves?',
+            title: 'Why Choose Wet Wash Gloves & Why it Work Better',
             summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
             icon: '/images/details/icon-14.svg',
             link: 'wet-wash-gloves/why-wet-wash-gloves'
         },
+        // {
+        //     title: 'Why Wet Wash Gloves Work Better',
+        //     summary: 'Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.',
+        //     icon: '/images/details/icon-10.svg',
+        //     link: 'wet-wash-gloves/working'
+        // },
         {
-            title: 'How to use Wet Wash Gloves',
-            summary: 'Hygiene made simple—in just a few easy steps.',
-            icon: '/images/details/icon-14.svg',
-            link: 'wet-wash-gloves/how-to-use-wet-wash-gloves'
+            title: 'Application & how to use of Wet Wash Gloves',
+            summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
+            icon: '/images/details/icon-12.svg',
+            link: 'wet-wash-gloves/application'
         },
+        // {
+        //     title: 'Key Features of Wet Wash Gloves',
+        //     summary: 'Engineered for trust, safety, and ease.',
+        //     icon: '/images/details/icon-13.svg',
+        //     link: 'wet-wash-gloves/key-features'
+        // },
+        // {
+        //     title: 'How to use Wet Wash Gloves',
+        //     summary: 'Hygiene made simple—in just a few easy steps.',
+        //     icon: '/images/details/icon-14.svg',
+        //     link: 'wet-wash-gloves/how-to-use-wet-wash-gloves'
+        // },
         {
             title: 'Traditional Bathing vs. Wet Wash Gloves',
             summary: 'See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.',
             icon: '/images/details/icon-14.svg',
             link: 'wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves'
         },
-        {
-            title: 'Technical Details',
-            summary: 'Key specifications ensuring quality and reliability.',
-            icon: '/images/details/icon-14.svg',
-            link: 'wet-wash-gloves/technical-details'
-        },
+        // {
+        //     title: 'Technical Details',
+        //     summary: 'Key specifications ensuring quality and reliability.',
+        //     icon: '/images/details/icon-14.svg',
+        //     link: 'wet-wash-gloves/technical-details'
+        // },
         {
             title: 'Contributor to NHM & NPHCE Policies of India',
             summary: 'Supporting national health initiatives with trusted hygiene solutions',

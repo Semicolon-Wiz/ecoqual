@@ -290,38 +290,29 @@ export default function NavBar() {
     return (
         <>
             <header className={`sticky top-0 bg-white z-20 w-full transition-all duration-300 ease-in-out border-b border-b-gray-200 ${showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"}`}>
-                <nav className='relative w-full max-w-7xl mx-auto px-5 py-2 flex items-center justify-between'>
+                <nav className='relative w-full max-w-7xl mx-auto lg:h-[80px] md:h-[70px] h-[65px] px-5 flex items-center justify-between'>
                     <div className='relative shrink-0 w-max'>
                         <Link href={'/'}>
                             <Image src={'/images/logo/logo.svg'} width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='lg:w-24 md:w-20 w-16 h-auto' />
                         </Link>
                     </div>
 
-                    <div className='lg:flex hidden relative w-max items-center gap-2'>
-                        <Link
-                            href="/"
-                            className={`text-base px-3.5 py-1.5 ${currentPath === '/'
-                                ? 'bg-primary text-white rounded-full'
-                                : 'text-zinc-800'
-                                }`}
-                        >
-                            Home
-                        </Link>
+                    <div className='lg:flex hidden relative w-max items-center gap-2 h-full'>
                         <Link
                             href="/about"
-                            className={`text-base px-3.5 py-1.5 ${currentPath === '/about'
+                            className={`block my-auto text-base px-3.5 py-1.5 ${currentPath === '/about'
                                 ? 'bg-primary text-white rounded-full'
                                 : 'text-zinc-800'
                                 }`}
                         >
-                            About
+                            About EcoQual
                         </Link>
                         {data?.map((category) => (
-                            <div key={category.id} className="relative group/menu">
+                            <div key={category.id} className="relative group/menu h-full ">
 
                                 <button
                                     type="button"
-                                    className="transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
+                                    className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
                                 >
                                     {category.title}
                                     {category.sub_categories.length > 0 && (
@@ -331,7 +322,7 @@ export default function NavBar() {
 
                                 {category.sub_categories.length > 0 && (
                                     <div
-                                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max bg-white rounded-xl shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 border border-gray-200"
+                                        className="absolute top-full left-0 z-50 w-max bg-white shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 border border-gray-200"
                                     >
                                         <Fragment>
                                             {
@@ -339,19 +330,19 @@ export default function NavBar() {
                                                     <Fragment>
                                                         <Link
                                                             href='/wet-wash-gloves'
-                                                            className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                                            className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
-                                                            <span className="truncate">
+                                                            <span className="truncate !font-inter font-normal">
                                                                 Wet Wash Gloves
                                                             </span>
                                                         </Link>
                                                         <Link
                                                             href='/ultrasound-gel'
-                                                            className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                                            className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
-                                                            <span className="truncate">
+                                                            <span className="truncate !font-inter font-normal">
                                                                 Ultrasound Gel
                                                             </span>
                                                         </Link>
@@ -362,10 +353,10 @@ export default function NavBar() {
                                                 <Link
                                                     key={sub.id}
                                                     href={`/${category.slug}/${sub.slug}`}
-                                                    className="group/item text-lg flex items-center gap-2.5 px-3 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                                    className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                                 >
                                                     <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
-                                                    <span className="truncate">{sub.title}</span>
+                                                    <span className="truncate !font-inter font-normal">{sub.title}</span>
                                                 </Link>
                                             ))}
                                         </Fragment>
@@ -419,11 +410,8 @@ export default function NavBar() {
 
                     <div className='w-full mt-10 flex flex-col gap-2'>
 
-                        <Link href="/" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-lg font-medium ${currentPath === '/' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
-                            Home
-                        </Link>
-                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-lg font-medium ${currentPath === '/about' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
-                            About
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/about' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                            About EcoQual
                         </Link>
 
                         {data?.map((category) => (
@@ -432,7 +420,7 @@ export default function NavBar() {
                                 <button
                                     type="button"
                                     onClick={() => toggleSubMenu(category.id)}
-                                    className="transition-all duration-200 ease-linear px-4 py-2 flex items-center justify-between font-medium text-white text-lg"
+                                    className="transition-all duration-200 ease-linear px-4 py-2 flex items-center justify-between font-medium text-white text-base !font-inter"
                                 >
                                     {category.title}
                                     {category.sub_categories.length > 0 && (
@@ -450,19 +438,19 @@ export default function NavBar() {
                                                     <Fragment>
                                                         <Link
                                                             href='/wet-wash-gloves'
-                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200"
+                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
-                                                            <span className="truncate">
+                                                            <span className="truncate !font-inter">
                                                                 Wet Wash Gloves
                                                             </span>
                                                         </Link>
                                                         <Link
                                                             href='/ultrasound-gel'
-                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200"
+                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
-                                                            <span className="truncate">
+                                                            <span className="truncate !font-inter">
                                                                 Ultrasound Gel
                                                             </span>
                                                         </Link>
@@ -475,10 +463,10 @@ export default function NavBar() {
                                                     key={sub.id}
                                                     href={`/product/${sub.slug}`}
                                                     onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
-                                                    className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200"
+                                                    className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
                                                 >
                                                     <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
-                                                    <span className="truncate">{sub.title}</span>
+                                                    <span className="truncate !font-inter font-normal">{sub.title}</span>
                                                 </Link>
                                             ))}
                                         </Fragment>
@@ -487,10 +475,10 @@ export default function NavBar() {
                             </div>
                         ))}
 
-                        <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-lg font-medium ${currentPath === '/blogs' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                        <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/blogs' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
                             Blogs
                         </Link>
-                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-lg font-medium ${currentPath === '/contact' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/contact' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
                             Contact
                         </Link>
                     </div>
