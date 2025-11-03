@@ -51,201 +51,6 @@ const fetchCategories = async (): Promise<Category[]> => {
 export default function NavBar() {
 
     const currentPath = usePathname();
-    // const menuItems: MenuItem[] = [
-    //     {
-    //         key: 'home',
-    //         name: 'Home',
-    //         path: '/'
-    //     },
-    //     {
-    //         key: 'about',
-    //         name: 'About EcoQual',
-    //         path: '/about'
-    //     },
-    //     {
-    //         key: 'wet-wash-gloves',
-    //         name: 'Wet Wash Gloves',
-    //         path: '/wet-wash-gloves',
-    //         submenu: [
-    //             {
-    //                 key: 'wet-wash-gloves',
-    //                 name: 'Wet Wash Gloves',
-    //                 path: '/wet-wash-gloves',
-    //             },
-    //             {
-    //                 key: 'wet-wash-gloves-technical-details',
-    //                 name: 'Technical Details',
-    //                 path: '/wet-wash-gloves/technical-details',
-    //             },
-    //             {
-    //                 key: 'wet-wash-gloves-contributor',
-    //                 name: 'Contributor to NHM & NPHCE Policies of India',
-    //                 path: '/wet-wash-gloves/contributor',
-    //             },
-    //             {
-    //                 key: 'wet-wash-gloves-packaging-and-supply',
-    //                 name: 'Packaging & Supply Details',
-    //                 path: '/wet-wash-gloves/packaging-and-supply',
-    //             },
-    //         ]
-    //     },
-    //     {
-    //         key: 'products',
-    //         name: 'Other EQ Products',
-    //         path: '/products',
-    //         submenu: [
-    //             {
-    //                 key: 'house-keeping-products',
-    //                 name: 'House Keeping Products',
-    //                 path: '/product/house-keeping',
-
-    //             },
-    //             {
-    //                 key: 'surgical-products',
-    //                 name: 'Surgical Products',
-    //                 path: '/product/surgical',
-
-    //             },
-    //             {
-    //                 key: 'institutional-uniforms',
-    //                 name: 'Institutional Uniforms',
-    //                 path: '/product/institutional',
-
-    //             },
-    //             {
-    //                 key: 'kits',
-    //                 name: 'Kits',
-    //                 path: '/product/kits',
-
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         key: 'blogs',
-    //         name: 'Blogs',
-    //         path: '/blogs'
-    //     },
-    //     {
-    //         key: 'contact',
-    //         name: 'Contact',
-    //         path: '/contact'
-    //     }
-    // ]
-    const menuItems: MenuItem[] = [
-        {
-            key: 'home',
-            name: 'Home',
-            path: '/'
-        },
-        {
-            key: 'about',
-            name: 'About EcoQual',
-            path: '/about'
-        },
-        {
-            key: 'healthcare_essentials',
-            name: 'Healthcare Essentials',
-            path: '/products',
-            submenu: [
-                {
-                    key: 'house-keeping-products',
-                    name: 'House Keeping Products',
-                    path: '/product/house-keeping',
-
-                },
-                {
-                    key: 'surgical-products',
-                    name: 'Surgical Products',
-                    path: '/product/surgical',
-
-                },
-                {
-                    key: 'institutional-uniforms',
-                    name: 'Institutional Uniforms',
-                    path: '/product/institutional',
-
-                },
-                {
-                    key: 'kits',
-                    name: 'Kits',
-                    path: '/product/kits',
-
-                }
-            ]
-        },
-        {
-            key: 'facility_hygiene',
-            name: 'Facility Hygiene',
-            path: '/products',
-            submenu: [
-                {
-                    key: 'house-keeping-products',
-                    name: 'House Keeping Products',
-                    path: '/product/house-keeping',
-
-                },
-                {
-                    key: 'surgical-products',
-                    name: 'Surgical Products',
-                    path: '/product/surgical',
-
-                },
-                {
-                    key: 'institutional-uniforms',
-                    name: 'Institutional Uniforms',
-                    path: '/product/institutional',
-
-                },
-                {
-                    key: 'kits',
-                    name: 'Kits',
-                    path: '/product/kits',
-
-                }
-            ]
-        },
-        {
-            key: 'professional_wear',
-            name: 'Professional Wear',
-            path: '/products',
-            submenu: [
-                {
-                    key: 'house-keeping-products',
-                    name: 'House Keeping Products',
-                    path: '/product/house-keeping',
-
-                },
-                {
-                    key: 'surgical-products',
-                    name: 'Surgical Products',
-                    path: '/product/surgical',
-
-                },
-                {
-                    key: 'institutional-uniforms',
-                    name: 'Institutional Uniforms',
-                    path: '/product/institutional',
-
-                },
-                {
-                    key: 'kits',
-                    name: 'Kits',
-                    path: '/product/kits',
-
-                }
-            ]
-        },
-        {
-            key: 'blogs',
-            name: 'Blogs',
-            path: '/blogs'
-        },
-        {
-            key: 'contact',
-            name: 'Contact',
-            path: '/contact'
-        }
-    ]
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
     const { stopScroll, startScroll } = useLenisControl();
@@ -307,9 +112,39 @@ export default function NavBar() {
                         >
                             About EcoQual
                         </Link>
+
+                        {
+                            isLoading && (
+                                <>
+                                    <button
+                                        type="button"
+                                        className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
+                                    >
+
+                                        Healthcare Essentials
+                                        <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={17} />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
+                                    >
+                                        Facility Hygiene
+                                        <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={17} />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
+                                    >
+                                        Professional Wear
+                                        <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={17} />
+                                    </button>
+
+                                </>
+                            )
+                        }
+
                         {data?.map((category) => (
                             <div key={category.id} className="relative group/menu h-full ">
-
                                 <button
                                     type="button"
                                     className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"

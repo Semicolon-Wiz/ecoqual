@@ -21,28 +21,7 @@ interface NewData {
 }
 
 export function WetWashHero() {
-    const data: NewData[] = [
-        {
-            title: 'Reduces infection risks',
-            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
-            image: '/images/hero/icon-01.svg'
-        },
-        {
-            title: 'Enhances patient comfort',
-            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
-            image: '/images/hero/icon-02.svg'
-        },
-        {
-            title: 'Single-use & microwaveable',
-            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
-            image: '/images/hero/icon-03.svg'
-        },
-        {
-            title: 'Saves time for caregivers',
-            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
-            image: '/images/hero/icon-04.svg'
-        },
-    ]
+
     return (
         <Section>
             <Wrapper>
@@ -71,18 +50,46 @@ export function WetWashHero() {
                     </div>
                 </div>
 
-                <div className='relative w-full mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3'>
+            </Wrapper>
+        </Section>
+    )
+}
+export function WetWashCard() {
+    const data: NewData[] = [
+        {
+            title: 'Reduces infection risks',
+            summary: 'Designed to minimize cross-contamination, Wet Wash Gloves significantly lower infection risks in critical healthcare settings.',
+            image: '/images/hero/icon-01.svg'
+        },
+        {
+            title: 'Enhances patient comfort',
+            summary: 'Soft, soothing material ensures gentle care while preserving patient dignity during hygiene routines.',
+            image: '/images/hero/icon-02.svg'
+        },
+        {
+            title: 'Single-use & microwaveable',
+            summary: 'Ready-to-use, disposable gloves can be warmed in seconds, ensuring comfort, hygiene, and practicality anytime, anywhere.',
+            image: '/images/hero/icon-03.svg'
+        },
+        {
+            title: 'Saves time for caregivers',
+            summary: 'Quick and easy to use, they streamline daily care, allowing healthcare professionals to focus more on patient well-being.',
+            image: '/images/hero/icon-04.svg'
+        },
+    ]
+    return (
+        <Section>
+            <Wrapper>
+                <div className='relative w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3'>
                     {
                         data.map((items, idx) => (
-                            <div className='w-full h-full flex gap-2 items-start bg-light-bg p-3 rounded-lg border border-primary ' key={idx}>
-                                <div className='w-10 h-10 shrink-0'>
-                                    <Image src={items.image} alt={items.title} width={40} height={40} className='w-10 h-10' />
-                                </div>
+                            <div className='w-full h-full flex gap-3 items-start bg-white p-3 rounded-lg shadow-md' key={idx}>
+                                <Image src={items.image} alt={items.title} width={40} height={40} className='w-10 h-10' />
                                 <div className='flex-1 flex flex-col gap-1'>
                                     <h3 className='font-medium text-base text-primary'>
                                         {items.title}
                                     </h3>
-                                    <Subheading classname='!text-left leading-[1.3] !text-xs'>
+                                    <Subheading classname='!text-left leading-[1.2] !text-zinc-700 !text-sm'>
                                         {items.summary}
                                     </Subheading>
                                 </div>
@@ -145,7 +152,7 @@ export function WetWashDetails() {
                         </Subheading>
                     </div>
 
-                    <div className='flex-1 relative grid lg:grid-cols-[1fr_480px] grid-cols-1 gap-5'>
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_400px] grid-cols-1 gap-5'>
                         <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
                             <Subheading classname='text-left mt-3 max-w-2xl !text-lg'>
                                 EQ Wet Wash Gloves are pre-moistened, single-use cleansing gloves designed for easy and effective hygiene care without the need for water or soap. Scientifically developed and clinically tested, they support hospital hygiene standards while ensuring comfort, convenience, and skin protection.
@@ -155,19 +162,19 @@ export function WetWashDetails() {
                                 Made with soft, two-sided fabric and a gentle cleansing solution, these gloves make cleaning quick, safe, and water-free — no rinsing required.
                             </Subheading>
 
-                            <div className='mt-8 w-full grid grid-cols-2 gap-5'>
+                            <div className='mt-8 w-full grid grid-cols-3 gap-3'>
                                 {
                                     dt1.map((data) => (
-                                        <div key={data.title} className='w-full h-full p-5 bg-gray-50 border border-gray-300 rounded-2xl '>
-                                            <div className='w-full flex gap-5 items-center'>
-                                                <div className='shrink-0 w-12 h-12 rounded-full bg-primary p-2 '>
-                                                    <Image src={data.icon} alt={data.title} width={36} height={36} />
+                                        <div key={data.title} className='w-full h-full p-2 bg-white shadow-md rounded-lg'>
+                                            <div className='w-full flex gap-3 items-center'>
+                                                <div className='shrink-0 w-9 h-9 rounded-full bg-primary p-2 '>
+                                                    <Image src={data.icon} alt={data.title} width={24} height={24} />
                                                 </div>
-                                                <h2 className='font-semibold md:text-lg text-base text-primary leading-[1.2] '>
+                                                <h2 className='font-semibold text-base text-primary leading-[1.2] '>
                                                     {data.title}
                                                 </h2>
                                             </div>
-                                            <p className='mt-3 font-medium text-base text-zinc-700'>
+                                            <p className='mt-3 font-medium text-sm text-zinc-700'>
                                                 {data.content}
                                             </p>
                                         </div>
@@ -178,7 +185,7 @@ export function WetWashDetails() {
                         </div>
 
                         <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-2 order-1">
-                            <Image src={'/images/hero/wet-wash.png'} alt='image'
+                            <Image src={'/images/wet_wash/new.png'} alt='image'
                                 width={800}
                                 height={500}
                                 className='w-[550px]' />
@@ -993,15 +1000,15 @@ export function Packaging() {
 export function AllPageLinks() {
     const data: Data[] = [
         {
-            title: 'Benefits & Features of Wet Wash Gloves',
+            title: 'Discover the Benefits of Wet Wash Gloves.',
             summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
-            icon: '/images/details/icon-9.svg',
+            icon: '/images/wet_wash/benefits.svg',
             link: 'wet-wash-gloves/benefits'
         },
         {
-            title: 'Why Choose Wet Wash Gloves & Why it Work Better',
+            title: 'Why Wet Wash Gloves Are the Better Hygiene Choice.',
             summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
-            icon: '/images/details/icon-14.svg',
+            icon: '/images/wet_wash/wet-wash.svg',
             link: 'wet-wash-gloves/why-wet-wash-gloves'
         },
         // {
@@ -1011,9 +1018,9 @@ export function AllPageLinks() {
         //     link: 'wet-wash-gloves/working'
         // },
         {
-            title: 'Application & how to use of Wet Wash Gloves',
+            title: 'Application & Usage of Wet Wash Gloves.',
             summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
-            icon: '/images/details/icon-12.svg',
+            icon: '/images/wet_wash/applications.svg',
             link: 'wet-wash-gloves/application'
         },
         // {
@@ -1031,7 +1038,7 @@ export function AllPageLinks() {
         {
             title: 'Traditional Bathing vs. Wet Wash Gloves',
             summary: 'See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.',
-            icon: '/images/details/icon-14.svg',
+            icon: '/images/wet_wash/traditional.svg',
             link: 'wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves'
         },
         // {
@@ -1043,13 +1050,13 @@ export function AllPageLinks() {
         {
             title: 'Contributor to NHM & NPHCE Policies of India',
             summary: 'Supporting national health initiatives with trusted hygiene solutions',
-            icon: '/images/details/icon-14.svg',
+            icon: '/images/wet_wash/contributor.svg',
             link: 'wet-wash-gloves/contributor'
         },
         {
             title: 'Packaging & Supply Details',
             summary: 'Secure, hygienic, and convenient packaging for every need.',
-            icon: '/images/details/icon-14.svg',
+            icon: '/images/wet_wash/packaging.svg',
             link: 'wet-wash-gloves/packaging-and-supply'
         },
     ]
@@ -1069,13 +1076,17 @@ export function AllPageLinks() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div className='relative w-full h-full p-3 bg-white border border-zinc-200 rounded-2xl' key={idx}>
+                                <div 
+                                className='relative w-full h-full p-3 md:p-5 bg-white after:absolute after:left-0 after:inset-y-0 after:w-[2px] after:bg-gradient-to-b after:from-primary after:via-white after:to-white before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-primary before:via-white before:to-white shadow-md '
+                                    key={idx}
+                                >
+                                    
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>
-                                    <h2 className='mt-8 font-semibold text-primary-dark  md:text-xl text-base'>
+                                    <Link href={items.link ?? '#'} className='block mt-8 text-gray-800 md:text-xl text-base leading-[1.4] '>
                                         {items.title}
-                                    </h2>
+                                    </Link>
                                     <Subheading classname='text-left mt-4 leading-[1.3] !font-normal line-clamp-2 '>
                                         {items.summary}
                                     </Subheading>

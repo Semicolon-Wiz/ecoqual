@@ -37,15 +37,9 @@ export default function ContactForm() {
         },
         {
             title: 'E-Mail',
-            content: 'info@gmail.com',
+            content: 'contact@ecoqual.in',
             icon: '/images/svg/icons/mail.svg',
-            link: 'info@ecoqual.com'
-        },
-        {
-            title: 'Office Hours',
-            content: 'Monday - Friday: 8:00 AM - 5:00 PM Saturday: 9:00 AM - 2:00 PM Sunday: Closed',
-            icon: '/images/svg/icons/clock-2.svg',
-            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
+            link: 'mailto:contact@ecoqual.in'
         },
     ]
     const [loading, setLoading] = useState<boolean>(false);
@@ -110,7 +104,7 @@ export default function ContactForm() {
     }
 
     return (
-        <Section classname=''>
+        <Section>
             <Wrapper>
                 <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
@@ -141,7 +135,7 @@ export default function ContactForm() {
                                                 <h4 className='text-base text-zinc-900'>
                                                     {info.title}
                                                 </h4>
-                                                <Link href={info.link} className='relative text-sm font-normal text-[#4E4E4E] leading-[1.1] !font-montserrat'>
+                                                <Link href={info.link} target='_blank' className='relative text-sm font-normal text-[#4E4E4E] leading-[1.1] !font-montserrat'>
                                                     {info.content}
                                                 </Link>
                                             </div>
@@ -214,6 +208,9 @@ export default function ContactForm() {
                             </form>
                         </div>
                     </div>
+                    
+                    <iframe className='rounded-2xl'
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.1461176023176!2d82.9793782!3d25.299294399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320ed9555555%3A0x7d77e8b1b105b0c2!2sEcoQual!5e0!3m2!1sen!2sin!4v1762151558593!5m2!1sen!2sin" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <Toaster />
             </Wrapper>

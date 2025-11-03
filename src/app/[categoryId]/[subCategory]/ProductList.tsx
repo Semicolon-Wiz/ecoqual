@@ -6,6 +6,7 @@ import { MoveUpRight } from 'lucide-react';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { ProductSkeleton } from '@/components/Skeleton';
+import { motion } from 'motion/react';
 
 export interface Product {
     id: number;
@@ -40,8 +41,10 @@ export interface ProductResponse {
     products: Product[];
 }
 
+const easeInOut: [number, number, number, number] = [0.42, 0, 0.58, 1];
 
 export default function ProductList({ categoryId, subCategory }: { categoryId: string, subCategory: string }) {
+
     const fetchProducts = async (categoryId: string, subCategoryId: string): Promise<ProductResponse> => {
         const res = await axios.get<ProductResponse>(`https://inforbit.in/demo/ecoqual/api/categories/${categoryId}/${subCategoryId}`);
         return res.data;
@@ -64,7 +67,7 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                             <div className="h-6 bg-gray-200 rounded-md w-2/3 mx-auto" />
                         </div>
 
-                        <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
+                        <div className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 gap-y-10'>
                             {
                                 Array.from({ length: 6 }).map((_, id) => (
                                     <ProductSkeleton key={id} />
@@ -75,6 +78,20 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                 </Wrapper>
             </Section>
         )
+    }
+
+    const cardContainerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.3,
+                ease: easeInOut,
+            },
+        },
+    };
+    const cardVarient = {
+        hidden: { opacity: 0, y: 200 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: easeInOut } },
     }
 
     return (
@@ -90,40 +107,48 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                         </Subheading>
                     </div>
 
-                    <div className='w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 gap-y-10'>
+                    <motion.div
+                        className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 gap-y-10'
+                        variants={cardContainerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0 }}
+                    >
                         {
                             data?.products.map((items, idx) => (
-                                <div
+                                <motion.div
                                     key={idx}
-                                    className='relative w-full h-full rounded-3xl overflow-hidden bg-white shadow group p-2.5'
+                                    className='relative w-full h-full bg-white shadow-md group rounded-md'
+                                    variants={cardVarient}
+                                    
                                 >
-                                    <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block relative w-full h-[320px] overflow-hidden rounded-2xl'>
-                                        <Image src={items.image} alt={items.title} width={500} height={400}
-                                            className='w-full h-full object-contain object-center rounded-2xl hover:scale-105 transition-transform duration-200'
+                                    <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block relative w-full h-[300px]'>
+                                        <Image src={items.image} alt={items.title} width={1920} height={1080}
+                                            className='w-full h-full object-contain object-center'
                                         />
                                     </Link>
-                                    <div className='relative w-full px-2 z-10 py-2 mt-4'>
+                                    <div className='relative w-full p-3 pb-6 z-10'>
                                         <span className='text-sm font-medium text-blue-600'>
                                             {data.category.title}
                                         </span>
-                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block mt-1 text-gray-900 font-normal !font-montserrat lg:text-2xl md:text-lg text-base '>
+                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block mt-1 text-gray-800 !font-montserrat md:text-lg text-base font-semibold '>
                                             {items.title}
                                         </Link>
 
                                         <div
-                                            className="prose mt-2 max-w-none text-gray-700 line-clamp-3"
+                                            className="prose mt-2 max-w-none text-gray-700 line-clamp-3 text-sm"
                                             dangerouslySetInnerHTML={{ __html: items.product_description }}
                                         />
 
-                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='ml-auto mt-6 w-max px-5 py-3 text-lg flex items-center gap-2 justify-center rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-colors duration-300 ease-in-out'>
+                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='ml-auto mt-6  w-max text-base flex items-center gap-1 justify-center text-blue-700 underline underline-offset-4 '>
                                             View Product
-                                            <MoveUpRight size={20} />
+                                            <MoveUpRight size={14} />
                                         </Link>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))
                         }
-                    </div>
+                    </motion.div>
                 </div>
             </Wrapper>
         </Section>

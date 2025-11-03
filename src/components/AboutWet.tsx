@@ -69,7 +69,7 @@ export default function AboutWet() {
                         </div>
 
                         <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-2 order-1">
-                            <Image src={'/images/img.png'} alt='image'
+                            <Image src={'/images/wet_wash/img.png'} alt='image'
                                 width={800}
                                 height={500}
                                 className='w-[450px]' />
