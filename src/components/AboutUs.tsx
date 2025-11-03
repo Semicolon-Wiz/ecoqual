@@ -222,18 +222,18 @@ export function OurValues() {
                             <ImageCarousel image={data} />
                         </div>
                         <div className='w-full h-full relative flex justify-center flex-col'>
-                            <p className='font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                            <p className='font-normal md:text-base lg:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
-                                    At EQ, we design with <strong>purpose — combining innovation, sustainability, and practicality to build smarter hygiene</strong> ecosystems for today&apos;s world.
+                                    At EQ, we design with purpose — combining innovation, sustainability, and practicality to build smarter hygiene  ecosystems for today&apos;s world.
                                 </span>
                                 <span>
-                                    Our solutions are <strong>eco-conscious, accessible, and human-centric, created to simplify hygiene, safeguard health, and support those who care for others.</strong>
+                                    Our solutions are eco-conscious, accessible, and human-centric, created to simplify hygiene, safeguard health, and support those who care for others.
                                 </span>
                                 <span>
                                     We go beyond products to create systems of trust — where every touchpoint enhances:
                                 </span>
                             </p>
-                            <ul className='mt-3 flex flex-col gap-1 pl-5 list-disc text-zinc-700'>
+                            <ul className='font-normal mt-3 flex flex-col gap-1 pl-5 list-disc text-zinc-700'>
                                 <li>
                                     <strong>Simpler hygiene management</strong>
                                 </li>
@@ -244,11 +244,9 @@ export function OurValues() {
                                     <strong>Improved safety, comfort, and efficiency</strong>
                                 </li>
                             </ul>
-                            <p className='mt-3 font-medium md:text-base lg:text-lg text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                            <p className='mt-3 font-normal md:text-base lg:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
                                 <span>
-                                    From healthcare to hospitality, from safety wear to sanitation, our mission is simple yet profound <strong>
-                                        to make hygiene intelligent, sustainable, and deeply human.
-                                    </strong>
+                                    From healthcare to hospitality, from safety wear to sanitation, our mission is simple yet profound to make hygiene intelligent, sustainable, and deeply human.
                                 </span>
                                 <strong>
                                     At EQ, we&apos;re building a healthier, safer tomorrow — for every hand that cares.
