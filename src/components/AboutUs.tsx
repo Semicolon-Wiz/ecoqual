@@ -300,10 +300,10 @@ export function MoreAboutUs() {
                 <div className="relative w-full flex flex-col gap-10">
                     <div className="text-center">
                         <Heading>
-                            <span className="font-inter text-secondry">About Us</span>
+                            <span className="font-inter text-secondry">Inspired by Clean Innovation</span>
                         </Heading>
                         <Subheading classname="max-w-xl mx-auto">
-                            The significance of starting our business in Varanasi.
+                            Redefining hygiene with smarter, safer, and sustainable solutions.
                         </Subheading>
                     </div>
 
@@ -311,64 +311,68 @@ export function MoreAboutUs() {
 
                         <div className="md:float-right md:ml-6 mb-4 w-full lg:w-[400px] md:w-[300px] relative rounded-2xl overflow-hidden shadow-lg">
                             <Image
-                                src="/images/about/me.jpeg"
+                                src="/images/about/me.jpg"
                                 alt="EcoQual Healthcare Solutions"
                                 width={400}
                                 height={300}
                                 className="object-cover w-full h-full"
                             />
                         </div>
-
+                        <h2 className='lg:text-2xl md:text-xl text-lg mb-2 font-semibold text-primary-dark'>
+                            The significance of starting our business in Varanasi.
+                        </h2>
                         <p>
                             <strong>EcoQual Healthcare Solutions</strong> founded in <strong>November 2019</strong> by <strong>Mr. Siddhant Mehra</strong>,
                             it emerged from a rich legacy in the traditional Banarasi silk trade,
                             combined with a vision to create meaningful impact through innovation and sustainability.
                         </p>
+                        {/* <div className='flex flex-col gap-4'> */}
 
-                        <p>
-                            As cities in northern India faced escalating air pollution and rising levels of harmful particulate matter (PM 2.5),
-                            Siddhant felt compelled to act. Drawing from his expertise in textiles and precision manufacturing,
-                            he began exploring ways to protect people from polluted air. This journey led him to specialize in fabric innovation,
-                            where he developed a deep understanding of filtration techniques and materials.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                As cities in northern India faced escalating air pollution and rising levels of harmful particulate matter (PM 2.5),
+                                Siddhant felt compelled to act. Drawing from his expertise in textiles and precision manufacturing,
+                                he began exploring ways to protect people from polluted air. This journey led him to specialize in fabric innovation,
+                                where he developed a deep understanding of filtration techniques and materials.
+                            </p>
 
-                        <p>
-                            In 2020, as the COVID-19 pandemic caused global disruptions, EcoQual adapted rapidly to the growing need for
-                            personal protective equipment. This pivot underscored the company's commitment to hygiene, protection, and preventive care,
-                            and set the stage for our entry into a broader range of healthcare and sanitation solutions.
-                            We expanded our offerings to include sanitizers, phenyls, detergents, and floor cleaners.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                In 2020, as the COVID-19 pandemic caused global disruptions, EcoQual adapted rapidly to the growing need for
+                                personal protective equipment. This pivot underscored the company's commitment to hygiene, protection, and preventive care,
+                                and set the stage for our entry into a broader range of healthcare and sanitation solutions.
+                                We expanded our offerings to include sanitizers, phenyls, detergents, and floor cleaners.
+                            </p>
 
-                        <p>
-                            As the pandemic unfolded, we saw firsthand the challenges healthcare workers, particularly nurses, faced with exposure
-                            to cross-contamination. This inspired a wave of innovation that led us to develop the
-                            <strong> EcoQual Wet Wash Gloves</strong> in 2023 — a safer, more hygienic alternative to traditional patient sponging methods.
-                            These gloves became a game-changer in caregiving standards, especially within hospitals and senior living facilities.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                As the pandemic unfolded, we saw firsthand the challenges healthcare workers, particularly nurses, faced with exposure
+                                to cross-contamination. This inspired a wave of innovation that led us to develop the
+                                <strong> EcoQual Wet Wash Gloves</strong> in 2023 — a safer, more hygienic alternative to traditional patient sponging methods.
+                                These gloves became a game-changer in caregiving standards, especially within hospitals and senior living facilities.
+                            </p>
 
-                        <p>
-                            Our continued work in healthcare revealed another critical gap: the inconsistency and lack of professionalism in caregiver
-                            and sanitation uniforms. This insight led to the creation of institutional uniforms, designed for both functionality and durability.
-                            We&apos;ve proudly partnered with municipal bodies (Nagar Nigam) and contributed to <strong>G20 events</strong> by outfitting sanitation teams across various cities.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                Our continued work in healthcare revealed another critical gap: the inconsistency and lack of professionalism in caregiver
+                                and sanitation uniforms. This insight led to the creation of institutional uniforms, designed for both functionality and durability.
+                                We&apos;ve proudly partnered with municipal bodies (Nagar Nigam) and contributed to <strong>G20 events</strong> by outfitting sanitation teams across various cities.
+                            </p>
 
-                        <p>
-                            Furthermore, our close collaboration with hospitals and healthcare institutions highlighted the need for high-quality, sterile,
-                            and ready-to-use surgical essentials. As a result, we expanded into Surgical Consumables, offering a comprehensive range of
-                            sterile gowns, drapes, caps, masks, and customized procedure packs that enhance safety and efficiency for medical staff and patients.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                Furthermore, our close collaboration with hospitals and healthcare institutions highlighted the need for high-quality, sterile,
+                                and ready-to-use surgical essentials. As a result, we expanded into Surgical Consumables, offering a comprehensive range of
+                                sterile gowns, drapes, caps, masks, and customized procedure packs that enhance safety and efficiency for medical staff and patients.
+                            </p>
 
-                        <p>
-                            To streamline our growing operations and focus more on specialized healthcare consumables, we established
-                            <strong> Biobhoomi Consumables Pvt. Ltd.</strong>, a sister company that manufactures medical-grade products like ultrasound (USG) jelly,
-                            reinforcing our commitment to excellence in healthcare.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                To streamline our growing operations and focus more on specialized healthcare consumables, we established
+                                <strong> Biobhoomi Consumables Pvt. Ltd.</strong>, a sister company that manufactures medical-grade products like ultrasound (USG) jelly,
+                                reinforcing our commitment to excellence in healthcare.
+                            </p>
 
-                        <p>
-                            From a single-product vision to a research-driven enterprise, EcoQual is dedicated to improving communities' well-being.
-                            Each milestone is a step toward our mission: to make life safer, cleaner, and more dignified through thoughtful design,
-                            rigorous research, and responsible manufacturing.
-                        </p>
+                            <p className='mt-3 text-justify'>
+                                From a single-product vision to a research-driven enterprise, EcoQual is dedicated to improving communities' well-being.
+                                Each milestone is a step toward our mission: to make life safer, cleaner, and more dignified through thoughtful design,
+                                rigorous research, and responsible manufacturing.
+                            </p>
+                        {/* </div> */}
 
                         <p className="italic text-zinc-600 mt-6">
                             At EcoQual, innovation begins with a simple question:
