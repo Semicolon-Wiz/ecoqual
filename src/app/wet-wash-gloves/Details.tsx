@@ -728,9 +728,9 @@ export function ContributorMain() {
                         </Heading>
                     </div>
 
-                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
-                        <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-1 order-2'>
-                            <div className='w-full relative'>
+                    <div className='flex-1 relative grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
+                        <div className='relative w-full h-full flex flex-col gap-10 lg:order-1 order-2'>
+                            <div className='w-full relative max-w-xl'>
                                 <h2 className='font-bold text-2xl text-primary'>
                                     Introduction
                                 </h2>
@@ -741,9 +741,12 @@ export function ContributorMain() {
                                     EQ Wet Wash Gloves have been proposed as an innovative hygiene solution to support NHM and NPHCE objectives, addressing systemic challenges in geriatric hygiene management such as water scarcity, infection control, patient comfort, and operational efficiency.
                                 </Subheading>
                             </div>
+                                <em className='block lg:mt-5 mt-3 text-primary italic'>
+                                    "By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient."
+                                </em>
                         </div>
 
-                        <Image src='/images/about/why.png' width={450} height={400} alt='Wet Wash Gloves'
+                        <Image src='/images/details/eco.png' width={400} height={350} alt='Wet Wash Gloves'
                             className='w-full h-auto lg:order-2 order-1'
                         />
                     </div>
@@ -836,7 +839,7 @@ export function ContributorMain() {
                         </div>
                     </div>
 
-                    <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
+                    {/* <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>
                         <div className='relative w-full h-full flex flex-col max-w-xl gap-10 lg:order-1 order-2'>
                             <div className='w-full relative'>
                                 <h2 className='font-bold text-2xl text-primary'>
@@ -886,16 +889,16 @@ export function ContributorMain() {
                         <Image src='/images/details/eco.png' width={450} height={400} alt='Wet Wash Gloves'
                             className='w-full h-auto lg:order-2 order-1'
                         />
-                    </div>
+                    </div> */}
 
-                    <div className='flex-1 relative '>
+                    {/* <div className='flex-1 relative '>
                         <Heading>
                             Conclusion
                         </Heading>
                         <Subheading classname='text-left'>
-                            By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.
+                            
                         </Subheading>
-                    </div>
+                    </div> */}
                 </div>
             </Wrapper>
         </Section>
@@ -1051,7 +1054,7 @@ export function AllPageLinks() {
             title: 'Contributor to NHM & NPHCE Policies of India',
             summary: 'Supporting national health initiatives with trusted hygiene solutions',
             icon: '/images/wet_wash/contributor.svg',
-            link: 'wet-wash-gloves/contributor'
+            link: 'wet-wash-gloves/contributor-nhm-nhpce-india'
         },
         {
             title: 'Packaging & Supply Details',
