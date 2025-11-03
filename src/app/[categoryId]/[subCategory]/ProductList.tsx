@@ -107,48 +107,54 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                         </Subheading>
                     </div>
 
-                    <motion.div
-                        className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 gap-y-10'
-                        variants={cardContainerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0 }}
-                    >
-                        {
-                            data?.products.map((items, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    className='relative w-full h-full bg-white shadow-md group rounded-md'
-                                    variants={cardVarient}
-                                    
-                                >
-                                    <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block relative w-full h-[300px]'>
-                                        <Image src={items.image} alt={items.title} width={1920} height={1080}
-                                            className='w-full h-full object-contain object-center'
-                                        />
-                                    </Link>
-                                    <div className='relative w-full p-3 pb-6 z-10'>
-                                        <span className='text-sm font-medium text-blue-600'>
-                                            {data.category.title}
-                                        </span>
-                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block mt-1 text-gray-800 !font-montserrat md:text-lg text-base font-semibold '>
-                                            {items.title}
-                                        </Link>
+                    {
+                        data?.products && data.products.length > 0 ? (
+                            <motion.div
+                                className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 gap-y-10'
+                                variants={cardContainerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0 }}
+                            >
+                                {
+                                    data?.products.map((items, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            className='relative w-full h-full bg-white shadow-md group rounded-md'
+                                            variants={cardVarient}
 
-                                        <div
-                                            className="prose mt-2 max-w-none text-gray-700 line-clamp-3 text-sm"
-                                            dangerouslySetInnerHTML={{ __html: items.product_description }}
-                                        />
+                                        >
+                                            <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block relative w-full h-[300px]'>
+                                                <Image src={items.image} alt={items.title} width={1920} height={1080}
+                                                    className='w-full h-full object-contain object-center'
+                                                />
+                                            </Link>
+                                            <div className='relative w-full p-3 pb-6 z-10'>
+                                                <span className='text-sm font-medium text-blue-600'>
+                                                    {data.category.title}
+                                                </span>
+                                                <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='block mt-1 text-gray-800 !font-montserrat md:text-lg text-base font-semibold '>
+                                                    {items.title}
+                                                </Link>
 
-                                        <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='ml-auto mt-6  w-max text-base flex items-center gap-1 justify-center text-blue-700 underline underline-offset-4 '>
-                                            View Product
-                                            <MoveUpRight size={14} />
-                                        </Link>
-                                    </div>
-                                </motion.div>
-                            ))
-                        }
-                    </motion.div>
+                                                <div
+                                                    className="prose mt-2 max-w-none text-gray-700 line-clamp-3 text-sm"
+                                                    dangerouslySetInnerHTML={{ __html: items.product_description }}
+                                                />
+
+                                                <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='ml-auto mt-6  w-max text-base flex items-center gap-1 justify-center text-blue-700 underline underline-offset-4 '>
+                                                    View Product
+                                                    <MoveUpRight size={14} />
+                                                </Link>
+                                            </div>
+                                        </motion.div>
+                                    ))
+                                }
+                            </motion.div>
+                        ) : <h3 className='font-extrabold mx-auto lg:text-5xl md:text-3xl text-xl max-w-3xl text-center text-gray-300 leading-[1.25]'>
+                            Products of this Category will be listed very shortly
+                        </h3>
+                    }
                 </div>
             </Wrapper>
         </Section>
