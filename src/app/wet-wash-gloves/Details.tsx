@@ -741,8 +741,8 @@ export function ContributorMain() {
                                     EQ Wet Wash Gloves have been proposed as an innovative hygiene solution to support NHM and NPHCE objectives, addressing systemic challenges in geriatric hygiene management such as water scarcity, infection control, patient comfort, and operational efficiency.
                                 </Subheading>
                             </div>
-                                <em className='block lg:mt-5 mt-3 text-primary italic'>
-                                    "By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient."
+                                <em className='block lg:mt-5 mt-3 text-primary italic font-medium'>
+                                    &quot;By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.&quot;
                                 </em>
                         </div>
 
