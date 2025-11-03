@@ -335,7 +335,7 @@ export function MoreAboutUs() {
 
                             <p className='mt-3 text-justify'>
                                 In 2020, as the COVID-19 pandemic caused global disruptions, EcoQual adapted rapidly to the growing need for
-                                personal protective equipment. This pivot underscored the company's commitment to hygiene, protection, and preventive care,
+                                personal protective equipment. This pivot underscored the company&apos;s commitment to hygiene, protection, and preventive care,
                                 and set the stage for our entry into a broader range of healthcare and sanitation solutions.
                                 We expanded our offerings to include sanitizers, phenyls, detergents, and floor cleaners.
                             </p>
@@ -366,7 +366,7 @@ export function MoreAboutUs() {
                             </p>
 
                             <p className='mt-3 text-justify'>
-                                From a single-product vision to a research-driven enterprise, EcoQual is dedicated to improving communities' well-being.
+                                From a single-product vision to a research-driven enterprise, EcoQual is dedicated to improving communities well-being.
                                 Each milestone is a step toward our mission: to make life safer, cleaner, and more dignified through thoughtful design,
                                 rigorous research, and responsible manufacturing.
                             </p>
