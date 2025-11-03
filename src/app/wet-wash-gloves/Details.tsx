@@ -1054,7 +1054,7 @@ export function AllPageLinks() {
             link: 'wet-wash-gloves/contributor'
         },
         {
-            title: 'Packaging & Supply Details.svg & Supply Details',
+            title: 'Packaging & Supply Details',
             summary: 'Secure, hygienic, and convenient packaging for every need.',
             icon: '/images/wet_wash/packaging.svg',
             link: 'wet-wash-gloves/packaging-and-supply'
