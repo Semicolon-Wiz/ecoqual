@@ -1000,13 +1000,13 @@ export function Packaging() {
 export function AllPageLinks() {
     const data: Data[] = [
         {
-            title: 'Benefits & Features of Wet Wash Gloves',
+            title: 'Discover the Benefits of Wet Wash Gloves.',
             summary: 'A Hygienic, Efficient, and Patient-Centric Solution.',
             icon: '/images/wet_wash/benefits.svg',
             link: 'wet-wash-gloves/benefits'
         },
         {
-            title: 'Why Choose Wet Wash Gloves & Why it Work Better',
+            title: 'Why Wet Wash Gloves Are the Better Hygiene Choice.',
             summary: 'Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.',
             icon: '/images/wet_wash/wet-wash.svg',
             link: 'wet-wash-gloves/why-wet-wash-gloves'
@@ -1018,7 +1018,7 @@ export function AllPageLinks() {
         //     link: 'wet-wash-gloves/working'
         // },
         {
-            title: 'Application & how to use of Wet Wash Gloves',
+            title: 'Application & Usage of Wet Wash Gloves.',
             summary: 'Versatile Use Across Diverse Clinical and Care Settings.',
             icon: '/images/wet_wash/applications.svg',
             link: 'wet-wash-gloves/application'
