@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import QueryProvider from "@/utils/QueryProvider";
 import Sponsor from "@/components/Sponsor";
 import ContactButton from "@/components/ContactButton";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Ecoqual Healthcare Solutions",
@@ -35,6 +36,7 @@ export default function RootLayout({
             <ContactButton/>
           </QueryProvider>
         </SmoothScrollProvider>
+        <GoogleAnalytics gaId="G-2DNJTNEBFH" />
         <script src="https://elfsightcdn.com/platform.js" async></script>
       </body>
     </html>
