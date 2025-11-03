@@ -459,17 +459,17 @@ export function InstitutionsList() {
                             Proudly supplying sustainable hygiene products to hospitals NGOs and corporate institutions across India.
                         </Subheading>
                     </div>
-                    <div className='relative w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 lg:gap-5 md:gap-3 gap-2.5'>
+                    <div className='relative w-full grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-3 gap-2.5'>
                         {
                             institutionsData.map((value, idx) => (
                                 <div
                                     key={idx + 2}
                                     style={{ backgroundColor: bg[idx] }}
                                     className={`w-full h-full relative p-3 lg:p-5 text-white rounded-xl `}>
-                                    <span className='block w-full font-semibold text-2xl'>
+                                    <span className='block w-full font-semibold text-2xl max-w-[200px]'>
                                         {value.name}
                                     </span>
-                                    <div className='mt-8 w-full flex flex-col gap-1'>
+                                    <div className='mt-10 w-full flex flex-col gap-1'>
                                         {
                                             value.institutions.map((item, id) => (
                                                 <div key={id} className='flex items-center gap-2 text-sm'>
