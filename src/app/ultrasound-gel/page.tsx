@@ -34,7 +34,7 @@ function Hero() {
                         </div>
                     </div>
 
-                    <div className="w-full h-full relative flex items-center md:justify-end justify-center">
+                    <div className="w-full h-full relative flex items-center justify-center">
                         <Image src={'/images/hero/ultra.png'} width={800} height={450}
                             alt='Hero Image'
                             className='w-full h-auto max-w-[350px] ' />
