@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --primary: #AFCB1E;
+  --primary: #afcb1e;
   --secondry: #119dd2;
   --primary-dark: #445116;
   --secondry-dark: #068ac3;
@@ -24,19 +24,19 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
@@ -98,17 +98,27 @@ li {
   transition: all 0.3s ease-in-out;
 }
 
-input:focus ~ .labels, input:not(:placeholder-shown) ~ .labels {
+input:focus ~ .labels,
+input:not(:placeholder-shown) ~ .labels {
   top: -14px;
   left: 8px;
   font-size: 0.95rem;
   color: var(--primary);
   transform: translateY(0);
 }
-textarea:focus ~ .label, textarea:not(:placeholder-shown) ~ .label {
+textarea:focus ~ .label,
+textarea:not(:placeholder-shown) ~ .label {
   top: -14px;
   left: 8px;
   font-size: 0.95rem;
   color: var(--primary);
   transform: translateY(0);
+}
+
+.dis p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 0;
 }

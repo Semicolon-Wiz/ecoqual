@@ -103,7 +103,7 @@ function Cards({ limit }: { limit?: number }) {
                         variants={cardVarient}
                     >
                         <div className="w-full h-60">
-                            <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-cover" />
+                            <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-contain object-top" />
                         </div>
                         <div className="relative flex flex-col lg:p-5 p-3">
                             <Link href={`/blogs/${items.slug}`} className=" font-semibold lg:text-xl md:text-lg text-base text-zinc-800 ">
