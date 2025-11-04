@@ -27,7 +27,7 @@ export default function AboutUs() {
                 <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>EcoQual Healthcare Solutions </span>
+                            <span className='!font-inter text-secondry'>EcoQual Healthcare Solutions </span>
                         </Heading>
                         <p className='md:text-2xl text-sm font-semibold text-primary-dark text-center'>
                             Caring for every hand that cares.
@@ -41,19 +41,19 @@ export default function AboutUs() {
                         className='relative flex-1 grid lg:grid-cols-3 grid-cols-1 gap-5 bg-white'
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.1 }}
                     >
                         <motion.div
                             className='w-full h-full relative flex flex-col bg-gray-50 p-5 border border-gray-300 rounded-2xl'
                             variants={leftVariant}
                         >
-                            <h2 className='font-bold md:text-xl text-base'>
-                                <span className='font-inter text-secondry'>
+                            <h2 className='font-bold md:text-xl text-base leading-[1.2] '>
+                                <span className='!font-inter text-secondry'>
                                     When Hygiene Fails, Everything Is at Risk
                                 </span>
                             </h2>
 
-                            <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
+                            <p className='lg:mt-5 mt-3 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
                                 <span>
                                     We develop smart, sustainable hygiene and healthcare solutions that address real-world challenges across India and the globe.
                                 </span>
@@ -79,12 +79,12 @@ export default function AboutUs() {
                             variants={rightVariant}
                             className='w-full h-full relative flex flex-col bg-gray-50 p-5 border border-gray-300 rounded-2xl'
                         >
-                            <h2 className='font-bold md:text-xl text-base'>
-                                <span className='font-inter text-secondry'>
+                            <h2 className='font-bold md:text-xl text-base leading-[1.2]'>
+                                <span className='!font-inter text-secondry'>
                                     Preserving life, dignity, and confidence
                                 </span>
                             </h2>
-                            <p className='mt-5 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
+                            <p className='lg:mt-5 mt-3 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
                                 <span>
                                     Hygiene isn&apos;t just about cleaning — it&apos;s about preserving life, dignity, and confidence.
                                 </span>
@@ -118,7 +118,7 @@ export function OurMission() {
 
                     <div className='flex-1 text-center'>
                         <Heading>
-                            When Hygiene Fails, <span className='font-inter text-secondry'>Everything Is at Risk</span>
+                            When Hygiene Fails, <span className='!font-inter text-secondry'>Everything Is at Risk</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto text-xl!'>
                             Preserving life, dignity, and confidence
@@ -163,7 +163,7 @@ export function OurVision() {
                 <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Why <span className='font-inter text-secondry'>Safety and Infection</span> Control Matter
+                            Why <span className='!font-inter text-secondry'>Safety and Infection</span> Control Matter
                         </Heading>
                     </div>
 
@@ -213,7 +213,7 @@ export function OurValues() {
 
                     <div className='flex-1 text-center'>
                         <Heading classname='text-center max-w-xl mx-auto'>
-                            Our Commitment: <span className='font-inter text-secondry'>Smarter Solutions, Healthier Tomorrow</span>
+                            Our Commitment: <span className='!font-inter text-secondry'>Smarter Solutions, Healthier Tomorrow</span>
                         </Heading>
                     </div>
 
@@ -451,7 +451,7 @@ export function InstitutionsList() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>Institutions We Serve</span>
+                            <span className='!font-inter text-secondry'>Institutions We Serve</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Proudly supplying sustainable hygiene products to hospitals NGOs and corporate institutions across India.

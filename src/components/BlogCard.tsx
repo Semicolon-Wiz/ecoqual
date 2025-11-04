@@ -95,7 +95,7 @@ function Cards({ limit }: { limit?: number }) {
             variants={cardContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
         >
             {
                 (limit && limit > 0 ? data?.slice(0, limit) : data)?.map((items: Blog) => (

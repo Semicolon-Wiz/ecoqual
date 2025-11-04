@@ -36,7 +36,7 @@ export default function SecondComponent() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            When Hygiene Becomes a Challenge, <span className='font-inter text-secondry'>Care Suffers</span>
+                            When Hygiene Becomes a Challenge, <span className='!font-inter text-secondry'>Care Suffers</span>
                         </Heading>
                         <Subheading>
                             Traditional hygiene methods are slow, risky, and costly.

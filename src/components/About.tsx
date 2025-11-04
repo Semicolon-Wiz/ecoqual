@@ -10,7 +10,7 @@ export default function About() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            About <span className='font-inter text-secondry'>Ecoqual Healthcare Solutions</span>
+                            About <span className='!font-inter text-secondry'>Ecoqual Healthcare Solutions</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Our Mission: Redefining Hygiene in Healthcare

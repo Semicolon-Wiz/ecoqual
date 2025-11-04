@@ -49,6 +49,8 @@ export default function ContactForm() {
         phone: '',
         message: ''
     })
+    const isFormIncomplete = !contactFormData.name.trim() || !contactFormData.email.trim() || !contactFormData.phone.trim() || !contactFormData.message.trim();
+
     function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         e.preventDefault();
         const { name, value } = e.target
@@ -153,7 +155,7 @@ export default function ContactForm() {
                             </div>
 
                             <form className='w-full mt-5 flex flex-col gap-5' onSubmit={handleSubmit}>
-                                <div className='w-full grid grid-cols-2 gap-2'>
+                                <div className='w-full grid md:grid-cols-2 grid-cols-1 md:gap-2 gap-5'>
                                     <input
                                         type="text"
                                         placeholder='Full Name'
@@ -191,7 +193,9 @@ export default function ContactForm() {
                                     />
                                 </div>
                                 <div className='w-full relative'>
-                                    <button type="submit" className='w-full flex items-center justify-center font-medium text-lg gap-3 text-white bg-zinc-800 hover:bg-zinc-900 transition-colors duration-200 ease-in-out rounded-lg py-3 px-2 cursor-pointer'>
+                                    <button type="submit" className={`w-full flex items-center justify-center font-medium text-lg gap-3 text-white bg-zinc-800 hover:bg-zinc-900 transition-colors duration-200 ease-in-out rounded-lg py-3 px-2 ${isFormIncomplete ? 'cursor-not-allowed' : 'cursor-pointer'} `}
+                                        disabled={isFormIncomplete}
+                                    >
                                         {loading ? (
                                             <>
                                                 <Loader2 className="animate-spin" size={18} />
@@ -208,9 +212,9 @@ export default function ContactForm() {
                             </form>
                         </div>
                     </div>
-                    
+
                     <iframe className='rounded-2xl'
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.1461176023176!2d82.9793782!3d25.299294399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320ed9555555%3A0x7d77e8b1b105b0c2!2sEcoQual!5e0!3m2!1sen!2sin!4v1762151558593!5m2!1sen!2sin" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.1461176023176!2d82.9793782!3d25.299294399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320ed9555555%3A0x7d77e8b1b105b0c2!2sEcoQual!5e0!3m2!1sen!2sin!4v1762151558593!5m2!1sen!2sin" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <Toaster />
             </Wrapper>

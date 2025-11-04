@@ -227,16 +227,18 @@ export default function NavBar() {
             </header>
 
 
-            <div className={`lg:hidden fixed inset-0 left-0 transition-transform duration-300 ease-linear bg-black/30 z-40 backdrop-blur-[4px] ${isMenuOpen ? 'translate-x-0' : ' -translate-x-full'} `} />
+            <div className={`lg:hidden fixed inset-0 left-0 transition-transform duration-300 ease-linear bg-black/30 z-40 backdrop-blur-[4px] ${isMenuOpen ? 'translate-x-0' : ' -translate-x-full'} `}
+            />
 
-            <div className={`lg:hidden fixed z-50 inset-y-0 bg-primary max-w-[400px] w-full transition-transform duration-300 ease-linear p-5 overflow-y-auto ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            <div className={`lg:hidden fixed z-50 inset-y-0 bg-white max-w-[400px] w-full transition-transform duration-300 ease-linear p-5 overflow-y-auto ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+            >
                 <div className='w-full h-full relative'>
                     <div className='relative w-full flex justify-between'>
                         <Link href='/' onClick={() => setIsMenuOpen(false)}>
                             <Image src='/images/logo/logo.svg' width={1000} height={600} alt='Ecoqual Healthcare Solutions' className='w-24 h-auto' />
                         </Link>
                         <button
-                            className='w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer'
+                            className='w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer'
                             onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                         >
                             <X />
@@ -245,7 +247,7 @@ export default function NavBar() {
 
                     <div className='w-full mt-10 flex flex-col gap-2'>
 
-                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/about' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-normal ${currentPath === '/about' ? 'bg-primary text-white rounded-full' : 'text-black'}`}>
                             About EcoQual
                         </Link>
 
@@ -255,7 +257,7 @@ export default function NavBar() {
                                 <button
                                     type="button"
                                     onClick={() => toggleSubMenu(category.id)}
-                                    className="transition-all duration-200 ease-linear px-4 py-2 flex items-center justify-between font-medium text-white text-base !font-inter"
+                                    className="transition-all duration-200 ease-linear px-5 py-1.5 flex items-center justify-between font-normal text-black text-base !font-inter"
                                 >
                                     {category.title}
                                     {category.sub_categories.length > 0 && (
@@ -273,7 +275,8 @@ export default function NavBar() {
                                                     <Fragment>
                                                         <Link
                                                             href='/wet-wash-gloves'
-                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
+                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                             <span className="truncate !font-inter">
@@ -282,7 +285,8 @@ export default function NavBar() {
                                                         </Link>
                                                         <Link
                                                             href='/ultrasound-gel'
-                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
+                                                            className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                             <span className="truncate !font-inter">
@@ -296,9 +300,9 @@ export default function NavBar() {
                                             {category.sub_categories.map((sub) => (
                                                 <Link
                                                     key={sub.id}
-                                                    href={`/product/${sub.slug}`}
+                                                    href={`/${category.slug}/${sub.slug}`}
                                                     onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
-                                                    className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
+                                                    className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
                                                 >
                                                     <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                     <span className="truncate !font-inter font-normal">{sub.title}</span>
@@ -310,10 +314,10 @@ export default function NavBar() {
                             </div>
                         ))}
 
-                        <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/blogs' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                        <Link href="/blogs" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-normal ${currentPath === '/blogs' ? 'bg-primary text-white rounded-full' : 'ext-black'}`}>
                             Blogs
                         </Link>
-                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-medium ${currentPath === '/contact' ? 'bg-white text-primary rounded-full' : 'text-white'}`}>
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-normal ${currentPath === '/contact' ? 'bg-primary text-white rounded-full' : 'text-black'}`}>
                             Contact
                         </Link>
                     </div>
