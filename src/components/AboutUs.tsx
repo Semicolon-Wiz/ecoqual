@@ -118,7 +118,7 @@ export function OurMission() {
 
                     <div className='flex-1 text-center'>
                         <Heading>
-                            When Hygiene Fails, <span className='font-inter text-secondry'>Everything Is at Risk</span>
+                            When Hygiene Fails, <span className='!font-inter text-secondry'>Everything Is at Risk</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto text-xl!'>
                             Preserving life, dignity, and confidence
@@ -163,7 +163,7 @@ export function OurVision() {
                 <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Why <span className='font-inter text-secondry'>Safety and Infection</span> Control Matter
+                            Why <span className='!font-inter text-secondry'>Safety and Infection</span> Control Matter
                         </Heading>
                     </div>
 
@@ -213,7 +213,7 @@ export function OurValues() {
 
                     <div className='flex-1 text-center'>
                         <Heading classname='text-center max-w-xl mx-auto'>
-                            Our Commitment: <span className='font-inter text-secondry'>Smarter Solutions, Healthier Tomorrow</span>
+                            Our Commitment: <span className='!font-inter text-secondry'>Smarter Solutions, Healthier Tomorrow</span>
                         </Heading>
                     </div>
 
@@ -451,7 +451,7 @@ export function InstitutionsList() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>Institutions We Serve</span>
+                            <span className='!font-inter text-secondry'>Institutions We Serve</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Proudly supplying sustainable hygiene products to hospitals NGOs and corporate institutions across India.

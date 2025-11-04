@@ -32,7 +32,7 @@ export default function WetWash() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            How to use <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                            How to use <span className='!font-inter text-secondry'>Wet Wash Gloves</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Hygiene made simple—in just a few easy steps.

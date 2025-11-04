@@ -203,7 +203,7 @@ export function Benefites() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Benefits of <span className='font-inter text-secondry'>Wet Wash Gloves?</span>
+                            Benefits of <span className='!font-inter text-secondry'>Wet Wash Gloves?</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             A Hygienic, Efficient, and Patient-Centric Solution.
@@ -262,7 +262,7 @@ export function WetWashWorking() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Why Wet Wash Gloves <span className='font-inter text-secondry'>Work Better</span>
+                            Why Wet Wash Gloves <span className='!font-inter text-secondry'>Work Better</span>
                         </Heading>
                         <Subheading classname='max-w-2xl mx-auto'>
                             Explore the key advantages that make Wet Wash Gloves a smarter, faster, and safer alternative to traditional patient hygiene methods.
@@ -325,7 +325,7 @@ export function WhereToUse() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Application of <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                            Application of <span className='!font-inter text-secondry'>Wet Wash Gloves</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Versatile Use Across Diverse Clinical and Care Settings.
@@ -556,7 +556,7 @@ export function Technical() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>Technical Details</span>
+                            <span className='!font-inter text-secondry'>Technical Details</span>
                         </Heading>
                         <Subheading classname='max-w-lg mx-auto'>
                             In-depth Product Specification | Functional Ingredients | Certificate of Analysis
@@ -724,7 +724,7 @@ export function ContributorMain() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>Contributor to NHM & NPHCE Policies of India</span>
+                            <span className='!font-inter text-secondry'>Contributor to NHM & NPHCE Policies of India</span>
                         </Heading>
                     </div>
 
@@ -911,7 +911,7 @@ export function Packaging() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            <span className='font-inter text-secondry'>Packaging & Supply Details</span>
+                            <span className='!font-inter text-secondry'>Packaging & Supply Details</span>
                         </Heading>
                     </div>
 
@@ -1069,7 +1069,7 @@ export function AllPageLinks() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            Get to Know <span className='font-inter text-secondry'>Wet Wash Gloves</span>
+                            Get to Know <span className='!font-inter text-secondry'>Wet Wash Gloves</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             A closer look at the innovation behind hygiene made simple.

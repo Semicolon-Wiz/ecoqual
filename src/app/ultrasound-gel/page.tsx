@@ -51,7 +51,7 @@ function AboutUltrasoundGel() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading>
-                            EQ <span className='font-inter text-secondry'>Ultrasound Gel</span>
+                            EQ <span className='!font-inter text-secondry'>Ultrasound Gel</span>
                         </Heading>
                         <Subheading classname='max-w-2xl mx-auto'>
                             Trusted by professionals for its consistent texture, easy application, and unmatched clarity in every scan.
