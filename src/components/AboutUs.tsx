@@ -316,7 +316,7 @@ export function MoreAboutUs() {
                                 className="object-cover w-full h-full"
                             />
                         </div>
-                        <h2 className='lg:text-2xl md:text-xl text-lg mb-2 font-semibold text-primary-dark'>
+                        <h2 className='lg:text-2xl md:text-xl text-lg mb-2 font-semibold text-primary-dark leading-[1.2]'>
                             The significance of starting our business in Varanasi.
                         </h2>
                         <p>

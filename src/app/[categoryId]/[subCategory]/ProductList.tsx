@@ -110,7 +110,7 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                     {
                         data?.products && data.products.length > 0 ? (
                             <motion.div
-                                className='w-full relative grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 gap-y-10'
+                                className='w-full relative grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 gap-y-10'
                                 variants={cardContainerVariants}
                                 initial="hidden"
                                 whileInView="visible"
