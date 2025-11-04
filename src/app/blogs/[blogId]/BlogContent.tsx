@@ -63,8 +63,8 @@ export default function BlogContent({ blogId }: { blogId: string }) {
             <h1 className='font-bold lg:text-4xl md:text-2xl text-xl text-primary leading-[1.3] '>
                 {data?.title}
             </h1>
-            <Image src={data?.blog_image ?? ''} alt={data?.title ?? ''} width={800} height={500} className='w-full h-[400px] object-cover mt-5 rounded-lg' />
-            <div className="mt-3 lg:text-base text-sm text-zinc-600 font-medium"
+            <Image src={data?.blog_image ?? ''} alt={data?.title ?? ''} width={800} height={500} className='w-full  object-contain mt-5 rounded-lg' />
+            <div className="mt-8 lg:text-base text-sm text-zinc-600 font-medium"
                 dangerouslySetInnerHTML={{ __html: data?.description ?? '' }}
             />
             {
