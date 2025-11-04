@@ -25,7 +25,7 @@ interface NewData {
 }
 
 export function WetWashHero() {
-    const [openVideo, setOpenVideo] = useState<boolean>(true);
+    const [openVideo, setOpenVideo] = useState<boolean>(false);
     const { stopScroll, startScroll } = useLenisControl();
 
     useEffect(() => {
