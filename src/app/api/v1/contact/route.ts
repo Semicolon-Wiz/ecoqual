@@ -4,57 +4,80 @@ import { z } from 'zod';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const ContactData = z.object({
-    name: z.string(),
-    email: z.string().email(),
-    phone: z.string(),
-    message: z.string(),
+const ContactSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  phone: z.string().min(5, 'Phone is required'),
+  message: z.string().min(1, 'Message is required'),
 });
 
+type ContactData = z.infer<typeof ContactSchema>;
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
+  try {
+    let body: Partial<ContactData> = {};
+
     try {
+      body = await req.json();
+    } catch {
+      try {
         const formData = await req.formData();
-
-        const body = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            message: formData.get('message'),
-        }
-
-        const parsed = ContactData.safeParse(body);
-
-        if (!parsed.success) {
-            return NextResponse.json(
-                { success: false, message: 'Please provide valid data' },
-                { status: 411 }
-            );
-        }
-
-        const { data, error } = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: 'wizards@ecoqual.in',
-            subject: 'New Contact Request',
-            html: `
-             <h2>New Contact Request</h2>
-             <p><strong>Name:</strong> ${body.name}</p>
-             <p><strong>Email:</strong> ${body.email}</p>
-             <p><strong>Phone:</strong> ${body.phone}</p>
-             <p><strong>Message:</strong> ${body.message}</p>
-           `
-        });
-
-        if (error) {
-            return Response.json({ error }, { status: 500 });
-        }
-
-        return NextResponse.json({ success: true, message: 'Email sent successfully' });
-    } catch (error) {
-        console.error(error);
+        body = {
+          name: formData.get('name') as string,
+          email: formData.get('email') as string,
+          phone: formData.get('phone') as string,
+          message: formData.get('message') as string,
+        };
+      } catch {
         return NextResponse.json(
-            { success: false, message: 'Something went wrong' },
-            { status: 500 }
+          { success: false, message: 'Invalid request format. Please provide propper Inputs.' },
+          { status: 400 }
         );
+      }
     }
+
+    const parsed = ContactSchema.safeParse(body);
+    if (!parsed.success) {
+      const errors = parsed.error.flatten().fieldErrors;
+      return NextResponse.json(
+        { success: false, message: 'Validation failed', errors },
+        { status: 422 }
+      );
+    }
+
+    const { name, email, phone, message } = parsed.data;
+
+    const { error } = await resend.emails.send({
+      from: 'EcoQual <onboarding@resend.dev>',
+      to: 'wizards@ecoqual.in',
+      subject: 'New Contact Request',
+      html: `
+        <h2>New Contact Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
+    });
+
+    if (error) {
+      console.error('❌ Email sending failed:', error);
+      return NextResponse.json(
+        { success: false, message: 'Failed to send email', error: error.message },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json(
+      { success: true, message: 'Email sent successfully' },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('🚨 Unexpected Server Error:', error);
+    return NextResponse.json(
+      { success: false, message: 'Internal server error' },
+      { status: 500 }
+    );
+  }
 }

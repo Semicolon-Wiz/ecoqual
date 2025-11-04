@@ -98,7 +98,7 @@ export function Category() {
             variants={cardContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
         >
             {
                 data?.map((items, idx) => (

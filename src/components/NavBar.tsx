@@ -255,7 +255,7 @@ export default function NavBar() {
                                 <button
                                     type="button"
                                     onClick={() => toggleSubMenu(category.id)}
-                                    className="transition-all duration-200 ease-linear px-4 py-2 flex items-center justify-between font-medium text-white text-base !font-inter"
+                                    className="transition-all duration-200 ease-linear px-5 py-1.5 flex items-center justify-between font-medium text-white text-base !font-inter"
                                 >
                                     {category.title}
                                     {category.sub_categories.length > 0 && (
@@ -274,6 +274,7 @@ export default function NavBar() {
                                                         <Link
                                                             href='/wet-wash-gloves'
                                                             className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
+                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                             <span className="truncate !font-inter">
@@ -283,6 +284,7 @@ export default function NavBar() {
                                                         <Link
                                                             href='/ultrasound-gel'
                                                             className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
+                                                            onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                                                         >
                                                             <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                                             <span className="truncate !font-inter">

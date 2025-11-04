@@ -41,7 +41,7 @@ export default function AboutUs() {
                         className='relative flex-1 grid lg:grid-cols-3 grid-cols-1 gap-5 bg-white'
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.1 }}
                     >
                         <motion.div
                             className='w-full h-full relative flex flex-col bg-gray-50 p-5 border border-gray-300 rounded-2xl'
