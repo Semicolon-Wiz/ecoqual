@@ -153,7 +153,7 @@ export function WetWashDetails() {
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_400px] grid-cols-1 gap-5'>
-                        <div className="w-full h-full relative flex justify-center flex-col pr-5 lg:order-1 order-2">
+                        <div className="w-full h-full relative flex justify-center flex-col lg:pr-5 pr-0 lg:order-1 order-2">
                             <Subheading classname='text-left mt-3 max-w-2xl !text-lg'>
                                 EQ Wet Wash Gloves are pre-moistened, single-use cleansing gloves designed for easy and effective hygiene care without the need for water or soap. Scientifically developed and clinically tested, they support hospital hygiene standards while ensuring comfort, convenience, and skin protection.
                             </Subheading>
@@ -162,7 +162,7 @@ export function WetWashDetails() {
                                 Made with soft, two-sided fabric and a gentle cleansing solution, these gloves make cleaning quick, safe, and water-free — no rinsing required.
                             </Subheading>
 
-                            <div className='mt-8 w-full grid grid-cols-3 gap-3'>
+                            <div className='mt-8 w-full grid md:grid-cols-3 grid-cols-1 gap-3'>
                                 {
                                     dt1.map((data) => (
                                         <div key={data.title} className='w-full h-full p-2 bg-white shadow-md rounded-lg'>
