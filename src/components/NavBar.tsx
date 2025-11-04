@@ -298,7 +298,7 @@ export default function NavBar() {
                                             {category.sub_categories.map((sub) => (
                                                 <Link
                                                     key={sub.id}
-                                                    href={`/product/${sub.slug}`}
+                                                    href={`/${category.slug}/${sub.slug}`}
                                                     onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
                                                     className="group/item flex items-center gap-2.5 px-7 py-1.5 text-white text-base border-b border-white/20 hover:text-blue-200 transition-colors duration-200 font-normal"
                                                 >

@@ -48,7 +48,7 @@ export default function ProductsCategory() {
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
                         <Heading classname='max-w-3xl mx-auto'>
-                            Comprehensive Solutions for <span className='font-inter text-secondry'>Smarter Healthcare Environments</span>
+                            Comprehensive Solutions for <span className='!font-inter text-secondry'>Smarter Healthcare Environments</span>
                         </Heading>
                         <Subheading classname='max-w-xl mx-auto'>
                             From patient care essentials to hygiene systems and professional wear, Ecoqual delivers trusted products that enhance safety, comfort, and efficiency across every healthcare space.
