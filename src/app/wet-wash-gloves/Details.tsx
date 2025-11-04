@@ -1,7 +1,11 @@
+'use client';
 import { ButtonPrimary, ButtonSecondry, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { X } from 'lucide-react';
+import { useLenisControl } from '@/utils/SmoothScroll';
 
 
 interface Data {
@@ -21,6 +25,17 @@ interface NewData {
 }
 
 export function WetWashHero() {
+    const [openVideo, setOpenVideo] = useState<boolean>(true);
+    const { stopScroll, startScroll } = useLenisControl();
+
+    useEffect(() => {
+        if (openVideo) {
+            stopScroll();
+        } else {
+            startScroll();
+        }
+        return () => startScroll();
+    }, [openVideo, stopScroll, startScroll]);
 
     return (
         <Section>
@@ -34,10 +49,10 @@ export function WetWashHero() {
                             Wet Wash Gloves - A New Standard in Hygiene That&apos;s Convenient, Effective, and Cost-Saving
                         </Subheading>
                         <div className='relative mt-10 flex items-center gap-2 md:justify-start justify-center'>
-                            <ButtonPrimary>
+                            <ButtonPrimary onClick={() => window.location.href = '/contact'}>
                                 Contact Us
                             </ButtonPrimary>
-                            <ButtonSecondry>
+                            <ButtonSecondry onClick={() => setOpenVideo(true)}>
                                 View Demo
                             </ButtonSecondry>
                         </div>
@@ -51,6 +66,49 @@ export function WetWashHero() {
                 </div>
 
             </Wrapper>
+
+            <AnimatePresence>
+                {
+                    openVideo && (
+                        <motion.div
+                            className='fixed inset-0 min-h-screen z-30 bg-black/15 backdrop-blur-[4px] p-10'
+                            onClick={() => setOpenVideo(false)}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className='w-full h-full relative flex items-center justify-center z-50'>
+                                <motion.div
+                                    className='relative max-w-xl h-full'
+                                    onClick={(e) => e.stopPropagation()}
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.8, opacity: 0 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 300,
+                                        damping: 12,
+                                    }}
+                                >
+                                    <button className='z-10 absolute -top-4 -right-4 p-2 bg-white rounded-full cursor-pointer'
+                                        onClick={() => setOpenVideo(false)}
+                                    >
+                                        <X size={16} />
+                                    </button>
+
+                                    <div className='relative w-full h-full'>
+                                        <video controls className='h-full' >
+                                            <source src='/video/demo.mp4' type='video/mp4' />
+                                        </video>
+                                    </div>
+
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    )
+                }
+            </AnimatePresence>
         </Section>
     )
 }
@@ -741,9 +799,9 @@ export function ContributorMain() {
                                     EQ Wet Wash Gloves have been proposed as an innovative hygiene solution to support NHM and NPHCE objectives, addressing systemic challenges in geriatric hygiene management such as water scarcity, infection control, patient comfort, and operational efficiency.
                                 </Subheading>
                             </div>
-                                <em className='block lg:mt-5 mt-3 text-primary italic font-medium'>
-                                    &quot;By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.&quot;
-                                </em>
+                            <em className='block lg:mt-5 mt-3 text-primary italic font-medium'>
+                                &quot;By integrating EQ Wet Wash Gloves, NHM and NPHCE can ensure superior infection control, improved patient dignity, and optimized resource utilization—making elderly care more sustainable, equitable, and efficient.&quot;
+                            </em>
                         </div>
 
                         <Image src='/images/details/eco.png' width={400} height={350} alt='Wet Wash Gloves'
@@ -1079,11 +1137,11 @@ export function AllPageLinks() {
                     <div className='flex-1 relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
                             data.map((items, idx) => (
-                                <div 
-                                className='relative w-full h-full p-3 md:p-5 bg-white after:absolute after:left-0 after:inset-y-0 after:w-[2px] after:bg-gradient-to-b after:from-primary after:via-white after:to-white before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-primary before:via-white before:to-white shadow-md '
+                                <div
+                                    className='relative w-full h-full p-3 md:p-5 bg-white after:absolute after:left-0 after:inset-y-0 after:w-[2px] after:bg-gradient-to-b after:from-primary after:via-white after:to-white before:absolute before:inset-x-0 before:top-0 before:h-[2px] before:bg-gradient-to-r before:from-primary before:via-white before:to-white shadow-md '
                                     key={idx}
                                 >
-                                    
+
                                     <div className='w-16 h-16 rounded-lg bg-neutral-100 flex items-center justify-center'>
                                         <Image src={items.icon} width={40} height={40} alt={items.title} />
                                     </div>

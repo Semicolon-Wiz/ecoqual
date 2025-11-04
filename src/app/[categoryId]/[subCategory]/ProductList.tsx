@@ -102,7 +102,7 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                         <Heading classname='text-secondry'>
                             {data?.subcategory.title ?? ''}
                         </Heading>
-                        <Subheading classname='max-w-3xl mx-auto'>
+                        <Subheading classname=' mx-auto !font-normal !text-justify'>
                             {data?.subcategory.description ?? ''}
                         </Subheading>
                     </div>
