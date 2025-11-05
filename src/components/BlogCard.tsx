@@ -1,16 +1,14 @@
 'use client';
-import { Heading, Section, Subheading, Wrapper } from "@/utils/Section";
+import { Section, Subheading, Wrapper } from "@/utils/Section";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { CategorySkeleton } from "./Skeleton";
-import { usePathname } from "next/navigation";
 import { motion } from 'motion/react'
 
 
 export default function BlogCard({ limit }: { limit?: number }) {
-    const currentPath = usePathname()
     return (
         <Section>
             <Wrapper>

@@ -7,6 +7,7 @@ import QueryProvider from "@/utils/QueryProvider";
 import Sponsor from "@/components/Sponsor";
 import ContactButton from "@/components/ContactButton";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Providers from "@/utils/QueryProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ecoqual.in'),
@@ -57,13 +58,13 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden relative">
         <SmoothScrollProvider>
-          <QueryProvider>
+          <Providers>
             <NavBar />
             {children}
             <Sponsor />
             <Footer />
             <ContactButton />
-          </QueryProvider>
+          </Providers>
         </SmoothScrollProvider>
         <GoogleAnalytics gaId="G-2DNJTNEBFH" />
         <script src="https://elfsightcdn.com/platform.js" async></script>
