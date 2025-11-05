@@ -16,17 +16,9 @@ export default function BlogCard({ limit }: { limit?: number }) {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        {
-                            currentPath === '/' ? (
-                                <Heading>
-                                    Insights That Empower You
-                                </Heading>
-                            ) : (
-                                <h1 className="lg:text-4xl md:text-[28px] text-2xl leading-[1.2] font-bold text-primary-dark">
-                                    Insights That Empower You
-                                </h1>
-                            )
-                        }
+                        <h1 className="lg:text-4xl md:text-[28px] text-2xl leading-[1.2] font-bold text-primary-dark">
+                            Insights That Empower You
+                        </h1>
                         <Subheading classname='max-w-md mx-auto'>
                             Explore expert articles, tips, and industry updates on hygiene, safety, and healthcare innovations.
                         </Subheading>
