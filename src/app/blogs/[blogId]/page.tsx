@@ -4,21 +4,8 @@ import BlogContent from './BlogContent'
 import { Metadata } from 'next'
 import axios from 'axios'
 import { getCanonicalUrl } from '@/utils/seo'
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 
-export default async function SingleBlogPage({ params }: { params: Promise<{ blogId: string }> }) {
-    const { blogId } = await params
-    return (
-        <main className='relative w-full'>
-            <Section>
-                <Wrapper>
-                    <div className='w-full relative max-w-4xl mx-auto'>
-                        <BlogContent blogId={blogId} />
-                    </div>
-                </Wrapper>
-            </Section>
-        </main>
-    )
-}
 
 interface Blog {
     id: number;
@@ -119,4 +106,35 @@ export async function generateMetadata(
             },
         };
     }
+}
+
+
+export default async function SingleBlogPage({ params }: { params: Promise<{ blogId: string }> }) {
+    const { blogId } = await params
+
+    async function FetchBlog(blogId: string): Promise<Blog> {
+        const response = await axios.get<BlogApi>(`https://inforbit.in/demo/ecoqual/api/blog/${blogId}`)
+        return response.data.data;
+    }
+
+    const queryClient = new QueryClient()
+
+    await queryClient.prefetchQuery({
+        queryKey: ['blogs', blogId],
+        queryFn: () => FetchBlog(blogId),
+    })
+
+    return (
+        <HydrationBoundary state={dehydrate(queryClient)}>
+            <main className='relative w-full'>
+                <Section>
+                    <Wrapper>
+                        <div className='w-full relative max-w-4xl mx-auto'>
+                            <BlogContent blogId={blogId} />
+                        </div>
+                    </Wrapper>
+                </Section>
+            </main>
+        </HydrationBoundary>
+    )
 }
