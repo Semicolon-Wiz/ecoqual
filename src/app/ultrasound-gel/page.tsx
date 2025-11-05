@@ -1,4 +1,5 @@
 import { ButtonPrimary, ButtonSecondry, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -60,7 +61,7 @@ function AboutUltrasoundGel() {
 
                     <div className='relative flex-1 grid grid-cols-1 gap-5'>
                         <div className='w-full h-full relative flex flex-col pr-5 md:order-1 order-2'>
-                            
+
                             <Subheading classname='text-left'>
                                 EQ Ultrasound Gel is a premium, water-soluble gel designed to deliver smooth acoustic transmission and crystal-clear imaging for all standard ultrasound procedures. Developed with a focus on patient safety and equipment protection, the gel ensures maximum diagnostic accuracy while being gentle on the skin. Trusted by healthcare professionals, EQ Ultrasound Gel combines reliability, comfort, and quality, making it the preferred choice for hospitals, diagnostic labs, and clinics.
                             </Subheading>
@@ -115,3 +116,33 @@ function AboutUltrasoundGel() {
         </Section>
     )
 }
+
+export const metadata: Metadata = {
+    title: 'Ultrasound Gel | Ecoqual | High-Quality Medical Imaging Gel',
+    description: 'Ecoqual Ultrasound Gel ensures clear imaging, patient comfort, and consistent conductivity. Non-irritating, non-greasy, and ideal for all ultrasound procedures.',
+    alternates: {
+        canonical: 'https://www.ecoqual.in/ultrasound-gel',
+    },
+    openGraph: {
+        title: 'Ultrasound Gel | Ecoqual | High-Quality Medical Imaging Gel',
+        description: 'Ecoqual Ultrasound Gel ensures clear imaging, patient comfort, and consistent conductivity. Non-irritating, non-greasy, and ideal for all ultrasound procedures.',
+        url: 'https://www.ecoqual.in/ultrasound-gel',
+        siteName: 'EcoQual Healthcare Solution',
+        images: [
+            {
+                url: '/images/hero/ultra.png',
+                width: 1200,
+                height: 630,
+                alt: 'EcoQual Healthcare Solution',
+            },
+        ],
+        locale: 'en_IN',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Ultrasound Gel | Ecoqual | High-Quality Medical Imaging Gel',
+        description: 'Ecoqual Ultrasound Gel ensures clear imaging, patient comfort, and consistent conductivity. Non-irritating, non-greasy, and ideal for all ultrasound procedures.',
+        images: ['/images/hero/ultra.png'],
+    },
+};

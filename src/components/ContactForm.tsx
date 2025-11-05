@@ -1,5 +1,5 @@
 'use client';
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section';
+import { Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Section';
 import Image from 'next/image'
 import Link from 'next/link';
 import React, { ChangeEvent, FormEvent, useState } from 'react'
@@ -111,9 +111,9 @@ export default function ContactForm() {
                 <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
                         <span className='lg:text-xl md:text-base text-sm font-medium text-secondry' >CONTACT US</span>
-                        <Heading>
+                        <MainHeading>
                             We&apos;re Here to Support You
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='max-w-md mx-auto'>
                             Reach out to our experts for product inquiries, partnerships, or bulk orders.
                         </Subheading>

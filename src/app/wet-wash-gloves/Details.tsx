@@ -1,5 +1,5 @@
 'use client';
-import { ButtonPrimary, ButtonSecondry, Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { ButtonPrimary, ButtonSecondry, Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -260,9 +260,9 @@ export function Benefites() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             Benefits of <span className='!font-inter text-secondry'>Wet Wash Gloves?</span>
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='max-w-xl mx-auto'>
                             A Hygienic, Efficient, and Patient-Centric Solution.
                         </Subheading>
@@ -382,9 +382,9 @@ export function WhereToUse() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             Application of <span className='!font-inter text-secondry'>Wet Wash Gloves</span>
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Versatile Use Across Diverse Clinical and Care Settings.
                         </Subheading>
@@ -422,9 +422,9 @@ export function Comparison() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading classname='text-white'>
+                        <MainHeading classname='text-white'>
                             Traditional Bathing vs. Wet Wash Gloves
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='!text-white max-w-3xl mx-auto mt-2 leading-[1.2]'>
                             See how Wet Wash Gloves outperform conventional methods across every key metric — from time and hygiene safety to staff efficiency and water usage.
                         </Subheading>
@@ -781,9 +781,9 @@ export function ContributorMain() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             <span className='!font-inter text-secondry'>Contributor to NHM & NPHCE Policies of India</span>
-                        </Heading>
+                        </MainHeading>
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5'>
@@ -968,9 +968,9 @@ export function Packaging() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             <span className='!font-inter text-secondry'>Packaging & Supply Details</span>
-                        </Heading>
+                        </MainHeading>
                     </div>
 
                     <div className='flex-1 relative grid lg:grid-cols-[1fr_550px] grid-cols-1 gap-5'>

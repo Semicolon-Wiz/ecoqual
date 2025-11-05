@@ -18,15 +18,30 @@ interface Category {
     sub_categories: SubCategory[];
 }
 
+interface Blog {
+    id: number;
+    title: string;
+    slug: string;
+    blog_image: string;
+    bog_description: string;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.ecoqual.in';
 
     const categoryRes = await fetch('https://inforbit.in/demo/ecoqual/api/menu', {
-        next: { revalidate: 86400 }, // revalidate once a day
+        next: { revalidate: 86400 },
+    });
+
+    const blogs = await fetch('https://inforbit.in/demo/ecoqual/api/blog', {
+        next: { revalidate: 86400 },
     });
 
     const categoryData = await categoryRes.json();
-    const categories : Category[] = categoryData?.data || [];
+    const categories: Category[] = categoryData?.data || [];
+
+    const blogData = await blogs.json();
+    const allBlogs: Blog[] = blogData?.data || []
 
     const urls: MetadataRoute.Sitemap = [];
 
@@ -85,6 +100,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 }
             }
         }
+    }
+    for (const blogs of allBlogs) {
+        urls.push({
+            url: `${baseUrl}/blogs/${blogs.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        });
     }
 
     return urls;

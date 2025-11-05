@@ -1,4 +1,4 @@
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import React from 'react'
 
@@ -35,9 +35,9 @@ export default function FourthSection() {
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             Why Choose <span className='!font-inter text-secondry'>Wet Wash Gloves?</span>
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='max-w-xl mx-auto'>
                             Safe, Convenient, Effective, and Economical—everything modern healthcare needs in one simple solution.
                         </Subheading>

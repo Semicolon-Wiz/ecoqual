@@ -1,5 +1,5 @@
 'use client';
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image';
 import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
@@ -99,9 +99,9 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
             <Wrapper>
                 <div className='relative w-full flex flex-col gap-8'>
                     <div className='flex-1 text-center'>
-                        <Heading classname='text-secondry sm:text-center text-left'>
+                        <MainHeading classname='text-secondry sm:text-center text-left'>
                             {data?.subcategory.title ?? ''}
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname='max-w-4xl mx-auto !font-normal !text-left !text-gray-700'>
                             {data?.subcategory.description ?? ''}
                         </Subheading>

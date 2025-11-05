@@ -1,5 +1,5 @@
 'use client';
-import { Heading, Section, Subheading, Wrapper } from '@/utils/Section'
+import { Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Section'
 import Image from 'next/image'
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
@@ -26,9 +26,9 @@ export default function AboutUs() {
             <Wrapper>
                 <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
                     <div className='flex-1 text-center'>
-                        <Heading>
+                        <MainHeading>
                             <span className='!font-inter text-secondry'>EcoQual Healthcare Solutions </span>
-                        </Heading>
+                        </MainHeading>
                         <p className='md:text-2xl text-sm font-semibold text-primary-dark text-center'>
                             Caring for every hand that cares.
                         </p>
@@ -297,9 +297,9 @@ export function MoreAboutUs() {
             <Wrapper>
                 <div className="relative w-full flex flex-col gap-10">
                     <div className="text-center">
-                        <Heading>
+                        <MainHeading>
                             <span className="font-inter text-secondry">Inspired by Clean Innovation</span>
-                        </Heading>
+                        </MainHeading>
                         <Subheading classname="max-w-xl mx-auto">
                             Redefining hygiene with smarter, safer, and sustainable solutions.
                         </Subheading>

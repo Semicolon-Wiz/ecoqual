@@ -25,6 +25,13 @@ export function Wrapper({ children, classname, style }: Props) {
         </div>
     )
 }
+export function MainHeading({ children, classname, style }: Props) {
+    return (
+        <h1 className={`${classname ?? ''} lg:text-4xl md:text-[28px] text-2xl leading-[1.2] font-bold text-primary-dark`} style={style}>
+            {children}
+        </h1>
+    )
+}
 export function Heading({ children, classname, style }: Props) {
     return (
         <h2 className={`${classname ?? ''} lg:text-4xl md:text-[28px] text-2xl leading-[1.2] font-bold text-primary-dark`} style={style}>
