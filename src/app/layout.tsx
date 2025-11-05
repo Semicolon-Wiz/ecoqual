@@ -9,8 +9,37 @@ import ContactButton from "@/components/ContactButton";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
-  title: "Ecoqual Healthcare Solutions",
-  description: "Ecoqual Healthcare Solutions",
+  metadataBase: new URL('https://www.ecoqual.in'),
+  title: 'Ecoqual | Innovative Hygiene & Healthcare Solutions in India',
+  description:
+    'Ecoqual offers eco-friendly hygiene and healthcare products designed for hospitals, clinics, and homes. Trusted quality, sustainable solutions, and care.',
+  alternates: {
+    canonical: 'https://www.ecoqual.in',
+  },
+  openGraph: {
+    title: 'Ecoqual | Innovative Hygiene & Healthcare Solutions in India',
+    description:
+      'Ecoqual offers eco-friendly hygiene and healthcare products designed for hospitals, clinics, and homes. Trusted quality, sustainable solutions, and care.',
+    url: 'https://www.ecoqual.in',
+    siteName: 'EcoQual Healthcare Solution',
+    images: [
+      {
+        url: 'https://www.ecoqual.in/images/logo/logo.svg',
+        width: 1200,
+        height: 630,
+        alt: 'EcoQual Healthcare Solution',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ecoqual | Innovative Hygiene & Healthcare Solutions in India',
+    description:
+      'Ecoqual offers eco-friendly hygiene and healthcare products designed for hospitals, clinics, and homes. Trusted quality, sustainable solutions, and care.',
+    images: ['https://www.ecoqual.in/images/logo/logo.svg'],
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +62,7 @@ export default function RootLayout({
             {children}
             <Sponsor />
             <Footer />
-            <ContactButton/>
+            <ContactButton />
           </QueryProvider>
         </SmoothScrollProvider>
         <GoogleAnalytics gaId="G-2DNJTNEBFH" />
