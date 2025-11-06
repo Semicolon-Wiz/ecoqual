@@ -100,7 +100,8 @@ export default async function SubCategoryPage({ params }: { params: Promise<{ ca
 
   await queryClient.prefetchQuery({
     queryKey: [categoryId, subCategory],
-    queryFn: () => fetchProducts(categoryId, subCategory)
+    queryFn: () => fetchProducts(categoryId, subCategory),
+    staleTime: 1000 * 60 * 5
   })
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
