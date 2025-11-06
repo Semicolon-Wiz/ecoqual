@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/wet-wash-gloves/contributor-nhm-nhpce-india',
         '/wet-wash-gloves/traditional-bathing-vs-wet-wash-gloves',
         '/contact',
-        '/blog',
+        '/blogs',
     ].map((path) => ({
         url: `${baseUrl}${path}`,
         lastModified: new Date(),

@@ -101,7 +101,7 @@ export default function Footer() {
                     <h3 className='mt-3 font-semibold text-white text-2xl'>
                         Ecoqual Healthcare Solutions
                     </h3>
-                    <Link href='mainlto:contact@ecoqual.in' target='_blank' className='mt-2 font-normal text-sm text-white !font-montserrat flex items-center gap-2'>
+                    <Link href='mailto:contact@ecoqual.in' target='_blank' className='mt-2 font-normal text-sm text-white !font-montserrat flex items-center gap-2'>
                         <Image src={'/images/svg/icons/mail-white.svg'} width={28} height={28} alt='email' className='w-6 h-6' />
                         contact@ecoqual.in
                     </Link>
