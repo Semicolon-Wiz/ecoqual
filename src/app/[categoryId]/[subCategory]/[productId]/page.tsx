@@ -2,7 +2,12 @@ import React from 'react';
 import SingleProduct from './SingleProduct';
 import type { Metadata } from 'next';
 import { getCanonicalUrl } from '@/utils/seo';
-import axios from 'axios';
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query'
+import axios from 'axios'
 
 
 export interface Product {
@@ -32,20 +37,6 @@ interface ApiResponse<T> {
   success: boolean;
   message: string;
   product: T;
-}
-
-export default async function SingleProductPage({
-  params,
-}: {
-  params: { productId: string; subCategory: string };
-}) {
-  const { productId, subCategory } = params;
-
-  return (
-    <main className="bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100">
-      <SingleProduct productId={productId} subCategory={subCategory} />
-    </main>
-  );
 }
 
 
@@ -117,5 +108,34 @@ export async function generateMetadata(
       },
     };
   }
+}
+
+
+
+
+export default async function SingleProductPage({
+  params,
+}: {
+  params: { productId: string; subCategory: string };
+}) {
+  const { productId, subCategory } = params;
+  const queryClient = new QueryClient()
+
+  const fetchProducts = async (id: string): Promise<Product> => {
+    const res = await axios.get<ApiResponse<Product>>(`https://inforbit.in/demo/ecoqual/api/products/${id}`);
+    return res.data.product;
+  };
+
+  await queryClient.prefetchQuery({
+    queryKey: [subCategory, productId],
+    queryFn: () => fetchProducts(productId),
+  })
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <main className="bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100">
+        <SingleProduct productId={productId} subCategory={subCategory} />
+      </main>
+    </HydrationBoundary>
+  );
 }
 

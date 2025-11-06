@@ -3,27 +3,22 @@ import ProductList from './ProductList'
 import { getCanonicalUrl } from '@/utils/seo'
 import { Metadata } from 'next'
 import axios from 'axios'
-
-
-export default async function SubCategoryPage({ params }: { params: Promise<{ categoryId: string, subCategory: string }> }) {
-  const { categoryId, subCategory } = await params
-  return (
-    <main className='bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100'>
-      <ProductList categoryId={categoryId} subCategory={subCategory} />
-    </main>
-  )
-}
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query'
 
 
 
-export interface SubCategory {
+interface SubCategory {
   id: number;
   title: string;
   slug: string;
   description: string | null;
 }
 
-export interface Category {
+interface Category {
   id: number;
   title: string;
   slug: string;
@@ -31,7 +26,7 @@ export interface Category {
   description: string;
 }
 
-export interface ProductResponse {
+interface ProductResponse {
   category: Category;
   subcategory: SubCategory;
 }
@@ -44,8 +39,8 @@ export async function generateMetadata(
     const res = await axios.get<ProductResponse>(`https://inforbit.in/demo/ecoqual/api/categories/${categoryId}/${subCategory}`);
     const pro = res.data;
 
-    const title = pro.subcategory.title
-    const description = pro.category.description
+    const title = pro.subcategory.title ?? ''
+    const description = pro.subcategory.description ?? ''
 
     const canonical = getCanonicalUrl(`${pro.category.slug}/${pro.subcategory.slug}`);
 
@@ -90,4 +85,29 @@ export async function generateMetadata(
       },
     };
   }
+}
+
+
+export default async function SubCategoryPage({ params }: { params: Promise<{ categoryId: string, subCategory: string }> }) {
+  const { categoryId, subCategory } = await params
+
+  const fetchProducts = async (categoryId: string, subCategoryId: string): Promise<ProductResponse> => {
+    const res = await axios.get<ProductResponse>(`https://inforbit.in/demo/ecoqual/api/categories/${categoryId}/${subCategoryId}`);
+    return res.data;
+  };
+
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery({
+    queryKey: [categoryId, subCategory],
+    queryFn: () => fetchProducts(categoryId, subCategory),
+    staleTime: 1000 * 60 * 5
+  })
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <main className='bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100'>
+        <ProductList categoryId={categoryId} subCategory={subCategory} />
+      </main>
+    </HydrationBoundary>
+  )
 }
