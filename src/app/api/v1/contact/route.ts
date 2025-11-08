@@ -17,23 +17,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     let body: Partial<ContactData> = {};
 
-    try {
-      body = await req.json();
-    } catch {
-      try {
-        const formData = await req.formData();
-        body = {
-          name: formData.get('name') as string,
-          email: formData.get('email') as string,
-          phone: formData.get('phone') as string,
-          message: formData.get('message') as string,
-        };
-      } catch {
-        return NextResponse.json(
-          { success: false, message: 'Invalid request format. Please provide propper Inputs.' },
-          { status: 400 }
-        );
-      }
+    const formData = await req.formData();
+    body = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      message: formData.get('message') as string,
     }
 
     const parsed = ContactSchema.safeParse(body);
@@ -48,8 +37,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const { name, email, phone, message } = parsed.data;
 
     const { error } = await resend.emails.send({
-      from: 'EcoQual <onboarding@resend.dev>',
-      to: 'wizards@ecoqual.in',
+      from: 'EcoQual Contact <wizards@ecoqual.in>',
+      to: ['contact@ecoqual.in', 'akshat.gd@gmail.com'],
       subject: 'New Contact Request',
       html: `
         <h2>New Contact Request</h2>

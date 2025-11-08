@@ -35,8 +35,8 @@ export async function POST(req: NextRequest) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: 'wizards@ecoqual.in',
+            from: 'EcoQual Product Enquiry <wizards@ecoqual.in>',
+            to: ['contact@ecoqual.in', 'akshat.gd@gmail.com'],
             subject: 'New Product Enquiry Request',
             html: `
         <h2>New Product Enquiry</h2>
