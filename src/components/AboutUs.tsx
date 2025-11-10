@@ -300,12 +300,9 @@ export function MoreAboutUs() {
             <Wrapper>
                 <div className="relative w-full flex flex-col gap-10">
                     <div className="text-center">
-                        <MainHeading>
-                            <span className="font-inter text-secondry">Inspired by Clean Innovation</span>
-                        </MainHeading>
-                        <Subheading classname="max-w-xl mx-auto">
+                        <MainHeading classname='max-w-2xl mx-auto'>
                             Redefining hygiene with smarter, safer, and sustainable solutions.
-                        </Subheading>
+                        </MainHeading>
                     </div>
 
                     <div className="relative prose prose-zinc max-w-none leading-relaxed text-zinc-700 lg:text-base md:text-sm text-sm">
@@ -319,12 +316,9 @@ export function MoreAboutUs() {
                                 className="object-cover w-full h-full"
                             />
                         </div>
-                        <h2 className='lg:text-2xl md:text-xl text-lg mb-2 font-semibold text-primary-dark leading-[1.2]'>
-                            The significance of starting our business in Varanasi.
-                        </h2>
                         <p>
                             <strong>EcoQual Healthcare Solutions</strong> founded in <strong>November 2019</strong> by <strong>Mr. Siddhant Mehra</strong>,
-                            it emerged from a rich legacy in the traditional Banarasi silk trade,
+                            in Varanasi it emerged from a rich legacy in the traditional Banarasi silk trade,
                             combined with a vision to create meaningful impact through innovation and sustainability.
                         </p>
                         {/* <div className='flex flex-col gap-4'> */}
@@ -378,7 +372,7 @@ export function MoreAboutUs() {
                         <p className="italic text-zinc-600 mt-6">
                             At EcoQual, innovation begins with a simple question:
                             <br />
-                            <strong className="text-zinc-800">“How can we enhance everyday care through integrity and ingenuity?”</strong>
+                            “How can we enhance everyday care through integrity and ingenuity?”
                             <br />
                             With every answer, we move closer to our vision of creating lasting, positive change.
                         </p>
