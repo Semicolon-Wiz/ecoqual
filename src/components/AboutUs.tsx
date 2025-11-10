@@ -50,7 +50,7 @@ export default function AboutUs() {
                             >
                                 <h2 className='font-bold md:text-xl text-base leading-[1.2] '>
                                     <span className='!font-inter text-secondry'>
-                                        When Hygiene Fails, Everything Is at Risk
+                                        Preserving life, dignity, and confidence
                                     </span>
                                 </h2>
 
@@ -83,7 +83,7 @@ export default function AboutUs() {
                             >
                                 <h2 className='font-bold md:text-xl text-base leading-[1.2]'>
                                     <span className='!font-inter text-secondry'>
-                                        Preserving life, dignity, and confidence
+                                        When Hygiene Fails, Everything Is at Risk
                                     </span>
                                 </h2>
                                 <p className='lg:mt-5 mt-3 font-medium md:text-base text-sm text-zinc-700 leading-[1.2] flex flex-col gap-[6px]'>
