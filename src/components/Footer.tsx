@@ -82,6 +82,10 @@ export default function Footer() {
             link: 'https://www.facebook.com/people/EQ-Solutions/61579565495330/'
         },
         {
+            icon: '/images/svg/icons/linkedin.svg',
+            link: 'https://www.linkedin.com/company/ecoqual-healthcare-solutions/'
+        },
+        {
             icon: '/images/svg/icons/youtube.svg',
             link: 'https://www.youtube.com/@EcoQualHealthcare'
         }

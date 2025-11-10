@@ -11,31 +11,18 @@ export default function ScrollToHashHandler() {
 
   useEffect(() => {
     const hash = window.location.hash;
-
     if (!lenis) return;
-    if (!hash) {
-      lenis.scrollTo(0);
-      return;
-    }
 
-    // ⏳ Retry until element exists (max 2 seconds)
-    let retries = 0;
-    const interval = setInterval(() => {
-      const target = document.querySelector(hash);
-      if (target) {
-        clearInterval(interval);
-        console.log('🚀 Scrolling to', hash);
-        lenis.scrollTo(target, { offset: -100, duration: 1.2 });
-      } else {
-        retries++;
-        if (retries > 20) { // ~2 seconds at 100ms each
-          clearInterval(interval);
-          console.warn('❌ Element not found after waiting:', hash);
-        }
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          lenis.scrollTo(el, { offset: -100, duration: 1.2 });
+        }, 300);
       }
-    }, 100);
-
-    return () => clearInterval(interval);
+    } else {
+      lenis.scrollTo(0);
+    }
   }, [pathname, searchParams, lenis]);
 
   return null;
