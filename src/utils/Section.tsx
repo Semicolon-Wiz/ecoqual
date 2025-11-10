@@ -4,6 +4,7 @@ interface Props {
     children: React.ReactNode;
     classname?: string;
     style?: CSSProperties;
+    id?: string
 }
 interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
@@ -11,9 +12,9 @@ interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     style?: CSSProperties;
 }
 
-export function Section({ children, classname, style }: Props) {
+export function Section({ children, classname, style, id }: Props) {
     return (
-        <section className={classname} style={style}>
+        <section className={classname} style={style} id={id}>
             {children}
         </section>
     )

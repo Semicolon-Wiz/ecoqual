@@ -210,7 +210,7 @@ export function OurValues() {
         "/images/about/banner-7.jpg",
     ]
     return (
-        <Section>
+        <Section id='ourCommitment'>
             <Wrapper>
                 <div className='relative w-full flex flex-col gap-8 lg:gap-14'>
 

@@ -134,7 +134,7 @@ export default function NavBar() {
                                         </span>
                                     </Link>
                                     <Link
-                                        href='/about#outCommitment'
+                                        href='/about#ourCommitment'
                                         className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                     >
                                         <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
@@ -143,7 +143,7 @@ export default function NavBar() {
                                         </span>
                                     </Link>
                                     <Link
-                                        href='/about#outVision'
+                                        href='/about#ourVision'
                                         className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                     >
                                         <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
@@ -152,7 +152,7 @@ export default function NavBar() {
                                         </span>
                                     </Link>
                                     <Link
-                                        href='/about#outMission'
+                                        href='/about#ourMission'
                                         className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
                                     >
                                         <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
