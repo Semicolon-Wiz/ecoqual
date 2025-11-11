@@ -209,6 +209,14 @@ export function OurValues() {
     const data: string[] = [
         "/images/about/banner-7.jpg",
     ]
+    const missionData: string[] = [
+        "/images/about/mission-01.jpg",
+        "/images/about/banner-04.jpg"
+    ]
+    const visionData: string[] = [
+        "/images/about/vision.png",
+        // "/images/about/new-03.png"
+    ]
     return (
         <Section id='ourCommitment'>
             <Wrapper>
@@ -254,6 +262,47 @@ export function OurValues() {
                                 <strong>
                                     At EQ, we&apos;re building a healthier, safer tomorrow — for every hand that cares.
                                 </strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 ' id='ourMission'>
+                        <div className='w-full h-full relative flex flex-col'>
+                            <h4 className='font-semibold text-lg md:text-2xl text-blue-500'>
+                                Our Mission
+                            </h4>
+                            <p className='mt-3 font-normal md:text-base lg:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                                <strong>
+                                    To develop smart, sustainable hygiene and healthcare solutions that solve real-world challenges and improve quality of life — across India and beyond.
+                                </strong>
+                                <span>
+                                    At Ecoqual Healthcare Solutions, our mission is to reshape how hygiene and healthcare are practiced by combining innovation, safety, and sustainability. We aim to create products that not only prevent infection and promote comfort but also build greater health awareness within society.
+                                </span>
+                                <span>
+                                    Driven by our founding values of Economy and Quality (EQ), every Ecoqual product is engineered with precision, care, and trust — ensuring comfort and confidence in every touch
+                                </span>
+                            </p>
+                        </div>
+                        <div className='w-full h-full relative flex items-center justify-center'>
+                            <ImageCarousel image={missionData} />
+                        </div>
+                    </div>
+
+                    <div className='relative flex-1 grid lg:grid-cols-[450px_1fr] grid-cols-1 gap-5 ' id='ourVision'>
+                        <div className='w-full relative flex items-center justify-center'>
+                            <ImageCarousel image={visionData} />
+                        </div>
+                        <div className='w-full h-full relative flex flex-col'>
+                            <h4 className='font-semibold text-lg md:text-2xl text-blue-500'>
+                                Our Vision
+                            </h4>
+                            <p className='mt-3 font-normal md:text-base lg:text-base text-sm text-zinc-700 leading-[1.3] flex flex-col gap-2'>
+                                <strong>
+                                    To build a healthier, more aware world — where hygiene, safety, and sustainability empower every individual and institution.
+                                </strong>
+                                <span>
+                                    We envision a future where clean environments, compassionate care, and responsible innovation go hand in hand. Through continuous research, education, and collaboration, Ecoqual strives to lead the evolution of healthcare and facility hygiene — creating systems that protect people, preserve resources, and promote dignity in every act of care.
+                                </span>
                             </p>
                         </div>
                     </div>
