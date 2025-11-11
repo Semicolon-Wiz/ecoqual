@@ -214,7 +214,7 @@ export function OurValues() {
         "/images/about/banner-04.jpg"
     ]
     const visionData: string[] = [
-        "/images/about/vision.png",
+        "/images/about/vision.jpg",
         // "/images/about/new-03.png"
     ]
     return (
