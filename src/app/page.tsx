@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AboutEQWet from "@/components/AboutEQWet";
 import AboutUs, { OurMission, OurValues, OurVision } from "@/components/AboutUs";
 import AboutWet from "@/components/AboutWet";
 import BlogCard from "@/components/BlogCard";
@@ -22,6 +23,7 @@ export default function Home() {
       {/* <SecondComponent/> */}
       {/* <AboutWet /> */}
       <ProductsCategory />
+      <AboutEQWet />
       {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
