@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AboutBioBhoomi from "@/components/AboutBioBhoomi";
 import AboutEQWet from "@/components/AboutEQWet";
 import AboutUs, { OurMission, OurValues, OurVision } from "@/components/AboutUs";
 import AboutWet from "@/components/AboutWet";
@@ -24,6 +25,7 @@ export default function Home() {
       {/* <AboutWet /> */}
       <ProductsCategory />
       <AboutEQWet />
+      <AboutBioBhoomi/>
       {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
