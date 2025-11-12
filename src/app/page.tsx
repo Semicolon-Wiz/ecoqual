@@ -6,6 +6,7 @@ import AboutWet from "@/components/AboutWet";
 import BlogCard from "@/components/BlogCard";
 import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
+import NHM from "@/components/NHM";
 import Products from "@/components/Products";
 import ProductsCategory from "@/components/ProductsCategory";
 import SecondComponent from "@/components/SecondComponent";
@@ -25,7 +26,8 @@ export default function Home() {
       {/* <AboutWet /> */}
       <ProductsCategory />
       <AboutEQWet />
-      <AboutBioBhoomi/>
+      <AboutBioBhoomi />
+      <NHM />
       {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}
