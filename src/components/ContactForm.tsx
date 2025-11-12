@@ -24,8 +24,14 @@ interface FormData {
 export default function ContactForm() {
     const contactInfo: ContactInfo[] = [
         {
-            title: 'Address',
+            title: 'Corporate Address',
             content: '38/7 -B-30, Raghunath Nagar, Tulsipur, Mahmoorganj, Varanasi, Uttar Pradesh 221010',
+            icon: '/images/svg/icons/pin.svg',
+            link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
+        },
+        {
+            title: 'Factory Address',
+            content: 'D-15/ D-18, Big Industrial Estate, Chandpur, Varanasi – 221106',
             icon: '/images/svg/icons/pin.svg',
             link: 'https://maps.app.goo.gl/ExARevfgX9WwD3hN9'
         },

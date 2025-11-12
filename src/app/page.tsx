@@ -1,9 +1,12 @@
 import About from "@/components/About";
+import AboutBioBhoomi from "@/components/AboutBioBhoomi";
+import AboutEQWet from "@/components/AboutEQWet";
 import AboutUs, { OurMission, OurValues, OurVision } from "@/components/AboutUs";
 import AboutWet from "@/components/AboutWet";
 import BlogCard from "@/components/BlogCard";
 import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
+import NHM from "@/components/NHM";
 import Products from "@/components/Products";
 import ProductsCategory from "@/components/ProductsCategory";
 import SecondComponent from "@/components/SecondComponent";
@@ -22,6 +25,9 @@ export default function Home() {
       {/* <SecondComponent/> */}
       {/* <AboutWet /> */}
       <ProductsCategory />
+      <AboutEQWet />
+      <AboutBioBhoomi />
+      <NHM />
       {/* <Products /> */}
       {/* <Instagram /> */}
       {/* <WhyUs /> */}

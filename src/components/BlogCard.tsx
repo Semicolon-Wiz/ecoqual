@@ -10,7 +10,7 @@ import { motion } from 'motion/react'
 
 export default function BlogCard({ limit }: { limit?: number }) {
     return (
-        <Section>
+        <Section classname='bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100'>
             <Wrapper>
                 <div className='relative w-full flex flex-col lg:gap-14 md:gap-10 gap-8'>
                     <div className='flex-1 text-center'>
@@ -89,7 +89,7 @@ function Cards({ limit }: { limit?: number }) {
         >
             {
                 (limit && limit > 0 ? data?.slice(0, limit) : data)?.map((items: Blog) => (
-                    <motion.div key={items.id} className="group w-full relative h-full border border-gray-300"
+                    <motion.div key={items.id} className="bg-white group w-full relative h-full shadow rounded-lg"
                         variants={cardVarient}
                     >
                         <div className="w-full h-60">

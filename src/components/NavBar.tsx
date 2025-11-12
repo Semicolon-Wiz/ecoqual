@@ -52,11 +52,11 @@ export default function NavBar() {
 
     const currentPath = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
+    const [openSubMenu, setOpenSubMenu] = useState<number | null | string>(null);
     const { stopScroll, startScroll } = useLenisControl();
     const [showHeader, setShowHeader] = useState(true);
 
-    const toggleSubMenu = (key: number) => {
+    const toggleSubMenu = (key: number | string) => {
         setOpenSubMenu((prev) => (prev === key ? null : key));
     };
 
@@ -102,16 +102,67 @@ export default function NavBar() {
                         </Link>
                     </div>
 
-                    <div className='lg:flex hidden relative w-max items-center gap-2 h-full'>
-                        <Link
-                            href="/about"
-                            className={`block my-auto text-base px-3.5 py-1.5 ${currentPath === '/about'
-                                ? 'bg-primary text-white rounded-full'
-                                : 'text-zinc-800'
-                                }`}
-                        >
-                            About EcoQual
-                        </Link>
+                    <div className='lg:flex hidden relative w-max items-center gap-3 h-full'>
+                        <div className="relative group/menu h-full">
+                            <button
+                                type="button"
+                                className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-[2px] text-base font-normal text-zinc-800 !font-inter"
+                            >
+                                About EcoQual
+                                <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={14} />
+                            </button>
+                            <div
+                                className="absolute top-full left-0 z-50 w-max bg-white shadow-md p-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:translate-y-0 border border-gray-200"
+                            >
+                                <Fragment>
+                                    <Link
+                                        href='/'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            Home
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            About
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourCommitment'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            Our Commitment
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourVision'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            Our Vision
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourMission'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            Our Mission
+                                        </span>
+                                    </Link>
+                                </Fragment>
+                            </div>
+                        </div>
 
                         {
                             isLoading && (
@@ -144,14 +195,14 @@ export default function NavBar() {
                         }
 
                         {data?.map((category) => (
-                            <div key={category.id} className="relative group/menu h-full ">
+                            <div key={category.id} className="relative group/menu h-full">
                                 <button
                                     type="button"
-                                    className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-1 text-base font-normal text-zinc-800 !font-inter"
+                                    className="my-auto h-full transition-all duration-200 ease-linear cursor-pointer inline-flex items-center gap-[2px] text-base font-normal text-zinc-800 !font-inter"
                                 >
                                     {category.title}
                                     {category.sub_categories.length > 0 && (
-                                        <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={17} />
+                                        <ChevronDown className="transition-transform duration-200 ease-linear group-hover/menu:rotate-180" size={14} />
                                     )}
                                 </button>
 
@@ -200,24 +251,28 @@ export default function NavBar() {
                             </div>
                         ))}
 
-                        <Link
-                            href="/blogs"
-                            className={`text-base px-3.5 py-1.5 ${currentPath === '/blogs'
-                                ? 'bg-primary text-white rounded-full'
-                                : 'text-zinc-800'
-                                }`}
-                        >
-                            Blogs
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className={`text-base px-3.5 py-1.5 ${currentPath === '/contact'
-                                ? 'bg-primary text-white rounded-full'
-                                : 'text-zinc-800'
-                                }`}
-                        >
-                            Contact
-                        </Link>
+                        <div className='relative h-full flex items-center'>
+                            <Link
+                                href="/blogs"
+                                className={`text-base ${currentPath === '/blogs'
+                                    ? 'text-primary'
+                                    : 'text-zinc-800'
+                                    }`}
+                            >
+                                Blogs
+                            </Link>
+                        </div>
+                        <div className='relative h-full flex items-center'>
+                            <Link
+                                href="/contact"
+                                className={`text-base ${currentPath === '/contact'
+                                    ? 'text-primary'
+                                    : 'text-zinc-800'
+                                    }`}
+                            >
+                                Contact
+                            </Link>
+                        </div>
                     </div>
 
                     <button onClick={() => setIsMenuOpen((prev) => !prev)} className='lg:hidden w-12 h-12 flex items-center justify-center cursor-pointer bg-primary rounded-full '>
@@ -246,10 +301,73 @@ export default function NavBar() {
                     </div>
 
                     <div className='w-full mt-10 flex flex-col gap-2'>
+                        <div className='flex flex-col'>
+                            <button
+                                type="button"
+                                onClick={() => toggleSubMenu("about")}
+                                className="transition-all duration-200 ease-linear px-5 py-1.5 flex items-center justify-between font-normal text-black text-base !font-inter"
+                            >
+                                About EcoQual
+                                <ChevronDown className={`transition-transform duration-200 ${openSubMenu === "about" ? "rotate-180" : ""}`} />
+                            </button>
 
-                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className={`w-max px-5 py-1.5 text-base font-normal ${currentPath === '/about' ? 'bg-primary text-white rounded-full' : 'text-black'}`}>
-                            About EcoQual
-                        </Link>
+                            <div
+                                className={`transition-all duration-300 overflow-hidden ${openSubMenu === "about" ? "max-h-[1000px] opacity-100 visible" : "max-h-0 opacity-0 invisible"}`}
+                            >
+                                <Fragment>
+                                    <Link
+                                        href='/'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            Home
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            About Us
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourCommitment'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            Our Commitment
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourVision'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            Our Vision
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/about#ourMission'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            Our Mission
+                                        </span>
+                                    </Link>
+                                </Fragment>
+                            </div>
+                        </div>
 
                         {data?.map((category) => (
                             <div key={category.id} className='flex flex-col'>
