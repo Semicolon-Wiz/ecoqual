@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
 import { motion } from 'motion/react'
-import { Marquee } from './ui/marquee'
 
 
 export default function AboutUs() {
@@ -267,7 +266,7 @@ export function OurValues() {
                     </div>
 
                     <div className='relative flex-1 grid lg:grid-cols-[1fr_450px] grid-cols-1 gap-5 ' id='ourMission'>
-                        <div className='w-full h-full relative flex flex-col'>
+                        <div className='w-full h-full relative flex flex-col lg:order-1 order-2'>
                             <h4 className='font-semibold text-lg md:text-2xl text-blue-500'>
                                 Our Mission
                             </h4>
@@ -283,7 +282,7 @@ export function OurValues() {
                                 </span>
                             </p>
                         </div>
-                        <div className='w-full h-full relative flex items-center justify-center'>
+                        <div className='w-full h-full relative flex items-center justify-center lg:order-2 order-1'>
                             <ImageCarousel image={missionData} />
                         </div>
                     </div>
@@ -506,7 +505,7 @@ export function InstitutionsList() {
                                 <div key={idx}
                                     className='relative w-full h-full bg-white p-3 rounded-lg shadow-md'>
                                     <Image src={data.image} alt={data.name}
-                                        width={156} height={156} className="w-16 object-contain"
+                                        width={156} height={156} className="md:w-16 w-10 object-contain"
                                     />
                                     <span className='text-xs block mt-4 text-zinc-800  '>
                                         {data.name}
