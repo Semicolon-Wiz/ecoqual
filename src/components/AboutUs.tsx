@@ -3,8 +3,8 @@ import { Heading, MainHeading, Section, Subheading, Wrapper } from '@/utils/Sect
 import Image from 'next/image'
 import React from 'react'
 import ImageCarousel from './ImageCarousel'
-import { motion, scale } from 'motion/react'
-import { ChevronsRight } from 'lucide-react';
+import { motion } from 'motion/react'
+import { Marquee } from './ui/marquee'
 
 
 export default function AboutUs() {
@@ -432,63 +432,60 @@ export function MoreAboutUs() {
     )
 }
 
+interface InstitutionsList {
+    name: string;
+    image: string;
+}
 export function InstitutionsList() {
-    interface InstitutionCategory {
-        name: string;
-        institutions: string[];
-        icon: string;
-    }
-
-    const institutionsData: InstitutionCategory[] = [
+    const list: InstitutionsList[] = [
         {
-            name: "Government",
-            institutions: [
-                "BLW Hospital (Railways)",
-                "NER Hospital (Railways)",
-                "MPMMMCC & HBC Varanasi & Muzaffarpur Bihar (Tata Cancer Hospital)",
-                "Sir Sundarlal Hospital (BHU)",
-                "LPS Cardiology Institute (Kanpur)",
-                "Maa Vindhyawasini Autonomous State Medical College, Mirzapur",
-                "Maharaja Balwant Singh District Hospital, Bhadohi",
-                "District Woman Hospital, Jaunpur",
-            ],
-            icon: '/images/wet_wash/new-icon-01.svg'
+            name: 'Apex',
+            image: '/images/sponsor/logo-01.png'
         },
         {
-            name: "NGO",
-            institutions: ["Ram Krishna Mission Home of Service"],
-            icon: '/images/wet_wash/new-icon-02.svg',
+            name: 'Ashirwad Hospital Varanasi',
+            image: '/images/sponsor/logo-02.png'
         },
         {
-            name: "Private",
-            institutions: [
-                "Ashirwad Hospital, Varanasi",
-                "Galaxy Hospital",
-                "Shubham Hospital",
-                "Apex Hospital",
-                "Trimurti Hospital",
-            ],
-            icon: '/images/wet_wash/new-icon-03.svg',
+            name: 'HBC Varanasi',
+            image: '/images/sponsor/logo-03.png'
         },
         {
-            name: "Other Institutions",
-            institutions: [
-                "State Bank of India",
-                "Nagar Nigam Varanasi",
-                "ICICI Bank",
-                "The Banaras Club",
-                "Automobile Dealerships (Tata, Kia, Bajaj, Honda etc.)",
-                "Sunbeam Group of Institutions",
-            ],
-            icon: '/images/wet_wash/new-icon-04.svg',
-        }
-    ];
-
-    const bg = [
-        "#85D0B1",
-        "#9688E9",
-        "#E87966",
-        "#F2C94C"
+            name: 'BLW Hospital',
+            image: '/images/sponsor/logo-04.png'
+        },
+        {
+            name: 'LPS cardiology Institute',
+            image: '/images/sponsor/logo-05.png'
+        },
+        {
+            name: 'ICICI bank',
+            image: '/images/sponsor/logo-06.png'
+        },
+        {
+            name: 'Ram Krishna Mission',
+            image: '/images/sponsor/logo-07.png'
+        },
+        {
+            name: 'MPMMMCC Varanasi',
+            image: '/images/sponsor/logo-08.png'
+        },
+        {
+            name: 'Nagar Nigam Varanasi',
+            image: '/images/sponsor/logo-09.png'
+        },
+        {
+            name: 'Maa Vindhyawasini Autonomous State Medical college Mirzapur',
+            image: '/images/sponsor/logo-10.png'
+        },
+        {
+            name: 'State Bank of India',
+            image: '/images/sponsor/logo-11.png'
+        },
+        {
+            name: 'Sir Sundarlal Hospital(BHU)',
+            image: '/images/sponsor/logo-12.png'
+        },
     ]
 
     return (
@@ -503,29 +500,17 @@ export function InstitutionsList() {
                             Proudly supplying sustainable hygiene products to hospitals NGOs and corporate institutions across India.
                         </Subheading>
                     </div>
-                    <div className='relative w-full grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-3 gap-2.5'>
+                    <div className='relative w-full grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3'>
                         {
-                            institutionsData.map((value, idx) => (
-                                <div
-                                    key={idx + 2}
-                                    style={{ backgroundColor: bg[idx] }}
-                                    className={`w-full h-full relative p-3 lg:p-5 text-white rounded-xl `}>
-                                    <span className='block w-full font-semibold text-2xl max-w-[200px]'>
-                                        {value.name}
-                                    </span>
-                                    <div className='mt-10 w-full flex flex-col gap-1'>
-                                        {
-                                            value.institutions.map((item, id) => (
-                                                <div key={id} className='flex items-center gap-2 text-sm'>
-                                                    <ChevronsRight size={16} className='shrink-0' />
-                                                    {item}
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                    <Image src={value.icon} alt={value.name} width={75} height={75}
-                                        className='absolute top-3 right-3'
+                            list.map((data, idx) => (
+                                <div key={idx}
+                                    className='relative w-full h-full bg-white p-3 rounded-lg shadow-md'>
+                                    <Image src={data.image} alt={data.name}
+                                        width={156} height={156} className="w-16 object-contain"
                                     />
+                                    <span className='text-xs block mt-4 text-zinc-800  '>
+                                        {data.name}
+                                    </span>
                                 </div>
                             ))
                         }
