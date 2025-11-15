@@ -17,7 +17,12 @@ export default function ScrollToHashHandler() {
       const el = document.querySelector(hash);
       if (el) {
         setTimeout(() => {
-          lenis.scrollTo(el, { offset: -100, duration: 1.2 });
+          if (el instanceof HTMLElement) {
+            lenis.scrollTo(el, { offset: -100, duration: 1.2 });
+          } else {
+            // fallback if it's not an HTMLElement
+            lenis.scrollTo(0);
+          }
         }, 300);
       }
     } else {
