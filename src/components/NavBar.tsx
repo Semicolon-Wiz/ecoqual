@@ -160,6 +160,15 @@ export default function NavBar() {
                                             Our Mission
                                         </span>
                                     </Link>
+                                    <Link
+                                        href='/gallery'
+                                        className="group/item text-base flex items-center gap-2.5 px-2 py-1.5 rounded text-zinc-900 hover:text-blue-600 transition-colors duration-200"
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:-translate-y-0.5 group-hover/item:translate-x-0.5" />
+                                        <span className="truncate !font-inter font-normal">
+                                            Gallery
+                                        </span>
+                                    </Link>
                                 </Fragment>
                             </div>
                         </div>
@@ -363,6 +372,16 @@ export default function NavBar() {
                                         <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
                                         <span className="truncate !font-inter">
                                             Our Mission
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        href='/gallery'
+                                        className="group/item flex items-center gap-2.5 px-7 py-1.5 text-blue-500 text-base border-b border-white/20 hover:text-blue-600 transition-colors duration-200 font-normal"
+                                        onClick={() => { setIsMenuOpen(false); setOpenSubMenu(null); }}
+                                    >
+                                        <MoveUpRight className="w-4 shrink-0 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5" />
+                                        <span className="truncate !font-inter">
+                                            Gallery
                                         </span>
                                     </Link>
                                 </Fragment>
