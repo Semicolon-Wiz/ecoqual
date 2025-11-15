@@ -9,6 +9,7 @@ import ContactButton from "@/components/ContactButton";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Providers from "@/utils/QueryProvider";
 import ScrollToHashHandler from "@/utils/ScrollToHashHandler";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ecoqual.in'),
@@ -59,7 +60,9 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden relative">
         <SmoothScrollProvider>
-          <ScrollToHashHandler />
+          <Suspense fallback={null}>
+            <ScrollToHashHandler />
+          </Suspense>
           <Providers>
             <NavBar />
             {children}
