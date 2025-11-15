@@ -1,5 +1,6 @@
 'use client';
 
+import Lenis from 'lenis';
 import { ReactLenis } from 'lenis/react';
 import type { LenisRef } from 'lenis/react';
 import { useEffect, useRef, ReactNode, createContext, useContext, useState } from 'react';
@@ -9,7 +10,7 @@ interface LenisProviderProps {
 }
 
 type LenisContextType = {
-  lenis: any | null;
+  lenis: Lenis | null;
   stopScroll: () => void;
   startScroll: () => void;
 };
@@ -24,7 +25,7 @@ export function useLenisControl() {
 
 export default function SmoothScrollProvider({ children }: LenisProviderProps) {
   const lenisRef = useRef<LenisRef>(null);
-  const [lenisInstance, setLenisInstance] = useState<any>(null);
+  const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
     const raf = (time: number) => {
