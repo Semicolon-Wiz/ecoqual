@@ -34,7 +34,7 @@ export default function AboutBioBhoomi() {
                         <div className='order-2'></div>
 
                         <div className="w-full h-full relative flex lg:justify-end justify-center items-center lg:order-3 order-1 ">
-                            <Image src={'/images/wet_wash/EQ.png'} alt='image'
+                            <Image src={'/images/bio.jpeg'} alt='image'
                                 width={1920}
                                 height={1080}
                                 className='w-full h-auto' />
