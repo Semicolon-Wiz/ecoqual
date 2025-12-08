@@ -348,9 +348,9 @@ export function MoreAboutUs() {
             <Wrapper>
                 <div className="relative w-full flex flex-col gap-10">
                     <div className="text-center">
-                        <MainHeading classname='max-w-2xl mx-auto'>
+                        <Heading classname='max-w-2xl mx-auto'>
                             Redefining hygiene with smarter, safer, and sustainable solutions.
-                        </MainHeading>
+                        </Heading>
                     </div>
 
                     <div className="relative prose prose-zinc max-w-none leading-relaxed text-zinc-700 lg:text-base md:text-sm text-sm">
@@ -425,6 +425,11 @@ export function MoreAboutUs() {
                             With every answer, we move closer to our vision of creating lasting, positive change.
                         </p>
                     </div>
+                </div>
+                <div className='mt-8 flex items-center w-full justify-center'>
+                    <h1 className='text-primary italic md:text-xl text-sm'>
+                        “Ecoqual Trusted Partner in Hygiene & Healthcare Solutions.”
+                    </h1>
                 </div>
             </Wrapper>
         </Section>
