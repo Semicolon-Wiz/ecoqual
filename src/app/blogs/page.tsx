@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: 'Ecoqual Blog | Hygiene & Healthcare Insights in India',
   description: 'Stay informed with Ecoqual’s blog — insights on hygiene systems, hospital consumables, sustainability in care and India’s evolving healthcare standards.',
   alternates: {
-    canonical: 'https://www.ecoqual.in/blog',
+    canonical: 'https://www.ecoqual.in/blogs',
   },
   openGraph: {
     title: 'Ecoqual Blog | Hygiene & Healthcare Insights in India',
     description: 'Stay informed with Ecoqual’s blog — insights on hygiene systems, hospital consumables, sustainability in care and India’s evolving healthcare standards.',
-    url: 'https://www.ecoqual.in/blog',
+    url: 'https://www.ecoqual.in/blogs',
     siteName: 'EcoQual Healthcare Solution',
     images: [
       {
