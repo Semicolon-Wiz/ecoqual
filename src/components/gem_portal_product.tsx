@@ -30,7 +30,7 @@ export default function GemPortalProduct() {
                             Our following products are listed and available for procurement through the Government e-Marketplace (GeM), India&apos;s official public procurement portal.
                         </Subheading>
                         <span className='block mt-4 text-xs italic'>
-                            "Government departments and PSUs can purchase these products directly via GeM using the registered seller listing."
+                            Government departments and PSUs can purchase these products directly via GeM using the registered seller listing.
                         </span>
                     </div>
                     <div className="w-full h-full">
