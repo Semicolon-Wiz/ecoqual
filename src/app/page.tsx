@@ -4,6 +4,7 @@ import AboutEQWet from "@/components/AboutEQWet";
 import AboutUs, { OurMission, OurValues, OurVision } from "@/components/AboutUs";
 import AboutWet from "@/components/AboutWet";
 import BlogCard from "@/components/BlogCard";
+import GemPortalProduct from "@/components/gem_portal_product";
 import Hero from "@/components/Hero";
 import Instagram from "@/components/Instagram";
 import NHM from "@/components/NHM";
@@ -27,6 +28,7 @@ export default function Home() {
       <ProductsCategory />
       <AboutEQWet />
       <AboutBioBhoomi />
+      <GemPortalProduct/>
       <NHM />
       {/* <Products /> */}
       {/* <Instagram /> */}

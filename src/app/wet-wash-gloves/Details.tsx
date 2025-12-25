@@ -56,6 +56,17 @@ export function WetWashHero() {
                                 View Demo
                             </ButtonSecondry>
                         </div>
+                        <div className='relative mt-10 grid grid-cols-1 sm:grid-cols-2 w-full gap-2'>
+                            <div className='w-full flex flex-col gap-2'>
+                                <span>
+                                    Available on GeM Portal
+                                </span>
+                                <Link href="https://mkp.gem.gov.in/ultrasound-gel/eq-ultrasound-gel/p-5116877-68024233382-cat.html" target='_blank' className='text-sm px-5 py-2 rounded-full bg-primary text-white w-max'>
+                                    View on GeM Portal
+                                </Link>
+                            </div>
+                            <Image src="/images/gem.svg" alt='Gem Portal' width={100} height={100} className='max-w-[200px] w-full' />
+                        </div>
                     </div>
 
                     <div className="w-full h-full relative flex items-center md:justify-end justify-center">
