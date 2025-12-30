@@ -7,7 +7,7 @@ export default function GemPortalProduct() {
     const productData = [
         {
             name: "Wet Wash Gloves",
-            image: "/images/wwg.JPG",
+            image: "/images/wwg.png",
             url: "/wet-wash-gloves",
             summary: "EQ Wet Wash Gloves are pre-moistened, single-use cleansing gloves designed for easy and effective hygiene care without the need for water or soap.",
         },

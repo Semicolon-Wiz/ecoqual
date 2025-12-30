@@ -81,17 +81,10 @@ function Cards({ limit }: { limit?: number }) {
         visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: easeInOut } },
     }
     return (
-        <motion.div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5"
-            variants={cardContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-        >
+        <div className="w-full relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
             {
                 (limit && limit > 0 ? data?.slice(0, limit) : data)?.map((items: Blog) => (
-                    <motion.div key={items.id} className="bg-white group w-full relative h-full shadow rounded-lg"
-                        variants={cardVarient}
-                    >
+                    <div key={items.id} className="bg-white group w-full relative h-full shadow rounded-lg">
                         <div className="w-full h-60">
                             <Image src={items.blog_image} alt={items.title} width={500} height={400} className="w-full h-full object-contain object-top" />
                         </div>
@@ -106,9 +99,9 @@ function Cards({ limit }: { limit?: number }) {
                                 Read this blog
                             </Link>
                         </div>
-                    </motion.div>
+                    </div>
                 ))
             }
-        </motion.div>
+        </div>
     )
 }
