@@ -16,6 +16,8 @@ interface SubCategory {
   title: string;
   slug: string;
   description: string | null;
+  meta_title: string
+  meta_description: string
 }
 
 interface Category {
@@ -39,8 +41,8 @@ export async function generateMetadata(
     const res = await axios.get<ProductResponse>(`https://inforbit.in/demo/ecoqual/api/categories/${categoryId}/${subCategory}`);
     const pro = res.data;
 
-    const title = pro.subcategory.title ?? ''
-    const description = pro.subcategory.description ?? ''
+    const title = pro.subcategory.meta_title ?? ''
+    const description = pro.subcategory.meta_description ?? ''
 
     const canonical = getCanonicalUrl(`${pro.category.slug}/${pro.subcategory.slug}`);
 
