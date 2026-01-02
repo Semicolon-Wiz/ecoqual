@@ -13,6 +13,8 @@ interface Blog {
     slug: string;
     blog_image: string;
     description: string;
+    meta_title: string;
+    meta_description: string;
     paragraphs: Paragraph[]
 }
 interface BlogApi {
@@ -60,8 +62,8 @@ export async function generateMetadata(
             };
         }
 
-        const title = blog.title || `${blog.title} | EcoQual`;
-        const description = blog.description || blog.description
+        const title = blog.meta_title ?? blog.title;
+        const description = blog.meta_description ?? blog.description
 
         const canonical = getCanonicalUrl(`/blogs/${blog.slug}`);
 
