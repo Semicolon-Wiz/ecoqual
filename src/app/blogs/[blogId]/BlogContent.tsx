@@ -70,9 +70,9 @@ export default function BlogContent({ blogId }: { blogId: string }) {
             {
                 data?.paragraphs.map((items: Paragraph) => (
                     <div key={items.id} className="relative w-full mt-5">
-                        <h3 className="font-semibold text-zinc-800 lg:text-2xl md:text-lg text-base ">
+                        <h2 className="font-semibold text-zinc-800 lg:text-2xl md:text-lg text-base ">
                             {items.title}
-                        </h3>
+                        </h2>
                         <div className="mt-1 lg:text-base text-sm text-zinc-600 font-medium"
                             dangerouslySetInnerHTML={{ __html: items?.description ?? '' }}
                         />
