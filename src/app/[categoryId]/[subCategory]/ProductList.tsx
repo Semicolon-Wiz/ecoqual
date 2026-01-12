@@ -12,6 +12,7 @@ export interface Product {
     id: number;
     title: string;
     slug: string;
+    short_description: string;
     product_description: string;
     category_id: number;
     subcategory_id: number;
@@ -138,10 +139,13 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                                                 </Link>
 
                                                 <div
-                                                    className="hidden md:block prose mt-2 max-w-none text-gray-700 line-clamp-3 text-xs dis"
-                                                    dangerouslySetInnerHTML={{ __html: items.product_description }}
-                                                />
-{/* 
+                                                    className="hidden md:block prose mt-2 max-w-none text-gray-700 line-clamp-3 dis"
+                                                >
+                                                    <Subheading classname='!font-normal !text-xs !text-left !text-gray-700'>
+                                                        {items.short_description ?? ''}
+                                                    </Subheading>
+                                                </div>
+                                                {/* 
                                                 <Link href={`/${categoryId}/${subCategory}/${items.slug}`} className='ml-auto mt-6  w-max md:text-base text-xs flex items-center gap-1 justify-center text-blue-700 underline underline-offset-4 '>
                                                     View Product
                                                     <MoveUpRight size={14} />
