@@ -4,13 +4,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = "https://www.ecoqual.in"
     const urls: MetadataRoute.Sitemap = []
 
-    function safeJson(data: any) {
-        try {
-            return JSON.parse(JSON.stringify(data))
-        } catch {
-            return null
-        }
-    }
+    // function safeJson(data: any) {
+    //     try {
+    //         return JSON.parse(JSON.stringify(data))
+    //     } catch {
+    //         return null
+    //     }
+    // }
 
     async function safeFetch(url: string) {
         try {
