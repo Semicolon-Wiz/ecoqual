@@ -103,9 +103,12 @@ export default function ProductList({ categoryId, subCategory }: { categoryId: s
                         <MainHeading classname='text-secondry sm:text-center text-left'>
                             {data?.subcategory.title ?? ''}
                         </MainHeading>
-                        <Subheading classname='max-w-4xl mx-auto !font-normal !text-left !text-gray-700'>
+                        {/* <Subheading classname='max-w-4xl mx-auto !font-normal !text-left !text-gray-700' dangerouslySetInnerHTML={{ __html: product.description ?? '' }}  />
+                            {data?.subcategory.description ?? ''} */}
+                        {/* <Subheading classname='max-w-4xl mx-auto !font-normal !text-left !text-gray-700'>
                             {data?.subcategory.description ?? ''}
-                        </Subheading>
+                        </Subheading> */}
+                        <div className='mx-auto !font-normal !text-left !text-gray-700 lg:text-base text-sm !mt-1' dangerouslySetInnerHTML={{ __html: data?.subcategory.description ?? '' }} />
                     </div>
 
                     {
