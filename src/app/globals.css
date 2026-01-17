@@ -13,6 +13,13 @@
   --inter: "Inter", sans-serif;
 }
 
+*{
+  list-style-type: disc;
+}
+ul{
+  padding-left: 20px;
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-secondry: var(--secondry);
